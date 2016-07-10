@@ -92,7 +92,7 @@ td{overflow: hidden;}
 .ABtable{
 	background-color:#FFD979;
 	width:100%;
-	height: 70px;
+	height: 68px;
 }
 .tdSpacing_ABtable{
 	background-color:#FFD979 ;
@@ -107,20 +107,20 @@ td{overflow: hidden;}
 }
 .tdSpacing_IO{
 	background-color:#7BBBBB ;
-	width: 1px  ;
+	width: 1px  ;	
 }
 
 
 .td_FirstColumn{
 	width:120px;
 	height: 25px;
-	background-color: rgba(255,255,255,0.7);
+	background-color: rgba(255,255,255,0.65);
 }
 .tdInFirstRow {
 	width: 37.5px;
 	text-align: center;
 	height: 25px;
-	background-color: rgba(255,255,255,0.7);
+	background-color: rgba(255,255,255,0.65);
 }
 
 
@@ -131,19 +131,18 @@ td{overflow: hidden;}
 	background-color: rgba(255,255,255,0.85);
 }
 
-.tdInTable_stool {
-	font-size:0.9em;
+.tdInTableEmpty {
 	width: 37.5px;
 	text-align: center;
 	height: 25px;
-	background-color: rgba(255,255,255,0.85);
+	background-color: rgba(255,255,255,0.6);
 }
 
 
 .event{
 	background-color:#84B4BF;
 	width:270px;
-	height: 370px;
+	height: 365px;
 	float:left;
 	margin-left: 20px;
 	margin-bottom: 10px;
@@ -333,6 +332,13 @@ td{overflow: hidden;}
 	float:left;
 }
 
+.DateInfo{
+	font-size: 1em;
+	line-height: 10px;
+	color: rgb(150,150,150);
+}
+
+
 .glucoseCard{
 	width:170px;
 	height: 130px;
@@ -357,11 +363,6 @@ td{overflow: hidden;}
 	line-height: 60px;
 	font-weight: bolder;
 }
-.glucoseDateInfo{
-	font-size: 1em;
-	line-height: 10px;
-	color: rgb(150,150,150);
-}
 
 .CBCCard{
 	width:520px;
@@ -377,201 +378,235 @@ td{overflow: hidden;}
 	height: 130px;
 	text-align: center;
 }
-
-.LabCardHeight{
-	width:170px;
-	height: 130px;
-	background-color: #BAD6FF;
-	box-shadow: 5px 5px 5px #444444;
-	display: inline-block;
-	margin-right: 5px;
-	margin-bottom: 5px;
-}
-.labCard_SmallInnerTableHeight{
-	width:170px;
-	height: 130px;
-	text-align: center;
-}
-.LabCardWideHeight{
-	width:520px;
-	height: 130px;
-	background-color: #BAD6FF;
-	box-shadow: 5px 5px 5px #444444;
-	display: inline-block;
-	margin-right: 5px;
-	margin-bottom: 5px;	
-}
-.labCard_WideInnerTableHeight{
-	width:520px;
-	height: 130px;
-	text-align: center;
-}
-
-.LabCard{
-	width:170px;
-	height: 110px;
-	background-color: #BAD6FF;
-	box-shadow: 5px 5px 5px #444444;
-	display: inline-block;
-	margin-right: 5px;
-	margin-bottom: 5px;
-}
-.labCard_SmallInnerTable{
-	width:170px;
-	height: 110px;
-	text-align: center;
-}
-
-.LabCardWide{
-	width:520px;
-	height: 110px;
-	background-color: #BAD6FF;
-	box-shadow: 5px 5px 5px #444444;
-	display: inline-block;
-	margin-right: 5px;
-	margin-bottom: 5px;	
-}
-.labCard_WideInnerTable{
-	width:520px;
-	height: 110px;
-	text-align: center;
-}
-
-.LabCard2x{
-	width:257px;
-	height: 110px;
-	background-color: #BAD6FF;
-	box-shadow: 5px 5px 5px #444444;
-	display: inline-block;
-	margin-right: 5px;
-	margin-bottom: 5px;	
-}
-.labCard_2xInnerTable{
-	width:257px;
-	height: 110px;
-	text-align: center;
-}
-
-.LabCard25x{
-	width:435px;
-	height: 110px;
-	background-color: #BAD6FF;
-	box-shadow: 5px 5px 5px #444444;
-	display: inline-block;
-	margin-right: 5px;
-	margin-bottom: 5px;	
-}
-.labCard25xInnerTable{
-	width:435px;
-	height: 110px;
-	text-align: center;
-}
-
-
-.LabCard3x{
-	width:342px;
-	height: 110px;
-	background-color: #BAD6FF;
-	box-shadow: 5px 5px 5px #444444;
-	display: inline-block;
-	margin-right: 5px;
-	margin-bottom: 5px;	
-}
-.labCard_3xInnerTable{
-	width:342px;
-	height: 110px;
-	text-align: center;
-}
-
-.LabCard4x{
-	width:700px;
-	height: 110px;
-	background-color: #BAD6FF;
-	box-shadow: 5px 5px 5px #444444;
-	display: inline-block;
-	margin-right: 5px;
-	margin-bottom: 5px;	
-}
-.labCard_4xInnerTable{
-	width:700px;
-	height: 110px;
-	text-align: center;
-}
-
-.labCard_trspacing2x{
-	height: 10px;
-}
-.labCard_trspacing{
-	height: 5px;
-}
-
-.trFixHeight_FirstRow{
-	height: 40px;
-}
-.trFixHeightBig_FirstRow{
-	height: 73px;
-}
-.trFixHeight{
-	height: 20px;
-}
-.trFixHeightBig{
-	height: 45px;
-}
-
-.trInnerTable{
-	text-align: center;
-	widows: 100%;
-}
-.labCard_titleWord{
+.CBCtitle{
 	font-size: 1em;
 	line-height: 10px;
-	color: rgb(0,0,0);
+}
+.CBCMainWord{
+	font-size: 2.4em;
+	line-height: 30px;
+	font-weight: bolder;
+}
+.CBCSubInfo{
+	font-weight: border;
+	line-height:13px;
 }
 
-.labCard_smallWord{
+.EleCard{
+	width:700px;
+	height: 110px;
+	background-color: #BAD6FF;
+	box-shadow: 5px 5px 5px #444444;
+	display: inline-block;
+	margin-right: 5px;
+	margin-bottom: 5px;	
+}
+.EleTable{
+	width:700px;
+	height: 110px;
+	text-align: center;
+}
+.EleTitle{
 	font-size: 1em;
-	line-height: 0px;
-	color: rgb(150,150,150);
+	line-height: 10px;
 }
-
-
-.labCard_MidWord{
+.EleMainWord{
 	font-size: 2.2em;
 	line-height:35px;
 	font-weight: bolder;
 }
-.labCard_MidWord_nodata{
-	font-size: 3em;
+
+.CRPCard{
+	width:124px;
+	height: 110px;
+	background-color: #BAD6FF;
+	box-shadow: 5px 5px 5px #444444;
+	display: inline-block;
+	margin-right: 5px;
+	margin-bottom: 5px;
+}
+.CRPTable{
+	width:124px;
+	height: 110px;
+	text-align: center;
+}
+.CRPTitle{
+	font-size: 1em;
+	line-height: 10px;
+}
+.CRPMainWord{
+	font-size: 2.2em;
+	line-height:35px;
 	font-weight: bolder;
-	line-height: 0px;
-	color:rgb(100,100,100);
 }
 
-.labCard_subInfo
-{
-	height: 25px;
-	font-weight: border;
-	line-height:10px;
+.AbxCard{
+	width:433px;
+	height: 110px;
+	background-color: #BAD6FF;
+	box-shadow: 5px 5px 5px #444444;
+	display: inline-block;
+	margin-right: 5px;
+	margin-bottom: 5px;	
 }
-
-.labCard_AbxWord{
-	font-size: 2em;
-	line-height: 35px;
+.AbxTable{
+	width:433px;
+	height: 110px;
+	text-align: center;	
+}
+.AbxTitle{
+	font-size: 1em;
+	line-height: 10px;
+}
+.AbxMainWord{
+	font-size: 1.5em;
+	line-height:35px;
 	font-weight: bolder;
 }
-.labCard_EmphasizeWord{
-	font-size: 3em;
-	line-height: 63px;
+
+.RenalCard{
+	width:257px;
+	height: 90px;
+	background-color: #BAD6FF;
+	box-shadow: 5px 5px 5px #444444;
+	display: inline-block;
+	margin-right: 5px;
+	margin-bottom: 5px;	
+}
+.RenalTable{
+	width:257px;
+	height: 90px;
+	text-align: center;
+}
+.RenalTitle{
+	font-size: 1em;
+	line-height: 10px;
+}
+.RenalMainWord{
+	font-size: 2.2em;
+	line-height:35px;
 	font-weight: bolder;
 }
 
-.upperWord{
-	vertical-align:super;
-	font-size: 0.7em;
+.LiverCard{
+	width:257px;
+	height: 90px;
+	background-color: #BAD6FF;
+	box-shadow: 5px 5px 5px #444444;
+	display: inline-block;
+	margin-right: 5px;
+	margin-bottom: 5px;	
+}
+.LiverTable{
+	width:257px;
+	height: 90px;
+	text-align: center;
+}
+.LiverTitle{
+	font-size: 1em;
+	line-height: 10px;
+}
+.LiverMainWord{
+	font-size: 2.2em;
+	line-height:35px;
+	font-weight: bolder;
 }
 
+.TbilCard{
+	width:168px;
+	height: 90px;
+	background-color: #BAD6FF;
+	box-shadow: 5px 5px 5px #444444;
+	display: inline-block;
+	margin-right: 5px;
+	margin-bottom: 5px;
+}
+.TbilTable{
+	width:168px;
+	height: 90px;
+	text-align: center;
+}
+.TbilTitle{
+	font-size: 1em;
+	line-height: 10px;
+}
+.TbilMainWord{
+	font-size: 2.2em;
+	line-height:35px;
+	font-weight: bolder;
+}
 
+.BoneMarkerCard{
+	width:200px;
+	height: 80px;
+	background-color: #BAD6FF;
+	box-shadow: 5px 5px 5px #444444;
+	display: inline-block;
+	margin-right: 5px;
+	margin-bottom: 5px;	
+}
+.BoneMarkerTable{
+	width:200px;
+	height: 80px;
+	text-align: center;
+}
+.BoneMarkerTitle{
+	font-size: 0.9em;
+	line-height: 9px;
+}
+.BoneMarkerMainWord{
+	font-size: 1.4em;
+	line-height:25px;
+	font-weight: bold;
+}
 
+.AnemiaCard{
+	width:282px;
+	height: 80px;
+	background-color: #BAD6FF;
+	box-shadow: 5px 5px 5px #444444;
+	display: inline-block;
+	margin-right: 5px;
+	margin-bottom: 5px;	
+}
+.AnemiaTable{
+	width:282px;
+	height: 80px;
+	text-align: center;
+}
+.AnemiaTitle{
+	font-size: 0.9em;
+	line-height: 9px;
+}
+.AnemiaMainWord{
+	font-size: 1.4em;
+	line-height:25px;
+	font-weight: bold;
+}
+
+.HemolysisCard{
+	width:200px;
+	height: 80px;
+	background-color: #BAD6FF;
+	box-shadow: 5px 5px 5px #444444;
+	display: inline-block;
+	margin-right: 5px;
+	margin-bottom: 5px;	
+}
+.HemolysisTable{
+	width:200px;
+	height: 80px;
+	text-align: center;
+}
+.HemolysisTitle{
+	font-size: 0.9em;
+	line-height: 9px;
+}
+.HemolysisMainWord{
+	font-size: 1.4em;
+	line-height:25px;
+	font-weight: bold;
+}
 
 
 .ventilator_table{
@@ -588,7 +623,7 @@ td{overflow: hidden;}
 	width: 80px;
 	text-align: center;
 	height: 25px;
-	background-color: rgba(255,255,255,0.6);
+	background-color: rgba(255,255,255,0.45);
 }
 .ventilator_table_innerTD2
 {
@@ -617,7 +652,7 @@ td{overflow: hidden;}
 	width: 80px;
 	text-align: center;
 	height: 25px;
-	background-color: rgba(255,255,255,0.6);
+	background-color: rgba(255,255,255,0.45);
 }
 .ABG_table_innterTD{
 	width: 42px;
@@ -627,19 +662,27 @@ td{overflow: hidden;}
 }
 
 
-
-.tr_bigspacing{
-	height: 5px;
-}
-
 .clear{
 	clear:both;
 }
 
+.upperWord{
+	vertical-align:super;
+	font-size: 0.7em;
+}
 
+.lowerWord{
+	vertical-align:bottom;
+	font-size: 0.7em;
+}
 
-.smallWord{
-	font-size:0.7em;
+.fade{
+	font-size: 0.8em;
+	color:rgb(150,150,150);
+}
+.blue{
+	color:rgb(0,20,100);	
+	font-weight: bolder;
 }
 .warn{
 	font-weight: bolder;
