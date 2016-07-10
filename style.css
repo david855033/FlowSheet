@@ -681,8 +681,8 @@ td{overflow: hidden;}
 	color:rgb(150,150,150);
 }
 .blue{
-	color:rgb(0,20,100);	
-	font-weight: bolder;
+	color:rgb(0,20,80);	
+	font-size: 0.9em;
 }
 .warn{
 	font-weight: bolder;
