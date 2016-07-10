@@ -1,0 +1,621 @@
+section
+{
+	margin:0 auto;
+	width:1440px;
+}
+body{
+	background-color: #666666;
+	font-family: Microsoft JhengHei;
+}
+table{overflow: hidden;}
+.header{
+	background-color: #EFEFEF;
+	margin: auto; 
+	width: 100%;
+	height: 115px;
+	text-align: center;
+	overflow: hidden;
+	box-shadow: 5px 5px 5px #444444;
+}
+
+.title{
+	padding-top : 20px;
+	padding-bottom : 0px;
+	font-size: 1.2em;
+	font-weight: bold;
+	height: 50px;
+}
+
+.smalltitle{
+	font-size: 1em;
+	color:rgb(100,100,100);
+}
+.bigtitle{
+	font-size: 2em;
+	font-weight: bold;
+}
+
+.midtitle{
+	font-size: 1.5em;
+	font-weight: bold;
+}
+
+.headerCard
+{
+	margin-left: 25px;
+	margin-right: 25px;
+	float:left;
+	text-align:center;
+}
+
+.navigator{
+	margin-top:2px;
+	background-color: #333;
+	box-shadow: 5px 5px 5px #444444;
+	height: 35px;
+	color:white;
+	padding:10px;
+}
+
+.navigatorButton{
+	margin-top: 5px;
+	margin-left: 40px;
+	margin-right: 40px;
+	float:left;
+	text-align:center;
+}
+
+.main-content{
+	margin-top: 20px;
+}
+
+.tr_spacing{
+	height: 2px;
+}
+
+.UpperLeftTableContainer{
+	width:1150px;
+	box-shadow: 5px 5px 5px #444444;
+	float:left;
+}
+.TPRtable{
+	background-color:#000427;
+	width:100%;
+	height: 310px;
+}
+.ABtable{
+	background-color:#4A0002;
+	width:100%;
+	height: 70px;
+}
+.td_FirstColumn{
+	width:120px;
+	height: 25px;
+	background-color: rgba(255,255,255,0.7);
+}
+.tdInFirstRow {
+	width: 38px;
+	text-align: center;
+	height: 25px;
+	background-color: rgba(255,255,255,0.7);
+}
+.tdSpacing_TPRtable{
+	background-color:#000427 ;
+	width: 1px  ;
+}
+.tdSpacing_ABtable{
+	background-color:#4A0002 ;
+	width: 1px  ;
+}
+.tdInTable {
+	width: 38px;
+	text-align: center;
+	height: 25px;
+	background-color: rgba(255,255,255,0.85);
+}
+
+.event{
+	background-color:#041E40;
+	width:270px;
+	height: 370px;
+	float:left;
+	margin-left: 20px;
+	margin-bottom: 10px;
+	box-shadow: 5px 5px 5px #444444;
+	overflow-y:scroll;
+}
+.td_FirstColumn_event{
+	width:50px;
+	height: 25px;
+	text-align: center;
+	background-color: rgba(255,255,255,0.7);
+}
+.tdInFirstRow_event {
+	width: 220px;
+	text-align: center;
+	height: 25px;
+	background-color: rgba(255,255,255,0.7);
+}
+.tdSpacing_TPRtable_event{
+	background-color:#041E40 ;
+	width: 0px  ;
+}
+.tdInTable_event {
+	text-align: center;
+	background-color: rgba(255,255,255,0.95);
+}
+
+
+
+.IO_content{
+	margin-bottom: 20px;
+}
+
+.IO_table{
+	background-color:#074A59;
+	width:1150px;
+	height: 100%;
+	float:left;
+	box-shadow: 5px 5px 5px #444444;
+}
+
+.tdSpacing_IO{
+	background-color:#074A59 ;
+	width: 1px  ;
+}
+
+
+.IO-detail{
+	width:270px;
+	float:left;
+	margin-left:20px;
+}
+
+.IOCard{
+	width: 270px;
+	height:100px ;
+	background-color:#BDD4DE;
+	margin-bottom: 5px;
+	box-shadow: 5px 5px 5px #444444;
+}
+
+
+
+.shift{
+	width: 20px;
+	height: 100%;
+	background: rgba(0,0,0,0.2);
+	float:left;
+}
+
+.IOContainer{
+	height: 100%;
+	float:left;
+}
+
+.IOInnerCard{
+	background: rgba(255,255,255,0.2);
+	height: 50px;
+	width: 50px;
+	float:left;
+}
+.IOInnerCardWide{
+	background: rgba(255,255,255,0.2);
+	height: 50px;
+	width: 90px;
+	float:left;
+}
+
+.IOInnerCard table,
+.IOInnerCardWide table,
+.IOInnerCardTotal table,
+.IOInnerCardWideTotal table,
+.IOBalance table,
+.IOBalanceTotal table
+{
+	height: 100%;
+	width: 100%;
+	border-collapse: collapse;
+}
+
+.IOInnerSmall{
+	font-size: 0.8em;
+	text-align: center;
+	color:rgb(100,100,100);
+}
+.IOInnerBig{
+	font-size: 1.2em;
+	text-align: center;
+	font-weight: border;
+}
+.IOBalance{
+	height: 100%;
+	width: 60px;
+	float:left;
+	font-size: 1.1em;
+}
+
+.tr_IObalancespacing{
+	height: 25px;
+}
+
+.tr_shiftspacing{
+	height: 20px;
+}
+
+
+.TotalIOCard{
+	width: 270px;
+	height:120px ;
+	background-color:#3F5765;
+	margin-bottom: 5px;
+	box-shadow: 5px 5px 5px #444444;
+}
+
+.shifttotal{
+	width: 20px;
+	height: 100%;
+	background: rgba(0,0,0,0.2);
+	color:#FFFFFF;
+	float:left;
+	font-weight: bolder;
+}
+
+.IOInnerCardTotal{
+	background: rgba(0,0,0,0.5);
+	height: 60px;
+	width: 50px;
+	float:left;
+}
+.IOInnerCardWideTotal{
+	background: rgba(0,0,0,0.5);
+	height: 60px;
+	width: 90px;
+	float:left;
+}
+
+.IOInnerSmallTotal{
+	font-size: 0.8em;
+	text-align: center;
+	color:rgb(180,180,180);
+}
+.IOInnerBigTotal{
+	font-size: 1.2em;
+	text-align: center;
+	color:#FFFFFF;
+	font-weight: border;
+}
+.IOBalanceTotal{
+	height: 100%;
+	width: 60px;
+	float:left;
+	font-size: 1.1em;
+}
+
+.tr_IObalancespacingTotal{
+	height: 35px;
+}
+
+
+.bottom-content{
+	width:100%;
+	margin-top: 10px;
+}
+
+.bottomLeft{
+	width:710px;
+	float:left;
+	margin-left:10px;
+}
+.bottomLeft table{
+	border-collapse: collapse;
+}
+.bottomRight{
+	width:710px;
+	margin-right:10px;
+	
+	float:left;
+}
+
+.glucoseCard{
+	width:170px;
+	height: 130px;
+	background-color: #DADAE0;
+	box-shadow: 5px 5px 5px #444444;
+	display: inline-block;
+	margin-right: 5px;
+	margin-bottom: 5px;
+}
+.glucoseTable{
+	width:170px;
+	height: 130px;
+	text-align: center;
+}
+.glucoseTitle{
+	font-size: 1em;
+	line-height: 10px;
+	color: rgb(0,0,0);
+}
+.glucoseMainWord{
+	font-size: 3em;
+	line-height: 60px;
+	font-weight: bolder;
+}
+.glucoseDateInfo{
+	font-size: 1em;
+	line-height: 10px;
+	color: rgb(150,150,150);
+}
+
+
+.LabCardHeight{
+	width:170px;
+	height: 130px;
+	background-color: #DADAE0;
+	box-shadow: 5px 5px 5px #444444;
+	display: inline-block;
+	margin-right: 5px;
+	margin-bottom: 5px;
+}
+.labCard_SmallInnerTableHeight{
+	width:170px;
+	height: 130px;
+	text-align: center;
+}
+.LabCardWideHeight{
+	width:520px;
+	height: 130px;
+	background-color: #DADAE0;
+	box-shadow: 5px 5px 5px #444444;
+	display: inline-block;
+	margin-right: 5px;
+	margin-bottom: 5px;	
+}
+.labCard_WideInnerTableHeight{
+	width:520px;
+	height: 130px;
+	text-align: center;
+}
+
+.LabCard{
+	width:170px;
+	height: 110px;
+	background-color: #DADAE0;
+	box-shadow: 5px 5px 5px #444444;
+	display: inline-block;
+	margin-right: 5px;
+	margin-bottom: 5px;
+}
+.labCard_SmallInnerTable{
+	width:170px;
+	height: 110px;
+	text-align: center;
+}
+
+.LabCardWide{
+	width:520px;
+	height: 110px;
+	background-color: #DADAE0;
+	box-shadow: 5px 5px 5px #444444;
+	display: inline-block;
+	margin-right: 5px;
+	margin-bottom: 5px;	
+}
+.labCard_WideInnerTable{
+	width:520px;
+	height: 110px;
+	text-align: center;
+}
+
+.LabCard2x{
+	width:257px;
+	height: 110px;
+	background-color: #DADAE0;
+	box-shadow: 5px 5px 5px #444444;
+	display: inline-block;
+	margin-right: 5px;
+	margin-bottom: 5px;	
+}
+.labCard_2xInnerTable{
+	width:257px;
+	height: 110px;
+	text-align: center;
+}
+
+.LabCard25x{
+	width:435px;
+	height: 110px;
+	background-color: #DADAE0;
+	box-shadow: 5px 5px 5px #444444;
+	display: inline-block;
+	margin-right: 5px;
+	margin-bottom: 5px;	
+}
+.labCard25xInnerTable{
+	width:435px;
+	height: 110px;
+	text-align: center;
+}
+
+
+.LabCard3x{
+	width:342px;
+	height: 110px;
+	background-color: #DADAE0;
+	box-shadow: 5px 5px 5px #444444;
+	display: inline-block;
+	margin-right: 5px;
+	margin-bottom: 5px;	
+}
+.labCard_3xInnerTable{
+	width:342px;
+	height: 110px;
+	text-align: center;
+}
+
+.LabCard4x{
+	width:700px;
+	height: 110px;
+	background-color: #DADAE0;
+	box-shadow: 5px 5px 5px #444444;
+	display: inline-block;
+	margin-right: 5px;
+	margin-bottom: 5px;	
+}
+.labCard_4xInnerTable{
+	width:700px;
+	height: 110px;
+	text-align: center;
+}
+
+.labCard_trspacing2x{
+	height: 10px;
+}
+.labCard_trspacing{
+	height: 5px;
+}
+
+.trFixHeight_FirstRow{
+	height: 40px;
+}
+.trFixHeightBig_FirstRow{
+	height: 73px;
+}
+.trFixHeight{
+	height: 20px;
+}
+.trFixHeightBig{
+	height: 45px;
+}
+
+.trInnerTable{
+	text-align: center;
+	widows: 100%;
+}
+.labCard_titleWord{
+	font-size: 1em;
+	line-height: 10px;
+	color: rgb(0,0,0);
+}
+
+.labCard_smallWord{
+	font-size: 1em;
+	line-height: 0px;
+	color: rgb(150,150,150);
+}
+
+
+.labCard_MidWord{
+	font-size: 2.2em;
+	line-height:35px;
+	font-weight: bolder;
+}
+.labCard_MidWord_nodata{
+	font-size: 3em;
+	font-weight: bolder;
+	line-height: 0px;
+	color:rgb(100,100,100);
+}
+
+.labCard_subInfo
+{
+	height: 25px;
+	font-weight: border;
+	line-height:10px;
+}
+
+.labCard_AbxWord{
+	font-size: 2em;
+	line-height: 35px;
+	font-weight: bolder;
+}
+.labCard_EmphasizeWord{
+	font-size: 3em;
+	line-height: 63px;
+	font-weight: bolder;
+}
+
+.upperWord{
+	vertical-align:super;
+	font-size: 0.7em;
+}
+
+
+
+
+
+.ventilator_table{
+	background-color: #75E243;
+	box-shadow: 5px 5px 5px #444444;
+	margin-bottom:20px;
+}
+.td_spacing_ventilator_table{
+	width:1px;
+	background-color: #75E243;
+}
+.ventilator_table_innerTD1
+{
+	width: 80px;
+	text-align: center;
+	height: 25px;
+	background-color: rgba(255,255,255,0.6);
+}
+.ventilator_table_innerTD2
+{
+	width: 150px;
+	text-align: center;
+	height: 25px;
+	background-color: rgba(255,255,255,0.6);
+}
+.ventilator_table_innerTD3
+{
+	width: 460px;
+	text-align: center;
+	height: 25px;
+	background-color: rgba(255,255,255,0.6);
+}
+
+.ABG_table{
+	background-color: #2ADD75;
+	box-shadow: 5px 5px 5px #444444;
+}
+.td_spacing_ABG_table{
+	width:1px;
+	background-color: #2ADD75;
+}
+.ABG_table_innterTD1{
+	width: 80px;
+	text-align: center;
+	height: 25px;
+	background-color: rgba(255,255,255,0.6);
+}
+.ABG_table_innterTD{
+	width: 42px;
+	text-align: center;
+	height: 25px;
+	background-color: rgba(255,255,255,0.6);
+}
+
+
+
+.tr_bigspacing{
+	height: 5px;
+}
+
+.clear{
+	clear:both;
+}
+
+
+
+.smallWord{
+	font-size:0.7em;
+}
+.warn{
+	font-weight: bolder;
+	color:rgb(255,0,0);
+}
+.warn2{
+	font-weight: bolder;
+	color:rgb(255,150,0);
+}
