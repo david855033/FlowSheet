@@ -6,7 +6,9 @@ section
 body{
 	background-color: #666666;
 	font-family: Microsoft JhengHei;
+	font-family: sans-serif;
 }
+
 table{overflow: hidden;}
 td{overflow: hidden;}
 .header{
@@ -19,21 +21,20 @@ td{overflow: hidden;}
 	box-shadow: 5px 5px 5px #444444;
 }
 
-.title{
-	padding-top : 20px;
-	padding-bottom : 0px;
-	font-size: 1.2em;
-	font-weight: bold;
-	height: 50px;
-}
-
 .smalltitle{
 	font-size: 1em;
 	color:rgb(100,100,100);
+	line-height: 20px;
+}
+.miltitle{
+	font-size: 1em;
+	color:rgb(100,100,100);
+	line-height: 55px;
 }
 .bigtitle{
 	font-size: 2em;
 	font-weight: bold;
+	line-height: 55px;
 }
 
 .midtitle{
@@ -49,6 +50,10 @@ td{overflow: hidden;}
 	text-align:center;
 }
 
+
+
+
+
 .navigator{
 	margin-top:2px;
 	background-color: #333;
@@ -58,13 +63,21 @@ td{overflow: hidden;}
 	padding:10px;
 }
 
+.navigatorContainer{
+	margin-left:10px;
+}
+
 .navigatorButton{
 	margin-top: 5px;
-	margin-left: 40px;
-	margin-right: 40px;
+	margin-left: 30px;
+	margin-right: 30px;
 	float:left;
 	text-align:center;
 }
+
+
+
+
 
 .main-content{
 	margin-top: 20px;
@@ -90,12 +103,12 @@ td{overflow: hidden;}
 }
 
 .ABtable{
-	background-color:#FFD979;
+	background-color:#DEB959;
 	width:100%;
 	height: 68px;
 }
 .tdSpacing_ABtable{
-	background-color:#FFD979 ;
+	background-color:#DEB959 ;
 	width: 1px  ;
 }
 .IO_table{
@@ -124,19 +137,50 @@ td{overflow: hidden;}
 }
 
 
-.tdInTable {
+.tdInTable1 {
 	width: 37.5px;
 	text-align: center;
 	height: 25px;
 	background-color: rgba(255,255,255,0.85);
 }
 
-.tdInTableEmpty {
+.tdInTableEmpty1 {
 	width: 37.5px;
 	text-align: center;
 	height: 25px;
-	background-color: rgba(255,255,255,0.6);
+	background-color: rgba(255,255,255,0.4);
 }
+
+.tdInTable2 {
+	width: 37.5px;
+	text-align: center;
+	height: 25px;
+	background-color: rgba(255,255,255,0.85);
+}
+
+.tdInTableEmpty2 {
+	width: 37.5px;
+	text-align: center;
+	height: 25px;
+	background-color: rgba(255,255,255,0.4);
+}
+
+.tdInTable3 {
+	width: 37.5px;
+	text-align: center;
+	height: 25px;
+	background-color: rgba(255,255,255,0.85);
+}
+
+.tdInTableEmpty3 {
+	width: 37.5px;
+	text-align: center;
+	height: 25px;
+	background-color: rgba(255,255,255,0.4);
+}
+
+
+
 
 
 .event{
@@ -177,9 +221,6 @@ td{overflow: hidden;}
 	margin-bottom: 20px;
 }
 
-
-
-
 .IO-detail{
 	width:270px;
 	float:left;
@@ -197,9 +238,9 @@ td{overflow: hidden;}
 
 
 .shift{
-	width: 20px;
+	width: 25px;
 	height: 100%;
-	background: rgba(0,0,0,0.2);
+	background: rgba(0,0,0,0.05);
 	float:left;
 }
 
@@ -217,7 +258,7 @@ td{overflow: hidden;}
 .IOInnerCardWide{
 	background: rgba(255,255,255,0.2);
 	height: 50px;
-	width: 90px;
+	width: 80px;
 	float:left;
 }
 
@@ -268,7 +309,7 @@ td{overflow: hidden;}
 }
 
 .shifttotal{
-	width: 20px;
+	width: 25px;
 	height: 100%;
 	background: rgba(0,0,0,0.2);
 	color:#FFFFFF;
@@ -285,7 +326,7 @@ td{overflow: hidden;}
 .IOInnerCardWideTotal{
 	background: rgba(0,0,0,0.5);
 	height: 60px;
-	width: 90px;
+	width: 80px;
 	float:left;
 }
 
@@ -341,7 +382,7 @@ td{overflow: hidden;}
 
 .glucoseCard{
 	width:170px;
-	height: 130px;
+	height: 110px;
 	background-color: #BAD6FF;
 	box-shadow: 5px 5px 5px #444444;
 	display: inline-block;
@@ -350,7 +391,7 @@ td{overflow: hidden;}
 }
 .glucoseTable{
 	width:170px;
-	height: 130px;
+	height: 110px;
 	text-align: center;
 }
 .glucoseTitle{
@@ -366,7 +407,7 @@ td{overflow: hidden;}
 
 .CBCCard{
 	width:520px;
-	height: 130px;
+	height: 110px;
 	background-color: #BAD6FF;
 	box-shadow: 5px 5px 5px #444444;
 	display: inline-block;
@@ -375,7 +416,7 @@ td{overflow: hidden;}
 }
 .CBCtable{
 	width:520px;
-	height: 130px;
+	height: 110px;
 	text-align: center;
 }
 .CBCtitle{
@@ -394,7 +435,7 @@ td{overflow: hidden;}
 
 .EleCard{
 	width:700px;
-	height: 110px;
+	height: 100px;
 	background-color: #BAD6FF;
 	box-shadow: 5px 5px 5px #444444;
 	display: inline-block;
@@ -403,7 +444,7 @@ td{overflow: hidden;}
 }
 .EleTable{
 	width:700px;
-	height: 110px;
+	height: 100px;
 	text-align: center;
 }
 .EleTitle{
@@ -418,7 +459,7 @@ td{overflow: hidden;}
 
 .CRPCard{
 	width:124px;
-	height: 110px;
+	height: 100px;
 	background-color: #BAD6FF;
 	box-shadow: 5px 5px 5px #444444;
 	display: inline-block;
@@ -427,7 +468,7 @@ td{overflow: hidden;}
 }
 .CRPTable{
 	width:124px;
-	height: 110px;
+	height: 100px;
 	text-align: center;
 }
 .CRPTitle{
@@ -442,7 +483,7 @@ td{overflow: hidden;}
 
 .AbxCard{
 	width:433px;
-	height: 110px;
+	height: 100px;
 	background-color: #BAD6FF;
 	box-shadow: 5px 5px 5px #444444;
 	display: inline-block;
@@ -451,7 +492,7 @@ td{overflow: hidden;}
 }
 .AbxTable{
 	width:433px;
-	height: 110px;
+	height: 100px;
 	text-align: center;	
 }
 .AbxTitle{
@@ -465,7 +506,7 @@ td{overflow: hidden;}
 }
 
 .RenalCard{
-	width:257px;
+	width:227px;
 	height: 90px;
 	background-color: #BAD6FF;
 	box-shadow: 5px 5px 5px #444444;
@@ -474,7 +515,7 @@ td{overflow: hidden;}
 	margin-bottom: 5px;	
 }
 .RenalTable{
-	width:257px;
+	width:227px;
 	height: 90px;
 	text-align: center;
 }
@@ -489,7 +530,7 @@ td{overflow: hidden;}
 }
 
 .LiverCard{
-	width:257px;
+	width:227px;
 	height: 90px;
 	background-color: #BAD6FF;
 	box-shadow: 5px 5px 5px #444444;
@@ -498,7 +539,7 @@ td{overflow: hidden;}
 	margin-bottom: 5px;	
 }
 .LiverTable{
-	width:257px;
+	width:227px;
 	height: 90px;
 	text-align: center;
 }
@@ -513,7 +554,7 @@ td{overflow: hidden;}
 }
 
 .TbilCard{
-	width:168px;
+	width:227px;
 	height: 90px;
 	background-color: #BAD6FF;
 	box-shadow: 5px 5px 5px #444444;
@@ -522,7 +563,7 @@ td{overflow: hidden;}
 	margin-bottom: 5px;
 }
 .TbilTable{
-	width:168px;
+	width:227px;
 	height: 90px;
 	text-align: center;
 }
@@ -537,7 +578,7 @@ td{overflow: hidden;}
 }
 
 .BoneMarkerCard{
-	width:200px;
+	width:320px;
 	height: 80px;
 	background-color: #BAD6FF;
 	box-shadow: 5px 5px 5px #444444;
@@ -546,7 +587,7 @@ td{overflow: hidden;}
 	margin-bottom: 5px;	
 }
 .BoneMarkerTable{
-	width:200px;
+	width:320px;
 	height: 80px;
 	text-align: center;
 }
@@ -561,7 +602,7 @@ td{overflow: hidden;}
 }
 
 .AnemiaCard{
-	width:282px;
+	width:368px;
 	height: 80px;
 	background-color: #BAD6FF;
 	box-shadow: 5px 5px 5px #444444;
@@ -570,7 +611,7 @@ td{overflow: hidden;}
 	margin-bottom: 5px;	
 }
 .AnemiaTable{
-	width:282px;
+	width:368px;
 	height: 80px;
 	text-align: center;
 }
@@ -584,29 +625,9 @@ td{overflow: hidden;}
 	font-weight: bold;
 }
 
-.HemolysisCard{
-	width:200px;
-	height: 80px;
-	background-color: #BAD6FF;
-	box-shadow: 5px 5px 5px #444444;
-	display: inline-block;
-	margin-right: 5px;
-	margin-bottom: 5px;	
-}
-.HemolysisTable{
-	width:200px;
-	height: 80px;
-	text-align: center;
-}
-.HemolysisTitle{
-	font-size: 0.9em;
-	line-height: 9px;
-}
-.HemolysisMainWord{
-	font-size: 1.4em;
-	line-height:25px;
-	font-weight: bold;
-}
+
+
+
 
 
 .ventilator_table{

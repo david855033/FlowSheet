@@ -4,13 +4,14 @@
 	<meta charset="UTF-8">
 	<title>Document</title>
 	<link rel="stylesheet" type="text/css" href="style.css">
+	<script src="HeaderDataProcess.js"></script>
+	<script src="TPRDataProcess.js"></script>
 </head>
-<body>
+<body onload="HeaderDataProcess(); TPRDataProcess();">
 <section>
-	<div class="header">
+	<div ID="mainHeader" class="header">
 			<div class="headerCard">
 				<table>
-					<tr class="tr_bigspacing"></tr>
 					<tr>
 						<td class="smalltitle">NICU - 1</td>
 					</tr>
@@ -21,12 +22,10 @@
 					<tr>
 						<td class="smalltitle">主治醫師：曹大大</td>
 					</tr>
-					<tr class="tr_spacing"></tr>
 				</table>
 			</div>
 			<div class="headerCard">
 				<table>
-					<tr class="tr_bigspacing"></tr>
 					<tr>
 						<td class="smalltitle">病歷號</td>
 					</tr>
@@ -36,13 +35,10 @@
 					<tr>
 						<td class="smalltitle">2016-7-1住院</td>
 					</tr>
-					
-					<tr class="tr_spacing"></tr>
 				</table>
 			</div>
 			<div class="headerCard">
 				<table>
-					<tr class="tr_bigspacing"></tr>
 					<tr>
 						<td class="smalltitle">年紀</td>
 					</tr>
@@ -53,13 +49,11 @@
 						<td class="smalltitle">2016-7-1出生</td>
 					</tr>
 					
-					<tr class="tr_spacing"></tr>
 				</table>
 			</div>
 			
 			<div class="headerCard">
 				<table>
-					<tr class="tr_bigspacing"></tr>
 					<tr>
 						<td class="smalltitle">矯正週數</td>
 					</tr>
@@ -69,13 +63,10 @@
 					<tr>
 						<td class="smalltitle">GA:29+1</td>
 					</tr>
-					
-					<tr class="tr_spacing"></tr>
 				</table>
 			</div>
 			<div class="headerCard">
 				<table>
-					<tr class="tr_bigspacing"></tr>
 					<tr>
 						<td class="smalltitle">體重</td>
 					</tr>
@@ -85,12 +76,10 @@
 					<tr>
 						<td class="smalltitle">BBW:1200g</td>
 					</tr>
-					<tr class="tr_spacing"></tr>
 				</table>
 			</div>
 			<div class="headerCard">
 				<table>
-						<tr class="tr_bigspacing"></tr>
 						<tr>
 							<td class="smalltitle">Diet</td>
 						</tr>
@@ -100,13 +89,10 @@
 						<tr>
 							<td class="smalltitle">10ml q3h</td>
 						</tr>
-						
-						<tr class="tr_spacing"></tr>
 				</table>
 			</div>
 			<div class="headerCard">
 				<table>
-						<tr class="tr_bigspacing"></tr>
 						<tr>
 							<td class="smalltitle">Ventilator</td>
 						</tr>
@@ -116,26 +102,28 @@
 						<tr>
 							<td class="smalltitle">FiO2:21% PEEP:5</td>
 						</tr>
-						
-						<tr class="tr_spacing"></tr>
 				</table>
 			</div>
 			<div class="clear"></div>
 	</div>
 	
 	<div class="navigator">	
-		<div class="navigatorButton">資料日期: 2016-7-6</div>
-		<div class="navigatorButton">Calender(綠單)</div>
-		<div class="navigatorButton">TPN功能</div>
-		<div class="navigatorButton">藥物劑量表</div>
-		<div class="navigatorButton">新生兒黃疸</div>
-		<div class="navigatorButton">Progress Note</div>
-		<div class="navigatorButton">NISS試算</div>
+		<div class="navigatorContainer">
+			<div id="currentDate" class="navigatorButton">資料日期: 2016-7-6</div>
+			<div class="navigatorButton">切換日期</div>
+			<div class="navigatorButton">切換病人</div>
+			<div class="navigatorButton">Calender(綠單)</div>
+			<div class="navigatorButton">TPN功能</div>
+			<div class="navigatorButton">藥物劑量表</div>
+			<div class="navigatorButton">新生兒黃疸</div>
+			<div class="navigatorButton">Progress Note</div>
+			<div class="navigatorButton">NISS試算</div>
+		</div>
 	</div>
 
 	<div class="main-content">
 		<div class="UpperLeftTableContainer">
-			<div class="TPRtable">
+			<div id="tprtable" class="TPRtable">
 				<table>
 					<tr class="tr_spacing"></tr>
 					<tr class="firstrow_TPRTable">
@@ -174,64 +162,64 @@
 						<td class="tdSpacing_TPRtable"></td>
 						<td class="td_FirstColumn">箱溫<span class="fade">('C)</span></td>
 						<td class="tdSpacing_TPRtable"></td>
-						<td class="tdInTable">30</td>
-						<td class="tdInTable">30</td>
-						<td class="tdInTableEmpty"></td>
-						<td class="tdInTableEmpty"></td>
-						<td class="tdInTableEmpty"></td>
-						<td class="tdInTableEmpty"></td>
-						<td class="tdInTableEmpty"></td>
-						<td class="tdInTableEmpty"></td>
+						<td class="tdInTable1">30</td>
+						<td class="tdInTable1">30</td>
+						<td class="tdInTableEmpty1"></td>
+						<td class="tdInTableEmpty1"></td>
+						<td class="tdInTableEmpty1"></td>
+						<td class="tdInTableEmpty1"></td>
+						<td class="tdInTableEmpty1"></td>
+						<td class="tdInTableEmpty1"></td>
 						<td class="tdSpacing_TPRtable"></td>
-						<td class="tdInTableEmpty"></td>
-						<td class="tdInTableEmpty"></td>
-						<td class="tdInTableEmpty"></td>
-						<td class="tdInTableEmpty"></td>
-						<td class="tdInTableEmpty"></td>
-						<td class="tdInTableEmpty"></td>
-						<td class="tdInTableEmpty"></td>
-						<td class="tdInTableEmpty"></td>
+						<td class="tdInTableEmpty1"></td>
+						<td class="tdInTableEmpty1"></td>
+						<td class="tdInTableEmpty1"></td>
+						<td class="tdInTableEmpty1"></td>
+						<td class="tdInTableEmpty1"></td>
+						<td class="tdInTableEmpty1"></td>
+						<td class="tdInTableEmpty1"></td>
+						<td class="tdInTableEmpty1"></td>
 						<td class="tdSpacing_TPRtable"></td>
-						<td class="tdInTableEmpty"></td>
-						<td class="tdInTableEmpty"></td>
-						<td class="tdInTableEmpty"></td>
-						<td class="tdInTableEmpty"></td>
-						<td class="tdInTableEmpty"></td>
-						<td class="tdInTableEmpty"></td>
-						<td class="tdInTableEmpty"></td>
-						<td class="tdInTableEmpty"></td>
+						<td class="tdInTableEmpty1"></td>
+						<td class="tdInTableEmpty1"></td>
+						<td class="tdInTableEmpty1"></td>
+						<td class="tdInTableEmpty1"></td>
+						<td class="tdInTableEmpty1"></td>
+						<td class="tdInTableEmpty1"></td>
+						<td class="tdInTableEmpty1"></td>
+						<td class="tdInTableEmpty1"></td>
 						<td class="tdSpacing_TPRtable"></td>
 					</tr>
 					<tr>
 						<td class="tdSpacing_TPRtable"></td>
 						<td class="td_FirstColumn">濕度<span class="fade">(%)</span></td>
 						<td class="tdSpacing_TPRtable"></td>
-						<td class="tdInTable">65</td>
-						<td class="tdInTable">65</td>
-						<td class="tdInTableEmpty"></td>
-						<td class="tdInTableEmpty"></td>
-						<td class="tdInTableEmpty"></td>
-						<td class="tdInTableEmpty"></td>
-						<td class="tdInTableEmpty"></td>
-						<td class="tdInTableEmpty"></td>
+						<td class="tdInTable1">65</td>
+						<td class="tdInTable1">65</td>
+						<td class="tdInTableEmpty1"></td>
+						<td class="tdInTableEmpty1"></td>
+						<td class="tdInTableEmpty1"></td>
+						<td class="tdInTableEmpty1"></td>
+						<td class="tdInTableEmpty1"></td>
+						<td class="tdInTableEmpty1"></td>
 						<td class="tdSpacing_TPRtable"></td>
-						<td class="tdInTableEmpty"></td>
-						<td class="tdInTableEmpty"></td>
-						<td class="tdInTableEmpty"></td>
-						<td class="tdInTableEmpty"></td>
-						<td class="tdInTableEmpty"></td>
-						<td class="tdInTableEmpty"></td>
-						<td class="tdInTableEmpty"></td>
-						<td class="tdInTableEmpty"></td>
+						<td class="tdInTableEmpty1"></td>
+						<td class="tdInTableEmpty1"></td>
+						<td class="tdInTableEmpty1"></td>
+						<td class="tdInTableEmpty1"></td>
+						<td class="tdInTableEmpty1"></td>
+						<td class="tdInTableEmpty1"></td>
+						<td class="tdInTableEmpty1"></td>
+						<td class="tdInTableEmpty1"></td>
 						<td class="tdSpacing_TPRtable"></td>
-						<td class="tdInTableEmpty"></td>
-						<td class="tdInTableEmpty"></td>
-						<td class="tdInTableEmpty"></td>
-						<td class="tdInTableEmpty"></td>
-						<td class="tdInTableEmpty"></td>
-						<td class="tdInTableEmpty"></td>
-						<td class="tdInTableEmpty"></td>
-						<td class="tdInTableEmpty"></td>
+						<td class="tdInTableEmpty1"></td>
+						<td class="tdInTableEmpty1"></td>
+						<td class="tdInTableEmpty1"></td>
+						<td class="tdInTableEmpty1"></td>
+						<td class="tdInTableEmpty1"></td>
+						<td class="tdInTableEmpty1"></td>
+						<td class="tdInTableEmpty1"></td>
+						<td class="tdInTableEmpty1"></td>
 						<td class="tdSpacing_TPRtable"></td>
 					</tr>
 					<tr class="tr_spacing"></tr>
@@ -239,128 +227,128 @@
 						<td class="tdSpacing_TPRtable"></td>
 						<td class="td_FirstColumn">體溫<span class="fade">('C)</span></td>
 						<td class="tdSpacing_TPRtable"></td>
-						<td class="tdInTable">37.5</td>
-						<td class="tdInTable"><span class="warn">38</span></td>
-						<td class="tdInTableEmpty"></td>
-						<td class="tdInTableEmpty"></td>
-						<td class="tdInTableEmpty"></td>
-						<td class="tdInTableEmpty"></td>
-						<td class="tdInTableEmpty"></td>
-						<td class="tdInTableEmpty"></td>
+						<td class="tdInTable1">37.5</td>
+						<td class="tdInTable1"><span class="warn">38</span></td>
+						<td class="tdInTableEmpty1"></td>
+						<td class="tdInTableEmpty1"></td>
+						<td class="tdInTableEmpty1"></td>
+						<td class="tdInTableEmpty1"></td>
+						<td class="tdInTableEmpty1"></td>
+						<td class="tdInTableEmpty1"></td>
 						<td class="tdSpacing_TPRtable"></td>
-						<td class="tdInTableEmpty"></td>
-						<td class="tdInTableEmpty"></td>
-						<td class="tdInTableEmpty"></td>
-						<td class="tdInTableEmpty"></td>
-						<td class="tdInTableEmpty"></td>
-						<td class="tdInTableEmpty"></td>
-						<td class="tdInTableEmpty"></td>
-						<td class="tdInTableEmpty"></td>
+						<td class="tdInTableEmpty1"></td>
+						<td class="tdInTableEmpty1"></td>
+						<td class="tdInTableEmpty1"></td>
+						<td class="tdInTableEmpty1"></td>
+						<td class="tdInTableEmpty1"></td>
+						<td class="tdInTableEmpty1"></td>
+						<td class="tdInTableEmpty1"></td>
+						<td class="tdInTableEmpty1"></td>
 						<td class="tdSpacing_TPRtable"></td>
-						<td class="tdInTableEmpty"></td>
-						<td class="tdInTableEmpty"></td>
-						<td class="tdInTableEmpty"></td>
-						<td class="tdInTableEmpty"></td>
-						<td class="tdInTableEmpty"></td>
-						<td class="tdInTableEmpty"></td>
-						<td class="tdInTableEmpty"></td>
-						<td class="tdInTableEmpty"></td>
+						<td class="tdInTableEmpty1"></td>
+						<td class="tdInTableEmpty1"></td>
+						<td class="tdInTableEmpty1"></td>
+						<td class="tdInTableEmpty1"></td>
+						<td class="tdInTableEmpty1"></td>
+						<td class="tdInTableEmpty1"></td>
+						<td class="tdInTableEmpty1"></td>
+						<td class="tdInTableEmpty1"></td>
 						<td class="tdSpacing_TPRtable"></td>
 					</tr>
 					<tr>
 						<td class="tdSpacing_TPRtable"></td>
 						<td class="td_FirstColumn">心率<span class="fade">(/min)</span></td>
 						<td class="tdSpacing_TPRtable"></td>
-						<td class="tdInTable">120</td>
-						<td class="tdInTable">145</td>
-						<td class="tdInTableEmpty"></td>
-						<td class="tdInTableEmpty"></td>
-						<td class="tdInTableEmpty"></td>
-						<td class="tdInTableEmpty"></td>
-						<td class="tdInTableEmpty"></td>
-						<td class="tdInTableEmpty"></td>
+						<td class="tdInTable1">120</td>
+						<td class="tdInTable1">145</td>
+						<td class="tdInTableEmpty1"></td>
+						<td class="tdInTableEmpty1"></td>
+						<td class="tdInTableEmpty1"></td>
+						<td class="tdInTableEmpty1"></td>
+						<td class="tdInTableEmpty1"></td>
+						<td class="tdInTableEmpty1"></td>
 						<td class="tdSpacing_TPRtable"></td>
-						<td class="tdInTableEmpty"></td>
-						<td class="tdInTableEmpty"></td>
-						<td class="tdInTableEmpty"></td>
-						<td class="tdInTableEmpty"></td>
-						<td class="tdInTableEmpty"></td>
-						<td class="tdInTableEmpty"></td>
-						<td class="tdInTableEmpty"></td>
-						<td class="tdInTableEmpty"></td>
+						<td class="tdInTableEmpty1"></td>
+						<td class="tdInTableEmpty1"></td>
+						<td class="tdInTableEmpty1"></td>
+						<td class="tdInTableEmpty1"></td>
+						<td class="tdInTableEmpty1"></td>
+						<td class="tdInTableEmpty1"></td>
+						<td class="tdInTableEmpty1"></td>
+						<td class="tdInTableEmpty1"></td>
 						<td class="tdSpacing_TPRtable"></td>
-						<td class="tdInTableEmpty"></td>
-						<td class="tdInTableEmpty"></td>
-						<td class="tdInTableEmpty"></td>
-						<td class="tdInTableEmpty"></td>
-						<td class="tdInTableEmpty"></td>
-						<td class="tdInTableEmpty"></td>
-						<td class="tdInTableEmpty"></td>
-						<td class="tdInTableEmpty"></td>
+						<td class="tdInTableEmpty1"></td>
+						<td class="tdInTableEmpty1"></td>
+						<td class="tdInTableEmpty1"></td>
+						<td class="tdInTableEmpty1"></td>
+						<td class="tdInTableEmpty1"></td>
+						<td class="tdInTableEmpty1"></td>
+						<td class="tdInTableEmpty1"></td>
+						<td class="tdInTableEmpty1"></td>
 						<td class="tdSpacing_TPRtable"></td>
 					</tr>
 						<tr>
 						<td class="tdSpacing_TPRtable"></td>
 						<td class="td_FirstColumn">呼吸<span class="fade">(/min)</span></td>
 						<td class="tdSpacing_TPRtable"></td>
-						<td class="tdInTable">40</td>
-						<td class="tdInTable">60</td>
-						<td class="tdInTableEmpty"></td>
-						<td class="tdInTableEmpty"></td>
-						<td class="tdInTableEmpty"></td>
-						<td class="tdInTableEmpty"></td>
-						<td class="tdInTableEmpty"></td>
-						<td class="tdInTableEmpty"></td>
+						<td class="tdInTable1">40</td>
+						<td class="tdInTable1">60</td>
+						<td class="tdInTableEmpty1"></td>
+						<td class="tdInTableEmpty1"></td>
+						<td class="tdInTableEmpty1"></td>
+						<td class="tdInTableEmpty1"></td>
+						<td class="tdInTableEmpty1"></td>
+						<td class="tdInTableEmpty1"></td>
 						<td class="tdSpacing_TPRtable"></td>
-						<td class="tdInTableEmpty"></td>
-						<td class="tdInTableEmpty"></td>
-						<td class="tdInTableEmpty"></td>
-						<td class="tdInTableEmpty"></td>
-						<td class="tdInTableEmpty"></td>
-						<td class="tdInTableEmpty"></td>
-						<td class="tdInTableEmpty"></td>
-						<td class="tdInTableEmpty"></td>
+						<td class="tdInTableEmpty1"></td>
+						<td class="tdInTableEmpty1"></td>
+						<td class="tdInTableEmpty1"></td>
+						<td class="tdInTableEmpty1"></td>
+						<td class="tdInTableEmpty1"></td>
+						<td class="tdInTableEmpty1"></td>
+						<td class="tdInTableEmpty1"></td>
+						<td class="tdInTableEmpty1"></td>
 						<td class="tdSpacing_TPRtable"></td>
-						<td class="tdInTableEmpty"></td>
-						<td class="tdInTableEmpty"></td>
-						<td class="tdInTableEmpty"></td>
-						<td class="tdInTableEmpty"></td>
-						<td class="tdInTableEmpty"></td>
-						<td class="tdInTableEmpty"></td>
-						<td class="tdInTableEmpty"></td>
-						<td class="tdInTableEmpty"></td>
+						<td class="tdInTableEmpty1"></td>
+						<td class="tdInTableEmpty1"></td>
+						<td class="tdInTableEmpty1"></td>
+						<td class="tdInTableEmpty1"></td>
+						<td class="tdInTableEmpty1"></td>
+						<td class="tdInTableEmpty1"></td>
+						<td class="tdInTableEmpty1"></td>
+						<td class="tdInTableEmpty1"></td>
 						<td class="tdSpacing_TPRtable"></td>
 					</tr>
 					<tr>
 						<td class="tdSpacing_TPRtable"></td>
 						<td class="td_FirstColumn">Sat<span class="fade">(%)</span></td>
 						<td class="tdSpacing_TPRtable"></td>
-						<td class="tdInTable"><span class="warn">77</span></td>
-						<td class="tdInTable">85</td>
-						<td class="tdInTableEmpty"></td>
-						<td class="tdInTableEmpty"></td>
-						<td class="tdInTableEmpty"></td>
-						<td class="tdInTableEmpty"></td>
-						<td class="tdInTableEmpty"></td>
-						<td class="tdInTableEmpty"></td>
+						<td class="tdInTable1"><span class="warn">77</span></td>
+						<td class="tdInTable1">85</td>
+						<td class="tdInTableEmpty1"></td>
+						<td class="tdInTableEmpty1"></td>
+						<td class="tdInTableEmpty1"></td>
+						<td class="tdInTableEmpty1"></td>
+						<td class="tdInTableEmpty1"></td>
+						<td class="tdInTableEmpty1"></td>
 						<td class="tdSpacing_TPRtable"></td>
-						<td class="tdInTableEmpty"></td>
-						<td class="tdInTableEmpty"></td>
-						<td class="tdInTableEmpty"></td>
-						<td class="tdInTableEmpty"></td>
-						<td class="tdInTableEmpty"></td>
-						<td class="tdInTableEmpty"></td>
-						<td class="tdInTableEmpty"></td>
-						<td class="tdInTableEmpty"></td>
+						<td class="tdInTableEmpty1"></td>
+						<td class="tdInTableEmpty1"></td>
+						<td class="tdInTableEmpty1"></td>
+						<td class="tdInTableEmpty1"></td>
+						<td class="tdInTableEmpty1"></td>
+						<td class="tdInTableEmpty1"></td>
+						<td class="tdInTableEmpty1"></td>
+						<td class="tdInTableEmpty1"></td>
 						<td class="tdSpacing_TPRtable"></td>
-						<td class="tdInTableEmpty"></td>
-						<td class="tdInTableEmpty"></td>
-						<td class="tdInTableEmpty"></td>
-						<td class="tdInTableEmpty"></td>
-						<td class="tdInTableEmpty"></td>
-						<td class="tdInTableEmpty"></td>
-						<td class="tdInTableEmpty"></td>
-						<td class="tdInTableEmpty"></td>
+						<td class="tdInTableEmpty1"></td>
+						<td class="tdInTableEmpty1"></td>
+						<td class="tdInTableEmpty1"></td>
+						<td class="tdInTableEmpty1"></td>
+						<td class="tdInTableEmpty1"></td>
+						<td class="tdInTableEmpty1"></td>
+						<td class="tdInTableEmpty1"></td>
+						<td class="tdInTableEmpty1"></td>
 						<td class="tdSpacing_TPRtable"></td>
 					</tr>
 					<tr class="tr_spacing"></tr>
@@ -368,96 +356,96 @@
 						<td class="tdSpacing_TPRtable"></td>
 						<td class="td_FirstColumn">SBP<span class="fade">(mmHg)</span></td>
 						<td class="tdSpacing_TPRtable"></td>
-						<td class="tdInTable">60</td>
-						<td class="tdInTable">65</td>
-						<td class="tdInTableEmpty"></td>
-						<td class="tdInTableEmpty"></td>
-						<td class="tdInTableEmpty"></td>
-						<td class="tdInTableEmpty"></td>
-						<td class="tdInTableEmpty"></td>
-						<td class="tdInTableEmpty"></td>
+						<td class="tdInTable1">60</td>
+						<td class="tdInTable1">65</td>
+						<td class="tdInTableEmpty1"></td>
+						<td class="tdInTableEmpty1"></td>
+						<td class="tdInTableEmpty1"></td>
+						<td class="tdInTableEmpty1"></td>
+						<td class="tdInTableEmpty1"></td>
+						<td class="tdInTableEmpty1"></td>
 						<td class="tdSpacing_TPRtable"></td>
-						<td class="tdInTableEmpty"></td>
-						<td class="tdInTableEmpty"></td>
-						<td class="tdInTableEmpty"></td>
-						<td class="tdInTableEmpty"></td>
-						<td class="tdInTableEmpty"></td>
-						<td class="tdInTableEmpty"></td>
-						<td class="tdInTableEmpty"></td>
-						<td class="tdInTableEmpty"></td>
+						<td class="tdInTableEmpty1"></td>
+						<td class="tdInTableEmpty1"></td>
+						<td class="tdInTableEmpty1"></td>
+						<td class="tdInTableEmpty1"></td>
+						<td class="tdInTableEmpty1"></td>
+						<td class="tdInTableEmpty1"></td>
+						<td class="tdInTableEmpty1"></td>
+						<td class="tdInTableEmpty1"></td>
 						<td class="tdSpacing_TPRtable"></td>
-						<td class="tdInTableEmpty"></td>
-						<td class="tdInTableEmpty"></td>
-						<td class="tdInTableEmpty"></td>
-						<td class="tdInTableEmpty"></td>
-						<td class="tdInTableEmpty"></td>
-						<td class="tdInTableEmpty"></td>
-						<td class="tdInTableEmpty"></td>
-						<td class="tdInTableEmpty"></td>
+						<td class="tdInTableEmpty1"></td>
+						<td class="tdInTableEmpty1"></td>
+						<td class="tdInTableEmpty1"></td>
+						<td class="tdInTableEmpty1"></td>
+						<td class="tdInTableEmpty1"></td>
+						<td class="tdInTableEmpty1"></td>
+						<td class="tdInTableEmpty1"></td>
+						<td class="tdInTableEmpty1"></td>
 						<td class="tdSpacing_TPRtable"></td>
 					</tr>
 					<tr>
 						<td class="tdSpacing_TPRtable"></td>
 						<td class="td_FirstColumn">DBP<span class="fade">(mmHg)</span></td>
 						<td class="tdSpacing_TPRtable"></td>
-						<td class="tdInTable">40</td>
-						<td class="tdInTable">35</td>
-						<td class="tdInTableEmpty"></td>
-						<td class="tdInTableEmpty"></td>
-						<td class="tdInTableEmpty"></td>
-						<td class="tdInTableEmpty"></td>
-						<td class="tdInTableEmpty"></td>
-						<td class="tdInTableEmpty"></td>
+						<td class="tdInTable1">40</td>
+						<td class="tdInTable1">35</td>
+						<td class="tdInTableEmpty1"></td>
+						<td class="tdInTableEmpty1"></td>
+						<td class="tdInTableEmpty1"></td>
+						<td class="tdInTableEmpty1"></td>
+						<td class="tdInTableEmpty1"></td>
+						<td class="tdInTableEmpty1"></td>
 						<td class="tdSpacing_TPRtable"></td>
-						<td class="tdInTableEmpty"></td>
-						<td class="tdInTableEmpty"></td>
-						<td class="tdInTableEmpty"></td>
-						<td class="tdInTableEmpty"></td>
-						<td class="tdInTableEmpty"></td>
-						<td class="tdInTableEmpty"></td>
-						<td class="tdInTableEmpty"></td>
-						<td class="tdInTableEmpty"></td>
+						<td class="tdInTableEmpty1"></td>
+						<td class="tdInTableEmpty1"></td>
+						<td class="tdInTableEmpty1"></td>
+						<td class="tdInTableEmpty1"></td>
+						<td class="tdInTableEmpty1"></td>
+						<td class="tdInTableEmpty1"></td>
+						<td class="tdInTableEmpty1"></td>
+						<td class="tdInTableEmpty1"></td>
 						<td class="tdSpacing_TPRtable"></td>
-						<td class="tdInTableEmpty"></td>
-						<td class="tdInTableEmpty"></td>
-						<td class="tdInTableEmpty"></td>
-						<td class="tdInTableEmpty"></td>
-						<td class="tdInTableEmpty"></td>
-						<td class="tdInTableEmpty"></td>
-						<td class="tdInTableEmpty"></td>
-						<td class="tdInTableEmpty"></td>
+						<td class="tdInTableEmpty1"></td>
+						<td class="tdInTableEmpty1"></td>
+						<td class="tdInTableEmpty1"></td>
+						<td class="tdInTableEmpty1"></td>
+						<td class="tdInTableEmpty1"></td>
+						<td class="tdInTableEmpty1"></td>
+						<td class="tdInTableEmpty1"></td>
+						<td class="tdInTableEmpty1"></td>
 						<td class="tdSpacing_TPRtable"></td>
 					</tr>
 					<tr>
 						<td class="tdSpacing_TPRtable"></td>
 						<td class="td_FirstColumn">MAP<span class="fade">(mmHg)</span></td>
 						<td class="tdSpacing_TPRtable"></td>
-						<td class="tdInTable">48</td>
-						<td class="tdInTable">50</td>
-						<td class="tdInTableEmpty"></td>
-						<td class="tdInTableEmpty"></td>
-						<td class="tdInTableEmpty"></td>
-						<td class="tdInTableEmpty"></td>
-						<td class="tdInTableEmpty"></td>
-						<td class="tdInTableEmpty"></td>
+						<td class="tdInTable1">48</td>
+						<td class="tdInTable1">50</td>
+						<td class="tdInTableEmpty1"></td>
+						<td class="tdInTableEmpty1"></td>
+						<td class="tdInTableEmpty1"></td>
+						<td class="tdInTableEmpty1"></td>
+						<td class="tdInTableEmpty1"></td>
+						<td class="tdInTableEmpty1"></td>
 						<td class="tdSpacing_TPRtable"></td>
-						<td class="tdInTableEmpty"></td>
-						<td class="tdInTableEmpty"></td>
-						<td class="tdInTableEmpty"></td>
-						<td class="tdInTableEmpty"></td>
-						<td class="tdInTableEmpty"></td>
-						<td class="tdInTableEmpty"></td>
-						<td class="tdInTableEmpty"></td>
-						<td class="tdInTableEmpty"></td>
+						<td class="tdInTableEmpty1"></td>
+						<td class="tdInTableEmpty1"></td>
+						<td class="tdInTableEmpty1"></td>
+						<td class="tdInTableEmpty1"></td>
+						<td class="tdInTableEmpty1"></td>
+						<td class="tdInTableEmpty1"></td>
+						<td class="tdInTableEmpty1"></td>
+						<td class="tdInTableEmpty1"></td>
 						<td class="tdSpacing_TPRtable"></td>
-						<td class="tdInTableEmpty"></td>
-						<td class="tdInTableEmpty"></td>
-						<td class="tdInTableEmpty"></td>
-						<td class="tdInTableEmpty"></td>
-						<td class="tdInTableEmpty"></td>
-						<td class="tdInTableEmpty"></td>
-						<td class="tdInTableEmpty"></td>
-						<td class="tdInTableEmpty"></td>
+						<td class="tdInTableEmpty1"></td>
+						<td class="tdInTableEmpty1"></td>
+						<td class="tdInTableEmpty1"></td>
+						<td class="tdInTableEmpty1"></td>
+						<td class="tdInTableEmpty1"></td>
+						<td class="tdInTableEmpty1"></td>
+						<td class="tdInTableEmpty1"></td>
+						<td class="tdInTableEmpty1"></td>
 						<td class="tdSpacing_TPRtable"></td>
 					</tr>
 				</table>
@@ -469,64 +457,64 @@
 						<td class="tdSpacing_ABtable"></td>
 						<td class="td_FirstColumn">A-B,自回<span class="fade">(次)</span></td>
 						<td class="tdSpacing_ABtable"></td>
-						<td class="tdInTableEmpty"></td>
-						<td class="tdInTableEmpty"></td>
-						<td class="tdInTableEmpty"></td>
-						<td class="tdInTableEmpty"></td>
-						<td class="tdInTableEmpty"></td>
-						<td class="tdInTable">1</td>
-						<td class="tdInTable">1</td>
-						<td class="tdInTableEmpty"></td>
+						<td class="tdInTableEmpty2"></td>
+						<td class="tdInTableEmpty2"></td>
+						<td class="tdInTableEmpty2"></td>
+						<td class="tdInTableEmpty2"></td>
+						<td class="tdInTableEmpty2"></td>
+						<td class="tdInTable2">1</td>
+						<td class="tdInTable2">1</td>
+						<td class="tdInTableEmpty2"></td>
 						<td class="tdSpacing_ABtable"></td>
-						<td class="tdInTableEmpty"></td>
-						<td class="tdInTableEmpty"></td>
-						<td class="tdInTableEmpty"></td>
-						<td class="tdInTableEmpty"></td>
-						<td class="tdInTableEmpty"></td>
-						<td class="tdInTable">1</td>
-						<td class="tdInTableEmpty"></td>
-						<td class="tdInTableEmpty"></td>
+						<td class="tdInTableEmpty2"></td>
+						<td class="tdInTableEmpty2"></td>
+						<td class="tdInTableEmpty2"></td>
+						<td class="tdInTableEmpty2"></td>
+						<td class="tdInTableEmpty2"></td>
+						<td class="tdInTable2">1</td>
+						<td class="tdInTableEmpty2"></td>
+						<td class="tdInTableEmpty2"></td>
 						<td class="tdSpacing_ABtable"></td>
-						<td class="tdInTableEmpty"></td>
-						<td class="tdInTable">1</td>
-						<td class="tdInTableEmpty"></td>
-						<td class="tdInTableEmpty"></td>
-						<td class="tdInTable">1</td>
-						<td class="tdInTableEmpty"></td>
-						<td class="tdInTableEmpty"></td>
-						<td class="tdInTableEmpty"></td>
+						<td class="tdInTableEmpty2"></td>
+						<td class="tdInTable2">1</td>
+						<td class="tdInTableEmpty2"></td>
+						<td class="tdInTableEmpty2"></td>
+						<td class="tdInTable2">1</td>
+						<td class="tdInTableEmpty2"></td>
+						<td class="tdInTableEmpty2"></td>
+						<td class="tdInTableEmpty2"></td>
 						<td class="tdSpacing_ABtable"></td>
 					</tr>
 					<tr>
 						<td class="tdSpacing_ABtable"></td>
 						<td class="td_FirstColumn">A-B,需處理<span class="fade">(次)</span></td>
 						<td class="tdSpacing_ABtable"></td>
-						<td class="tdInTableEmpty"></td>
-						<td class="tdInTable"><span class="warn">2</span></td>
-						<td class="tdInTableEmpty"></td>
-						<td class="tdInTableEmpty"></td>
-						<td class="tdInTableEmpty"></td>
-						<td class="tdInTableEmpty"></td>
-						<td class="tdInTableEmpty"></td>
-						<td class="tdInTableEmpty"></td>
+						<td class="tdInTableEmpty2"></td>
+						<td class="tdInTable2"><span class="warn">2</span></td>
+						<td class="tdInTableEmpty2"></td>
+						<td class="tdInTableEmpty2"></td>
+						<td class="tdInTableEmpty2"></td>
+						<td class="tdInTableEmpty2"></td>
+						<td class="tdInTableEmpty2"></td>
+						<td class="tdInTableEmpty2"></td>
 						<td class="tdSpacing_ABtable"></td>
-						<td class="tdInTableEmpty"></td>
-						<td class="tdInTableEmpty"></td>
-						<td class="tdInTableEmpty"></td>
-						<td class="tdInTableEmpty"></td>
-						<td class="tdInTable"><span class="warn">2</span></td>
-						<td class="tdInTableEmpty"></td>
-						<td class="tdInTableEmpty"></td>
-						<td class="tdInTable"><span class="warn">2</span></td>
+						<td class="tdInTableEmpty2"></td>
+						<td class="tdInTableEmpty2"></td>
+						<td class="tdInTableEmpty2"></td>
+						<td class="tdInTableEmpty2"></td>
+						<td class="tdInTable2"><span class="warn">2</span></td>
+						<td class="tdInTableEmpty2"></td>
+						<td class="tdInTableEmpty2"></td>
+						<td class="tdInTable2"><span class="warn">2</span></td>
 						<td class="tdSpacing_ABtable"></td>
-						<td class="tdInTableEmpty"></td>
-						<td class="tdInTableEmpty"></td>
-						<td class="tdInTableEmpty"></td>
-						<td class="tdInTableEmpty"></td>
-						<td class="tdInTable"><span class="warn">5</span></td>
-						<td class="tdInTableEmpty"></td>
-						<td class="tdInTableEmpty"></td>
-						<td class="tdInTableEmpty"></td>
+						<td class="tdInTableEmpty2"></td>
+						<td class="tdInTableEmpty2"></td>
+						<td class="tdInTableEmpty2"></td>
+						<td class="tdInTableEmpty2"></td>
+						<td class="tdInTable2"><span class="warn">5</span></td>
+						<td class="tdInTableEmpty2"></td>
+						<td class="tdInTableEmpty2"></td>
+						<td class="tdInTableEmpty2"></td>
 						<td class="tdSpacing_ABtable"></td>
 					</tr>
 					<tr class="tr_spacing"></tr>
@@ -607,501 +595,477 @@
 				<tr>
 					<td class="tdSpacing_IO"></td>
 					<td class="td_FirstColumn">
-						IV
-						<span class="fade">(ml)</span>
-						<span class="blue">Mepem</span></td><td class="tdSpacing_IO">
+						IV<span class="fade">(ml)</span><span class="blue">Mepem</span></td><td class="tdSpacing_IO">
 					</td>
-					<td class="tdInTable">4</td>
-					<td class="tdInTableEmpty"></td>
-					<td class="tdInTableEmpty"></td>
-					<td class="tdInTableEmpty"></td>
-					<td class="tdInTableEmpty"></td>
-					<td class="tdInTableEmpty"></td>
-					<td class="tdInTable">4</td>
-					<td class="tdInTableEmpty"></td>
+					<td class="tdInTable3">4</td>
+					<td class="tdInTableEmpty3"></td>
+					<td class="tdInTableEmpty3"></td>
+					<td class="tdInTableEmpty3"></td>
+					<td class="tdInTableEmpty3"></td>
+					<td class="tdInTableEmpty3"></td>
+					<td class="tdInTable3">4</td>
+					<td class="tdInTableEmpty3"></td>
 					<td class="tdSpacing_IO"></td>
-					<td class="tdInTableEmpty"></td>
-					<td class="tdInTableEmpty"></td>
-					<td class="tdInTableEmpty"></td>
-					<td class="tdInTable">4</td>
-					<td class="tdInTableEmpty"></td>
-					<td class="tdInTableEmpty"></td>
-					<td class="tdInTableEmpty"></td>
-					<td class="tdInTableEmpty"></td>
+					<td class="tdInTableEmpty3"></td>
+					<td class="tdInTableEmpty3"></td>
+					<td class="tdInTableEmpty3"></td>
+					<td class="tdInTable3">4</td>
+					<td class="tdInTableEmpty3"></td>
+					<td class="tdInTableEmpty3"></td>
+					<td class="tdInTableEmpty3"></td>
+					<td class="tdInTableEmpty3"></td>
 					<td class="tdSpacing_IO"></td>
-					<td class="tdInTableEmpty"></td>
-					<td class="tdInTableEmpty"></td>
-					<td class="tdInTableEmpty"></td>
-					<td class="tdInTableEmpty"></td>
-					<td class="tdInTableEmpty"></td>
-					<td class="tdInTableEmpty"></td>
-					<td class="tdInTableEmpty"></td>
-					<td class="tdInTableEmpty"></td>
+					<td class="tdInTableEmpty3"></td>
+					<td class="tdInTableEmpty3"></td>
+					<td class="tdInTableEmpty3"></td>
+					<td class="tdInTableEmpty3"></td>
+					<td class="tdInTableEmpty3"></td>
+					<td class="tdInTableEmpty3"></td>
+					<td class="tdInTableEmpty3"></td>
+					<td class="tdInTableEmpty3"></td>
 					<td class="tdSpacing_IO"></td>
 				</tr>
 				<tr>
 					<td class="tdSpacing_IO"></td>
 					<td class="td_FirstColumn">
-						IV
-						<span class="fade">(ml)</span>
-						<span class="blue">Dopa</span></td><td class="tdSpacing_IO">
+						IV<span class="fade">(ml)</span><span class="blue">Dopa</span></td><td class="tdSpacing_IO">
 					</td>
-					<td class="tdInTable">0.3</td>
-					<td class="tdInTable">0.3</td>
-					<td class="tdInTable">0.3</td>
-					<td class="tdInTable">0.3</td>
-					<td class="tdInTable">0.3</td>
-					<td class="tdInTableEmpty"></td>
-					<td class="tdInTableEmpty"></td>
-					<td class="tdInTableEmpty"></td>
+					<td class="tdInTable3">0.3</td>
+					<td class="tdInTable3">0.3</td>
+					<td class="tdInTable3">0.3</td>
+					<td class="tdInTable3">0.3</td>
+					<td class="tdInTable3">0.3</td>
+					<td class="tdInTableEmpty3"></td>
+					<td class="tdInTableEmpty3"></td>
+					<td class="tdInTableEmpty3"></td>
 					<td class="tdSpacing_IO"></td>
-					<td class="tdInTableEmpty"></td>
-					<td class="tdInTableEmpty"></td>
-					<td class="tdInTableEmpty"></td>
-					<td class="tdInTableEmpty"></td>
-					<td class="tdInTableEmpty"></td>
-					<td class="tdInTableEmpty"></td>
-					<td class="tdInTableEmpty"></td>
-					<td class="tdInTableEmpty"></td>
+					<td class="tdInTableEmpty3"></td>
+					<td class="tdInTableEmpty3"></td>
+					<td class="tdInTableEmpty3"></td>
+					<td class="tdInTableEmpty3"></td>
+					<td class="tdInTableEmpty3"></td>
+					<td class="tdInTableEmpty3"></td>
+					<td class="tdInTableEmpty3"></td>
+					<td class="tdInTableEmpty3"></td>
 					<td class="tdSpacing_IO"></td>
-					<td class="tdInTableEmpty"></td>
-					<td class="tdInTableEmpty"></td>
-					<td class="tdInTableEmpty"></td>
-					<td class="tdInTableEmpty"></td>
-					<td class="tdInTableEmpty"></td>
-					<td class="tdInTableEmpty"></td>
-					<td class="tdInTableEmpty"></td>
-					<td class="tdInTableEmpty"></td>
-					<td class="tdSpacing_IO"></td>
-				</tr>
-				<tr>
-					<td class="tdSpacing_IO"></td>
-					<td class="td_FirstColumn">A-Line<span class="fade">(ml)</span></td><td class="tdSpacing_IO"></td>
-					<td class="tdInTable">0.5</td>
-					<td class="tdInTable">0.5</td>
-					<td class="tdInTable">0.5</td>
-					<td class="tdInTableEmpty"></td>
-					<td class="tdInTableEmpty"></td>
-					<td class="tdInTableEmpty"></td>
-					<td class="tdInTableEmpty"></td>
-					<td class="tdInTableEmpty"></td>
-					<td class="tdSpacing_IO"></td>
-					<td class="tdInTableEmpty"></td>
-					<td class="tdInTableEmpty"></td>
-					<td class="tdInTableEmpty"></td>
-					<td class="tdInTableEmpty"></td>
-					<td class="tdInTableEmpty"></td>
-					<td class="tdInTableEmpty"></td>
-					<td class="tdInTableEmpty"></td>
-					<td class="tdInTableEmpty"></td>
-					<td class="tdSpacing_IO"></td>
-					<td class="tdInTableEmpty"></td>
-					<td class="tdInTableEmpty"></td>
-					<td class="tdInTableEmpty"></td>
-					<td class="tdInTableEmpty"></td>
-					<td class="tdInTableEmpty"></td>
-					<td class="tdInTableEmpty"></td>
-					<td class="tdInTableEmpty"></td>
-					<td class="tdInTableEmpty"></td>
+					<td class="tdInTableEmpty3"></td>
+					<td class="tdInTableEmpty3"></td>
+					<td class="tdInTableEmpty3"></td>
+					<td class="tdInTableEmpty3"></td>
+					<td class="tdInTableEmpty3"></td>
+					<td class="tdInTableEmpty3"></td>
+					<td class="tdInTableEmpty3"></td>
+					<td class="tdInTableEmpty3"></td>
 					<td class="tdSpacing_IO"></td>
 				</tr>
 				<tr>
 					<td class="tdSpacing_IO"></td>
-					<td class="td_FirstColumn">
-						UV
-						<span class="fade">(ml)</span>
-						<span class="blue">TPN</span></td>
+					<td class="td_FirstColumn">A-Line<span class="fade">(ml)</span><span class="blue">1/2%S</span></td><td class="tdSpacing_IO"></td>
+					<td class="tdInTable3">0.5</td>
+					<td class="tdInTable3">0.5</td>
+					<td class="tdInTable3">0.5</td>
+					<td class="tdInTableEmpty3"></td>
+					<td class="tdInTableEmpty3"></td>
+					<td class="tdInTableEmpty3"></td>
+					<td class="tdInTableEmpty3"></td>
+					<td class="tdInTableEmpty3"></td>
 					<td class="tdSpacing_IO"></td>
-					<td class="tdInTable">2</td>
-					<td class="tdInTable">2</td>
-					<td class="tdInTable">2</td>
-					<td class="tdInTable">2</td>
-					<td class="tdInTable">2</td>
-					<td class="tdInTable">2</td>
-					<td class="tdInTableEmpty"></td>
-					<td class="tdInTableEmpty"></td>
+					<td class="tdInTableEmpty3"></td>
+					<td class="tdInTableEmpty3"></td>
+					<td class="tdInTableEmpty3"></td>
+					<td class="tdInTableEmpty3"></td>
+					<td class="tdInTableEmpty3"></td>
+					<td class="tdInTableEmpty3"></td>
+					<td class="tdInTableEmpty3"></td>
+					<td class="tdInTableEmpty3"></td>
 					<td class="tdSpacing_IO"></td>
-					<td class="tdInTableEmpty"></td>
-					<td class="tdInTableEmpty"></td>
-					<td class="tdInTableEmpty"></td>
-					<td class="tdInTableEmpty"></td>
-					<td class="tdInTableEmpty"></td>
-					<td class="tdInTableEmpty"></td>
-					<td class="tdInTableEmpty"></td>
-					<td class="tdInTableEmpty"></td>
-					<td class="tdSpacing_IO"></td>
-					<td class="tdInTableEmpty"></td>
-					<td class="tdInTableEmpty"></td>
-					<td class="tdInTableEmpty"></td>
-					<td class="tdInTableEmpty"></td>
-					<td class="tdInTableEmpty"></td>
-					<td class="tdInTableEmpty"></td>
-					<td class="tdInTableEmpty"></td>
-					<td class="tdInTableEmpty"></td>
+					<td class="tdInTableEmpty3"></td>
+					<td class="tdInTableEmpty3"></td>
+					<td class="tdInTableEmpty3"></td>
+					<td class="tdInTableEmpty3"></td>
+					<td class="tdInTableEmpty3"></td>
+					<td class="tdInTableEmpty3"></td>
+					<td class="tdInTableEmpty3"></td>
+					<td class="tdInTableEmpty3"></td>
 					<td class="tdSpacing_IO"></td>
 				</tr>
 				<tr>
 					<td class="tdSpacing_IO"></td>
-					<td class="td_FirstColumn">
-						UV
-						<span class="fade">(ml)</span>
-						<span class="blue">Fentanyl</span></td>
+					<td class="td_FirstColumn">UV<span class="fade">(ml)</span><span class="blue">TPN</span></td>
 					<td class="tdSpacing_IO"></td>
-					<td class="tdInTable">0.1</td>
-					<td class="tdInTable">0.1</td>
-					<td class="tdInTable">0.1</td>
-					<td class="tdInTable">0.1</td>
-					<td class="tdInTableEmpty"></td>
-					<td class="tdInTableEmpty"></td>
-					<td class="tdInTableEmpty"></td>
-					<td class="tdInTableEmpty"></td>
+					<td class="tdInTable3">2</td>
+					<td class="tdInTable3">2</td>
+					<td class="tdInTable3">2</td>
+					<td class="tdInTable3">2</td>
+					<td class="tdInTable3">2</td>
+					<td class="tdInTable3">2</td>
+					<td class="tdInTableEmpty3"></td>
+					<td class="tdInTableEmpty3"></td>
 					<td class="tdSpacing_IO"></td>
-					<td class="tdInTableEmpty"></td>
-					<td class="tdInTableEmpty"></td>
-					<td class="tdInTableEmpty"></td>
-					<td class="tdInTableEmpty"></td>
-					<td class="tdInTableEmpty"></td>
-					<td class="tdInTableEmpty"></td>
-					<td class="tdInTableEmpty"></td>
-					<td class="tdInTableEmpty"></td>
+					<td class="tdInTableEmpty3"></td>
+					<td class="tdInTableEmpty3"></td>
+					<td class="tdInTableEmpty3"></td>
+					<td class="tdInTableEmpty3"></td>
+					<td class="tdInTableEmpty3"></td>
+					<td class="tdInTableEmpty3"></td>
+					<td class="tdInTableEmpty3"></td>
+					<td class="tdInTableEmpty3"></td>
 					<td class="tdSpacing_IO"></td>
-					<td class="tdInTableEmpty"></td>
-					<td class="tdInTableEmpty"></td>
-					<td class="tdInTableEmpty"></td>
-					<td class="tdInTableEmpty"></td>
-					<td class="tdInTableEmpty"></td>
-					<td class="tdInTableEmpty"></td>
-					<td class="tdInTableEmpty"></td>
-					<td class="tdInTableEmpty"></td>
+					<td class="tdInTableEmpty3"></td>
+					<td class="tdInTableEmpty3"></td>
+					<td class="tdInTableEmpty3"></td>
+					<td class="tdInTableEmpty3"></td>
+					<td class="tdInTableEmpty3"></td>
+					<td class="tdInTableEmpty3"></td>
+					<td class="tdInTableEmpty3"></td>
+					<td class="tdInTableEmpty3"></td>
+					<td class="tdSpacing_IO"></td>
+				</tr>
+				<tr>
+					<td class="tdSpacing_IO"></td>
+					<td class="td_FirstColumn">UV<span class="fade">(ml)</span><span class="blue">Fentanyl</span></td>
+					<td class="tdSpacing_IO"></td>
+					<td class="tdInTable3">0.1</td>
+					<td class="tdInTable3">0.1</td>
+					<td class="tdInTable3">0.1</td>
+					<td class="tdInTable3">0.1</td>
+					<td class="tdInTableEmpty3"></td>
+					<td class="tdInTableEmpty3"></td>
+					<td class="tdInTableEmpty3"></td>
+					<td class="tdInTableEmpty3"></td>
+					<td class="tdSpacing_IO"></td>
+					<td class="tdInTableEmpty3"></td>
+					<td class="tdInTableEmpty3"></td>
+					<td class="tdInTableEmpty3"></td>
+					<td class="tdInTableEmpty3"></td>
+					<td class="tdInTableEmpty3"></td>
+					<td class="tdInTableEmpty3"></td>
+					<td class="tdInTableEmpty3"></td>
+					<td class="tdInTableEmpty3"></td>
+					<td class="tdSpacing_IO"></td>
+					<td class="tdInTableEmpty3"></td>
+					<td class="tdInTableEmpty3"></td>
+					<td class="tdInTableEmpty3"></td>
+					<td class="tdInTableEmpty3"></td>
+					<td class="tdInTableEmpty3"></td>
+					<td class="tdInTableEmpty3"></td>
+					<td class="tdInTableEmpty3"></td>
+					<td class="tdInTableEmpty3"></td>
 					<td class="tdSpacing_IO"></td>
 				</tr>
 				<tr class="tr_spacing"></tr>
 				<tr>
 					<td class="tdSpacing_IO"></td>
-					<td class="td_FirstColumn">
-						pRBC
-						<span class="fade">(ml)</span>
-					</td>
+					<td class="td_FirstColumn">pRBC<span class="fade">(ml)</span></td>
 					<td class="tdSpacing_IO"></td>
-					<td class="tdInTableEmpty"></td>
-					<td class="tdInTableEmpty"></td>
-					<td class="tdInTableEmpty"></td>
-					<td class="tdInTableEmpty"></td>
-					<td class="tdInTableEmpty"></td>
-					<td class="tdInTableEmpty"></td>
-					<td class="tdInTableEmpty"></td>
-					<td class="tdInTableEmpty"></td>
+					<td class="tdInTableEmpty3"></td>
+					<td class="tdInTableEmpty3"></td>
+					<td class="tdInTableEmpty3"></td>
+					<td class="tdInTableEmpty3"></td>
+					<td class="tdInTableEmpty3"></td>
+					<td class="tdInTableEmpty3"></td>
+					<td class="tdInTableEmpty3"></td>
+					<td class="tdInTableEmpty3"></td>
 					<td class="tdSpacing_IO"></td>
-					<td class="tdInTableEmpty"></td>
-					<td class="tdInTableEmpty"></td>
-					<td class="tdInTableEmpty"></td>
-					<td class="tdInTableEmpty"></td>
-					<td class="tdInTableEmpty"></td>
-					<td class="tdInTableEmpty"></td>
-					<td class="tdInTable">12</td>
-					<td class="tdInTable">12</td>
+					<td class="tdInTableEmpty3"></td>
+					<td class="tdInTableEmpty3"></td>
+					<td class="tdInTableEmpty3"></td>
+					<td class="tdInTableEmpty3"></td>
+					<td class="tdInTableEmpty3"></td>
+					<td class="tdInTableEmpty3"></td>
+					<td class="tdInTable3">12</td>
+					<td class="tdInTable3">12</td>
 					<td class="tdSpacing_IO"></td>
-					<td class="tdInTable">12</td>
-					<td class="tdInTable">12</td>
-					<td class="tdInTableEmpty"></td>
-					<td class="tdInTableEmpty"></td>
-					<td class="tdInTableEmpty"></td>
-					<td class="tdInTableEmpty"></td>
-					<td class="tdInTableEmpty"></td>
-					<td class="tdInTableEmpty"></td>
+					<td class="tdInTable3">12</td>
+					<td class="tdInTable3">12</td>
+					<td class="tdInTableEmpty3"></td>
+					<td class="tdInTableEmpty3"></td>
+					<td class="tdInTableEmpty3"></td>
+					<td class="tdInTableEmpty3"></td>
+					<td class="tdInTableEmpty3"></td>
+					<td class="tdInTableEmpty3"></td>
 					<td class="tdSpacing_IO"></td>
 				</tr>
 				<tr>
 					<td class="tdSpacing_IO"></td>
-					<td class="td_FirstColumn">
-						PLT
-						<span class="fade">(ml)</span>
-					</td><td class="tdSpacing_IO"></td>
-					<td class="tdInTableEmpty"></td>
-					<td class="tdInTableEmpty"></td>
-					<td class="tdInTableEmpty"></td>
-					<td class="tdInTable">20</td>
-					<td class="tdInTable">20</td>
-					<td class="tdInTableEmpty"></td>
-					<td class="tdInTableEmpty"></td>
-					<td class="tdInTableEmpty"></td>
+					<td class="td_FirstColumn">PLT<span class="fade">(ml)</span></td><td class="tdSpacing_IO"></td>
+					<td class="tdInTableEmpty3"></td>
+					<td class="tdInTableEmpty3"></td>
+					<td class="tdInTableEmpty3"></td>
+					<td class="tdInTable3">20</td>
+					<td class="tdInTable3">20</td>
+					<td class="tdInTableEmpty3"></td>
+					<td class="tdInTableEmpty3"></td>
+					<td class="tdInTableEmpty3"></td>
 					<td class="tdSpacing_IO"></td>
-					<td class="tdInTableEmpty"></td>
-					<td class="tdInTableEmpty"></td>
-					<td class="tdInTableEmpty"></td>
-					<td class="tdInTableEmpty"></td>
-					<td class="tdInTableEmpty"></td>
-					<td class="tdInTableEmpty"></td>
-					<td class="tdInTableEmpty"></td>
-					<td class="tdInTableEmpty"></td>
+					<td class="tdInTableEmpty3"></td>
+					<td class="tdInTableEmpty3"></td>
+					<td class="tdInTableEmpty3"></td>
+					<td class="tdInTableEmpty3"></td>
+					<td class="tdInTableEmpty3"></td>
+					<td class="tdInTableEmpty3"></td>
+					<td class="tdInTableEmpty3"></td>
+					<td class="tdInTableEmpty3"></td>
 					<td class="tdSpacing_IO"></td>
-					<td class="tdInTableEmpty"></td>
-					<td class="tdInTableEmpty"></td>
-					<td class="tdInTableEmpty"></td>
-					<td class="tdInTableEmpty"></td>
-					<td class="tdInTableEmpty"></td>
-					<td class="tdInTableEmpty"></td>
-					<td class="tdInTableEmpty"></td>
-					<td class="tdInTableEmpty"></td>
+					<td class="tdInTableEmpty3"></td>
+					<td class="tdInTableEmpty3"></td>
+					<td class="tdInTableEmpty3"></td>
+					<td class="tdInTableEmpty3"></td>
+					<td class="tdInTableEmpty3"></td>
+					<td class="tdInTableEmpty3"></td>
+					<td class="tdInTableEmpty3"></td>
+					<td class="tdInTableEmpty3"></td>
 					<td class="tdSpacing_IO"></td>
 				</tr>
 				<tr>
 					<td class="tdSpacing_IO"></td>
-					<td class="td_FirstColumn">
-						FFP
-						<span class="fade">(ml)</span>
+					<td class="td_FirstColumn">FFP<span class="fade">(ml)</span>
 					</td><td class="tdSpacing_IO"></td>
-					<td class="tdInTableEmpty"></td>
-					<td class="tdInTableEmpty"></td>
-					<td class="tdInTableEmpty"></td>
-					<td class="tdInTableEmpty"></td>
-					<td class="tdInTableEmpty"></td>
-					<td class="tdInTableEmpty"></td>
-					<td class="tdInTableEmpty"></td>
-					<td class="tdInTableEmpty"></td>
+					<td class="tdInTableEmpty3"></td>
+					<td class="tdInTableEmpty3"></td>
+					<td class="tdInTableEmpty3"></td>
+					<td class="tdInTableEmpty3"></td>
+					<td class="tdInTableEmpty3"></td>
+					<td class="tdInTableEmpty3"></td>
+					<td class="tdInTableEmpty3"></td>
+					<td class="tdInTableEmpty3"></td>
 					<td class="tdSpacing_IO"></td>
-					<td class="tdInTableEmpty"></td>
-					<td class="tdInTableEmpty"></td>
-					<td class="tdInTable">20</td>
-					<td class="tdInTable">20</td>
-					<td class="tdInTableEmpty"></td>
-					<td class="tdInTableEmpty"></td>
-					<td class="tdInTableEmpty"></td>
-					<td class="tdInTableEmpty"></td>
+					<td class="tdInTableEmpty3"></td>
+					<td class="tdInTableEmpty3"></td>
+					<td class="tdInTable3">20</td>
+					<td class="tdInTable3">20</td>
+					<td class="tdInTableEmpty3"></td>
+					<td class="tdInTableEmpty3"></td>
+					<td class="tdInTableEmpty3"></td>
+					<td class="tdInTableEmpty3"></td>
 					<td class="tdSpacing_IO"></td>
-					<td class="tdInTableEmpty"></td>
-					<td class="tdInTableEmpty"></td>
-					<td class="tdInTableEmpty"></td>
-					<td class="tdInTableEmpty"></td>
-					<td class="tdInTableEmpty"></td>
-					<td class="tdInTableEmpty"></td>
-					<td class="tdInTableEmpty"></td>
-					<td class="tdInTableEmpty"></td>
+					<td class="tdInTableEmpty3"></td>
+					<td class="tdInTableEmpty3"></td>
+					<td class="tdInTableEmpty3"></td>
+					<td class="tdInTableEmpty3"></td>
+					<td class="tdInTableEmpty3"></td>
+					<td class="tdInTableEmpty3"></td>
+					<td class="tdInTableEmpty3"></td>
+					<td class="tdInTableEmpty3"></td>
 					<td class="tdSpacing_IO"></td>
 				</tr>
 				<tr class="tr_spacing"></tr>
 				<tr>
 					<td class="tdSpacing_IO"></td>
 					<td class="td_FirstColumn">PO(ml)</td><td class="tdSpacing_IO"></td>
-					<td class="tdInTable">10</td>
-					<td class="tdInTableEmpty"></td>
-					<td class="tdInTableEmpty"></td>
-					<td class="tdInTable">10</td>
-					<td class="tdInTableEmpty"></td>
-					<td class="tdInTableEmpty"></td>
-					<td class="tdInTable">10</td>
-					<td class="tdInTableEmpty"></td>
+					<td class="tdInTable3">10</td>
+					<td class="tdInTableEmpty3"></td>
+					<td class="tdInTableEmpty3"></td>
+					<td class="tdInTable3">10</td>
+					<td class="tdInTableEmpty3"></td>
+					<td class="tdInTableEmpty3"></td>
+					<td class="tdInTable3">10</td>
+					<td class="tdInTableEmpty3"></td>
 					<td class="tdSpacing_IO"></td>
-					<td class="tdInTableEmpty"></td>
-					<td class="tdInTable">10</td>
-					<td class="tdInTableEmpty"></td>
-					<td class="tdInTableEmpty"></td>
-					<td class="tdInTable">10</td>
-					<td class="tdInTableEmpty"></td>
-					<td class="tdInTableEmpty"></td>
-					<td class="tdInTableEmpty"></td>
+					<td class="tdInTableEmpty3"></td>
+					<td class="tdInTable3">10</td>
+					<td class="tdInTableEmpty3"></td>
+					<td class="tdInTableEmpty3"></td>
+					<td class="tdInTable3">10</td>
+					<td class="tdInTableEmpty3"></td>
+					<td class="tdInTableEmpty3"></td>
+					<td class="tdInTableEmpty3"></td>
 					<td class="tdSpacing_IO"></td>
-					<td class="tdInTableEmpty"></td>
-					<td class="tdInTableEmpty"></td>
-					<td class="tdInTableEmpty"></td>
-					<td class="tdInTableEmpty"></td>
-					<td class="tdInTable">5</td>
-					<td class="tdInTableEmpty"></td>
-					<td class="tdInTableEmpty"></td>
-					<td class="tdInTableEmpty"></td>
+					<td class="tdInTableEmpty3"></td>
+					<td class="tdInTableEmpty3"></td>
+					<td class="tdInTableEmpty3"></td>
+					<td class="tdInTableEmpty3"></td>
+					<td class="tdInTable3">5</td>
+					<td class="tdInTableEmpty3"></td>
+					<td class="tdInTableEmpty3"></td>
+					<td class="tdInTableEmpty3"></td>
 					<td class="tdSpacing_IO"></td>
 				</tr>
 				<tr>
 					<td class="tdSpacing_IO"></td>
 					<td class="td_FirstColumn">NG/OG<span class="fade">(ml)</span></td><td class="tdSpacing_IO"></td>
-					<td class="tdInTableEmpty"></td>
-					<td class="tdInTableEmpty"></td>
-					<td class="tdInTableEmpty"></td>
-					<td class="tdInTableEmpty"></td>
-					<td class="tdInTableEmpty"></td>
-					<td class="tdInTableEmpty"></td>
-					<td class="tdInTableEmpty"></td>
-					<td class="tdInTableEmpty"></td>
+					<td class="tdInTableEmpty3"></td>
+					<td class="tdInTableEmpty3"></td>
+					<td class="tdInTableEmpty3"></td>
+					<td class="tdInTableEmpty3"></td>
+					<td class="tdInTableEmpty3"></td>
+					<td class="tdInTableEmpty3"></td>
+					<td class="tdInTableEmpty3"></td>
+					<td class="tdInTableEmpty3"></td>
 					<td class="tdSpacing_IO"></td>
-					<td class="tdInTableEmpty"></td>
-					<td class="tdInTableEmpty"></td>
-					<td class="tdInTableEmpty"></td>
-					<td class="tdInTableEmpty"></td>
-					<td class="tdInTableEmpty"></td>
-					<td class="tdInTableEmpty"></td>
-					<td class="tdInTableEmpty"></td>
-					<td class="tdInTableEmpty"></td>
+					<td class="tdInTableEmpty3"></td>
+					<td class="tdInTableEmpty3"></td>
+					<td class="tdInTableEmpty3"></td>
+					<td class="tdInTableEmpty3"></td>
+					<td class="tdInTableEmpty3"></td>
+					<td class="tdInTableEmpty3"></td>
+					<td class="tdInTableEmpty3"></td>
+					<td class="tdInTableEmpty3"></td>
 					<td class="tdSpacing_IO"></td>
-					<td class="tdInTableEmpty"></td>
-					<td class="tdInTableEmpty"></td>
-					<td class="tdInTableEmpty"></td>
-					<td class="tdInTableEmpty"></td>
-					<td class="tdInTable">5</td>
-					<td class="tdInTableEmpty"></td>
-					<td class="tdInTableEmpty"></td>
-					<td class="tdInTableEmpty"></td>
+					<td class="tdInTableEmpty3"></td>
+					<td class="tdInTableEmpty3"></td>
+					<td class="tdInTableEmpty3"></td>
+					<td class="tdInTableEmpty3"></td>
+					<td class="tdInTable3">5</td>
+					<td class="tdInTableEmpty3"></td>
+					<td class="tdInTableEmpty3"></td>
+					<td class="tdInTableEmpty3"></td>
 					<td class="tdSpacing_IO"></td>
 				</tr>
 				<tr>
 					<td class="tdSpacing_IO"></td>
-					<td class="td_FirstColumn">RV
-					<span class="fade">(ml)</span>
-					</td><td class="tdSpacing_IO"></td>
-					<td class="tdInTable">3</td>
-					<td class="tdInTableEmpty"></td>
-					<td class="tdInTableEmpty"></td>
-					<td class="tdInTable">3</td>
-					<td class="tdInTableEmpty"></td>
-					<td class="tdInTableEmpty"></td>
-					<td class="tdInTable">3</td>
-					<td class="tdInTableEmpty"></td>
+					<td class="td_FirstColumn">RV<span class="fade">(ml)</span></td><td class="tdSpacing_IO"></td>
+					<td class="tdInTable3">3</td>
+					<td class="tdInTableEmpty3"></td>
+					<td class="tdInTableEmpty3"></td>
+					<td class="tdInTable3">3</td>
+					<td class="tdInTableEmpty3"></td>
+					<td class="tdInTableEmpty3"></td>
+					<td class="tdInTable3">3</td>
+					<td class="tdInTableEmpty3"></td>
 					<td class="tdSpacing_IO"></td>
-					<td class="tdInTableEmpty"></td>
-					<td class="tdInTableEmpty"></td>
-					<td class="tdInTableEmpty"></td>
-					<td class="tdInTableEmpty"></td>
-					<td class="tdInTableEmpty"></td>
-					<td class="tdInTableEmpty"></td>
-					<td class="tdInTableEmpty"></td>
-					<td class="tdInTableEmpty"></td>
+					<td class="tdInTableEmpty3"></td>
+					<td class="tdInTableEmpty3"></td>
+					<td class="tdInTableEmpty3"></td>
+					<td class="tdInTableEmpty3"></td>
+					<td class="tdInTableEmpty3"></td>
+					<td class="tdInTableEmpty3"></td>
+					<td class="tdInTableEmpty3"></td>
+					<td class="tdInTableEmpty3"></td>
 					<td class="tdSpacing_IO"></td>
-					<td class="tdInTableEmpty"></td>
-					<td class="tdInTableEmpty"></td>
-					<td class="tdInTableEmpty"></td>
-					<td class="tdInTableEmpty"></td>
-					<td class="tdInTableEmpty"></td>
-					<td class="tdInTableEmpty"></td>
-					<td class="tdInTableEmpty"></td>
-					<td class="tdInTableEmpty"></td>
+					<td class="tdInTableEmpty3"></td>
+					<td class="tdInTableEmpty3"></td>
+					<td class="tdInTableEmpty3"></td>
+					<td class="tdInTableEmpty3"></td>
+					<td class="tdInTableEmpty3"></td>
+					<td class="tdInTableEmpty3"></td>
+					<td class="tdInTableEmpty3"></td>
+					<td class="tdInTableEmpty3"></td>
 					<td class="tdSpacing_IO"></td>
 				</tr>
 				<tr class="tr_spacing"></tr>
 				<tr>
 					<td class="tdSpacing_IO"></td>
-					<td class="td_FirstColumn">NG drain
-					<span class="fade">(ml)</span>
-					</td><td class="tdSpacing_IO"></td>
-					<td class="tdInTableEmpty"></td>
-					<td class="tdInTableEmpty"></td>
-					<td class="tdInTableEmpty"></td>
-					<td class="tdInTableEmpty"></td>
-					<td class="tdInTableEmpty"></td>
-					<td class="tdInTableEmpty"></td>
-					<td class="tdInTableEmpty"></td>
-					<td class="tdInTableEmpty"></td>
+					<td class="td_FirstColumn">NG drain<span class="fade">(ml)</span></td><td class="tdSpacing_IO"></td>
+					<td class="tdInTableEmpty3"></td>
+					<td class="tdInTableEmpty3"></td>
+					<td class="tdInTableEmpty3"></td>
+					<td class="tdInTableEmpty3"></td>
+					<td class="tdInTableEmpty3"></td>
+					<td class="tdInTableEmpty3"></td>
+					<td class="tdInTableEmpty3"></td>
+					<td class="tdInTableEmpty3"></td>
 					<td class="tdSpacing_IO"></td>
-					<td class="tdInTableEmpty"></td>
-					<td class="tdInTableEmpty"></td>
-					<td class="tdInTableEmpty"></td>
-					<td class="tdInTableEmpty"></td>
-					<td class="tdInTableEmpty"></td>
-					<td class="tdInTableEmpty"></td>
-					<td class="tdInTableEmpty"></td>
-					<td class="tdInTableEmpty"></td>
+					<td class="tdInTableEmpty3"></td>
+					<td class="tdInTableEmpty3"></td>
+					<td class="tdInTableEmpty3"></td>
+					<td class="tdInTableEmpty3"></td>
+					<td class="tdInTableEmpty3"></td>
+					<td class="tdInTableEmpty3"></td>
+					<td class="tdInTableEmpty3"></td>
+					<td class="tdInTableEmpty3"></td>
 					<td class="tdSpacing_IO"></td>
-					<td class="tdInTableEmpty"></td>
-					<td class="tdInTableEmpty"></td>
-					<td class="tdInTableEmpty"></td>
-					<td class="tdInTableEmpty"></td>
-					<td class="tdInTableEmpty"></td>
-					<td class="tdInTableEmpty"></td>
-					<td class="tdInTableEmpty"></td>
-					<td class="tdInTableEmpty"></td>
+					<td class="tdInTableEmpty3"></td>
+					<td class="tdInTableEmpty3"></td>
+					<td class="tdInTableEmpty3"></td>
+					<td class="tdInTableEmpty3"></td>
+					<td class="tdInTableEmpty3"></td>
+					<td class="tdInTableEmpty3"></td>
+					<td class="tdInTableEmpty3"></td>
+					<td class="tdInTableEmpty3"></td>
 					<td class="tdSpacing_IO"></td>
 				</tr>
 				<tr>
 					<td class="tdSpacing_IO"></td>
-					<td class="td_FirstColumn">Urine
-					<span class="fade">(ml)</span>
-					</td><td class="tdSpacing_IO"></td>
-					<td class="tdInTable">15</td>
-					<td class="tdInTableEmpty"></td>
-					<td class="tdInTableEmpty"></td>
-					<td class="tdInTable">15</td>
-					<td class="tdInTableEmpty"></td>
-					<td class="tdInTableEmpty"></td>
-					<td class="tdInTable">22</td>
-					<td class="tdInTableEmpty"></td>
+					<td class="td_FirstColumn">Urine<span class="fade">(ml)</span></td><td class="tdSpacing_IO"></td>
+					<td class="tdInTable3">15</td>
+					<td class="tdInTableEmpty3"></td>
+					<td class="tdInTableEmpty3"></td>
+					<td class="tdInTable3">15</td>
+					<td class="tdInTableEmpty3"></td>
+					<td class="tdInTableEmpty3"></td>
+					<td class="tdInTable3">22</td>
+					<td class="tdInTableEmpty3"></td>
 					<td class="tdSpacing_IO"></td>
-					<td class="tdInTableEmpty"></td>
-					<td class="tdInTable">0</td>
-					<td class="tdInTableEmpty"></td>
-					<td class="tdInTableEmpty"></td>
-					<td class="tdInTable">15</td>
-					<td class="tdInTableEmpty"></td>
-					<td class="tdInTableEmpty"></td>
-					<td class="tdInTableEmpty"></td>
+					<td class="tdInTableEmpty3"></td>
+					<td class="tdInTable3">0</td>
+					<td class="tdInTableEmpty3"></td>
+					<td class="tdInTableEmpty3"></td>
+					<td class="tdInTable3">15</td>
+					<td class="tdInTableEmpty3"></td>
+					<td class="tdInTableEmpty3"></td>
+					<td class="tdInTableEmpty3"></td>
 					<td class="tdSpacing_IO"></td>
-					<td class="tdInTableEmpty"></td>
-					<td class="tdInTableEmpty"></td>
-					<td class="tdInTableEmpty"></td>
-					<td class="tdInTableEmpty"></td>
-					<td class="tdInTableEmpty"></td>
-					<td class="tdInTableEmpty"></td>
-					<td class="tdInTableEmpty"></td>
-					<td class="tdInTableEmpty"></td>
+					<td class="tdInTableEmpty3"></td>
+					<td class="tdInTableEmpty3"></td>
+					<td class="tdInTableEmpty3"></td>
+					<td class="tdInTableEmpty3"></td>
+					<td class="tdInTableEmpty3"></td>
+					<td class="tdInTableEmpty3"></td>
+					<td class="tdInTableEmpty3"></td>
+					<td class="tdInTableEmpty3"></td>
 					<td class="tdSpacing_IO"></td>
 				</tr>
 				<tr> 
 					<td class="tdSpacing_IO"></td>
 					<td class="td_FirstColumn">Stool</td><td class="tdSpacing_IO"></td>
-					<td class="tdInTable">SYP</td>
-					<td class="tdInTableEmpty"></td>
-					<td class="tdInTableEmpty"></td>
-					<td class="tdInTable">MYP</td>
-					<td class="tdInTableEmpty"></td>
-					<td class="tdInTableEmpty"></td>
-					<td class="tdInTable">MYP</td>
-					<td class="tdInTableEmpty"></td>
+					<td class="tdInTable3">SYP</td>
+					<td class="tdInTableEmpty3"></td>
+					<td class="tdInTableEmpty3"></td>
+					<td class="tdInTable3">MYP</td>
+					<td class="tdInTableEmpty3"></td>
+					<td class="tdInTableEmpty3"></td>
+					<td class="tdInTable3">MYP</td>
+					<td class="tdInTableEmpty3"></td>
 					<td class="tdSpacing_IO"></td>
-					<td class="tdInTableEmpty"></td>
-					<td class="tdInTable">MYP</td>
-					<td class="tdInTableEmpty"></td>
-					<td class="tdInTableEmpty"></td>
-					<td class="tdInTable">MYP</td>
-					<td class="tdInTableEmpty"></td>
-					<td class="tdInTableEmpty"></td>
-					<td class="tdInTable">MYP</td>
+					<td class="tdInTableEmpty3"></td>
+					<td class="tdInTable3">MYP</td>
+					<td class="tdInTableEmpty3"></td>
+					<td class="tdInTableEmpty3"></td>
+					<td class="tdInTable3">MYP</td>
+					<td class="tdInTableEmpty3"></td>
+					<td class="tdInTableEmpty3"></td>
+					<td class="tdInTable3">MYP</td>
 					<td class="tdSpacing_IO"></td>
-					<td class="tdInTableEmpty"></td>
-					<td class="tdInTableEmpty"></td>
-					<td class="tdInTable">MYP</td>
-					<td class="tdInTableEmpty"></td>
-					<td class="tdInTableEmpty"></td>
-					<td class="tdInTableEmpty"></td>
-					<td class="tdInTableEmpty"></td>
-					<td class="tdInTableEmpty"></td>
+					<td class="tdInTableEmpty3"></td>
+					<td class="tdInTableEmpty3"></td>
+					<td class="tdInTable3">MYP</td>
+					<td class="tdInTableEmpty3"></td>
+					<td class="tdInTableEmpty3"></td>
+					<td class="tdInTableEmpty3"></td>
+					<td class="tdInTableEmpty3"></td>
+					<td class="tdInTableEmpty3"></td>
 					<td class="tdSpacing_IO"></td>
 				</tr>
 				<tr> 
 					<td class="tdSpacing_IO"></td>
 					<td class="td_FirstColumn">Enema/Stim.</td><td class="tdSpacing_IO"></td>
-					<td class="tdInTable">S</td>
-					<td class="tdInTableEmpty"></td>
-					<td class="tdInTableEmpty"></td>
-					<td class="tdInTable">E</td>
-					<td class="tdInTableEmpty"></td>
-					<td class="tdInTableEmpty"></td>
-					<td class="tdInTableEmpty"></td>
-					<td class="tdInTableEmpty"></td>
+					<td class="tdInTable3">S</td>
+					<td class="tdInTableEmpty3"></td>
+					<td class="tdInTableEmpty3"></td>
+					<td class="tdInTable3">E</td>
+					<td class="tdInTableEmpty3"></td>
+					<td class="tdInTableEmpty3"></td>
+					<td class="tdInTableEmpty3"></td>
+					<td class="tdInTableEmpty3"></td>
 					<td class="tdSpacing_IO"></td>
-					<td class="tdInTableEmpty"></td>
-					<td class="tdInTableEmpty"></td>
-					<td class="tdInTableEmpty"></td>
-					<td class="tdInTableEmpty"></td>
-					<td class="tdInTableEmpty"></td>
-					<td class="tdInTableEmpty"></td>
-					<td class="tdInTableEmpty"></td>
-					<td class="tdInTableEmpty"></td>
+					<td class="tdInTableEmpty3"></td>
+					<td class="tdInTableEmpty3"></td>
+					<td class="tdInTableEmpty3"></td>
+					<td class="tdInTableEmpty3"></td>
+					<td class="tdInTableEmpty3"></td>
+					<td class="tdInTableEmpty3"></td>
+					<td class="tdInTableEmpty3"></td>
+					<td class="tdInTableEmpty3"></td>
 					<td class="tdSpacing_IO"></td>
-					<td class="tdInTableEmpty"></td>
-					<td class="tdInTableEmpty"></td>
-					<td class="tdInTableEmpty"></td>
-					<td class="tdInTableEmpty"></td>
-					<td class="tdInTableEmpty"></td>
-					<td class="tdInTableEmpty"></td>
-					<td class="tdInTableEmpty"></td>
-					<td class="tdInTableEmpty"></td>
+					<td class="tdInTableEmpty3"></td>
+					<td class="tdInTableEmpty3"></td>
+					<td class="tdInTableEmpty3"></td>
+					<td class="tdInTableEmpty3"></td>
+					<td class="tdInTableEmpty3"></td>
+					<td class="tdInTableEmpty3"></td>
+					<td class="tdInTableEmpty3"></td>
+					<td class="tdInTableEmpty3"></td>
 					<td class="tdSpacing_IO"></td>
 				</tr>
 				<tr class="tr_spacing"></tr>
@@ -1803,14 +1767,19 @@
 					<table class="TbilTable">
 						<tr>
 							<td><span class="TbilTitle">T.Bil</span></td>
+							<td><span class="TbilTitle">D.Bil</span></td>
 						</tr>
 						<tr>
 							<td>
 								<span class="TbilMainWord">6.4</span>
 							</td>
+							<td>
+								<span class="TbilMainWord">0.3</span>
+							</td>
 						</tr>
 						<tr>
 							<td> <span class="DateInfo">7/4 12:00</span></td>
+							<td> <span class="DateInfo">7/4</span></td>
 						</tr>
 					</table>
 				</div>
@@ -1822,6 +1791,7 @@
 						<tr>
 							<td><span class="BoneMarkerTitle">ALKP</span></td>
 							<td><span class="BoneMarkerTitle">Total Ca</span></td>
+							<td><span class="BoneMarkerTitle">LDH</span></td>
 						</tr>
 						<tr>
 							<td>
@@ -1829,6 +1799,9 @@
 							</td>
 							<td>
 								<span class="BoneMarkerMainWord">9.9</span>	
+							</td>
+							<td>
+								<span class="BoneMarkerMainWord">-</span>	
 							</td>
 						</tr>
 						<tr>
@@ -1864,27 +1837,6 @@
 							<td> <span class="DateInfo">7/4</span></td>
 							<td> <span class="DateInfo">7/4</span></td>
 							<td> <span class="DateInfo">7/4</span></td>
-							<td> <span class="DateInfo">7/4</span></td>
-						</tr>
-					</table>
-				</div>
-
-				<div class="HemolysisCard">
-					<table class="HemolysisTable">
-						<tr>
-							<td><span class="HemolysisTitle">LDH</span></td>
-							<td><span class="HemolysisTitle">D.Bil</span></td>
-						</tr>
-						<tr>
-							<td>
-								<span class="HemolysisMainWord">-</span>
-							</td>
-							<td>
-								<span class="HemolysisMainWord">0.2</span>	
-							</td>
-						</tr>
-						<tr>
-							<td> <span class="DateInfo"><br></span></td>
 							<td> <span class="DateInfo">7/4</span></td>
 						</tr>
 					</table>
