@@ -1,16 +1,20 @@
 var incubatorTemp =
- [29.5,29.5,29,30,30,30,30];
+ [28,29.5,29,30,30,30,30];
 var incubatorHumidity =
  [70,70,70,70,65,65,65];
+
 var bodyTemperature =
- [37,37,36.5,36.5,38,39,38];
+ [37,35.5,36.5,36.5,38,39,38];
+var bodyTemperatureWarn_U = 38;
+var bodyTemperatureWarn_L = 36;
+
 var HeartRate =
  [120,140,120,133,153,180,93];
 var HeartRateWarn_U;
 var HeartRateWarn_L;
 
 var  RespRate=
- [44,43,46,57,34,45,65];
+ [44,43,46,99,34,45,18];
 var RespRateWarn_U;
 var RespRateWarn_L;
 
@@ -50,9 +54,18 @@ function getTable()
 	table.appendChild(printRow("箱溫","('C)",incubatorTemp));
 	table.appendChild(printRow("濕度","(%)",incubatorHumidity));
 	table.appendChild(getSpacingRow());
-	table.appendChild(printRow("體溫","('C)",bodyTemperature));
+
+	if(!(typeof bodyTemperatureWarn_U ==="number")) bodyTemperatureWarn_U=38;
+	if(!(typeof bodyTemperatureWarn_L ==="number")) bodyTemperatureWarn_L=36;
+	table.appendChild(printRow("體溫","('C)",bodyTemperature,bodyTemperatureWarn_L,bodyTemperatureWarn_U));
+
+	if(!(typeof RespRateWarn_U ==="number")) RespRateWarn_U=80;
+	if(!(typeof RespRateWarn_L ==="number")) RespRateWarn_L=20;
 	table.appendChild(printRow("心率","(/min)",HeartRate));
-	table.appendChild(printRow("呼吸","(/min)",RespRate));
+	
+	if(!(typeof RespRateWarn_U ==="number")) RespRateWarn_U=80;
+	if(!(typeof RespRateWarn_L ==="number")) RespRateWarn_L=20;
+	table.appendChild(printRow("呼吸","(/min)",RespRate,RespRateWarn_L,RespRateWarn_U));
 	
 	if(!(typeof SaturationWarn_L ==="number")) SaturationWarn_L=85;
 	if(!(typeof SaturationWarn_U ==="number")) SaturationWarn_U=95;
@@ -112,7 +125,7 @@ function getTD(value, L,U)
 {
 	td =  document.createElement('td');		
 
-	if(typeof value === "number")
+	if(typeof value === "number" && value !=0)
 	{
 		var warn ="";
 		if( (typeof L ==="number" && value<L) ||
@@ -138,8 +151,6 @@ function getFirstRow()
 	td =  document.createElement('td');
 	td.setAttribute("class","td_FirstColumn");
 	td.appendChild(getSpan("時間",""));
-
-	
 	tr.appendChild(getSpacingTD());
 	tr.appendChild(td);
 	tr.appendChild(getSpacingTD());
