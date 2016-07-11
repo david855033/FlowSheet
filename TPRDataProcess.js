@@ -20,17 +20,17 @@ var SaturationWarn_U;
 var SaturationWarn_L; 
 
 var SBP =
- [65,70,55,66,56,45,33];
+ [65,70,55,66,56,45,33,,50,60];
 var SBP_U;
-var SBP_L; 
- 
+var SBP_L=55; 
+
 var DBP =
-[46,45,34,32,44,33,21];
+[46,45,34,32,44,33,21,39,,20];
 var DBP_U;
 var DBP_L; 
  
- var MAPWarn_U;
- var MAPWarn_L;
+var MAPWarn_U;
+var MAPWarn_L;
 
 
 var MAP = new Array();
@@ -53,16 +53,25 @@ function getTable()
 	table.appendChild(printRow("體溫","('C)",bodyTemperature));
 	table.appendChild(printRow("心率","(/min)",HeartRate));
 	table.appendChild(printRow("呼吸","(/min)",RespRate));
-	table.appendChild(printRow("Sat","(%)",Saturation));
+	
+	if(!(typeof SaturationWarn_L ==="number")) SaturationWarn_L=85;
+	if(!(typeof SaturationWarn_U ==="number")) SaturationWarn_U=95;
+	table.appendChild(printRow("Sat","(%)",Saturation,SaturationWarn_L,SaturationWarn_U));
 	table.appendChild(getSpacingRow());
-	table.appendChild(printRow("SBP","(/mmHg)",SBP));
-	table.appendChild(printRow("SBP","(/mmHg)",DBP));
-	table.appendChild(printRow("MAP","(/mmHg)",MAP));
+	
+	if(!(typeof SBP_L ==="number")) SBP_L=45;
+	table.appendChild(printRow("SBP","(/mmHg)",SBP,SBP_L,SBP_U));
+
+	table.appendChild(printRow("DBP","(/mmHg)",DBP,DBP_L,DBP_U));
+	
+	if(!(typeof MAPWarn_L ==="number")) MAPWarn_L=35;
+	table.appendChild(printRow("MAP","(/mmHg)",MAP,MAPWarn_L,MAPWarn_U));
+	
 	table.appendChild(getSpacingRow());
 	return table;
 }
 
-function printRow(fieldName, Unit, DataArray)
+function printRow(fieldName, Unit, DataArray, LowerWarn, UpperWarn)
 {
 	var tr = document.createElement('tr');
 	
@@ -70,58 +79,58 @@ function printRow(fieldName, Unit, DataArray)
 	td.setAttribute("class","td_FirstColumn");
 	td.appendChild(getSpan(fieldName,""));
 	td.appendChild(getSpan(Unit,"fade"));
-	
+	if(typeof LowerWarn ==="number" && typeof UpperWarn === "number")
+	{
+		td.appendChild(getSpan(" "+LowerWarn+"-"+UpperWarn,"warnInfo"));
+	}else if(typeof LowerWarn ==="number")
+	{
+		td.appendChild(getSpan(" >"+LowerWarn,"warnInfo"));
+	}
+	else if(typeof UpperWarn === "number")
+	{
+		td.appendChild(getSpan(" <"+UpperWarn,"warnInfo"));
+	}
 	tr.appendChild(getSpacingTD());
 	tr.appendChild(td);
 	tr.appendChild(getSpacingTD());
 	for(i=0;i<8;i++){
-		td =  document.createElement('td');		
-		if(typeof DataArray[i] === "number")
-		{
-			input=DataArray[i];
-			td.setAttribute("class","tdInTable1");
-			td.appendChild(getSpan(input,""));
-		}else
-		{
-			td.setAttribute("class","tdInTableEmpty1");
-			td.appendChild(getSpan("",""));
-		}
-		tr.appendChild(td);
+		tr.appendChild(getTD(DataArray[i],LowerWarn,UpperWarn));	
 	}
 	tr.appendChild(getSpacingTD());
 	for(i=8;i<16;i++){
-		td =  document.createElement('td');		
-		if(typeof DataArray[i] === "number")
-		{
-			input=DataArray[i];
-			td.setAttribute("class","tdInTable1");
-			td.appendChild(getSpan(input,""));
-		}else
-		{
-			td.setAttribute("class","tdInTableEmpty1");
-			td.appendChild(getSpan("",""));
-		}
-		tr.appendChild(td);
+		tr.appendChild(getTD(DataArray[i],LowerWarn,UpperWarn));	
 	}
 	tr.appendChild(getSpacingTD());
 	for(i=16;i<24;i++){
-		td =  document.createElement('td');		
-		if(typeof DataArray[i] === "number")
-		{
-			input=DataArray[i];
-			td.setAttribute("class","tdInTable1");
-			td.appendChild(getSpan(input,""));
-		}else
-		{
-			td.setAttribute("class","tdInTableEmpty1");
-			td.appendChild(getSpan("",""));
-		}
-		tr.appendChild(td);
+		tr.appendChild(getTD(DataArray[i],LowerWarn,UpperWarn));	
 	}
 	tr.appendChild(getSpacingTD());
 	return tr;
 }
 
+function getTD(value, L,U)
+{
+	td =  document.createElement('td');		
+
+	if(typeof value === "number")
+	{
+		var warn ="";
+		if( (typeof L ==="number" && value<L) ||
+			(typeof U === "number" && value >U) )
+		{
+			warn="warn";
+		}
+
+		input=value;
+		td.setAttribute("class","tdInTable1");
+		td.appendChild(getSpan(value,warn));
+	}else
+	{
+		td.setAttribute("class","tdInTableEmpty1");
+		td.appendChild(getSpan("",""));
+	}
+	return td;
+}
 function getFirstRow()
 {
 	var tr = document.createElement('tr');
