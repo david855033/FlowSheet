@@ -36,7 +36,6 @@ var DBP_L;
 var MAPWarn_U;
 var MAPWarn_L;
 
-
 var MAP = new Array();
 function TPRDataProcess()
 {

@@ -201,18 +201,20 @@ td{overflow: hidden;}
 	width:50px;
 	height: 25px;
 	text-align: center;
-	background-color: rgba(255,255,255,0.7);
+	background-color: rgba(255,255,255,0.5);
 }
 .tdInFirstRow_event {
 	width: 220px;
 	text-align: center;
 	height: 25px;
-	background-color: rgba(255,255,255,0.7);
+	background-color: rgba(255,255,255,0.5);
 }
-
 .tdInTable_event {
 	text-align: center;
-	background-color: rgba(255,255,255,0.95);
+	background-color: rgba(255,255,255,0.8);
+	padding-top: 4px;
+	padding-bottom: 4px;
+	font-size:0.9em;
 }
 
 
@@ -247,12 +249,13 @@ td{overflow: hidden;}
 
 .shift{
 	width: 25px;
-	height: 100%;
+	height: 100px;
 	float:left;
 }
 .shifttotal{
 	width: 25px;
-	height: 100%;
+	height: 120px;
+	padding-top: 10px;
 	color:#FFFFFF;
 	float:left;
 	font-weight: bolder;
@@ -274,6 +277,13 @@ td{overflow: hidden;}
 	width: 65px;
 	float:left;
 	font-size: 1.1em;
+	text-align: center;
+}
+.IOBalanceTotal{
+	height: 100%;
+	width: 65px;
+	float:left;
+	font-size: 1.2em;
 	text-align: center;
 }
 
@@ -300,7 +310,6 @@ td{overflow: hidden;}
 	height: 60px;
 	width: 80px;
 	float:left;
-
 }
 
 .IOInnerSmall{
@@ -339,9 +348,13 @@ td{overflow: hidden;}
 }
 
 
+.tr_shiftSpacing{
+	height: 30px;
+}
+
 
 .tr_IObalancespacing{
-	height: 30px;
+	height: 25px;
 }
 
 
@@ -402,7 +415,7 @@ td{overflow: hidden;}
 }
 .glucoseMainWord{
 	font-size: 3em;
-	line-height: 60px;
+	line-height: 43px;
 	font-weight: bolder;
 }
 
@@ -430,6 +443,7 @@ td{overflow: hidden;}
 	font-weight: bolder;
 }
 .CBCSubInfo{
+	font-size: 1.2em;
 	font-weight: border;
 	line-height:13px;
 }
@@ -629,8 +643,6 @@ td{overflow: hidden;}
 
 
 
-
-
 .ventilator_table{
 	background-color: #75E243;
 	box-shadow: 5px 5px 5px #444444;
@@ -652,14 +664,14 @@ td{overflow: hidden;}
 	width: 150px;
 	text-align: center;
 	height: 25px;
-	background-color: rgba(255,255,255,0.6);
+	background-color: rgba(255,255,255,0.45);
 }
 .ventilator_table_innerTD3
 {
 	width: 460px;
 	text-align: center;
 	height: 25px;
-	background-color: rgba(255,255,255,0.6);
+	background-color: rgba(255,255,255,0.45);
 }
 
 .ABG_table{
@@ -718,4 +730,7 @@ td{overflow: hidden;}
 .warn2{
 	font-weight: bolder;
 	color:rgb(255,150,0);
+}
+.warn3{
+	color:rgb(255,0,0);
 }

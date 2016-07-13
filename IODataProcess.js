@@ -6,12 +6,12 @@ var alineRoute=[];
 var alineName=[];
 var alineAmount=[];
 
-var centralRoute=["CVC","PCVL"];
-var centralName=["Dopa","S.Lipid"];
-var centralAmount=[[0.2,0,0.2,0.2,0.2,0.1,0,0],[1,1,1,1,1]];
+var centralRoute=["CVC","PCVL","UV","PD"];
+var centralName=["Dopa","S.Lipid","Albumin","PD solution"];
+var centralAmount=[[0.2,0,0.2,0.2,0.2,0.1,0,0],[1,1,1,1,1],[0,0,0,0,0,10,10,10,10],[30]];
 
-var transfusionNames=["pRBC","FFP"];
-var transfusionAmount=[[0,0,0,0,0,12,12,12,12],[0,0,0,0,0,0,0,0,0,0,12,12,12,12]];
+var transfusionNames=["pRBC","FFP","AlienBLood"];
+var transfusionAmount=[[0,0,0,0,0,12,12,12,12],[0,0,0,0,0,0,0,0,0,0,12,12,12,12],[100,100,100]];
 
 var POAmount=[0,0,15,0,0,30,0,0,25];
 var NGAmount=[0,0,3,0,0,30,0,0,25];
@@ -20,11 +20,11 @@ var RVCharacter=[0,0,"半消",0,0,0,0,0,"黃褐"];
 
 var NGDrain=[0,0,0,15];
 
-var drainRoute=["Pigtail","JP"];
-var drainName=["右胸","左腹"];
-var drainAmount=[[45,,,,,,,20,,,,,,,],[15,,,,,,,]];
+var drainRoute=["Pigtail","JP","CVVH","PD"];
+var drainName=["右胸","左腹","",""];
+var drainAmount=[[45,,,,,,,20,,,,,,,],[15,,,,,,,],[5,5,5,5,5,5,5,5,5],[0,1,1,1]];
 
-var urine =[,,,,30,,,,22,,,,,30,];
+var urine =[,,,,30,,,,22,,,,,20,,90,90,];
 var stool = [,,,,,"MYP",,,,,,];
 var enema =[,,,,"S",,,,"E",,,];
 
@@ -59,15 +59,23 @@ function getIOCard(shiftname, start, end, isTotal){
 	divCard.appendChild(getClearDiv());
 	return divCard;
 }
-function getShiftName(start, end, isTotal)
+
+function getShiftName(shiftname, isTotal)
 {
 	var div = document.createElement('div');
 	var setClass;
 	if(isTotal){setClass="shifttotal";}else{setClass="shift";}
-	div.setAttribute('class',setClass);
-	
+	div.setAttribute('class',setClass);	
+		var tb = document.createElement('table');
+			var tr_spacing = document.createElement('tr');
+			tr_spacing.setAttribute('class',"tr_shiftSpacing");
+		tb.appendChild(tr_spacing);
+			var tr = getTDinTR(shiftname);
+		tb.appendChild(tr);
+	div.appendChild(tb);
 	return div;
 }
+
 
 function getIOContainer(start, end, isTotal)
 {
@@ -82,7 +90,7 @@ function getIOContainer(start, end, isTotal)
 	var warn;
 	if(uo >= 5 || (uo <1 && uo>0)) {warn="warn";}
 	div.appendChild(getInnerCard("ml/kg/h",uo, isTotal, false, warn));
-	div.appendChild(getInnerCard("Output","100", isTotal, true));
+	div.appendChild(getInnerCard("Output",getOutput(start,end), isTotal, true));
 	div.appendChild(getClearDiv());
 	return div;
 }
@@ -169,9 +177,38 @@ function getUrine(start, end){
 }
 
 function getUrinePerHour(start,end){
-	var amount = Math.round (getUrine(start,end)*10 / (end-start+1))/10;
+	var amount = Math.round (getUrine(start,end)*10 / (end-start+1)/bodyWeight*1000)/10;
 	return amount;
 }
+
+function getOutput(start,end){
+	var amount = getUrine(start, end);
+	for(x = 0; x < drainRoute.length; x++)
+	{
+		for(y = start ; y<=end ; y++)
+		{
+			if(typeof drainAmount[x][y] === "number")
+			{
+				amount += drainAmount[x][y];
+			}
+		}
+	}
+	for(y = start ; y<=end ; y++)
+		{
+			if(typeof NGDrain[y] === "number")
+			{
+				amount += NGDrain[y];
+			}
+		}
+	return amount;
+}
+
+function getIO(start,end){
+	var amount = getInput(start,end)-getOutput(start,end);
+	return amount;
+}
+
+
 function getInnerCard(name, amount, isTotal, isWide, isWarn)
 {
 	var div=document.createElement('div');
@@ -242,10 +279,30 @@ function getDivClass(isTotal, isWide)
 function getIOBalance(start, end, isTotal)
 {
 	var div = document.createElement('div');
-	var setClass;
-	if(isTotal){setClass="IOBalanceTotal";}else{setClass="IOBalance";}
-	div.setAttribute('class',setClass);
+	var setClass,setClass1,setClass2;
+	if(isTotal){
+		setClass="IOBalanceTotal";
+		setClass1="IOInnerSmallTotal";
+		setClass2="IOInnerBigTotal";
+	}else{
+		setClass="IOBalance";
+		setClass1="IOInnerSmall";
+		setClass2="IOInnerBig";
+	}
 
+	div.setAttribute('class',setClass);
+	var tb = document.createElement('tb');
+		var tb = document.createElement('table');
+			var tr_spacing = document.createElement('tr');
+			tr_spacing.setAttribute('class',"tr_IObalancespacing");
+		tb.appendChild(tr_spacing);
+			var tr1 = getTDinTR("I/O",setClass1);
+			tr1.align="center";
+		tb.appendChild(tr1);
+			var tr2 = getTDinTR(getIO(start,end),setClass2);
+			tr2.align="center";
+		tb.appendChild(tr2);
+	div.appendChild(tb);
 	return div;
 }
 
@@ -260,11 +317,11 @@ function getClearDiv(){
 
 function getTDinTR(content,setTDClass,warn){
 	var tr = document.createElement('tr');
-	var td = document.createElement('tr');
-	if(typeof setTDClass === "string"){
-		td.setAttribute('class', setTDClass );
-	}
-	td.appendChild(getSpan(content,warn));
+		var td = document.createElement('tr');
+		if(typeof setTDClass === "string"){
+			td.setAttribute('class', setTDClass );
+		}
+		td.appendChild(getSpan(content,warn));
 	tr.appendChild(td)	
 	return tr;
 }
@@ -305,7 +362,10 @@ function getIOTable()
 	{
 		table.appendChild(printRow_IO(transfusionNames[x],"(ml)","",transfusionAmount[x]));
 	}
-
+	if(transfusionNames.length==0)
+	{
+		table.appendChild(printRow_IO("Transfusion","(ml)","",[0]));	
+	}
 	table.appendChild(getSpacingRow());
 	table.appendChild(printRow_IO("PO","(ml)","",POAmount));
 	table.appendChild(printRow_IO("NG/OG","(ml)","",NGAmount));
