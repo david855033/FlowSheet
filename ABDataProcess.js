@@ -1,8 +1,4 @@
-var ABeventSelfRecovered=
-[1,0,0,0,0,2,0]
 
- var ABeventManaged=
- [0,0,0,0,0,0,3,2,1];
 
  function ABDataProcess(){
  	var table =document.getElementById("abtable");

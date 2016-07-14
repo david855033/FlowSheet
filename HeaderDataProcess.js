@@ -1,19 +1,4 @@
-var wardName = "NICU - 1";
-var patientName = "郝早生之男";
-var doctorName = "主治醫師：曹大大";
-var chartNumber = "39482362";
-var admissionDate = new Date("2016-07-01");
-var birthDate = new Date("2016-06-02");
-var currentDate = new Date("2016-07-01");
-var gestationalAgeWeek=36;
-var gestationalAgeDate=1;
-var bodyWeight = 1700;
-var bodyWeightLastDate = 1600;
-var birthBodyWeight = 1212;
-var dietType="BMF+SSC24";
-var dietAmount="20ml q3h";
-var ventilatorType="IMV/OETT";
-var ventilatorSetting="FiO2:21%, P=30/5, R=20";
+
 
 
 

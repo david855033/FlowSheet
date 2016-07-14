@@ -1,32 +1,3 @@
-var peripheralRoute=["IV","IV"];
-var peripheralName=["TPN","Mepem"];
-var peripheralAmount=[[1,1,1,1,1],[,,,,4]];
-
-var alineRoute=[];
-var alineName=[];
-var alineAmount=[];
-
-var centralRoute=["CVC","PCVL","UV","PD"];
-var centralName=["Dopa","S.Lipid","Albumin","PD solution"];
-var centralAmount=[[0.2,0,0.2,0.2,0.2,0.1,0,0],[1,1,1,1,1],[0,0,0,0,0,10,10,10,10],[30]];
-
-var transfusionNames=["pRBC","FFP","AlienBLood"];
-var transfusionAmount=[[0,0,0,0,0,12,12,12,12],[0,0,0,0,0,0,0,0,0,0,12,12,12,12],[100,100,100]];
-
-var POAmount=[0,0,15,0,0,30,0,0,25];
-var NGAmount=[0,0,3,0,0,30,0,0,25];
-var RVAmount=[0,0,5,0,0,0,0,0,15];
-var RVCharacter=[0,0,"半消",0,0,0,0,0,"黃褐"];
-
-var NGDrain=[0,0,0,15];
-
-var drainRoute=["Pigtail","JP","CVVH","PD"];
-var drainName=["右胸","左腹","",""];
-var drainAmount=[[45,,,,,,,20,,,,,,,],[15,,,,,,,],[5,5,5,5,5,5,5,5,5],[0,1,1,1]];
-
-var urine =[,,,,30,,,,22,,,,,20,,90,90,];
-var stool = [,,,,,"MYP",,,,,,];
-var enema =[,,,,"S",,,,"E",,,];
 
 function IODataProcess(){
 	var table = document.getElementById("iotable");

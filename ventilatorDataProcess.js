@@ -1,26 +1,3 @@
-ventilatorTime = 
-["10:00",
-"15:00", 
-"20:00",
-"21:00",
-"23:00",
-"23:30"];
-ventilatorMode =
-["IMV/OETT",
-"IMV/OETT",
-"IMV/OETT",
-"HFOV/OETT",
-"ECMO",
-"ECMO|HFOV/OETT"];
-
-ventilatorSetting = 
-["FiO2:40%, PIP/PEEP:20/5mmHg, Rate:20/min",
-"FiO2:40%, PIP/PEEP:20/5mmHg, Rate:20/min",
-"FiO2:40%, PIP/PEEP:20/5mmHg, Rate:20/min",
-"FiO2:60%, MAP:25mmHg, AMP: 10mmHg, Freq:10Hz",
-"FiO2:100%, Flow: 0.6L/min, 2000RPM",
-"FiO2:100%, Flow: 0.6L/min, 2000RPM|FiO2:60%, MAP:25mmHg, AMP: 10mmHg, Freq:10Hz"
-];
 
 
 

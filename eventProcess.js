@@ -1,7 +1,3 @@
-eventTime = ["11:00","12:00", "13:34","14:00","15:20","19:30"];
-eventContent = ["Apnea Sat:70%","Apnea Sat:70%","Bradycardia HR:65","sent to OR","CPR","test long event test long event test long event test long event test long event"];
-eventWarn = [0,0,1,0,1,0];
-
 
 
 function eventProcess()
