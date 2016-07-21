@@ -5,35 +5,36 @@ function HeaderDataProcess() {
 }
 
 function generateHeader(){
-	document.getElementById("mainHeader").innerHTML="";
+	var mainHeader=document.getElementById("mainHeader");
+	mainHeader.innerHTML="";
 
-	document.getElementById("mainHeader").appendChild
-	(generateHeaderCard(wardName,patientName,doctorName));
+	mainHeader.appendChild
+	(generateHeaderCard(wardName,patientName,"主治醫師: "+doctorName));
 
-	document.getElementById("mainHeader").appendChild
+	mainHeader.appendChild
 	(generateHeaderCard("病歷號",chartNumber,
 		dateToStringShort(admissionDate)+" 住院"));
 
-	document.getElementById("mainHeader").appendChild
+	mainHeader.appendChild
 	(generateHeaderCard("實際年齡",getAgeStirng(),
 		dateToStringShort(birthDate)+" 生"));
 
 	if(gestationalAgeWeek<37)
 	{
-		document.getElementById("mainHeader").appendChild
+		mainHeader.appendChild
 		(generateHeaderCard(getCGATitle(),getCGAString(),
 			getGAString()));
 	}
 
-	document.getElementById("mainHeader").appendChild
+	mainHeader.appendChild
 		(generateHeaderCard2("體重",getBodyWeigth(),
 			getBodyWeightDif(),getBirthWeight()));
 
-	document.getElementById("mainHeader").appendChild
+	mainHeader.appendChild
 		(generateHeaderCard("Diet",getDietType(),
 			getDietAmount()));
 
-	document.getElementById("mainHeader").appendChild
+	mainHeader.appendChild
 		(generateHeaderCard("Ventilator",getVentilatorType(),
 			getVentilatorSetting()));
 }
@@ -41,7 +42,7 @@ function generateHeader(){
 function generateHeaderCard(s1,s2,s3){
 
 	var td1 = getComponent("id","smalltitle",s1);
-	var td2 = document.createElement('td');
+	var td2 = getComponent('td',"","")
 		var split= s2.split("+");
 		for(i = 0 ; i < split.length;i++)
 		{
@@ -51,67 +52,58 @@ function generateHeaderCard(s1,s2,s3){
 				td2.appendChild(sp1);
 			}else
 			{
-				var sp2 = getComponent("span",'bigtitle',"+");
-				var sp3 = document.createElement('span');
-				sp2.setAttribute('class','bigtitle');
-				sp2.innerHTML=split[i];
-				td2.appendChild(sp1);
+				var sp2 = getComponent("span",'midtitle',"+");
+				var sp3 = getComponent("span",'bigtitle',split[i]);
 				td2.appendChild(sp2);
+				td2.appendChild(sp3);
 			}
 		}
+	
 	var td3 =  getComponent("id","smalltitle",s3);
 
-	var newDiv = getComponent("div","headerCard");
-	var table =  document.createElement('table');
-	var tr1 =  document.createElement('tr');
-	var tr2 =  document.createElement('tr');
-	var tr3 =  document.createElement('tr');
+	var tr1 =  getComponent('tr');
+	var tr2 =  getComponent('tr');
+	var tr3 =  getComponent('tr');
 	tr1.appendChild(td1);
 	tr2.appendChild(td2);
 	tr3.appendChild(td3);
+	var table =  getComponent('table');
 	table.appendChild(tr1);
 	table.appendChild(tr2);
 	table.appendChild(tr3);
+
+	var newDiv = getComponent('div',"headerCard");
 	newDiv.appendChild(table);
 	return newDiv;
 }
 
-function generateHeaderCard2(s1,s2,s2_2,s3){
-	var newDiv = document.createElement('div');
-	var table =  document.createElement('table');
-	var tr1 =  document.createElement('tr');
-	var tr2 =  document.createElement('tr');
-	var tr3 =  document.createElement('tr');
-	var td1 =  document.createElement('td');
-	var td2 = document.createElement('td');
-	var td3 = document.createElement('td');
-	newDiv.setAttribute('class','headerCard');
-	td1.setAttribute('class','smalltitle');
-	td1.innerHTML=s1;
-	var sp1 = document.createElement('span');
-	sp1.setAttribute('class','bigtitle');
-	sp1.innerHTML=s2;
-	var sp2 = document.createElement('span');
-	sp2.innerHTML=s2_2;
+function generateHeaderCard2(s1,s2_1,s2_2,s3){
+	
+	
+	var td1 =  getComponent('td','smalltitle',s1);
+
+	var sp1 = getComponent('span','bigtitle',s2_1);
+	var sp2 = getComponent('span',"",s2_2);
+	var td2 = getComponent('td');
 	td2.appendChild(sp1);
 	td2.appendChild(sp2);
-	td3.setAttribute('class','smalltitle');
-	td3.innerHTML=s3;
+
+	var td3 = getComponent('td','smalltitle',s3);
+	
+	var tr1 =  getComponent('tr');
+	var tr2 =  getComponent('tr');
+	var tr3 =  getComponent('tr');
 	tr1.appendChild(td1);
 	tr2.appendChild(td2);
 	tr3.appendChild(td3);
+	var table =  getComponent('table');
 	table.appendChild(tr1);
 	table.appendChild(tr2);
 	table.appendChild(tr3);
+
+	var newDiv = getComponent('div',"headerCard");
 	newDiv.appendChild(table);
 	return newDiv;
-}
-
-function dateToStringShort(input)
-{
-	var result=
-	input.getFullYear() +"-"+(input.getMonth() + 1) + '-' + input.getDate();
-	return result;
 }
 
 function getAgeInDays()
@@ -140,6 +132,7 @@ function getAgeStirng()
 
 	return result;
 }
+
 
 function getCGATitle()
 {
@@ -212,9 +205,13 @@ function getBirthWeight(){
 
 function getBodyWeigth(){
 	var result;
-	if (typeof bodyWeight=== "number")
+	if (typeof bodyWeight === "number")
 	{
 		result = bodyWeight+"g";
+	}
+	else if(typeof mostRecentBodyWeight=== "number")
+	{
+		result =  mostRecentBodyWeight+"g";
 	}
 	else
 	{
@@ -235,12 +232,15 @@ function getBodyWeightDif(){
 		{
 			result +=	" ("+dif+")";
 		}			
+	}else if(typeof mostRecentBodyWeight === "number")
+	{
+		result += " ("+dateToStringMMDD(mostRecentBodyWeightDate)+")";
 	}
 	return result;
 }
 function getDietType()
 {
-	if(typeof dietType === "string")
+	if(dietType)
 	{
 		return dietType;
 	}
@@ -249,7 +249,7 @@ function getDietType()
 
 function getDietAmount()
 {
-	if(typeof dietAmount === "string")
+	if(dietAmount && dietType)
 	{
 		return dietAmount;
 	}
@@ -258,18 +258,18 @@ function getDietAmount()
 
 function getVentilatorType()
 {
-	if(typeof ventilatorType === "string")
+	if(currentVentilatorType)
 	{
-		return ventilatorType;
+		return currentVentilatorType;
 	}
 	return "-";
 }
 
 function getVentilatorSetting()
 {
-	if(typeof ventilatorSetting === "string")
+	if(currentVentilatorSetting && currentVentilatorType)
 	{
-		return ventilatorSetting;
+		return currentVentilatorSetting;
 	}
 	return "-";
 }

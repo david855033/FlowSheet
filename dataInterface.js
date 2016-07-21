@@ -1,24 +1,71 @@
 //Header
-var wardName = "NICU - 1";
-var patientName = "郝早生之女";
-var doctorName = "主治醫師：曹大大";
-var chartNumber = "39482362";
-var admissionDate = new Date("2016-07-01");
-var birthDate = new Date("2016-06-02");
-var currentDate = new Date("2016-07-01");
-var gestationalAgeWeek=36;
-var gestationalAgeDate=1;
-var bodyWeight = 1600;
-var bodyWeightLastDate = 1500;
+
+//病房號及床號(string)
+var wardName = "NICU - 1";  					
+
+//姓名(string)
+var patientName = "郝早生之女"; 				
+
+//主治醫師(string)
+var doctorName = "曹大大"; 						
+
+//病歷號(string)
+var chartNumber = "39482362";					
+
+//住院日期(date)
+var admissionDate = new Date("2016-07-01");		
+
+//生日(date)
+var birthDate = new Date("2016-06-02");			
+
+//頁面當前時間(date)
+var currentDate = new Date("2016-07-01");		
+
+//出生時候週數(cGA)(int)
+var gestationalAgeWeek=36;						
+//出生時候週數(cGA)之日數部分(int)
+var gestationalAgeDate=1;						
+
+//今日體重(g),若無資料則傳入空字串(int)
+var bodyWeight = 1300;							
+
+//昨天體重(g),若無資料則傳入空字串(int)
+var bodyWeightLastDate = 1500;			
+
+//最近一筆體重(g),若沒有今日體重，則查詢最近一筆體重傳入(int)
+var mostRecentBodyWeight=1400;					
+//最近一筆體重日期(g),若沒有今日體重，則查詢最近一筆體重傳入(date)
+var mostRecentBodyWeightDate=new Date("2016-06-30");		
+
+//出生體重(g)(int)
 var birthBodyWeight = 1212;
+
+//飲食醫囑(尚未確定格式，預計從醫囑系統內抓取)
 var dietType="BMF+SSC24";
 var dietAmount="22ml q3h";
-var ventilatorType="IMV/OETT";
-var ventilatorSetting="FiO2:21%, P=30/5";
 
-//TPR
+//呼吸器設定(尚未確定格式，要等RT電子表單完成)
+var currentVentilatorType="IMV/OETT";
+var currentVentilatorSetting="FiO2:21%, P=30/5";
+
+//TPR (**此部分皆為陣列，陣列元素為時間(string,"hh:mm")+數值*)
+//保溫箱溫度
 var incubatorTemp =
- [28,29.5,29,30,30,30,30];
+[
+{"time":"0:00","value":29.5},
+{"time":"1:00","value":29.5},
+{"time":"2:00","value":29.5},
+{"time":"3:00","value":29.5},
+{"time":"4:00","value":29.5},
+{"time":"5:00","value":29.5},
+{"time":"6:00","value":29.5},
+{"time":"7:00","value":29.5},
+{"time":"7:20","value":29.5},
+{"time":"7:40","value":29.5},
+{"time":"8:00","value":29.5},
+{"time":"9:00","value":29.5},
+]
+
 var incubatorHumidity =
  [70,70,70,70,65,65,65];
 

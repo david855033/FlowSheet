@@ -17,12 +17,12 @@ function generateIOShiftCard()
 }
 
 function getIOCard(shiftname, start, end, isTotal){
-	var divCard = document.createElement('div');
+	
 	if(isTotal)
 	{
-		divCard.setAttribute('class',"TotalIOCard");
+		var divCard = getComponent('div',"TotalIOCard");
 	}else{
-		divCard.setAttribute('class',"IOCard");	
+		var divCard = getComponent('div',"IOCard");	
 	}
 	divCard.appendChild(getShiftName(shiftname,isTotal));
 	divCard.appendChild(getIOContainer(start, end, isTotal));

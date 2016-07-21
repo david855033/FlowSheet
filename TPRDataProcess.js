@@ -1,4 +1,4 @@
-var MAP = new Array();
+var MAP = [];
 function TPRDataProcess()
 {
 	generateMAP();
@@ -9,7 +9,7 @@ function TPRDataProcess()
 
 function getTable()
 {
-	var table = document.createElement('table');
+	var table = getComponent('table');
 	table.appendChild(getSpacingRow());
 	table.appendChild(getFirstRow());
 	table.appendChild(printRow("箱溫","('C)",incubatorTemp));
@@ -47,39 +47,53 @@ function getTable()
 
 function printRow(fieldName, Unit, DataArray, LowerWarn, UpperWarn)
 {
-	var tr = document.createElement('tr');
+	var tr = getComponent('tr');
 	
-	td =  document.createElement('td');
-	td.setAttribute("class","td_FirstColumn");
-	td.appendChild(getSpan(fieldName,""));
-	td.appendChild(getSpan(Unit,"fade"));
-	if(typeof LowerWarn ==="number" && typeof UpperWarn === "number")
-	{
-		td.appendChild(getSpan(" "+LowerWarn+"-"+UpperWarn,"warnInfo"));
-	}else if(typeof LowerWarn ==="number")
-	{
-		td.appendChild(getSpan(" >"+LowerWarn,"warnInfo"));
-	}
-	else if(typeof UpperWarn === "number")
-	{
-		td.appendChild(getSpan(" <"+UpperWarn,"warnInfo"));
-	}
-	tr.appendChild(getSpacingTD());
-	tr.appendChild(td);
-	tr.appendChild(getSpacingTD());
-	for(i=0;i<8;i++){
-		tr.appendChild(getTD(DataArray[i],LowerWarn,UpperWarn));	
-	}
-	tr.appendChild(getSpacingTD());
-	for(i=8;i<16;i++){
-		tr.appendChild(getTD(DataArray[i],LowerWarn,UpperWarn));	
-	}
-	tr.appendChild(getSpacingTD());
-	for(i=16;i<24;i++){
-		tr.appendChild(getTD(DataArray[i],LowerWarn,UpperWarn));	
-	}
-	tr.appendChild(getSpacingTD());
+		var td =  getComponent('td',"td_FirstColumn");
+		td.appendChild(getComponent('span',"",fieldName));
+		td.appendChild(getComponent('span',"fade",Unit));
+		if(typeof LowerWarn ==="number" && typeof UpperWarn === "number")
+		{
+			td.appendChild(getComponent('span',"warnInfo"," "+LowerWarn+"-"+UpperWarn));
+		}else if(typeof LowerWarn ==="number")
+		{
+			td.appendChild(getComponent('span',"warnInfo"," >"+LowerWarn));
+		}
+		else if(typeof UpperWarn === "number")
+		{
+			td.appendChild(getComponent('span',"warnInfo"," <"+UpperWarn));
+		}
+		tr.appendChild(getSpacingTD());
+		tr.appendChild(td);
+		tr.appendChild(getSpacingTD());
+
+		var dataOutput = generateDataOutput(DataArray);
+		for(i=0;i<8;i++){
+			tr.appendChild(getTD(dataOutput[i],LowerWarn,UpperWarn));	
+		}
+		tr.appendChild(getSpacingTD());
+		for(i=8;i<16;i++){
+			tr.appendChild(getTD(dataOutput[i],LowerWarn,UpperWarn));	
+		}
+		tr.appendChild(getSpacingTD());
+		for(i=16;i<24;i++){
+			tr.appendChild(getTD(dataOutput[i],LowerWarn,UpperWarn));	
+		}
+		tr.appendChild(getSpacingTD());
+
 	return tr;
+}
+
+function generateDataOutput(DataArray)
+{
+	var dataOutput = DataArray;
+
+	for(var i = 0; i<24; i++)
+	{
+		
+	}
+
+	return dataOutput;
 }
 
 function getTD(value, L,U)
@@ -139,34 +153,7 @@ function getFirstRow()
 	return tr;
 }
 
-function getSpacingTD()
-{
-	var td = document.createElement('td');
-	td.setAttribute("class","tdSpacing_TPRtable");
-	return td;
-}
 
-function getSpacingRow()
-{	
-	var tr = document.createElement('tr');
-	tr.setAttribute("class","tr_spacing");
-	return tr;
-}
-
-function getSpan(content,classname){
-	if(classname=="")
-	{
-		var	sp=document.createElement('span');
-		sp.innerHTML=content;
-		return sp;
-	}else
-	{
-		var	sp=document.createElement('span');
-		sp.setAttribute('class',classname);
-		sp.innerHTML=content;
-		return sp;
-	}
-}
 
 function generateMAP(){
 
