@@ -1,5 +1,3 @@
-
-
  function ABDataProcess(){
  	var table =document.getElementById("abtable");
 	table.innerHTML="";
@@ -8,7 +6,7 @@
 
 function getABTable()
 {
-	var table = document.createElement('table');
+	var table = getComponent('table');
 	table.appendChild(getSpacingRow());
 	table.appendChild(printRowAB("A-B,自回","(次)",ABeventSelfRecovered));
 	table.appendChild(printRowAB("A-B,需處理","(次)",ABeventManaged,0,-1));
@@ -18,57 +16,26 @@ function getABTable()
 
 function printRowAB(fieldName, Unit, DataArray, LowerWarn, UpperWarn)
 {
-	var tr = document.createElement('tr');
+	var tr = getComponent('tr');
 	
-	td =  document.createElement('td');
-	td.setAttribute("class","td_FirstColumn");
-	td.appendChild(getSpan(fieldName,""));
-	td.appendChild(getSpan(Unit,"fade"));
-	tr.appendChild(getSpacingTD_AB());
-	tr.appendChild(td);
-	tr.appendChild(getSpacingTD_AB());
-	for(i=0;i<8;i++){
-		tr.appendChild(getTD_AB(DataArray[i], LowerWarn, UpperWarn));	
-	}
-	tr.appendChild(getSpacingTD_AB());
-	for(i=8;i<16;i++){
-		tr.appendChild(getTD_AB(DataArray[i], LowerWarn, UpperWarn));	
-	}
-	tr.appendChild(getSpacingTD_AB());
-	for(i=16;i<24;i++){
-		tr.appendChild(getTD_AB(DataArray[i], LowerWarn, UpperWarn));	
-	}
-	tr.appendChild(getSpacingTD_AB());
-	return tr;
-}
-
-function getTD_AB(value, L,U)
-{
-	td =  document.createElement('td');		
-
-	if(typeof value === "number" && value !=0)
-	{
-		var warn ="";
-		if( (typeof L ==="number" && value<L) ||
-			(typeof U === "number" && value >U) )
-		{
-			warn="warn";
+	var td = getComponent('td',"td_FirstColumn_AB");
+		td.appendChild(getSpan(fieldName,""));
+		td.appendChild(getSpan(Unit,"fade"));
+		tr.appendChild(getSpacingTD());
+		tr.appendChild(td);
+		tr.appendChild(getSpacingTD());
+		for(i=0;i<8;i++){
+			tr.appendChild(getTDwithData(DataArray[i],"td_Data_AB", LowerWarn, UpperWarn));	
 		}
-
-		input=value;
-		td.setAttribute("class","tdInTable2");
-		td.appendChild(getSpan(value,warn));
-	}else
-	{
-		td.setAttribute("class","tdInTableEmpty2");
-		td.appendChild(getSpan("",""));
-	}
-	return td;
-}
-
-function getSpacingTD_AB()
-{
-	var td = document.createElement('td');
-	td.setAttribute("class","tdSpacing_ABtable");
-	return td;
+		tr.appendChild(getSpacingTD());
+		for(i=8;i<16;i++){
+			tr.appendChild(getTDwithData(DataArray[i], "td_Data_AB", LowerWarn, UpperWarn));	
+		}
+		tr.appendChild(getSpacingTD());
+		for(i=16;i<24;i++){
+			tr.appendChild(getTDwithData(DataArray[i], "td_Data_AB", LowerWarn, UpperWarn));	
+		}
+	
+	tr.appendChild(getSpacingTD());
+	return tr;
 }

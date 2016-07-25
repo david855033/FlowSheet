@@ -10,6 +10,13 @@ body{
 }
 table{overflow: hidden; }
 td{overflow: hidden;}
+
+/*span 警告字體*/
+.warn{
+	font-weight: bolder;
+	color:rgb(255,0,0);
+}
+
 /*標頭底色*/
 .header{
 	background-color: #FFFFFF;
@@ -60,7 +67,6 @@ td{overflow: hidden;}
 	color:white;
 	padding:10px;
 }
-
 .navigatorContainer{
 	margin-left:10px;
 }
@@ -92,140 +98,110 @@ td{overflow: hidden;}
 	box-shadow: 5px 5px 5px #444444;
 	float:left;
 }
+
 /*TPR table之背景色*/
 .TPRtable{
 	background-color:#7BD979;
 	width:100%;
 }
+/*TPR 第一欄的顏色設定*/
+.td_FirstColumn_TPR{
+	width:120px;
+	height: 25px;
+	background-color: rgb(209,242,208);
+}
+/*TPR 第一列的顏色設定*/
+.td_FirstRow_TPR {
+	width: 37.5px;
+	text-align: center;
+	height: 25px;
+	background-color: rgb(209,242,208);
+}
+/*TPR 標題欄 標註上限下限之字體*/
+.warnInfo_TPR{
+	font-size: 0.8em;
+	color:rgb(50,150,30);
+}
+/*TPR含數值的格子*/
+.td_Data_TPR {
+	width: 37.5px;
+	text-align: center;
+	height: 25px;
+	background-color: rgb(235,249,235);
+}
+/*TPR不含數值的格子*/
+.td_Data_TPR_Empty {
+	width: 37.5px;
+	text-align: center;
+	height: 25px;
+	background-color: rgb(176,232,175);
+}
+
 
 /*AB table之背景色設定*/
 .ABtable{
 	background-color:#DEB959;
 	width:100%;
 }
-
-.tdSpacing_ABtable{
-	background-color:#DEB959 ;
-	width: 1px  ;
+/*AB table第一欄*/
+.td_FirstColumn_AB{
+	width:120px;
+	height: 25px;
+	background-color: rgb(243,231,197);
 }
+/*AB含數值的格子*/
+.td_Data_AB {
+	width: 37.5px;
+	text-align: center;
+	height: 25px;
+	background-color: rgb(250,245,230);
+}
+/*AB不含數值的格子*/
+.td_Data_AB_Empty {
+	width: 37.5px;
+	text-align: center;
+	height: 25px;
+	background-color: rgb(253,213,155);
+}
+
+/*IO table之背景色設定*/
 .IO_table{
 	background-color:#7BBBBB;
 	width:1150px;
-	height: 100%;
 	float:left;
 	box-shadow: 5px 5px 5px #444444;
 }
-.tdSpacing_IO{
-	background-color:#7BBBBB ;
-	width: 1px  ;	
-}
-
-
-.td_FirstColumn{
+/*IO table第一欄*/
+.td_FirstColumn_IO{
 	width:120px;
 	height: 25px;
-	background-color: rgba(255,255,255,0.65);
+	background-color: rgb(209,231,231);
 }
-.tdInFirstRow {
+/*IO 含數值的格子*/
+.td_Data_IO {
 	width: 37.5px;
 	text-align: center;
 	height: 25px;
-	background-color: rgba(255,255,255,0.65);
+	background-color: rgb(235,245,245);
 }
-
-
-.tdInTable1 {
+/*IO 不含數值的格子*/
+.td_Data_IO_Empty {
 	width: 37.5px;
 	text-align: center;
 	height: 25px;
-	background-color: rgba(255,255,255,0.85);
-}
-
-.tdInTableEmpty1 {
-	width: 37.5px;
-	text-align: center;
-	height: 25px;
-	background-color: rgba(255,255,255,0.4);
-}
-
-.tdInTable2 {
-	width: 37.5px;
-	text-align: center;
-	height: 25px;
-	background-color: rgba(255,255,255,0.85);
-}
-
-.tdInTableEmpty2 {
-	width: 37.5px;
-	text-align: center;
-	height: 25px;
-	background-color: rgba(255,255,255,0.4);
-}
-
-.tdInTable3 {
-	width: 37.5px;
-	text-align: center;
-	height: 25px;
-	background-color: rgba(255,255,255,0.85);
-}
-
-.tdInTableEmpty3 {
-	width: 37.5px;
-	text-align: center;
-	height: 25px;
-	background-color: rgba(255,255,255,0.4);
-}
+	background-color: rgb(176,214,214);
+		}
 
 
-
-
-
-.event{
-	background-color:#84B4BF;
-	width:270px;
-	height: 365px;
-	float:left;
-	margin-left: 20px;
-	margin-bottom: 10px;
-	box-shadow: 5px 5px 5px #444444;
-	overflow-y:scroll;
-}
-.tdSpacing_TPRtable_event{
-	background-color:#84B4BF ;
-	width: 0px  ;
-}
-.td_FirstColumn_event{
-	width:50px;
-	height: 25px;
-	text-align: center;
-	background-color: rgba(255,255,255,0.5);
-}
-.tdInFirstRow_event {
-	width: 220px;
-	text-align: center;
-	height: 25px;
-	background-color: rgba(255,255,255,0.5);
-}
-.tdInTable_event {
-	text-align: center;
-	background-color: rgba(255,255,255,0.8);
-	padding-top: 4px;
-	padding-bottom: 4px;
-	font-size:0.9em;
-}
-
-
-
-.IO_content{
-	margin-bottom: 20px;
-}
-
-.IO-detail{
+/*右邊輸入輸出加總區域寬度(擺放卡片的空間)*/
+.IO_Cards{
 	width:270px;
 	float:left;
 	margin-left:20px;
 }
 
+
+/*一張卡片的大小、顏色設定*/
 .IOCard{
 	width: 270px;
 	height:100px ;
@@ -233,23 +209,20 @@ td{overflow: hidden;}
 	margin-bottom: 5px;
 	box-shadow: 5px 5px 5px #444444;
 }
-.TotalIOCard{
+.IOCard_Total{
 	width: 270px;
 	height:120px ;
 	background-color:#3F5765;
-	margin-bottom: 5px;
 	box-shadow: 5px 5px 5px #444444;
 }
 
-
-
-
+/*顯示卡片名稱的欄位*/
 .shift{
 	width: 25px;
 	height: 100px;
 	float:left;
 }
-.shifttotal{
+.shift_Total{
 	width: 25px;
 	height: 120px;
 	padding-top: 10px;
@@ -257,18 +230,73 @@ td{overflow: hidden;}
 	float:left;
 	font-weight: bolder;
 }
-
+.tr_shiftSpacing{
+	height: 25px;
+}
+/*裝IO細項欄位(IO卡中間的六小格) 設定寬度*/
 .IOContainer{
 	width: 180px;
 	height: 100%;
 	float:left;
 }
-.IOContainerTotal{
-	width: 180px;
-	height: 100%;
+.IOInnerCard{
+	background: rgb(222,203,255);
+	height: 50px;
+	width: 50px;
+	float:left;
+}
+.IOInnerCard_Wide{
+	background: rgb(228,212,255);
+	height: 50px;
+	width: 80px;
+	float:left;
+}
+.IOInnerCard_Total{
+	background: rgb(31,43,50);
+	height: 60px;
+	width: 50px;
+	float:left;
+}
+.IOInnerCard_Wide_Total{
+	background: rgb(25,35,40);
+	height: 60px;
+	width: 80px;
 	float:left;
 }
 
+/*IO卡片字體設定*/
+.IOInnerSmall{
+	line-height: 10px;
+	font-size: 0.8em;
+	color:rgb(100,100,100);
+}
+.IOInnerBig{
+	font-size: 1.3em;
+	font-weight: border;
+}
+.IOInnerBigWarn{
+	font-size: 1.3em;
+	font-weight: border;
+	color:rgb(255,0,0);
+}
+.IOInnerSmallTotal{
+	line-height: 15px;
+	font-size: 0.8em;
+	color:rgb(180,180,180);
+}
+.IOInnerBigTotal{
+	font-size: 1.3em;
+	color:#FFFFFF;
+	font-weight: border;
+}
+.IOInnerBigTotalWarn{
+	font-size: 1.3em;
+	color:#FFFFFF;
+	font-weight: border;
+	color:rgb(255,150,0);
+}
+
+/*IO加總 欄位大小*/
 .IOBalance{
 	height: 100%;
 	width: 65px;
@@ -283,105 +311,130 @@ td{overflow: hidden;}
 	font-size: 1.2em;
 	text-align: center;
 }
-
-.IOInnerCard{
-	background: rgba(255,255,255,0.4);
-	height: 50px;
-	width: 50px;
-	float:left;
-}
-.IOInnerCardWide{
-	background: rgba(255,255,255,0.5);
-	height: 50px;
-	width: 80px;
-	float:left;
-}
-.IOInnerCardTotal{
-	background: rgba(0,0,0,0.5);
-	height: 60px;
-	width: 50px;
-	float:left;
-}
-.IOInnerCardWideTotal{
-	background: rgba(0,0,0,0.6);
-	height: 60px;
-	width: 80px;
-	float:left;
-}
-
-.IOInnerSmall{
-	font-size: 0.8em;
-	color:rgb(100,100,100);
-	text-align: center;
-}
-.IOInnerBig{
-	font-size: 1.2em;
-	font-weight: border;
-	text-align: center;
-}
-.IOInnerBigWarn{
-	font-size: 1.2em;
-	font-weight: border;
-	text-align: center;
-	color:rgb(255,0,0);
-}
-.IOInnerSmallTotal{
-	font-size: 0.8em;
-	color:rgb(180,180,180);
-	text-align: center;
-}
-.IOInnerBigTotal{
-	font-size: 1.2em;
-	color:#FFFFFF;
-	font-weight: border;
-	text-align: center;
-}
-.IOInnerBigTotalWarn{
-	font-size: 1.2em;
-	color:#FFFFFF;
-	font-weight: border;
-	text-align: center;
-	color:rgb(255,150,0);
-}
-
-
-.tr_shiftSpacing{
-	height: 30px;
-}
-
-
 .tr_IObalancespacing{
 	height: 25px;
 }
 
 
-
-.IO-detail div>table
-{
-	height: 100%;
-	width: 100%;
-	border-collapse: collapse;
+/*事件欄位*/
+.event{
+	background-color:#84B4BF;
+	width:270px;
+	height: 365px;
+	float:left;
+	margin-left: 20px;
+	margin-bottom: 10px;
+	box-shadow: 5px 5px 5px #444444;
+	overflow-y:scroll;
+}
+/*首欄寬度*/
+.td_FirstColumn_event{
+	width:50px;
+	height: 25px;
+	text-align: center;
+	background-color: rgb(194,218,223);
+}
+/*第二欄寬度*/
+.tdInFirstRow_event {
+	width: 220px;
+	text-align: center;
+	height: 25px;
+	background-color: rgb(194,218,223);
+}
+.tdInTable_event {
+	text-align: center;
+	background-color: rgb(230,240,242);
+	padding-top: 4px;
+	padding-bottom: 4px;
+	font-size:0.9em;
 }
 
+/*下方區域空間*/
 
 .bottom-content{
 	width:100%;
 	margin-top: 10px;
 }
 
+
+/*左方欄(呼吸器及ABG)*/
 .bottomLeft{
+	width:710px;
+	margin-right:10px;
+	float:left;
+}
+
+/*ventilator table*/
+.ventilator_table{
+	background-color: #75E243;
+	box-shadow: 5px 5px 5px #444444;
+	margin-bottom:20px;
+}
+.ventilator_table_innerTD1
+{
+	width: 80px;
+	text-align: center;
+	height: 25px;
+	background-color: #b3ef98;
+}
+.ventilator_table_innerTD2
+{
+	width: 150px;
+	text-align: center;
+	height: 25px;
+	background-color: #b3ef98;
+}
+.ventilator_table_innerTD3
+{
+	width: 460px;
+	text-align: center;
+	height: 25px;
+	background-color: #b3ef98;
+}
+.ventilator_table_Content_TD
+{	
+	text-align: center;
+	height: 25px;
+	background-color: #e3f9d9;
+}
+
+
+/*ABG table*/
+.ABG_table{
+	background-color: #2ADD75;
+	box-shadow: 5px 5px 5px #444444;
+}
+.td_spacing_ABG_table{
+	width:1px;
+	background-color: #2ADD75;
+}
+.ABG_table_TD_Time{
+	width: 80px;
+	text-align: center;
+	height: 25px;
+	background-color: #95eeba;
+}
+.ABG_table_TD_Element{
+	width: 42px;
+	text-align: center;
+	height: 25px;
+	background-color: #95eeba;
+}
+.ABG_table_TD_Content{
+	text-align: center;
+	height: 25px;
+	background-color: #c0f5d6;
+}
+
+
+/*右方欄(Labdata)*/
+.bottomRight{
 	width:710px;
 	float:left;
 	margin-left:10px;
 }
-.bottomLeft table{
+.bottomRight table{
 	border-collapse: collapse;
-}
-.bottomRight{
-	width:710px;
-	margin-right:10px;
-	
-	float:left;
 }
 
 .DateInfo{
@@ -389,8 +442,6 @@ td{overflow: hidden;}
 	line-height: 10px;
 	color: rgb(150,150,150);
 }
-
-
 .glucoseCard{
 	width:170px;
 	height: 110px;
@@ -637,62 +688,6 @@ td{overflow: hidden;}
 	font-weight: bold;
 }
 
-
-
-
-.ventilator_table{
-	background-color: #75E243;
-	box-shadow: 5px 5px 5px #444444;
-	margin-bottom:20px;
-}
-.td_spacing_ventilator_table{
-	width:1px;
-	background-color: #75E243;
-}
-.ventilator_table_innerTD1
-{
-	width: 80px;
-	text-align: center;
-	height: 25px;
-	background-color: rgba(255,255,255,0.45);
-}
-.ventilator_table_innerTD2
-{
-	width: 150px;
-	text-align: center;
-	height: 25px;
-	background-color: rgba(255,255,255,0.45);
-}
-.ventilator_table_innerTD3
-{
-	width: 460px;
-	text-align: center;
-	height: 25px;
-	background-color: rgba(255,255,255,0.45);
-}
-
-.ABG_table{
-	background-color: #2ADD75;
-	box-shadow: 5px 5px 5px #444444;
-}
-.td_spacing_ABG_table{
-	width:1px;
-	background-color: #2ADD75;
-}
-.ABG_table_innterTD1{
-	width: 80px;
-	text-align: center;
-	height: 25px;
-	background-color: rgba(255,255,255,0.45);
-}
-.ABG_table_innterTD{
-	width: 42px;
-	text-align: center;
-	height: 25px;
-	background-color: rgba(255,255,255,0.6);
-}
-
-
 .clear{
 	clear:both;
 }
@@ -715,15 +710,8 @@ td{overflow: hidden;}
 	color:rgb(0,20,80);	
 	font-size: 0.9em;
 }
-.warnInfo{
-	font-size: 0.8em;
-	color:rgb(50,150,30);
-}
 
-.warn{
-	font-weight: bolder;
-	color:rgb(255,0,0);
-}
+
 .warn2{
 	font-weight: bolder;
 	color:rgb(255,150,0);
@@ -731,3 +719,4 @@ td{overflow: hidden;}
 .warn3{
 	color:rgb(255,0,0);
 }
+

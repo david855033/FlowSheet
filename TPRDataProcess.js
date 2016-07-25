@@ -1,7 +1,6 @@
-var MAP = [];
 function TPRDataProcess()
 {
-	generateMAP();
+	//generateMAP();
 	var TPRTable =document.getElementById("tprtable");
 	TPRTable.innerHTML="";
 	TPRTable.appendChild(getTable());
@@ -11,160 +10,178 @@ function getTable()
 {
 	var table = getComponent('table');
 	table.appendChild(getSpacingRow());
-	table.appendChild(getFirstRow());
-	table.appendChild(printRow("箱溫","('C)",incubatorTemp));
-	table.appendChild(printRow("濕度","(%)",incubatorHumidity));
+	table.appendChild(getFirstRowTPR());
+	table.appendChild(printRowTPR("箱溫","('C)",incubatorTemp));
+	table.appendChild(printRowTPR("濕度","(%)",incubatorHumidity));
 	table.appendChild(getSpacingRow());
 
 	if(!(typeof bodyTemperatureWarn_U ==="number")) bodyTemperatureWarn_U=38;
 	if(!(typeof bodyTemperatureWarn_L ==="number")) bodyTemperatureWarn_L=36;
-	table.appendChild(printRow("體溫","('C)",bodyTemperature,bodyTemperatureWarn_L,bodyTemperatureWarn_U));
+	table.appendChild(printRowTPR("體溫","('C)",bodyTemperature,bodyTemperatureWarn_L,bodyTemperatureWarn_U));
 
 	if(!(typeof RespRateWarn_U ==="number")) RespRateWarn_U=80;
 	if(!(typeof RespRateWarn_L ==="number")) RespRateWarn_L=20;
-	table.appendChild(printRow("心率","(/min)",HeartRate));
+	table.appendChild(printRowTPR("心率","(/min)",HeartRate));
 	
 	if(!(typeof RespRateWarn_U ==="number")) RespRateWarn_U=80;
 	if(!(typeof RespRateWarn_L ==="number")) RespRateWarn_L=20;
-	table.appendChild(printRow("呼吸","(/min)",RespRate,RespRateWarn_L,RespRateWarn_U));
+	table.appendChild(printRowTPR("呼吸","(/min)",RespRate,RespRateWarn_L,RespRateWarn_U));
 	
 	if(!(typeof SaturationWarn_L ==="number")) SaturationWarn_L=85;
 	if(!(typeof SaturationWarn_U ==="number")) SaturationWarn_U=95;
-	table.appendChild(printRow("Sat","(%)",Saturation,SaturationWarn_L,SaturationWarn_U));
+	table.appendChild(printRowTPR("Sat","(%)",Saturation,SaturationWarn_L,SaturationWarn_U));
 	table.appendChild(getSpacingRow());
 	
 	if(!(typeof SBP_L ==="number")) SBP_L=45;
-	table.appendChild(printRow("SBP","(/mmHg)",SBP,SBP_L,SBP_U));
+	table.appendChild(printRowTPR("SBP","(/mmHg)",SBP,SBP_L,SBP_U));
 
-	table.appendChild(printRow("DBP","(/mmHg)",DBP,DBP_L,DBP_U));
+	table.appendChild(printRowTPR("DBP","(/mmHg)",DBP,DBP_L,DBP_U));
 	
 	if(!(typeof MAPWarn_L ==="number")) MAPWarn_L=35;
-	table.appendChild(printRow("MAP","(/mmHg)",MAP,MAPWarn_L,MAPWarn_U));
+	table.appendChild(printRowTPR("MAP","(/mmHg)",generateMAP(SBP,DBP),MAPWarn_L,MAPWarn_U));
 	
 	table.appendChild(getSpacingRow());
 	return table;
 }
 
-function printRow(fieldName, Unit, DataArray, LowerWarn, UpperWarn)
+//產生一列TPR表格
+function printRowTPR(fieldName, Unit, DataArray, LowerWarn, UpperWarn)
+{
+	var tr = getComponent('tr');
+		
+		tr.appendChild(getSpacingTD());
+
+			var td = getComponent('td', "td_FirstColumn_TPR");
+				td.appendChild(getComponent('span', "", fieldName));
+				td.appendChild(getComponent('span', "fade", Unit));
+				
+				var limittext ;
+				if(typeof LowerWarn ==="number" && typeof UpperWarn === "number")
+				{
+					limittext=" "+LowerWarn+"-"+UpperWarn;
+				}else if(typeof LowerWarn ==="number")
+				{
+					limittext=" >"+LowerWarn;
+				}
+				else if(typeof UpperWarn === "number")
+				{
+					limittext=" <"+UpperWarn;
+				}
+			td.appendChild(getComponent('span',"warnInfo",limittext));
+		tr.appendChild(td);
+		tr.appendChild(getSpacingTD());
+		var dataOutput = generateDataOutput(DataArray);
+		for(var i=0;i<8;i++){
+			tr.appendChild(getTDwithData(dataOutput[i],"td_Data_TPR",LowerWarn,UpperWarn));	
+		}
+		tr.appendChild(getSpacingTD());
+		for(var i=8;i<16;i++){
+			tr.appendChild(getTDwithData(dataOutput[i],"td_Data_TPR",LowerWarn,UpperWarn));	
+		}
+		tr.appendChild(getSpacingTD());
+		for(var i=16;i<24;i++){
+			tr.appendChild(getTDwithData(dataOutput[i],"td_Data_TPR",LowerWarn,UpperWarn));	
+		}
+
+		tr.appendChild(getSpacingTD());
+
+	return tr;
+}
+
+//產生第一列(時間及0~23)
+function getFirstRowTPR()
 {
 	var tr = getComponent('tr');
 	
-		var td =  getComponent('td',"td_FirstColumn");
-		td.appendChild(getComponent('span',"",fieldName));
-		td.appendChild(getComponent('span',"fade",Unit));
-		if(typeof LowerWarn ==="number" && typeof UpperWarn === "number")
-		{
-			td.appendChild(getComponent('span',"warnInfo"," "+LowerWarn+"-"+UpperWarn));
-		}else if(typeof LowerWarn ==="number")
-		{
-			td.appendChild(getComponent('span',"warnInfo"," >"+LowerWarn));
-		}
-		else if(typeof UpperWarn === "number")
-		{
-			td.appendChild(getComponent('span',"warnInfo"," <"+UpperWarn));
-		}
-		tr.appendChild(getSpacingTD());
+	tr.appendChild(getSpacingTD());
+	
+	var td = getComponent('td',"td_FirstColumn_TPR");
+		td.appendChild(getComponent('span',"","時間"));
+	tr.appendChild(td);
+	
+	tr.appendChild(getSpacingTD());
+	
+	for(i=0;i<8;i++){
+		var td = getComponent('td',"td_FirstRow_TPR");
+		td.appendChild(getComponent('span',"",i));
 		tr.appendChild(td);
-		tr.appendChild(getSpacingTD());
-
-		var dataOutput = generateDataOutput(DataArray);
-		for(i=0;i<8;i++){
-			tr.appendChild(getTD(dataOutput[i],LowerWarn,UpperWarn));	
-		}
-		tr.appendChild(getSpacingTD());
-		for(i=8;i<16;i++){
-			tr.appendChild(getTD(dataOutput[i],LowerWarn,UpperWarn));	
-		}
-		tr.appendChild(getSpacingTD());
-		for(i=16;i<24;i++){
-			tr.appendChild(getTD(dataOutput[i],LowerWarn,UpperWarn));	
-		}
-		tr.appendChild(getSpacingTD());
-
+	}
+	
+	tr.appendChild(getSpacingTD());
+	
+	for(i=8;i<16;i++){
+		var td = getComponent('td',"td_FirstRow_TPR");
+		td.appendChild(getComponent('span',"",i));
+		tr.appendChild(td);
+	}
+	
+	tr.appendChild(getSpacingTD());
+	
+	for(i=16;i<24;i++){
+		var td = getComponent('td',"td_FirstRow_TPR");
+		td.appendChild(getComponent('span',"",i));
+		tr.appendChild(td);
+	}
+	
+	tr.appendChild(getSpacingTD());
+	
 	return tr;
 }
 
+
+//將interface的資料轉成24小時的資料(若一小時有兩筆以上，選大的數字)
 function generateDataOutput(DataArray)
 {
-	var dataOutput = DataArray;
+	var dataOutput=[];
 
 	for(var i = 0; i<24; i++)
 	{
-		
+		var max="";
+		for(var x = 0;x< DataArray.length;x++)
+		{
+			if(DataArray[x].time.split(':')[0]==i)
+			{
+				if( DataArray[x].value > max) max = DataArray[x].value;
+			}
+		}
+		dataOutput[i] = max;
 	}
-
 	return dataOutput;
 }
 
-function getTD(value, L,U)
-{
-	td =  document.createElement('td');		
+function generateMAP(SBDDataArray,DBPDataArray){
 
-	if(typeof value === "number" && value !=0)
+	var MAP=[];
+	var SBPdataOutput=[];
+	var DPBdataOutput=[];
+	for(var i = 0; i<24; i++)
 	{
-		var warn ="";
-		if( (typeof L ==="number" && value<L) ||
-			(typeof U === "number" && value >U) )
+		var max="";
+		for(var x = 0;x< SBDDataArray.length;x++)
 		{
-			warn="warn";
+			if(SBDDataArray[x].time.split(':')[0]==i)
+			{
+				if( SBDDataArray[x].value > max) max = SBDDataArray[x].value;
+			}
 		}
-
-		input=value;
-		td.setAttribute("class","tdInTable1");
-		td.appendChild(getSpan(value,warn));
-	}else
-	{
-		td.setAttribute("class","tdInTableEmpty1");
-		td.appendChild(getSpan("",""));
-	}
-	return td;
-}
-function getFirstRow()
-{
-	var tr = document.createElement('tr');
-	
-	td =  document.createElement('td');
-	td.setAttribute("class","td_FirstColumn");
-	td.appendChild(getSpan("時間",""));
-	tr.appendChild(getSpacingTD());
-	tr.appendChild(td);
-	tr.appendChild(getSpacingTD());
-	for(i=0;i<8;i++){
-		td =  document.createElement('td');
-		td.setAttribute("class","tdInFirstRow");
-		td.appendChild(getSpan(i,""));
-		tr.appendChild(td);
-	}
-	tr.appendChild(getSpacingTD());
-	for(i=8;i<16;i++){
-		td =  document.createElement('td');
-		td.setAttribute("class","tdInFirstRow");
-		td.appendChild(getSpan(i,""));
-		tr.appendChild(td);
-	}
-	tr.appendChild(getSpacingTD());
-	for(i=16;i<24;i++){
-		td =  document.createElement('td');
-		td.setAttribute("class","tdInFirstRow");
-		td.appendChild(getSpan(i,""));
-		tr.appendChild(td);
-	}
-	tr.appendChild(getSpacingTD());
-	return tr;
-}
-
-
-
-function generateMAP(){
-
-	for(i=0;i<23;i++)
-	{
-		if(typeof SBP[i] === "number" && typeof DBP[i] === "number" )
+		SBPdataOutput[i] = max;
+		var max="";
+		for(var x = 0;x< DBPDataArray.length;x++)
 		{
-			MAP.push(Math.round(SBP[i]/3+DBP[i]*2/3));
-		}else
+			if(DBPDataArray[x].time.split(':')[0]==i)
+			{
+				if( DBPDataArray[x].value > max) max = DBPDataArray[x].value;
+			}
+		}
+		DPBdataOutput[i] = max;
+	}
+	for(var i=0;i<23;i++)
+	{
+		if(typeof SBPdataOutput[i] === "number" && typeof DPBdataOutput[i] === "number" )
 		{
-			MAP.push(null);
+			MAP.push({"time":i+":00","value":Math.round(SBPdataOutput[i]/3+DPBdataOutput[i]*2/3)});
 		}
 	}
+
+	return MAP;
 }

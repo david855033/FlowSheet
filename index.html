@@ -11,14 +11,14 @@
 	<script src="TPRDataProcess.js"></script>
 	<script src="ABDataProcess.js"></script>
 	<script src="IODataProcess.js"></script>
+	<script src="IOSummaryCard.js"></script>
 	<script src="eventProcess.js"></script>
 	<script src="ventilatorDataProcess.js"></script>
 	<script src="ABGDataProcess.js"></script>
 	<script src="labDataProcess.js"></script>
-	
+
 </head>
-<body onload="HeaderDataProcess(); TPRDataProcess(); ABDataProcess(); IODataProcess();eventProcess();
-	ventilatorProcess();ABGDataProcess();labDataProcess();">
+<body onload="HeaderDataProcess();TPRDataProcess(); ABDataProcess();IODataProcess();IOSummaryCard();eventProcess();ventilatorProcess();ABGDataProcess();labDataProcess();">
 <section>
 	<div ID="mainHeader" class="header">
 			<div class="clear"></div>
@@ -50,7 +50,7 @@
 		
 		</div>
 
-		<div id="idcards" class="IO-detail">
+		<div id="idcards" class="IO_Cards">
 	
 		</div>
 		<div class="clear"></div>
@@ -58,14 +58,14 @@
 
 
 	<div class="bottom-content">
-			<div class="bottomRight">
+			<div class="bottomLeft">
 				<div id="ventilatorDiv" class="ventilator_table">
 				</div>
 
 				<div id="ABGDiv" class="ABG_table">
 				</div>
 			</div>
-			<div class="bottomLeft">
+			<div class="bottomRight">
 			
 				<div class="glucoseCard">
 					<table class="glucoseTable">

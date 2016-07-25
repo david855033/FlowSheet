@@ -1,54 +1,42 @@
-
-
 function eventProcess()
 {
 	var eventdiv = document.getElementById("eventdiv");
 	eventdiv.innerHTML="";
-	var tb = document.createElement('table');
+	var tb = getComponent('table');
 		tb.appendChild(getSpacingRow());
 		tb.appendChild(getFirstRowEvent());
 		tb.appendChild(getSpacingRow());
-		for(i = 0 ; i < eventTime.length;i++)
+		for(i = 0 ; i < event_Array.length;i++)
 		{
-			tb.appendChild(getEventRow(eventTime[i],eventContent[i],eventWarn[i]));
+			tb.appendChild(getEventRow(event_Array[i]));
 		}
 		tb.appendChild(getSpacingRow());
 	eventdiv.appendChild(tb);
 }
 
-function getEventRow(time, content, warnIndex){
-	var warn="";
-	if(warnIndex==1) { warn="warn"; }	
-	var tr=document.createElement('tr');
-		tr.appendChild(getSpacingTD_event());
-
-		var td1= document.createElement('td');
-			td1.setAttribute('class',"tdInTable_event");
+function getEventRow(event){
+	var tr=getComponent('tr');
+		tr.appendChild(getSpacingTD());
+		var td1= getComponent('td',"tdInTable_event");
 			td1.align="center";
-			var sp1 = document.createElement('span');
-			sp1.innerHTML=time;
-			td1.appendChild(sp1);
+			td1.appendChild(getComponent('span',"",event.time));
 		tr.appendChild(td1);
 
-		tr.appendChild(getSpacingTD_event());
+		tr.appendChild(getSpacingTD());
 
-		var td2= document.createElement('td');
-			td2.setAttribute('class',"tdInTable_event");
+		var td2= getComponent('td',"tdInTable_event");
 			td2.align="center";
-			var sp2 = document.createElement('span');
-			sp2.setAttribute('class',warn);
-			sp2.innerHTML=content;
-			td2.appendChild(sp2);
+			td2.appendChild(getComponent('span',"",event.content));
 		tr.appendChild(td2);
 
-		tr.appendChild(getSpacingTD_event());
+		tr.appendChild(getSpacingTD());
 	return tr;
 }
 
 function getFirstRowEvent()
 {
 	var firstRow = document.createElement('tr');
-		firstRow.appendChild(getSpacingTD_event());
+		firstRow.appendChild(getSpacingTD());
 		
 		var td1= document.createElement('td');
 			td1.setAttribute('class',"td_FirstColumn_event");
@@ -58,7 +46,7 @@ function getFirstRowEvent()
 			td1.appendChild(sp1);
 		firstRow.appendChild(td1);
 		
-		firstRow.appendChild(getSpacingTD_event());
+		firstRow.appendChild(getSpacingTD());
 		
 		var td2= document.createElement('td');
 			td2.setAttribute('class',"tdInFirstRow_event");
@@ -66,13 +54,6 @@ function getFirstRowEvent()
 			td2.innerHTML="事件";
 		firstRow.appendChild(td2);
 		
-		firstRow.appendChild(getSpacingTD_event());
+		firstRow.appendChild(getSpacingTD());
 	return firstRow;
-}
-
-function getSpacingTD_event()
-{
-	var td = document.createElement('td');
-	td.setAttribute("class","tdSpacing_TPRtable_event");
-	return td;
 }

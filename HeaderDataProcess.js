@@ -44,7 +44,7 @@ function generateHeaderCard(s1,s2,s3){
 	var td1 = getComponent("id","smalltitle",s1);
 	var td2 = getComponent('td',"","")
 		var split= s2.split("+");
-		for(i = 0 ; i < split.length;i++)
+		for(var i = 0 ; i < split.length;i++)
 		{
 			if(i==0)
 			{

@@ -1,226 +1,248 @@
-
 function labDataProcess()
 {
-	glucoseData = document.getElementById("glucoseData_tr");
+	var emptyObject ={"value":"","date":"","time":""};
+	var glucoseData = document.getElementById("glucoseData_tr");
 	glucoseData.innerHTML="";
-	warn="";
-	if(lab_glucose>=150 || lab_glucose < 60) {warn="warn";}
-	glucoseData.appendChild(getTDandSpan(lab_glucose,"","glucoseMainWord",warn));
+	var warn="";
+	if(lab_glucose.value>=150 || lab_glucose.value < 60) {warn="warn";}
+	glucoseData.appendChild(getTDandSpan(lab_glucose.value,"","glucoseMainWord",warn));
 
-	glucoseTime = document.getElementById("glucoseTime_tr");
+	var glucoseTime = document.getElementById("glucoseTime_tr");
 	glucoseTime.innerHTML="";
-	glucoseTime.appendChild(getTDandSpan(getMonthDayTime(lab_glucose_time),"","DateInfo"));
+	glucoseTime.appendChild(
+		getTDandSpan(getMonthDay(lab_glucose.date)+" "+lab_glucose.time,"","DateInfo")
+		);
 
-	CBCData = document.getElementById("CBCData_tr");
+	var CBCData = document.getElementById("CBCData_tr");
 	CBCData.innerHTML="";
-	CBCData.appendChild(getTDandSpan(lab_WBC,"","CBCMainWord"));
+	CBCData.appendChild(getTDandSpan(lab_WBC.value,"","CBCMainWord"));
 	warn="";
 	if(lab_Hgb>=20 || lab_Hgb < 10) {warn="warn";}
-	td = getTDandSpan(lab_Hgb,"","CBCMainWord",warn);
+	var td = getTDandSpan(lab_Hgb.value,"","CBCMainWord",warn);
 	td.setAttribute("rowspan","2");
 	CBCData.appendChild(td);
-	td = getTDandSpan(Math.round(lab_PLT/1000)+"k","","CBCMainWord");
+	td = getTDandSpan(Math.round(lab_PLT.value/1000)+"k","","CBCMainWord");
 	td.setAttribute("rowspan","2");
 	CBCData.appendChild(td);
 
-	CBCData2 = document.getElementById("CBCData2_tr");
+	var CBCData2 = document.getElementById("CBCData2_tr");
 	CBCData2.innerHTML="";
-	CBCData2.appendChild(getTDandSpan(lab_Seg,"","CBCSubInfo"));
+	CBCData2.appendChild(getTDandSpan(lab_Seg.value,"","CBCSubInfo"));
 	
-
-	CBCTime = document.getElementById("CBCTime");
+	var CBCTime = document.getElementById("CBCTime");
 	CBCTime.innerHTML="";
-	CBCTime.appendChild(getTDandSpan(getMonthDayTime(lab_WBCTime),"","DateInfo"));
-	CBCTime.appendChild(getTDandSpan(getMonthDayTime(lab_HgbTime),"","DateInfo"));
-	CBCTime.appendChild(getTDandSpan(getMonthDayTime(lab_PLTTime),"","DateInfo"));
+	CBCTime.appendChild(getTDandSpan(getMonthDay(lab_WBC.date)+" "+lab_WBC.time,"","DateInfo"));
+	CBCTime.appendChild(getTDandSpan(getMonthDay(lab_Hgb.date)+" "+lab_Hgb.time,"","DateInfo"));
+	CBCTime.appendChild(getTDandSpan(getMonthDay(lab_PLT.date)+" "+lab_PLT.time,"","DateInfo"));
 
-	EleData = document.getElementById("EleData_tr");
+	var EleData = document.getElementById("EleData_tr");
 	EleData.innerHTML="";
 	warn="";
-	if(lab_Na>=145 || lab_Na < 135) {warn="warn";}
-	EleData.appendChild(getTDandSpan(lab_Na,"","EleMainWord",warn));
+	if(lab_Na.value>=145 || lab_Na.value < 135) {warn="warn";}
+	EleData.appendChild(getTDandSpan(lab_Na.value,"","EleMainWord",warn));
 	warn="";
-	if(lab_K>=6 || lab_K < 3) {warn="warn";}
-	EleData.appendChild(getTDandSpan(lab_K,"","EleMainWord",warn));
+	if(lab_K.value>=6 || lab_K.value < 3) {warn="warn";}
+	EleData.appendChild(getTDandSpan(lab_K.value,"","EleMainWord",warn));
 	warn="";
-	if(lab_Ca>=1.2 || lab_Ca < 1) {warn="warn";}
-	EleData.appendChild(getTDandSpan(lab_Ca,"","EleMainWord",warn));
+	if(lab_Ca.value>=1.2 || lab_Ca.value < 1) {warn="warn";}
+	EleData.appendChild(getTDandSpan(lab_Ca.value,"","EleMainWord",warn));
 	warn="";
-	if(lab_P>=6 || lab_P < 3) {warn="warn";}
-	EleData.appendChild(getTDandSpan(lab_P,"","EleMainWord",warn));
+	if(lab_P.value>=6 || lab_P.value < 3) {warn="warn";}
+	EleData.appendChild(getTDandSpan(lab_P.value,"","EleMainWord",warn));
 	warn="";
-	if(lab_Mg>=4 || lab_Mg < 2) {warn="warn";}
-	EleData.appendChild(getTDandSpan(lab_Mg,"","EleMainWord",warn));
+	if(lab_Mg.value>=4 || lab_Mg.value < 2) {warn="warn";}
+	EleData.appendChild(getTDandSpan(lab_Mg.value,"","EleMainWord",warn));
 	
-	EleTime	= document.getElementById("EleTime_tr");
+	var EleTime	= document.getElementById("EleTime_tr");
 	EleTime.innerHTML="";
-	EleTime.appendChild(getTDandSpan(getMonthDayTime(lab_NaTime),"","DateInfo"));
-	EleTime.appendChild(getTDandSpan(getMonthDayTime(lab_KTime),"","DateInfo"));
-	EleTime.appendChild(getTDandSpan(getMonthDayTime(lab_CaTime),"","DateInfo"));
-	EleTime.appendChild(getTDandSpan(getMonthDayTime(lab_PTime),"","DateInfo"));
-	EleTime.appendChild(getTDandSpan(getMonthDayTime(lab_MgTime),"","DateInfo"));
+	EleTime.appendChild(getTDandSpan(getMonthDay(lab_Na.date)+" "+lab_Na.time,"","DateInfo"));
+	EleTime.appendChild(getTDandSpan(getMonthDay(lab_K.date)+" "+lab_K.time,"","DateInfo"));
+	EleTime.appendChild(getTDandSpan(getMonthDay(lab_Ca.date)+" "+lab_Ca.time,"","DateInfo"));
+	EleTime.appendChild(getTDandSpan(getMonthDay(lab_Mg.date)+" "+lab_Mg.time,"","DateInfo"));
+	EleTime.appendChild(getTDandSpan(getMonthDay(lab_P.date)+" "+lab_P.time,"","DateInfo"));
 
-	CRPData = document.getElementById("CRPData_tr");
+	var CRPData = document.getElementById("CRPData_tr");
 	CRPData.innerHTML="";
 	warn="";
-	if(lab_CRP>=0.5) {warn="warn";}
-	CRPData.appendChild(getTDandSpan(lab_CRP,"","CRPMainWord",warn));
+	if(lab_CRP.value>=0.5) {warn="warn";}
+	CRPData.appendChild(getTDandSpan(lab_CRP.value,"","CRPMainWord",warn));
 
-	CRPTime = document.getElementById("CRPTime_tr");
+	var CRPTime = document.getElementById("CRPTime_tr");
 	CRPTime.innerHTML="";
-	CRPTime.appendChild(getTDandSpan(getMonthDay(lab_CRPTime),"","DateInfo"));
+	CRPTime.appendChild(getTDandSpan(getMonthDay(lab_CRP.date)+" "+lab_CRP.time,"","DateInfo"));
 
-	PCTData = document.getElementById("PCTData_tr");
+	var PCTData = document.getElementById("PCTData_tr");
 	PCTData.innerHTML="";
 	warn="";
-	if(lab_PCT>=0.5) {warn="warn";}
-	PCTData.appendChild(getTDandSpan(lab_PCT,"","CRPMainWord",warn));
+	if(lab_PCT.value>=0.5) {warn="warn";}
+	PCTData.appendChild(getTDandSpan(lab_PCT.value,"","CRPMainWord",warn));
 
-	PCTTime = document.getElementById("PCTTime_tr");
+	var PCTTime = document.getElementById("PCTTime_tr");
 	PCTTime.innerHTML="";
-	PCTTime.appendChild(getTDandSpan(getMonthDay(lab_PCTTime),"","DateInfo"));
+	PCTTime.appendChild(getTDandSpan(getMonthDay(lab_PCT.date),"","DateInfo"));
 
-	Abxname = document.getElementById("abxname_tr");
+	var Abxname = document.getElementById("abxname_tr");
 	Abxname.innerHTML="";
-	for(x = 0; x<CurrentABX.length && x<3;x++)
+	for(var x = 0; x<Abx_Array.length && x<3;x++)
 	{
-		Abxname.appendChild(getTDandSpan(CurrentABX[x],"","AbxMainWord"));
+		Abxname.appendChild(getTDandSpan(Abx_Array[x].name,"","AbxMainWord"));
 	}
-	if(CurrentABX.length>3)
+	if(Abx_Array.length>3)
 	{
 		Abxname.appendChild(getTDandSpan("...","","AbxMainWord"));
 	}
 
-	Abxdose = document.getElementById("abxdose_tr");
+	var Abxdose = document.getElementById("abxdose_tr");
 	Abxdose.innerHTML="";
-	for(x = 0; x<CurrentABX.length && x<3;x++)
+	for(var x = 0; x< Abx_Array.length && x<3;x++)
 	{
-		Abxdose.appendChild(getTDandSpan(CurrentDose[x],"","DateInfo"));
+		Abxdose.appendChild(getTDandSpan(Abx_Array[x].dosage + " " +Abx_Array[x].frequency ,"","DateInfo"));
 	}
 
-	renalData = document.getElementById("renal_tr");
+	var renalData = document.getElementById("renal_tr");
 	renalData.innerHTML="";
 	warn="";
-	if(lab_BUN>20) {warn="warn";}
-	renalData.appendChild(getTDandSpan(lab_BUN,"RenalMainWord","",warn));
-	if(lab_Cr>=1) {warn="warn";}
-	renalData.appendChild(getTDandSpan(lab_Cr,"RenalMainWord","",warn));
+	if(lab_BUN.value>20) {warn="warn";}
+	renalData.appendChild(getTDandSpan(lab_BUN.value,"RenalMainWord","",warn));
 
-	renalTime = document.getElementById("renaltime_tr");
+	if(lab_Cr.value>=1) {warn="warn";}
+	renalData.appendChild(getTDandSpan(lab_Cr.value,"RenalMainWord","",warn));
+
+	var renalTime = document.getElementById("renaltime_tr");
 	renalTime.innerHTML="";
-	renalTime.appendChild(getTDandSpan(getMonthDay(lab_BUNTime),"","DateInfo"));
-	renalTime.appendChild(getTDandSpan(getMonthDay(lab_CrTime),"","DateInfo"));
+	renalTime.appendChild(getTDandSpan(getMonthDay(lab_BUN.date),"","DateInfo"));
+	renalTime.appendChild(getTDandSpan(getMonthDay(lab_Cr.date),"","DateInfo"));
 
-	liverData = document.getElementById("liver_tr");
+	var liverData = document.getElementById("liver_tr");
 	liverData.innerHTML="";
 	warn="";
-	if(lab_ALT>=50) {warn="warn";}
-	liverData.appendChild(getTDandSpan(lab_ALT,"LiverMainWord","",warn));
-	if(lab_AST>=50) {warn="warn";}
-	liverData.appendChild(getTDandSpan(lab_AST,"LiverMainWord","",warn));
+	if(lab_ALT.value>=50) {warn="warn";}
+	liverData.appendChild(getTDandSpan(lab_ALT.value,"LiverMainWord","",warn));
+	if(lab_AST.value>=50) {warn="warn";}
+	liverData.appendChild(getTDandSpan(lab_AST.value,"LiverMainWord","",warn));
 
-	liverTime = document.getElementById("livertime_tr");
+	var liverTime = document.getElementById("livertime_tr");
 	liverTime.innerHTML="";
-	liverTime.appendChild(getTDandSpan(getMonthDay(lab_ALTTime),"","DateInfo"));
-	liverTime.appendChild(getTDandSpan(getMonthDay(lab_ASTTime),"","DateInfo"));
+	liverTime.appendChild(getTDandSpan(getMonthDay(lab_ALT.date),"","DateInfo"));
+	liverTime.appendChild(getTDandSpan(getMonthDay(lab_AST.date),"","DateInfo"));
 
-	TBILTitle = document.getElementById("TBilTitle_tr");
+	var TBILTitle = document.getElementById("TBilTitle_tr");
 	TBILTitle.innerHTML="";
 	TBilTitle="TBil";
-	if(lab_MICROBILTime > lab_TBILTime)
+	if(compareDate(lab_MICROBIL.date, lab_TBIL.date, lab_MICROBIL.time, lab_TBIL.time))
 	{
-		TBilTitle="Micro Bili.";
+		TBilTitle = "Micro Bili.";
 	}
-	if(lab_TCBTime > lab_MICROBILTime)
+	if(compareDate(lab_TCB.date, lab_MICROBIL.date, lab_TCB.time, lab_MICROBIL.time))
 	{
-		TBilTitle="TCB";
+		TBilTitle = "TCB";
 	}
 	TBILTitle.appendChild(getTDandSpan(TBilTitle,"" ,"TbilTitle"));
 	TBILTitle.appendChild(getTDandSpan("D.Bil","" ,"TbilTitle"));
 
-	TBilData = document.getElementById("TBilData_tr");
+	var TBilData = document.getElementById("TBilData_tr");
 	TBilData.innerHTML="";
-	TBilToShow = lab_TBIL;
-	if(lab_MICROBILTime > lab_TBILTime)
+	TBilToShow = lab_TBIL.value;
+	if(compareDate(lab_MICROBIL.date, lab_TBIL.date, lab_MICROBIL.time, lab_TBIL.time))
 	{
-		TBilToShow = lab_MICROBIL;
+		TBilToShow = lab_MICROBIL.value;
 	}
-	if(lab_TCBTime > lab_MICROBILTime)
+	if(compareDate(lab_TCB.date, lab_MICROBIL.date, lab_TCB.time, lab_MICROBIL.time))
 	{
-		TBilToShow = lab_TCB;
+		TBilToShow = lab_TCB.value;
 	}
 	TBilData.appendChild(getTDandSpan(TBilToShow, "" ,"TbilMainWord"));
-	TBilData.appendChild(getTDandSpan(lab_DBIL, "" ,"TbilMainWord"));
+	TBilData.appendChild(getTDandSpan(lab_DBIL.value, "" ,"TbilMainWord"));
 
-	TBilTime = document.getElementById("TBilTime_tr");
+	var TBilTime = document.getElementById("TBilTime_tr");
 	TBilTime.innerHTML="";
-	TBilTimeToShow = lab_TCBTime;
-	if(lab_MICROBILTime > lab_TBILTime)
+	TBilTimeToShow = lab_TBIL.date;
+	if(compareDate(lab_MICROBIL.date, lab_TBIL.date, lab_MICROBIL.time, lab_TBIL.time))
 	{
-		TBilTimeToShow = lab_MICROBIL;
+		TBilTimeToShow = lab_MICROBIL.date;
 	}
-	if(lab_TCBTime > lab_MICROBILTime)
+	if(compareDate(lab_TCB.date, lab_MICROBIL.date, lab_TCB.time, lab_MICROBIL.time))
 	{
-		TBilTimeToShow = lab_TCB;
+		TBilTimeToShow = lab_TCB.date;
 	}
 	TBilTime.appendChild(getTDandSpan(getMonthDay(TBilTimeToShow), "" ,"DateInfo"));
-	TBilTime.appendChild(getTDandSpan(getMonthDay(lab_DBILTime), "" ,"DateInfo"));
+	TBilTime.appendChild(getTDandSpan(getMonthDay(lab_DBIL.date), "" ,"DateInfo"));
 
-	BoneMarkerData = document.getElementById("BoneMarkerData_tr");
+	var BoneMarkerData = document.getElementById("BoneMarkerData_tr");
 	BoneMarkerData.innerHTML="";
-	BoneMarkerData.appendChild(getTDandSpan(lab_ALKP,"","BoneMarkerMainWord"));
-	BoneMarkerData.appendChild(getTDandSpan(lab_TotalCa,"","BoneMarkerMainWord",""));
-	BoneMarkerData.appendChild(getTDandSpan(lab_LDH,"","BoneMarkerMainWord",""));
+	BoneMarkerData.appendChild(getTDandSpan(lab_ALKP.value,"","BoneMarkerMainWord"));
+	BoneMarkerData.appendChild(getTDandSpan(lab_TotalCa.value,"","BoneMarkerMainWord",""));
+	BoneMarkerData.appendChild(getTDandSpan(lab_LDH.value,"","BoneMarkerMainWord",""));
 
-	BoneMarkerTime = document.getElementById("BoneMarkerTime_tr");
+	var BoneMarkerTime = document.getElementById("BoneMarkerTime_tr");
 	BoneMarkerTime.innerHTML="";
-	BoneMarkerTime.appendChild(getTDandSpan(getMonthDay(lab_ALKPTime),"","DateInfo"));
-	BoneMarkerTime.appendChild(getTDandSpan(getMonthDay(lab_TotalCaTime),"","DateInfo"));
-	BoneMarkerTime.appendChild(getTDandSpan(getMonthDay(lab_LDHTime),"","DateInfo"));
+	BoneMarkerTime.appendChild(getTDandSpan(getMonthDay(lab_ALKP.date),"","DateInfo"));
+	BoneMarkerTime.appendChild(getTDandSpan(getMonthDay(lab_TotalCa.date),"","DateInfo"));
+	BoneMarkerTime.appendChild(getTDandSpan(getMonthDay(lab_LDH.date),"","DateInfo"));
 
-	AnemiaData = document.getElementById("AnemiaData_tr");
+	var AnemiaData = document.getElementById("AnemiaData_tr");
 	AnemiaData.innerHTML="";
-	AnemiaData.appendChild(getTDandSpan(lab_Iron,"","AnemiaMainWord",""));
-	AnemiaData.appendChild(getTDandSpan(lab_TIBC,"","AnemiaMainWord",""));
+	AnemiaData.appendChild(getTDandSpan(lab_Iron.value,"","AnemiaMainWord",""));
+	AnemiaData.appendChild(getTDandSpan(lab_TIBC.value,"","AnemiaMainWord",""));
 	var IronSAT="";
-	if(typeof lab_Iron ==="number" && typeof lab_TIBC ==="number" )
+	if(typeof lab_Iron.value ==="number" && typeof lab_TIBC.value ==="number" )
 	{
-		IronSAT = Math.round( lab_Iron/lab_TIBC * 1000)/10 +"%";	
+		IronSAT = Math.round(lab_Iron.value/lab_TIBC.value * 1000)/10 +"%";	
 	}
 	AnemiaData.appendChild(getTDandSpan(IronSAT,"","AnemiaMainWord",""));
-	AnemiaData.appendChild(getTDandSpan(lab_Ferritin,"","AnemiaMainWord",""));
+	AnemiaData.appendChild(getTDandSpan(lab_Ferritin.value,"","AnemiaMainWord",""));
 
-	AnemiaTime = document.getElementById("AnemiaTime_tr");
+	var AnemiaTime = document.getElementById("AnemiaTime_tr");
 	AnemiaTime.innerHTML="";
-	AnemiaTime.appendChild(getTDandSpan(getMonthDay(lab_IronTime),"","DateInfo"));
-	AnemiaTime.appendChild(getTDandSpan(getMonthDay(lab_TIBCTime),"","DateInfo"));
+	AnemiaTime.appendChild(getTDandSpan(getMonthDay(lab_Iron.date),"","DateInfo"));
+	AnemiaTime.appendChild(getTDandSpan(getMonthDay(lab_TIBC.date),"","DateInfo"));
 	AnemiaTime.appendChild(getTDandSpan("","","DateInfo"));
-	AnemiaTime.appendChild(getTDandSpan(getMonthDay(lab_FerritinTime),"","DateInfo"));
+	AnemiaTime.appendChild(getTDandSpan(getMonthDay(lab_Ferritin.date),"","DateInfo"));
 }
 
-function getMonthDay(d)
+function compareDate(dateA, dateB, timeA, timeB)
 {
-	if(d=="")
+	if(!(dateA && dateB && timeA && timeB))
+	{
+		return false;
+	}
+	else if(dateA.split('-')[0] > dateB.split('-')[0])
+	{
+		return true;
+	}else if(dateA.split('-')[1] > dateB.split('-')[1])
+	{
+		return true;
+	}else if(dateA.split('-')[2] > dateB.split('-')[2])
+	{
+		return true;
+	}else if(timeA.split(':')[0] > timeB.split(':')[0])
+	{
+		return true;
+	}else if(timeA.split(':')[1] > timeB.split(':')[1])
+	{
+		return true;
+	}
+	return false;
+}
+
+function getMonthDay(s)
+{
+	if(s)
+	{
+		var d = new Date(s);	
+	}
+	else
 	{
 		return "";
 	}
-	result = (d.getMonth()+1) +"/"+d.getDate();
-	if(typeof result ==="string")
+	result = (d.getMonth()+1) + "/" + d.getDate();
+	if(typeof result === "string")
 	{
 		return result;
 	}else
 	{
 		return "";
 	}
-}
-
-function getMonthDayTime(d)
-{
-	if(d=="")
-	{
-		return "";
-	}
-	return (d.getMonth()+1) +"/"+d.getDate() + " " + d.getHours()+":"+d.getMinutes();;
 }
 
 
