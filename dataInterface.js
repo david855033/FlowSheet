@@ -64,7 +64,7 @@ var incubatorTemp =
 {"time":"7:20","value":29},
 {"time":"7:40","value":29},
 {"time":"8:00","value":29},
-{"time":"9:00","value":29},
+{"time":"9:00","value":29}
 ]
 //保溫箱濕度(%)(number)
 var incubatorHumidity =
@@ -80,7 +80,7 @@ var incubatorHumidity =
 {"time":"7:20","value":60},
 {"time":"7:40","value":60},
 {"time":"8:00","value":60},
-{"time":"9:00","value":60},
+{"time":"9:00","value":60}
 ]
 //體溫(number)
 var bodyTemperature =
@@ -96,7 +96,7 @@ var bodyTemperature =
 {"time":"7:20","value":41},
 {"time":"7:40","value":39},
 {"time":"8:00","value":37},
-{"time":"9:00","value":37},
+{"time":"9:00","value":37}
 ]
 //體溫警告上限(number)
 var bodyTemperatureWarn_U = 38;
@@ -117,7 +117,7 @@ var HeartRate =
 {"time":"7:20","value":140},
 {"time":"7:40","value":130},
 {"time":"8:00","value":120},
-{"time":"9:00","value":110},
+{"time":"9:00","value":110}
 ]
 //心跳速度警告上限(number)
 var HeartRateWarn_U;
@@ -137,7 +137,7 @@ var RespRate=
 {"time":"7:20","value":40},
 {"time":"7:40","value":30},
 {"time":"8:00","value":40},
-{"time":"9:00","value":60},
+{"time":"9:00","value":60}
 ]
 //呼吸速度上限(number)
 var RespRateWarn_U;
@@ -157,7 +157,7 @@ var Saturation =
 {"time":"7:20","value":88},
 {"time":"7:40","value":88},
 {"time":"8:00","value":90},
-{"time":"9:00","value":90},
+{"time":"9:00","value":90}
 ]
 //血氧濃度上限(number)
 var SaturationWarn_U;
@@ -177,7 +177,7 @@ var SBP =
 {"time":"7:20","value":57},
 {"time":"7:40","value":58},
 {"time":"8:00","value":60},
-{"time":"9:00","value":54},
+{"time":"9:00","value":54}
 ]
 //收縮壓上限
 var SBP_U;
@@ -197,7 +197,7 @@ var DBP =
 {"time":"7:20","value":38},
 {"time":"7:40","value":44},
 {"time":"8:00","value":44},
-{"time":"9:00","value":45},
+{"time":"9:00","value":45}
 ]
 //舒張壓上限
 var DBP_U;
@@ -232,7 +232,7 @@ event_Array=
 	{"time":"14:00", "content": "Apnea Sat:60%"},
 	{"time":"15:00", "content": "Bradycardia Sat:70%"},
 	{"time":"15:00", "content": "給藥 lasix 1mg"},
-	{"time":"15:00", "content": "給藥 ibuprofen 0.5ml"},
+	{"time":"15:00", "content": "給藥 ibuprofen 0.5ml"}
 ]
 
 
@@ -293,15 +293,15 @@ var drain_Array=
 
 //小便量,含Foley(尿管)以及自行解尿   array of num
 var urine =
-	[,,,,30,,,,22,,,,,20,,90,90,];
+	[,,,,30,,,,22,,,,,20,,90,90];
 
 //大便量以及性狀     array of string
 var stool = 
-	[,,,,,"MYP",,,,,,];
+	[,,,,,"MYP"];
 
 //是否有灌腸(S表示有肛門口刺激，E表示灌腸，D表示digital)   array of string
 var enema =
-	[,,,,"S",,,,"E",,,];
+	[,,,,"S",,,,"E"];
 
 //ventilator_Array 有三個欄位: time mode setting, 
 //預計由RT表單接入
@@ -311,7 +311,7 @@ ventilator_Array=
 	{"time":"10:00","mode":"IMV/OETT",
 	"setting":"FiO2:40%, PIP/PEEP:20/5mmHg, Rate:20/min"},
 	{"time":"15:00","mode":"IMV/OETT|ECMO",
-	"setting":"FiO2:40%, PIP/PEEP:20/5mmHg, Rate:20/min|FiO2=100%, Air flow=2L/min, RPM=2500, Flow=700ml/min"},
+	"setting":"FiO2:40%, PIP/PEEP:20/5mmHg, Rate:20/min|FiO2=100%, Air flow=2L/min, RPM=2500, Flow=700ml/min"}
 ]
 
 //ABG有兩個欄位(Time/Data)
@@ -321,7 +321,7 @@ ABG_Array =
 [
 	{"time":"10:00", "data":[7.25,60,40,24,-3,"50%",13.1,140,3.5,1.01,2.03,20,0.34]},
 	{"time":"12:00", "data":[7.25,60,40,24,-3,"50%"]},
-	{"time":"14:00", "data":[7.25,60,40,24,-3,"50%",13.1,140,3.5,1.01,2.03,20,0.34]},
+	{"time":"14:00", "data":[7.25,60,40,24,-3,"50%",13.1,140,3.5,1.01,2.03,20,0.34]}
 ]
 
 //lab data物件的欄位(查詢最近一筆資料),：
@@ -360,7 +360,7 @@ lab_PCT =
 Abx_Array =
 [
 	{"name":"Vanco","dosage":"20mg","frequency":"qd"},
-	{"name":"Mepem","dosage":"20mg","frequency":"q12h"},
+	{"name":"Mepem","dosage":"20mg","frequency":"q12h"}
 ]
 
 

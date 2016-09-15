@@ -33,12 +33,12 @@ function getTable()
 	table.appendChild(getSpacingRow());
 	
 	if(!(typeof SBP_L ==="number")) SBP_L=45;
-	table.appendChild(printRowTPR("SBP","(/mmHg)",SBP,SBP_L,SBP_U));
+	table.appendChild(printRowTPR("SBP","(mmHg)",SBP,SBP_L,SBP_U));
 
-	table.appendChild(printRowTPR("DBP","(/mmHg)",DBP,DBP_L,DBP_U));
+	table.appendChild(printRowTPR("DBP","(mmHg)",DBP,DBP_L,DBP_U));
 	
 	if(!(typeof MAPWarn_L ==="number")) MAPWarn_L=35;
-	table.appendChild(printRowTPR("MAP","(/mmHg)",generateMAP(SBP,DBP),MAPWarn_L,MAPWarn_U));
+	table.appendChild(printRowTPR("MAP","(mmHg)",generateMAP(SBP,DBP),MAPWarn_L,MAPWarn_U));
 	
 	table.appendChild(getSpacingRow());
 	return table;
