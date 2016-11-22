@@ -180,8 +180,25 @@ function getUrine(start, end){
 	return amount;	
 }
 
-function getUrinePerHour(start,end){
-	var amount = Math.round (getUrine(start,end)*10 / (end-start+1)/bodyWeight*1000)/10;
+function getUrinePerHour(start,end){	
+
+	if(end>validEnd) {end = validEnd;}
+	if(start<validStart) {start = validStart;}
+	
+
+	var validHour = end-start+1 ;
+
+	if(typeof bodyWeight !== "undefined" && bodyWeight)
+	{
+	var amount = Math.round (getUrine(start,end)*10 / (validHour)/bodyWeight*1000)/10;
+	}else if(typeof mostRecentBodyWeight !== "undefined" && mostRecentBodyWeight)
+	{
+	var amount = Math.round (getUrine(start,end)*10 / (validHour)/mostRecentBodyWeight*1000)/10;
+	}else
+	{
+	var amount = "-";
+	}
+	
 	return amount;
 }
 

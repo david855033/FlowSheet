@@ -1,5 +1,7 @@
 function eventProcess()
 {
+	if(typeof event_Array==="undefined") event_Array=[];
+	event_Array.sort(keysrt('time'));
 	var eventdiv = document.getElementById("eventdiv");
 	eventdiv.innerHTML="";
 	var tb = getComponent('table');

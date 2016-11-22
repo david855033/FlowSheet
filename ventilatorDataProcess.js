@@ -2,6 +2,10 @@ function ventilatorProcess()
 {
 	var ventilatorDiv = document.getElementById("ventilatorDiv");
 	ventilatorDiv.innerHTML="";
+	if(typeof ventilator_Array =="undefined")
+	{
+		ventilator_Array=[];
+	}
 	var tb = getComponent('table');
 		tb.appendChild(getSpacingRow());
 		tb.appendChild(getFirstRowVent());
@@ -9,6 +13,10 @@ function ventilatorProcess()
 		for(i = 0 ; i < ventilator_Array.length;i++)
 		{
 			tb.appendChild(getVentRow(ventilator_Array[i]));
+		}
+		if(ventilator_Array.length==0)
+		{
+			tb.appendChild(getVentRow({"time":"","mode":"","setting":""}));	
 		}
 		tb.appendChild(getSpacingRow());
 	ventilatorDiv.appendChild(tb);

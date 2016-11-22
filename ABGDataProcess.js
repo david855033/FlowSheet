@@ -2,6 +2,10 @@ function ABGDataProcess()
 {
 	var ABGDiv = document.getElementById("ABGDiv");
 	ABGDiv.innerHTML="";
+	if(typeof ABG_Array =="undefined")
+	{
+		ABG_Array=[];
+	}
 	var tb = getComponent('table');
 		tb.appendChild(getSpacingRow());
 		tb.appendChild(getFirstRowABG());
@@ -9,6 +13,10 @@ function ABGDataProcess()
 		for(i = 0 ; i < ABG_Array.length;i++)
 		{
 			tb.appendChild(getABGRow(ABG_Array[i]));
+		}
+		if(ABG_Array.length==0)
+		{
+			tb.appendChild(getABGRow({"time":"","data":["","","","","","","","","","","","",""]}));	
 		}
 		tb.appendChild(getSpacingRow());
 	ABGDiv.appendChild(tb);

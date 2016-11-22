@@ -7,19 +7,46 @@ function HeaderDataProcess() {
 function generateHeader(){
 	var mainHeader=document.getElementById("mainHeader");
 	mainHeader.innerHTML="";
-
+	
+	if(typeof wardName == "undefined"){
+		wardName = "未知病房";
+	}
+	if(typeof patientName == "undefined"){
+		patientName="未知姓名";
+	}
+	if(typeof doctorName == "undefined"){
+		doctorName="未知醫師";
+	}
 	mainHeader.appendChild
 	(generateHeaderCard(wardName,patientName,"主治醫師: "+doctorName));
 
+	if(typeof chartNumber == "undefined"){
+		chartNumber = "01234567";
+	}
+	if(typeof admissionDate == "undefined"){
+		admissionDate = new Date("1990-01-01");
+	}
 	mainHeader.appendChild
 	(generateHeaderCard("病歷號",chartNumber,
 		dateToStringShort(admissionDate)+" 住院"));
 
-	mainHeader.appendChild
-	(generateHeaderCard("實際年齡",getAgeStirng(),
-		dateToStringShort(birthDate)+" 生"));
+	if(typeof birthDate == "undefined" || typeof currentDate == "undefined"){
+		mainHeader.appendChild
+		(generateHeaderCard("實際年齡","未知年齡",
+		"未知生日"));
+	}else{
+		mainHeader.appendChild
+		(generateHeaderCard("實際年齡",getAgeStirng(),
+		dateToStringShort(birthDate)+" 出生"));
+	}
 
-	if(gestationalAgeWeek<37)
+	
+	if( typeof gestationalAgeWeek !== "undefined"&&
+		typeof gestationalAgeDate !== "undefined" &&
+		typeof birthDate !== "undefined" &&
+		typeof currentDate !== "undefined" &&
+		gestationalAgeWeek<37 &&
+		parseInt(getAgeInDays()/365)<2)
 	{
 		mainHeader.appendChild
 		(generateHeaderCard(getCGATitle(),getCGAString(),
@@ -30,13 +57,19 @@ function generateHeader(){
 		(generateHeaderCard2("體重",getBodyWeigth(),
 			getBodyWeightDif(),getBirthWeight()));
 
+	if(dietType && dietAmount)
+	{
 	mainHeader.appendChild
 		(generateHeaderCard("Diet",getDietType(),
 			getDietAmount()));
+	}
 
+	if(currentVentilatorType && currentVentilatorSetting)
+	{
 	mainHeader.appendChild
 		(generateHeaderCard("Ventilator",getVentilatorType(),
 			getVentilatorSetting()));
+	}
 }
 
 function generateHeaderCard(s1,s2,s3){
@@ -108,6 +141,7 @@ function generateHeaderCard2(s1,s2_1,s2_2,s3){
 
 function getAgeInDays()
 {
+	
 	var timeDiff = Math.abs(currentDate.getTime() - birthDate.getTime());
 	var diffDays = Math.ceil(timeDiff / (1000 * 3600 * 24)); 
 	return diffDays;
@@ -119,15 +153,19 @@ function getAgeStirng()
 	var result;
 	if(diffDays<30)
 	{
-		result = diffDays + " D";
+		result = diffDays + " d/o";
 	}else if (diffDays<365)
 	{
-		result = parseInt(diffDays/30)+"M "
-		+ (diffDays%30)+"D";
+		result = parseInt(diffDays/30)+"m "
+		+ (diffDays%30)+"d";
+	}
+	else if(parseInt(diffDays/365)<10)
+	{
+		result = parseInt(diffDays/365)+"y "
+		+ Math.round((diffDays%365)/30)+"m";
 	}else
 	{
-		result = parseInt(diffDays/365)+"Y "
-		+ Math.round((diffDays%365)/30)+"M";
+		result = parseInt(diffDays/365)+"y/o";
 	}
 
 	return result;
@@ -163,20 +201,22 @@ function getCGAString()
 		{
 			return cGAweek+ "+" + cGAdate+" wk";
 		}
-	}else
+	}else 
 	{
 		var ageInDays = totalGADays - 7*40;
 		if(ageInDays<30)
 		{
-			result = ageInDays + " D";
+			result = ageInDays + " d/o";
 		}else if (ageInDays<365)
 		{
-			result = parseInt(ageInDays/30)+"M "
-			+ (ageInDays%30)+"D";
+			result = parseInt(ageInDays/30)+"m "
+			+ (ageInDays%30)+"d";
+		}else if(parseInt(diffDays/365)<10){
+			result = parseInt(diffDays/365)+"y "
+			+ Math.round((diffDays%365)/30)+"m";
 		}else
 		{
-			result = parseInt(ageInDays/365)+"Y "
-			+ Math.round((ageInDays%365)/30)+"M";
+			result = parseInt(ageInDays/365)+"y/o"
 		}
 		return result;
 	}
@@ -193,29 +233,34 @@ function getGAString()
 	}
 }
 
-function getBirthWeight(){
-	if (typeof birthBodyWeight=== "number")
-	{
-		return "BBW:"+birthBodyWeight+"g";
-	}else
-	{
-		return "-";
-	}
-}
+
 
 function getBodyWeigth(){
 	var result;
 	if (typeof bodyWeight === "number")
 	{
-		result = bodyWeight+"g";
+		if(bodyWeight<4000)
+		{
+			result = bodyWeight+"g";
+		}else
+		{
+			result = Math.round(bodyWeight/100)/10+"kg";	
+		}
+		
 	}
-	else if(typeof mostRecentBodyWeight=== "number")
+	else if(typeof mostRecentBodyWeight === "number")
 	{
-		result =  mostRecentBodyWeight+"g";
+		if(mostRecentBodyWeight<4000)
+		{
+			result = mostRecentBodyWeight+"g";
+		}else
+		{
+			result = Math.round(mostRecentBodyWeight/100)/10+"kg";	
+		}
 	}
 	else
 	{
-		result = "-";
+		result = "未知體重";
 	}
 	return result;
 }
@@ -238,6 +283,20 @@ function getBodyWeightDif(){
 	}
 	return result;
 }
+
+function getBirthWeight(){
+	if (typeof birthBodyWeight=== "number" &&
+	  typeof birthDate !== "undefined" &&
+	  typeof currentDate !=="undefined" &&
+	  getAgeInDays() < 365)
+	{
+		return "BBW:"+birthBodyWeight+"g";
+	}else
+	{
+		return "";
+	}
+}
+
 function getDietType()
 {
 	if(dietType)
@@ -276,6 +335,13 @@ function getVentilatorSetting()
 
 function getCurrentDate()
 {
-	document.getElementById('currentDate').innerHTML=
-	 "資料日期: "+dateToStringShort(currentDate);
+	if(dateToStringShort(currentDate))
+	{
+		document.getElementById('currentDate').innerHTML=
+	 	"資料日期: "+dateToStringShort(currentDate);
+	}else
+	{
+		document.getElementById('currentDate').innerHTML=
+		"資料日期錯誤";
+	}
 }

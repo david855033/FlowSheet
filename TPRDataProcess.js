@@ -1,3 +1,4 @@
+var validStart=23, validEnd=0;
 function TPRDataProcess()
 {
 	//generateMAP();
@@ -17,28 +18,53 @@ function getTable()
 
 	if(!(typeof bodyTemperatureWarn_U ==="number")) bodyTemperatureWarn_U=38;
 	if(!(typeof bodyTemperatureWarn_L ==="number")) bodyTemperatureWarn_L=36;
+	if(typeof bodyTemperature =="undefined")
+	{
+		bodyTemperature=[];
+	}
 	table.appendChild(printRowTPR("體溫","('C)",bodyTemperature,bodyTemperatureWarn_L,bodyTemperatureWarn_U));
 
-	if(!(typeof RespRateWarn_U ==="number")) RespRateWarn_U=80;
-	if(!(typeof RespRateWarn_L ==="number")) RespRateWarn_L=20;
-	table.appendChild(printRowTPR("心率","(/min)",HeartRate));
+	if(typeof HeartRate =="undefined")
+	{
+		HeartRate=[];
+	}
+	if(!(typeof HeartRateWarn_U ==="number")) HeartRateWarn_U=220;
+	if(!(typeof HeartRateWarn_L ==="number")) HeartRateWarn_L=100;
+	table.appendChild(printRowTPR("心率","(/min)",HeartRate,HeartRateWarn_U,HeartRateWarn_L));
 	
+	if(typeof RespRate =="undefined")
+	{
+		RespRate=[];
+	}
 	if(!(typeof RespRateWarn_U ==="number")) RespRateWarn_U=80;
 	if(!(typeof RespRateWarn_L ==="number")) RespRateWarn_L=20;
 	table.appendChild(printRowTPR("呼吸","(/min)",RespRate,RespRateWarn_L,RespRateWarn_U));
 	
+	if(typeof Saturation =="undefined")
+	{
+		Saturation=[];
+	}
 	if(!(typeof SaturationWarn_L ==="number")) SaturationWarn_L=85;
 	if(!(typeof SaturationWarn_U ==="number")) SaturationWarn_U=95;
 	table.appendChild(printRowTPR("Sat","(%)",Saturation,SaturationWarn_L,SaturationWarn_U));
 	table.appendChild(getSpacingRow());
 	
+	if(typeof SBP =="undefined")
+	{
+		SBP=[];
+	}
 	if(!(typeof SBP_L ==="number")) SBP_L=45;
-	table.appendChild(printRowTPR("SBP","(mmHg)",SBP,SBP_L,SBP_U));
+	table.appendChild(printRowTPR("SBP","(/mmHg)",SBP,SBP_L,SBP_U));
 
-	table.appendChild(printRowTPR("DBP","(mmHg)",DBP,DBP_L,DBP_U));
+	if(typeof DBP ==="undefined")
+	{
+		DBP=[];
+	}
+	table.appendChild(printRowTPR("DBP","(/mmHg)",DBP,DBP_L,DBP_U));
 	
+
 	if(!(typeof MAPWarn_L ==="number")) MAPWarn_L=35;
-	table.appendChild(printRowTPR("MAP","(mmHg)",generateMAP(SBP,DBP),MAPWarn_L,MAPWarn_U));
+	table.appendChild(printRowTPR("MAP","(/mmHg)",generateMAP(SBP,DBP),MAPWarn_L,MAPWarn_U));
 	
 	table.appendChild(getSpacingRow());
 	return table;
@@ -67,7 +93,7 @@ function printRowTPR(fieldName, Unit, DataArray, LowerWarn, UpperWarn)
 				{
 					limittext=" <"+UpperWarn;
 				}
-			td.appendChild(getComponent('span',"warnInfo",limittext));
+			td.appendChild(getComponent('span',"warnInfo_TPR",limittext));
 		tr.appendChild(td);
 		tr.appendChild(getSpacingTD());
 		var dataOutput = generateDataOutput(DataArray);
@@ -133,7 +159,6 @@ function getFirstRowTPR()
 function generateDataOutput(DataArray)
 {
 	var dataOutput=[];
-
 	for(var i = 0; i<24; i++)
 	{
 		var max="";
@@ -142,6 +167,8 @@ function generateDataOutput(DataArray)
 			if(DataArray[x].time.split(':')[0]==i)
 			{
 				if( DataArray[x].value > max) max = DataArray[x].value;
+				if(validStart > i) {validStart=i;}
+				if(validEnd < i) {validEnd=i;}
 			}
 		}
 		dataOutput[i] = max;

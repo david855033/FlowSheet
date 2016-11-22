@@ -103,19 +103,23 @@ td{overflow: hidden;}
 .TPRtable{
 	background-color:#7BD979;
 	width:100%;
+
 }
 /*TPR 第一欄的顏色設定*/
 .td_FirstColumn_TPR{
-	width:120px;
+	max-width: 128px;
+	min-width: 128px;
 	height: 25px;
 	background-color: rgb(209,242,208);
+
 }
 /*TPR 第一列的顏色設定*/
 .td_FirstRow_TPR {
-	width: 37.5px;
+	max-width: 37.5px;
+	min-width: 37.5px;
 	text-align: center;
 	height: 25px;
-	background-color: rgb(209,242,208);
+	background-color: rgb(209,242,208);	
 }
 /*TPR 標題欄 標註上限下限之字體*/
 .warnInfo_TPR{
@@ -124,14 +128,16 @@ td{overflow: hidden;}
 }
 /*TPR含數值的格子*/
 .td_Data_TPR {
-	width: 37.5px;
+	max-width: 37.5px;
+	min-width: 37.5px;
 	text-align: center;
 	height: 25px;
 	background-color: rgb(235,249,235);
 }
 /*TPR不含數值的格子*/
 .td_Data_TPR_Empty {
-	width: 37.5px;
+	max-width: 37.5px;
+	min-width: 37.5px;
 	text-align: center;
 	height: 25px;
 	background-color: rgb(176,232,175);
@@ -145,20 +151,23 @@ td{overflow: hidden;}
 }
 /*AB table第一欄*/
 .td_FirstColumn_AB{
-	width:120px;
+	max-width: 128px;
+	min-width: 128px;
 	height: 25px;
 	background-color: rgb(243,231,197);
 }
 /*AB含數值的格子*/
 .td_Data_AB {
-	width: 37.5px;
+	max-width: 37.5px;
+	min-width: 37.5px;
 	text-align: center;
 	height: 25px;
 	background-color: rgb(250,245,230);
 }
 /*AB不含數值的格子*/
 .td_Data_AB_Empty {
-	width: 37.5px;
+	max-width: 37.5px;
+	min-width: 37.5px;
 	text-align: center;
 	height: 25px;
 	background-color: rgb(253,213,155);
@@ -173,20 +182,23 @@ td{overflow: hidden;}
 }
 /*IO table第一欄*/
 .td_FirstColumn_IO{
-	width:120px;
+	max-width: 128px;
+	min-width: 128px;
 	height: 25px;
 	background-color: rgb(209,231,231);
 }
 /*IO 含數值的格子*/
 .td_Data_IO {
-	width: 37.5px;
+	max-width: 37.5px;
+	min-width: 37.5px;
 	text-align: center;
 	height: 25px;
 	background-color: rgb(235,245,245);
 }
 /*IO 不含數值的格子*/
 .td_Data_IO_Empty {
-	width: 37.5px;
+	max-width: 37.5px;
+	min-width: 37.5px;
 	text-align: center;
 	height: 25px;
 	background-color: rgb(176,214,214);
@@ -195,7 +207,8 @@ td{overflow: hidden;}
 
 /*右邊輸入輸出加總區域寬度(擺放卡片的空間)*/
 .IO_Cards{
-	width:270px;
+	max-width:270px;
+	min-width:270px;
 	float:left;
 	margin-left:20px;
 }
@@ -203,58 +216,73 @@ td{overflow: hidden;}
 
 /*一張卡片的大小、顏色設定*/
 .IOCard{
-	width: 270px;
-	height:100px ;
+	max-width:270px;
+	min-width:270px;
+	max-height:100px ;
+	min-height:100px ;
 	background-color:#C8A8FF;
 	margin-bottom: 5px;
 	box-shadow: 5px 5px 5px #444444;
 }
 .IOCard_Total{
-	width: 270px;
-	height:120px ;
+	max-width:270px;
+	min-width:270px;
+	max-height:120px ;
+	min-height:120px ;
 	background-color:#3F5765;
 	box-shadow: 5px 5px 5px #444444;
 }
 
 /*顯示卡片名稱的欄位*/
 .shift{
-	width: 25px;
-	height: 100px;
+	max-width:25px;
+	min-width:25px;
+	max-height:100px ;
+	min-height:100px ;
 	float:left;
 }
 .shift_Total{
-	width: 25px;
-	height: 120px;
+	max-width:25px;
+	min-width:25px;
+	max-height:120px ;
+	min-height:120px ;
 	padding-top: 10px;
 	color:#FFFFFF;
 	float:left;
 	font-weight: bolder;
 }
 .tr_shiftSpacing{
-	height: 25px;
+	height:20px ;
 }
 /*裝IO細項欄位(IO卡中間的六小格) 設定寬度*/
 .IOContainer{
-	width: 180px;
+	max-width: 180px;
+	min-width: 180px;
 	height: 100%;
 	float:left;
 }
 .IOInnerCard{
 	background: rgb(222,203,255);
-	height: 50px;
-	width: 50px;
+	max-height: 50px;
+	min-height: 50px;
+	max-width: 50px;
+	min-width: 50px;
 	float:left;
 }
 .IOInnerCard_Wide{
 	background: rgb(228,212,255);
-	height: 50px;
-	width: 80px;
+	max-height: 50px;
+	min-height: 50px;
+	max-width: 80px;
+	min-width: 80px;
 	float:left;
 }
 .IOInnerCard_Total{
 	background: rgb(31,43,50);
-	height: 60px;
-	width: 50px;
+	max-height: 60px;
+	min-height: 60px;
+	max-width: 50px;
+	min-width: 50px;
 	float:left;
 }
 .IOInnerCard_Wide_Total{
@@ -271,11 +299,11 @@ td{overflow: hidden;}
 	color:rgb(100,100,100);
 }
 .IOInnerBig{
-	font-size: 1.3em;
+	font-size: 1.2em;
 	font-weight: border;
 }
 .IOInnerBigWarn{
-	font-size: 1.3em;
+	font-size: 1.2em;
 	font-weight: border;
 	color:rgb(255,0,0);
 }
@@ -285,12 +313,12 @@ td{overflow: hidden;}
 	color:rgb(180,180,180);
 }
 .IOInnerBigTotal{
-	font-size: 1.3em;
+	font-size: 1.2em;
 	color:#FFFFFF;
 	font-weight: border;
 }
 .IOInnerBigTotalWarn{
-	font-size: 1.3em;
+	font-size: 1.2em;
 	color:#FFFFFF;
 	font-weight: border;
 	color:rgb(255,150,0);
@@ -298,17 +326,21 @@ td{overflow: hidden;}
 
 /*IO加總 欄位大小*/
 .IOBalance{
-	height: 100%;
-	width: 65px;
+	max-width: 65px;
+	min-width: 65px;
+	max-height:100px ;
+	min-height:100px ;
 	float:left;
-	font-size: 1.1em;
+	font-size: 1.0em;
 	text-align: center;
 }
 .IOBalanceTotal{
-	height: 100%;
-	width: 65px;
+	max-width: 65px;
+	min-width: 65px;
+	max-height:120px ;
+	min-height:120px ;
 	float:left;
-	font-size: 1.2em;
+	font-size: 1.1em;
 	text-align: center;
 }
 .tr_IObalancespacing{
@@ -319,8 +351,10 @@ td{overflow: hidden;}
 /*事件欄位*/
 .event{
 	background-color:#84B4BF;
-	width:270px;
-	height: 365px;
+	max-width:270px;
+	min-width:270px;
+	max-height: 365px;
+	min-height: 365px;
 	float:left;
 	margin-left: 20px;
 	margin-bottom: 10px;
@@ -329,16 +363,20 @@ td{overflow: hidden;}
 }
 /*首欄寬度*/
 .td_FirstColumn_event{
-	width:50px;
-	height: 25px;
+	max-width:50px;
+	min-width:50px;
+	max-height: 25px;
+	min-height: 25px;
 	text-align: center;
 	background-color: rgb(194,218,223);
 }
 /*第二欄寬度*/
 .tdInFirstRow_event {
-	width: 220px;
+	max-width: 173px;
+	min-width: 173px;
 	text-align: center;
-	height: 25px;
+	max-height: 25px;
+	min-height: 25px;
 	background-color: rgb(194,218,223);
 }
 .tdInTable_event {
@@ -403,6 +441,7 @@ td{overflow: hidden;}
 .ABG_table{
 	background-color: #2ADD75;
 	box-shadow: 5px 5px 5px #444444;
+	margin-bottom:10px;
 }
 .td_spacing_ABG_table{
 	width:1px;
@@ -445,7 +484,7 @@ td{overflow: hidden;}
 .glucoseCard{
 	width:170px;
 	height: 110px;
-	background-color: #BAD6FF;
+	background-color: #EDF3FF;
 	box-shadow: 5px 5px 5px #444444;
 	display: inline-block;
 	margin-right: 5px;
@@ -470,7 +509,7 @@ td{overflow: hidden;}
 .CBCCard{
 	width:520px;
 	height: 110px;
-	background-color: #BAD6FF;
+	background-color: #EDF3FF;
 	box-shadow: 5px 5px 5px #444444;
 	display: inline-block;
 	margin-right: 5px;
@@ -499,7 +538,7 @@ td{overflow: hidden;}
 .EleCard{
 	width:700px;
 	height: 100px;
-	background-color: #BAD6FF;
+	background-color: #EDF3FF;
 	box-shadow: 5px 5px 5px #444444;
 	display: inline-block;
 	margin-right: 5px;
@@ -523,7 +562,7 @@ td{overflow: hidden;}
 .CRPCard{
 	width:124px;
 	height: 100px;
-	background-color: #BAD6FF;
+	background-color: #EDF3FF;
 	box-shadow: 5px 5px 5px #444444;
 	display: inline-block;
 	margin-right: 5px;
@@ -547,7 +586,7 @@ td{overflow: hidden;}
 .AbxCard{
 	width:433px;
 	height: 100px;
-	background-color: #BAD6FF;
+	background-color: #EDF3FF;
 	box-shadow: 5px 5px 5px #444444;
 	display: inline-block;
 	margin-right: 5px;
@@ -571,7 +610,7 @@ td{overflow: hidden;}
 .RenalCard{
 	width:227px;
 	height: 90px;
-	background-color: #BAD6FF;
+	background-color: #EDF3FF;
 	box-shadow: 5px 5px 5px #444444;
 	display: inline-block;
 	margin-right: 5px;
@@ -595,7 +634,7 @@ td{overflow: hidden;}
 .LiverCard{
 	width:227px;
 	height: 90px;
-	background-color: #BAD6FF;
+	background-color: #EDF3FF;
 	box-shadow: 5px 5px 5px #444444;
 	display: inline-block;
 	margin-right: 5px;
@@ -619,7 +658,7 @@ td{overflow: hidden;}
 .TbilCard{
 	width:227px;
 	height: 90px;
-	background-color: #BAD6FF;
+	background-color: #EDF3FF;
 	box-shadow: 5px 5px 5px #444444;
 	display: inline-block;
 	margin-right: 5px;
@@ -643,7 +682,7 @@ td{overflow: hidden;}
 .BoneMarkerCard{
 	width:320px;
 	height: 80px;
-	background-color: #BAD6FF;
+	background-color: #EDF3FF;
 	box-shadow: 5px 5px 5px #444444;
 	display: inline-block;
 	margin-right: 5px;
@@ -667,7 +706,7 @@ td{overflow: hidden;}
 .AnemiaCard{
 	width:368px;
 	height: 80px;
-	background-color: #BAD6FF;
+	background-color: #EDF3FF;
 	box-shadow: 5px 5px 5px #444444;
 	display: inline-block;
 	margin-right: 5px;

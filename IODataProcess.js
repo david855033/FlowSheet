@@ -10,17 +10,25 @@ function getIOTable()
 {
 	var table = getComponent('table');
 	table.appendChild(getSpacingRow());
-	
+	if(typeof peripheral_Array =="undefined")
+	{
+		peripheral_Array=[];
+	}
+	peripheral_Array = combineSameIOArray(peripheral_Array);
 	for(var x = 0; x < peripheral_Array.length;x++)
 	{
 		table.appendChild(printRow_IO(peripheral_Array[x],"(ml)"));
 	}
-	
 	if(peripheral_Array.length==0)
 	{
 		table.appendChild(printRow_IO({"route":"IV"},"(ml)"));
 	}
 	
+	if(typeof aline_Array =="undefined")
+	{
+		aline_Array=[];
+	}
+	aline_Array = combineSameIOArray(aline_Array);
 	for(var x = 0; x < aline_Array.length;x++)
 	{
 		table.appendChild(printRow_IO(aline_Array[x],"(ml)"));
@@ -30,6 +38,12 @@ function getIOTable()
 		table.appendChild(printRow_IO({"route":"AL/UA"},"(ml)"));
 	}
 	
+
+	if(typeof central_Array =="undefined")
+	{
+		central_Array=[];
+	}
+	central_Array = combineSameIOArray(central_Array);
 	for(var x = 0; x < central_Array.length;x++)
 	{
 		table.appendChild(printRow_IO(central_Array[x],"(ml)"));
@@ -40,6 +54,12 @@ function getIOTable()
 	}
 	table.appendChild(getSpacingRow());
 
+
+	if(typeof transfusion_Array =="undefined")
+	{
+		transfusion_Array=[];
+	}
+	transfusion_Array = combineSameIOArray(transfusion_Array);
 	for(var x = 0; x < transfusion_Array.length;x++)
 	{
 		table.appendChild(printRow_IO(transfusion_Array[x],"(ml)"));
@@ -50,14 +70,44 @@ function getIOTable()
 	}
 	
 	table.appendChild(getSpacingRow());
+
+	if(typeof POAmount =="undefined")
+	{
+		POAmount=[];
+	}
 	table.appendChild(printRow_IO({"route":"PO","amount":POAmount},"(ml)"));
+
+	if(typeof NGAmount =="undefined")
+	{
+		NGAmount=[];
+	}
 	table.appendChild(printRow_IO({"route":"NG/OG","amount":NGAmount},"(ml)"));
+
+	if(typeof RVAmount =="undefined")
+	{
+		RVAmount=[];
+	}
 	table.appendChild(printRow_IO({"route":"RV","amount":RVAmount},"(ml)"));
+
+	if(typeof RVCharacter =="undefined")
+	{
+		RVCharacter=[];
+	}
 	table.appendChild(printRow_IO({"route":"RV Character","amount":RVCharacter},""));
 	
 	table.appendChild(getSpacingRow());
+
+	if(typeof NGDrain =="undefined")
+	{
+		NGDrain=[];
+	}
 	table.appendChild(printRow_IO({"route":"NG/OG drain","amount":NGDrain},""));
 	
+	if(typeof drain_Array =="undefined")
+	{
+		drain_Array=[];
+	}
+	drain_Array = combineSameIOArray(drain_Array);
 	for(var x = 0; x < drain_Array.length;x++)
 	{
 		table.appendChild(printRow_IO(drain_Array[x],"(ml)"));
@@ -66,8 +116,23 @@ function getIOTable()
 	{
 		table.appendChild(printRow_IO({"route":"Drain"},"(ml)"));
 	}
+
+	if(typeof urine =="undefined")
+	{
+		urine=[];
+	}
 	table.appendChild(printRow_IO({"route":"Urine","amount":urine},"(ml)"));
+	
+	if(typeof stool =="undefined")
+	{
+		stool=[];
+	}
 	table.appendChild(printRow_IO({"route":"Stool","amount":stool},""));
+	
+	if(typeof enema =="undefined")
+	{
+		enema=[];
+	}
 	table.appendChild(printRow_IO({"route":"Enema/Stim","amount":enema},""));
 
 	table.appendChild(getSpacingRow());
@@ -107,4 +172,46 @@ function printRow_IO(IOObject, unit)
 	}
 	tr.appendChild(getSpacingTD());
 	return tr;
+}
+
+function combineSameIOArray(IOArray)
+{
+	var result_Array=[];
+	var repeatPosition=[];
+	for(var i =0; i<IOArray.length;i++)
+	{
+		var newElement={"route":"","name":"","amount":[]};
+		newElement.route = IOArray[i].route;
+		newElement.name = IOArray[i].name;
+		newElement.amount=[];
+		for(var j=0;j<IOArray.length;j++)
+		{
+			if(repeatPosition.indexOf(j)<0 && IOArray[i].route == IOArray[j].route && IOArray[i].name == IOArray[j].name)
+			{
+				for(var k = 0; k<24;k++)
+				{
+					var toadd=0;
+					if(IOArray[j].amount[k])
+					{
+						toadd=IOArray[j].amount[k];
+					}
+					var original=0
+					if(newElement.amount[k])
+					{
+						original = newElement.amount[k];
+					}
+					newElement.amount[k] = original + toadd;
+				}
+				if(i!=j){
+					repeatPosition.push(j);
+				}
+			}
+		}
+		if(repeatPosition.indexOf(i)<0)
+		{
+			result_Array.push(newElement);
+		}
+	}
+
+	return result_Array;
 }

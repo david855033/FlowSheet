@@ -27,9 +27,16 @@ function getSpacingTD()
 
 function dateToStringShort(input)
 {
-	var result=
-	input.getFullYear() +"-"+(input.getMonth() + 1) + '-' + input.getDate();
-	return result;
+	if(typeof input ==="Date")
+	{
+		var result=
+		input.getFullYear() +"-"+(input.getMonth() + 1) + '-' + input.getDate();
+		return result;
+	}else
+	{
+
+		return "";
+	}
 }
 
 function dateToStringMMDD(input)
@@ -97,3 +104,35 @@ function getClearDiv(){
 	return clearDiv;
 }
 
+function keysrt(key,desc) {
+  return function(a,b){
+   return desc ? ~~(a[key] < b[key]) : ~~(a[key] > b[key]);
+  }
+}
+
+ function srtDateTime(desc) {
+  return function(a,b){
+  	var aDate = new Date(a.date + " "+ a.time);
+  	var bDate = new Date(b.date + " "+ b.time);
+   	  return desc ? ~~(aDate < bDate) : ~~(aDate > bDate); 
+  }
+ }
+
+ function dateFilter(){
+ 	return function (a) {
+		var nowDate;
+		if(currentDate instanceof Date)
+		{
+			nowDate = currentDate;
+		}
+		else 
+		{
+			var Today = new Date();
+			nowDate = Today.getFullYear()+"-"+(Today.getMonth()+1)+"-"+Today.getDate();
+
+		}
+		var aDate = new Date(a.date);
+		var nDate = new Date(nowDate);
+		return aDate <= nDate;
+ }
+}
