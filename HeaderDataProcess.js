@@ -41,8 +41,8 @@ function generateHeader(){
 	}
 
 	
-	if( typeof gestationalAgeWeek !== "undefined"&&
-		typeof gestationalAgeDate !== "undefined" &&
+	if( typeof gestationalAgeWeek === "number"&&
+		typeof gestationalAgeDate === "number" &&
 		typeof birthDate !== "undefined" &&
 		typeof currentDate !== "undefined" &&
 		gestationalAgeWeek<37 &&
@@ -272,10 +272,10 @@ function getBodyWeightDif(){
 		var dif = bodyWeight-bodyWeightLastDate;
 		if(dif>=0)
 		{
-			result += " (+"+dif+")";
+			result += " (+"+dif+"g)";
 		}else
 		{
-			result +=	" ("+dif+")";
+			result +=	" ("+dif+"g)";
 		}			
 	}else if(typeof mostRecentBodyWeight === "number")
 	{

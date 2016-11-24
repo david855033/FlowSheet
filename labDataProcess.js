@@ -27,7 +27,13 @@ function labDataProcess()
 	var td = getTDandSpan(HgbDataToShow.value,"","CBCMainWord",warn);
 	td.setAttribute("rowspan","2");
 	CBCData.appendChild(td);
-	td = getTDandSpan(Math.round(PltDataToShow.value/1000)+"k","","CBCMainWord");
+	if(PltDataToShow>0)
+	{
+		td = getTDandSpan(Math.round(PltDataToShow.value/1000)+"k","","CBCMainWord");
+	}else
+	{
+		td = getTDandSpan("","","CBCMainWord");
+	}
 	td.setAttribute("rowspan","2");
 	CBCData.appendChild(td);
 
@@ -234,8 +240,8 @@ function labDataProcess()
 
 function processData(dataArrayObject)
 {
-	var emptyObject ={"value":"","date":"","time":""};
-	var dataToShow=emptyObject;
+	var emptyObject ={"value":"", "date":"","time":""};
+	
 
 	if(typeof dataArrayObject =="undefined" && dataArrayObject)
 	{
@@ -243,8 +249,20 @@ function processData(dataArrayObject)
 	}
 	else
 	{
-		var newArray = dataArrayObject.filter(dateFilter());
-		if(newArray[0])
+		var newArray=[];
+		
+		for(var i = 0; i < dataArrayObject.length; i++)
+		{
+			dataArrayObject[i].date = regularDate(dataArrayObject[i].date);
+			dataArrayObject[i].time = regularTime(dataArrayObject[i].time);
+			
+			if(new Date(dataArrayObject[i].date) <= getThresholdDate() )
+			{
+				newArray.push(dataArrayObject[i]);
+			}
+		}
+		
+		if(newArray.length>0)
 		{
 			newArray.sort(srtDateTime(true));
 			dataToShow= newArray[0];	
@@ -255,6 +273,50 @@ function processData(dataArrayObject)
 	}
 	return dataToShow;
 }
+
+ function getThresholdDate()
+ {
+ 	var nowDate;
+		if(currentDate instanceof Date)
+		{
+			nowDate = currentDate;
+		}
+		else 
+		{
+			var Today = new Date();
+			nowDate = Today.getFullYear()+"-"+(Today.getMonth()+1)+"-"+Today.getDate();
+		}
+	return new Date(nowDate);
+ }
+
+ function regularDate(inputStringDate)
+ {
+ 	var split = inputStringDate.split('-');
+ 	if(split[1].length==1) {split[1] = "0"+split[1]};
+ 	if(split[2].length==1) {split[2] = "0"+split[2]};
+ 	return split[0]+"-"+split[1]+"-"+split[2];
+ }
+
+function regularTime(inputStringDate)
+ {
+ 	var split = inputStringDate.split(':');
+ 	if(split[0].length==1) {split[0] = "0"+split[0]};
+ 	if(split[1].length==1) {split[1] = "0"+split[1]};
+ 	return split[0]+":"+split[1];
+ }
+
+ function srtDateTime(desc) {
+  return function(a,b){
+  	var result;
+  		if( a.date == b.date)
+  		{
+  			 if(a.time > b.time) {result = 1;}else{result = -1;}
+  		}
+	  	else if(a.date > b.date) {result = 1;}else{result = -1;}
+	  	if(desc) result = result * -1;
+   	 return result; 
+  }
+ }
 
 
 function compareDate(dateA, dateB, timeA, timeB)
@@ -335,8 +397,8 @@ function getAbx_Array()
 	{
 		for(var j =0; j<AvailableDrugList.length;j++)
 		{
-			if( ((filteredArray[i].name.toLowerCase().includes(AvailableDrugList[j].match.toLowerCase()))||
-				(filteredArray[i].productName.toLowerCase().includes(AvailableDrugList[j].match.toLowerCase()))) &&
+			if( ((filteredArray[i].name.toLowerCase().indexOf(AvailableDrugList[j].match.toLowerCase())>=0)||
+				(filteredArray[i].productName.toLowerCase().indexOf(AvailableDrugList[j].match.toLowerCase())>=0)) &&
 				filteredArray[i].frequency.toLowerCase() != "st" &&
 				filteredArray[i].frequency.toLowerCase() != "stat" &&
 				filteredArray[i].frequency.toLowerCase() != "once")

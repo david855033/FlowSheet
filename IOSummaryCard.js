@@ -5,7 +5,7 @@ function IOSummaryCard(){
 	idcards.appendChild(getIOCard("大夜", 0,7, false));
 	idcards.appendChild(getIOCard("白班", 8,15, false));
 	idcards.appendChild(getIOCard("小夜", 16,23, false));
-	idcards.appendChild(getIOCard("加總", 0,23, true));
+	idcards.appendChild(getIOCard("全日", 0,23, true));
 }
 
 

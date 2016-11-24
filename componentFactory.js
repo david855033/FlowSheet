@@ -106,33 +106,9 @@ function getClearDiv(){
 
 function keysrt(key,desc) {
   return function(a,b){
-   return desc ? ~~(a[key] < b[key]) : ~~(a[key] > b[key]);
+  	var result;
+  	if(a[key] > b[key]) {result = 1;}else{result = -1;}
+  	if(desc) result = result * -1;
+   return result;
   }
-}
-
- function srtDateTime(desc) {
-  return function(a,b){
-  	var aDate = new Date(a.date + " "+ a.time);
-  	var bDate = new Date(b.date + " "+ b.time);
-   	  return desc ? ~~(aDate < bDate) : ~~(aDate > bDate); 
-  }
- }
-
- function dateFilter(){
- 	return function (a) {
-		var nowDate;
-		if(currentDate instanceof Date)
-		{
-			nowDate = currentDate;
-		}
-		else 
-		{
-			var Today = new Date();
-			nowDate = Today.getFullYear()+"-"+(Today.getMonth()+1)+"-"+Today.getDate();
-
-		}
-		var aDate = new Date(a.date);
-		var nDate = new Date(nowDate);
-		return aDate <= nDate;
- }
 }

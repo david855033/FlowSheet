@@ -1,6 +1,9 @@
 var validStart=23, validEnd=0;
+
+
 function TPRDataProcess()
 {
+	
 	//generateMAP();
 	var TPRTable =document.getElementById("tprtable");
 	TPRTable.innerHTML="";
@@ -30,7 +33,7 @@ function getTable()
 	}
 	if(!(typeof HeartRateWarn_U ==="number")) HeartRateWarn_U=220;
 	if(!(typeof HeartRateWarn_L ==="number")) HeartRateWarn_L=100;
-	table.appendChild(printRowTPR("心率","(/min)",HeartRate,HeartRateWarn_U,HeartRateWarn_L));
+	table.appendChild(printRowTPR("心率","(/min)",HeartRate,HeartRateWarn_L,HeartRateWarn_U));
 	
 	if(typeof RespRate =="undefined")
 	{

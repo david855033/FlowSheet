@@ -200,11 +200,11 @@ var ABeventSelfRecovered=
 var ABeventManaged= 
 [];
 
-/*//Event: 每個event為一個物件，物件內有時間欄位(hh:mm)及內容欄位(string)
-event_Array=
+//Event: 每個event為一個物件，物件內有時間欄位(hh:mm)及內容欄位(string)
+/*event_Array=
 [
 	{"time":"20:00", "content": "Apnea Sat:70%"},
-	{"time":"12:18", "content": "Apnea Sat:80%"},
+	{"time":"02:18", "content": "Apnea Sat:80%"},
 	{"time":"12:15", "content": "Apnea Sat:70%"},
 	{"time":"14:00", "content": "Apnea Sat:60%"},
 	{"time":"15:00", "content": "Bradycardia Sat:70%"},
@@ -237,7 +237,9 @@ event_Array=
 /*var central_Array=
 	[
 		{"route":"CVC", "name":"S.Lipid","amount":[1,1,1,1,1]},
-		{"route":"PCVL", "name":"Albumin","amount":[0,0,0,0,0,10,10,10,10]}
+		{"route":"PCVL", "name":"albumin","amount":[0,0,0,0,0,10,10,10,10]},
+		{"route":"PCVL", "name":"Albumin","amount":[0,0,0,0,0,10,10,10,10]},
+		{"route":"PCVL", "name":"Alb  umin","amount":[1,0,0,0,0,10,10,10,10,5,5,5]},
 	];
 */
 //輸血(不論何種管路都將輸血獨立出來，並且顯示血品種類於Route就好)
@@ -317,20 +319,22 @@ var ABG_Array =
 // value(num)/date(str)/time(str)
 var lab_glucose=
 [
-{"value":30,"date":"2016-12-1","time":"0:23"},
 {"value":180,"date":"2016-11-22","time":"0:23"},
-{"value":50,"date":"2016-10-1","time":"10:23"},
-{"value":40,"date":"2016-9-1","time":"10:23"}
+{"value":30,"date":"2016-10-01","time":"0:23"},
+{"value":50,"date":"2016-11-01","time":"10:23"},
+{"value":40,"date":"2016-9-01","time":"10:23"}
 ];
 
 var lab_WBC=
-[{"value":20300,"date":"2016-7-1","time":"17:23"}];
+[{"value":20500,"date":"2016-8-01","time":"17:23"},
+{"value":20300,"date":"2016-7-01","time":"17:23"},
+{"value":12000,"date":"2016-9-01","time":"17:23"}];
 var lab_Seg=
-[{"value":"43%","date":"2016-7-1","time":"17:23"}];
+[{"value":"43%","date":"2016-7-01","time":"17:23"}];
 var lab_Hgb=
-[{"value":7.7,"date":"2016-7-1","time":"17:23"}];
+[{"value":7.7,"date":"2016-7-01","time":"17:23"}];
 var lab_PLT = 
-[{"value":213000,"date":"2016-7-1","time":"17:23"}];
+[];
 
 var lab_Na = 
 [{"value":143,"date":"2016-7-1","time":"17:23"}];
@@ -399,12 +403,12 @@ json格式：{"name":"","productName":"","dosage":"","unit":"","route":"","frequ
 var drug_Array =
 [
 	{"name":"Ampicillin sod for inj 500 mg",'productName':'Ampolin inj 500 mg "YF"',"dosage":"270","unit":"mg","route":"IVA",
-	"frequency":"Q6H","startDate":"2016-11-30-16.44",
-	"endDate":"2016-11-20-12:00","status":"使用中","totalAmount":"21","selfPaid":"N","info":"test string"},
-	
-	{"name":"Ampicillin sod for inj 500 mg",'productName':'Ampolin inj 500 mg "YF"',"dosage":"270","unit":"mg","route":"IVA",
 	"frequency":"QD","startDate":"2016-11-07-16.44",
 	"endDate":"2016-12-19-12:00","status":"使用中","totalAmount":"21","selfPaid":"N","info":"test string"},
+
+	{"name":"Ampicillin sod for inj 500 mg",'productName':'Ampolin inj 500 mg "YF"',"dosage":"270","unit":"mg","route":"IVA",
+	"frequency":"Q6H","startDate":"2016-11-13-16.44",
+	"endDate":"2016-11-20-12:00","status":"使用中","totalAmount":"21","selfPaid":"N","info":"test string"},
 
 	{"name":"unasyn sod for inj 500 mg",'productName':'unasyn inj 500 mg "YF"',"dosage":"270","unit":"mg","route":"IVA",
 	"frequency":"Q6H","startDate":"2016-11-18-16.44",

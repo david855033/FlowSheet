@@ -1,0 +1,319 @@
+﻿<!DOCTYPE html>
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=EmulateIE9" >
+    <title>NICU FLow Sheet Main Page</title>
+    <script language='javaScript'>var path='/NIS';</script>
+<script language='javaScript'>var qdate='2016/11/14';</script>
+<script language='javaScript'>var chartNumber='43273207';</script>
+<script language='javaScript'>var wardName='PICU - 10';</script>
+<script language='javaScript'>var patientName='李佳霓';</script>
+<script language='javaScript'>var doctorName='張瑞文';</script>
+<script language='javaScript'>var currentDate=new Date('2016-11-14');</script>
+<script language='javaScript'>var admissionDate=new Date('2016-05-27');</script>
+<script language='javaScript'>var birthDate=new Date('2016-05-23');</script>
+<script language='javaScript'>var gestationalAgeWeek='';</script>
+<script language='javaScript'>var gestationalAgeDate='';</script>
+<script language='javaScript'>var bodyWeight=4937.0;</script>
+<script language='javaScript'>var bodyWeightLastDate=5205.0;</script>
+<script language='javaScript'>var mostRecentBodyWeight=4937.0;</script>
+<script language='javaScript'>var mostRecentBodyWeightDate=new Date('2016-11-24');</script>
+<script language='javaScript'>var birthBodyWeight='';</script>
+<script language='javaScript'>var bodyTemperature=[{"time":"20:00","value":36.5},{"time":"15:31","value":37.2},{"time":"13:10","value":36.3},{"time":"12:16","value":36.3},{"time":"11:27","value":36.8},{"time":"11:25","value":36.8},{"time":"10:20","value":36.8},{"time":"09:27","value":36.3},{"time":"09:12","value":36.3},{"time":"08:39","value":36.3},{"time":"08:20","value":36},{"time":"08:00","value":36.9},{"time":"04:00","value":36.8}];</script>
+<script language='javaScript'>var HeartRate=[{"time":"23:00","value":145},{"time":"22:00","value":153},{"time":"21:00","value":143},{"time":"20:00","value":154},{"time":"19:00","value":158},{"time":"18:00","value":164},{"time":"17:00","value":168},{"time":"15:31","value":157},{"time":"15:00","value":146},{"time":"14:00","value":146},{"time":"13:10","value":180},{"time":"12:16","value":189},{"time":"11:27","value":140},{"time":"11:25","value":130},{"time":"10:20","value":159},{"time":"09:27","value":121},{"time":"09:12","value":134},{"time":"08:39","value":134},{"time":"08:20","value":124},{"time":"08:00","value":112},{"time":"07:00","value":130},{"time":"06:00","value":139},{"time":"05:00","value":126},{"time":"04:00","value":132},{"time":"03:00","value":140},{"time":"02:00","value":136},{"time":"01:00","value":146}];</script>
+<script language='javaScript'>var RespRate=[{"time":"23:00","value":55},{"time":"22:00","value":34},{"time":"21:00","value":35},{"time":"20:00","value":38},{"time":"19:00","value":54},{"time":"18:00","value":53},{"time":"17:00","value":52},{"time":"15:31","value":40},{"time":"15:00","value":33},{"time":"14:00","value":33},{"time":"13:10","value":36},{"time":"12:16","value":44},{"time":"11:27","value":18},{"time":"11:25","value":18},{"time":"10:20","value":16},{"time":"09:27","value":30},{"time":"09:12","value":34},{"time":"08:39","value":34},{"time":"08:20","value":30},{"time":"08:00","value":28},{"time":"07:00","value":27},{"time":"06:00","value":28},{"time":"05:00","value":30},{"time":"04:00","value":27},{"time":"03:00","value":40},{"time":"02:00","value":36},{"time":"01:00","value":32}];</script>
+<script language='javaScript'>var SBP=[{"time":"23:00","value":93},{"time":"21:00","value":89},{"time":"19:00","value":81},{"time":"17:00","value":81},{"time":"15:00","value":90},{"time":"13:10","value":119},{"time":"12:16","value":119},{"time":"11:27","value":56},{"time":"11:25","value":60},{"time":"10:20","value":116},{"time":"09:27","value":84},{"time":"09:12","value":82},{"time":"08:39","value":89},{"time":"08:20","value":101},{"time":"07:00","value":88},{"time":"05:00","value":90},{"time":"03:00","value":88},{"time":"01:00","value":72}];</script>
+<script language='javaScript'>var DBP=[{"time":"23:00","value":44},{"time":"21:00","value":49},{"time":"19:00","value":38},{"time":"17:00","value":40},{"time":"15:00","value":44},{"time":"13:10","value":95},{"time":"12:16","value":92},{"time":"11:27","value":30},{"time":"11:25","value":28},{"time":"10:20","value":54},{"time":"09:27","value":41},{"time":"09:12","value":41},{"time":"08:39","value":78},{"time":"08:20","value":45},{"time":"07:00","value":43},{"time":"05:00","value":43},{"time":"03:00","value":40},{"time":"01:00","value":34}];</script>
+<script language='javaScript'>var peripheral_Array=[];</script>
+<script language='javaScript'>var aline_Array=[];</script>
+<script language='javaScript'>var central_Array=[{"route":"Hickman","name":"NS","amount":[,,,,,,,,,,,,,,,,,,,,,,,]},{"route":"Hickman","name":"D10W+3%Nacl","amount":[,,,,,,,,,,,,,,,,,,,20,20,20,20,10]},{"route":"Hickman","name":"NS","amount":[,,,,,,,,1,,,,,5,,0,,,,,,,,]},{"route":"Hickman","name":"D5(1/3)S","amount":[,,,,,,,15,,,,,,,5,5,5,20,20,,,,,]},{"route":"Hickman","name":"D5(1/3)S","amount":[,,,,15,15,15,,,,,,,,,,,,,,,,,]}];</script>
+<script language='javaScript'>var transfusion_Array=[{"route":"Whole Blood","name":"","amount":[,,,,,,,,,,,,20,,,,,,,,,,,]},{"route":"Plt. Con.","name":"","amount":[,,,,,,,,,30,17,,,,,,,,,,,,,]},{"route":"Cryo","name":"","amount":[,,,,,,,,16,,,,,,,,,,,,,,,]}];</script>
+<script language='javaScript'>var drain_Array=[];</script>
+<script language='javaScript'>var NGDrain=[,,,,,,,,,,,,,,,,,,,,,,10.0,];</script>
+<script language='javaScript'>var event_Array=[{"time":"20:57","content":"手術室回至病房"},{"time":"09:53","content":"至手術室手術間"},{"time":"09:39","content":"至手術室觀察區"}];</script>
+<script language='javaScript'>var POAmount=[,,,,,,,,,,,,,,,,,,,,,,,];</script>
+<script language='javaScript'>var NGAmount=[40,45,,,,,,,,,,,,,,,,,5,,,5,,];</script>
+<script language='javaScript'>var RVAmount=[,,,,,,,,,,,,,,,,,,,,,,,];</script>
+<script language='javaScript'>var urine=[,50,,15,,,16,,9,,,,,,0,,,,7,,,,8,];</script>
+  
+    <script src="/NIS/report/FlowSheet/jquery-1.2.6.pack.js"></script>
+    <script src="/NIS/report/FlowSheet/flowsheet_main.js"></script>
+</head>
+
+
+<body>
+<input type="hidden" id="hdactvdate" value=""/>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>NICU FLow Sheet</title>
+    <link rel="stylesheet" type="text/css" href="style.css">
+    
+    <script src="dataInterface.js"></script>
+    <script src="componentFactory.js"></script>
+    <script src="HeaderDataProcess.js"></script>
+    <script src="TPRDataProcess.js"></script>
+    <script src="ABDataProcess.js"></script>
+    <script src="IODataProcess.js"></script>
+    <script src="IOSummaryCard.js"></script>
+    <script src="eventProcess.js"></script>
+    <script src="ventilatorDataProcess.js"></script>
+    <script src="ABGDataProcess.js"></script>
+    <script src="labDataProcess.js"></script>
+
+
+</head>
+<body onload="HeaderDataProcess();TPRDataProcess(); ABDataProcess();IODataProcess();IOSummaryCard();eventProcess();ventilatorProcess();ABGDataProcess();labDataProcess();">
+<section>
+    <div ID="mainHeader" class="header">
+            <div class="clear"></div>
+    </div>
+    
+    <div class="navigator">    
+        <div class="navigatorContainer">
+            <div id="currentDate" class="navigatorButton"></div>
+            <div id="chgdate" class="navigatorButton">切換日期</div>
+        </div>
+    </div>
+
+
+    <div class="main-content">
+        <div class="UpperLeftTableContainer">
+            <div id="tprtable" class="TPRtable">
+            </div>
+            <div id="abtable" class="ABtable">
+            </div>
+        </div>
+            
+        <div id="eventdiv" class="event">
+
+
+        </div>
+        <div class="clear"></div>
+    </div>
+
+
+    <div class="IO_content">
+        <div id="iotable" class="IO_table">
+        
+        </div>
+
+
+        <div id="idcards" class="IO_Cards">
+    
+        </div>
+        <div class="clear"></div>
+    </div>
+
+
+
+
+    <div class="bottom-content">
+            <div class="bottomLeft">
+                <div id="ABGDiv" class="ABG_table">
+                </div>
+                
+                <div id="ventilatorDiv" class="ventilator_table">
+                </div>
+            </div>
+            <div class="bottomRight">
+            
+                <div class="glucoseCard">
+                    <table class="glucoseTable">
+                        <tr>
+                            <td><span class="glucoseTitle">Glucose</span></td>
+                        </tr>
+                        <tr id="glucoseData_tr">
+                        
+                        </tr>
+                        <tr id="glucoseTime_tr">
+                        
+                        </tr>
+                    </table>
+                </div>
+                <div class="CBCCard">
+                    <table class="CBCtable">
+                        <tr>
+                            <td><span class="CBCtitle">WBC</span></td>
+                            <td><span class="CBCtitle">Hgb</span></td>
+                            <td><span class="CBCtitle">Platelet</span></td>
+                        </tr>
+                        <tr id="CBCData_tr">
+                            
+                        </tr>
+                        <tr id="CBCData2_tr">
+                            
+                        </tr>
+                        <tr id="CBCTime">
+                            
+                        </tr>
+                    </table>
+                </div>
+                
+                <div class="clear"></div>
+
+
+                <div class="EleCard">
+                    <table class="EleTable">
+                        <tr>
+                            <td><span class="EleTitle">Na<span class="upperWord">+</span></span></td>
+                            <td><span class="EleTitle">K<span class="upperWord">+</span></span></td>
+                            <td><span class="EleTitle">Ca<span class="upperWord">2+</span></span></td>
+                            <td><span class="EleTitle">P</span></td>
+                            <td><span class="EleTitle">Mg<span class="upperWord">2+</span></span></td>
+                        </tr>
+                        <tr id="EleData_tr">
+                            
+                        </tr>
+                        <tr id="EleTime_tr">
+                            
+                        </tr>
+                    </table>
+                </div>
+                <div class="clear"></div>
+                
+                <div class="CRPCard">
+                    <table class="CRPTable">
+                        <tr>
+                            <td><span class="CRPTitle">CRP</span></td>
+                        </tr>
+                        <tr id="CRPData_tr">
+                        </tr>
+                        <tr id="CRPTime_tr">
+                        </tr>
+                    </table>
+                </div>
+                <div class="CRPCard">
+                    <table class="CRPTable">
+                        <tr>
+                            <td><span class="CRPTitle">Procalcitonin</span></td>
+                        </tr>
+                        <tr  id="PCTData_tr">
+                        </tr>
+                        <tr id="PCTTime_tr">
+                        </tr>
+                    </table>
+                </div>
+        
+                <div class="AbxCard">
+                    <table class="AbxTable">
+                        <tr>
+                            <td colspan="4"><span class="AbxTitle">Current Antibiotics</span></td>
+                        </tr>
+                        <tr id="abxname_tr">
+                        </tr>
+                        <tr id="abxdose_tr">
+                        </tr>
+
+
+                    </table>
+                </div>
+
+
+                <div class="clear"></div>
+
+
+                <div class="RenalCard">
+                    <table class="RenalTable">
+                        <tr>
+                            <td><span class="RenalTitle">BUN</span></td>
+                            <td><span class="RenalTitle">Cr</span></td>
+                        </tr>
+                        <tr id="renal_tr">
+
+
+                        </tr>
+                        <tr id="renaltime_tr">
+
+
+                        </tr>
+                    </table>
+                </div>
+                
+                <div class="LiverCard">
+                    <table class="LiverTable">
+                        <tr>
+                            <td><span class="LiverTitle">ALT</span></td>
+                            <td><span class="LiverTitle">AST</span></td>
+                        </tr>
+                        <tr id="liver_tr">
+                        </tr>
+                        <tr id="livertime_tr">
+                        </tr>
+                    </table>
+                </div>
+
+
+                <div class="TbilCard">
+                    <table class="TbilTable">
+                        <tr id="TBilTitle_tr">
+
+
+                        </tr>
+                        <tr id="TBilData_tr">
+                        </tr>
+                        <tr id="TBilTime_tr">
+                        </tr>
+                    </table>
+                </div>
+
+
+                <div class="clear"></div>
+                    
+                <div class="BoneMarkerCard">
+                    <table class="BoneMarkerTable">
+                        <tr>
+                            <td><span class="BoneMarkerTitle">ALKP</span></td>
+                            <td><span class="BoneMarkerTitle">Total Ca</span></td>
+                            <td><span class="BoneMarkerTitle">LDH</span></td>
+                        </tr>
+                        <tr id="BoneMarkerData_tr">
+                    
+                        </tr>
+                        <tr id="BoneMarkerTime_tr">
+                    
+                        </tr>
+                    </table>
+                </div>
+                
+                <div class="AnemiaCard">
+                    <table class="AnemiaTable">
+                        <tr>
+                            <td><span class="AnemiaTitle">Iron</span></td>
+                            <td><span class="AnemiaTitle">TIBC</span></td>
+                            <td><span class="AnemiaTitle">FeSat</span></td>
+                            <td><span class="AnemiaTitle">Ferritin</span></td>
+                        </tr>
+                        <tr id="AnemiaData_tr">
+
+
+                        </tr>
+                        <tr id="AnemiaTime_tr">
+                    
+                        </tr>
+                    </table>
+                </div>
+
+
+                <div class="clear"></div>
+
+
+            </div>
+            <div class="clear"></div>
+        </div>
+        <div style="height:2px;"></div>
+    </div>
+    
+</section>
+
+
+</body>
+</html>
+</body>
+</html>
+
+

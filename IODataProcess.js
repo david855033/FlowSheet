@@ -186,7 +186,9 @@ function combineSameIOArray(IOArray)
 		newElement.amount=[];
 		for(var j=0;j<IOArray.length;j++)
 		{
-			if(repeatPosition.indexOf(j)<0 && IOArray[i].route == IOArray[j].route && IOArray[i].name == IOArray[j].name)
+			var compareString1= IOArray[i].name.replace(/\s/g, '').toLowerCase();
+			var compareString2= IOArray[j].name.replace(/\s/g, '').toLowerCase();
+			if(repeatPosition.indexOf(j)<0 && IOArray[i].route == IOArray[j].route && compareString1 == compareString2)
 			{
 				for(var k = 0; k<24;k++)
 				{
@@ -212,6 +214,20 @@ function combineSameIOArray(IOArray)
 			result_Array.push(newElement);
 		}
 	}
+	
+	result_Array.sort(
+		function(a,b){
+			var result;
+			if(a.route==b.route) {
+				if(a.name > b.name) {result = 1;}
+				else{result = -1;}
+			}
+			else if(a.route > b.route) {result = 1;}
+			else{result = -1;}
+			return result;
+		}
+	);
 
 	return result_Array;
 }
+
