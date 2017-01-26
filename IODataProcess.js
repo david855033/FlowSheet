@@ -87,13 +87,13 @@ function getIOTable()
 	{
 		RVAmount=[];
 	}
-	table.appendChild(printRow_IO({"route":"RV","amount":RVAmount},"(ml)"));
+	table.appendChild(printRow_IO({"route":"RV","amount":RVAmount},"(ml)",true));
 
 	if(typeof RVCharacter =="undefined")
 	{
 		RVCharacter=[];
 	}
-	table.appendChild(printRow_IO({"route":"RV Character","amount":RVCharacter},""));
+	table.appendChild(printRow_IO({"route":"RV Character","amount":RVCharacter},"",true));
 	
 	table.appendChild(getSpacingRow());
 
@@ -101,7 +101,7 @@ function getIOTable()
 	{
 		NGDrain=[];
 	}
-	table.appendChild(printRow_IO({"route":"NG/OG drain","amount":NGDrain},""));
+	table.appendChild(printRow_IO({"route":"NG/OG drain","amount":NGDrain},"",true));
 	
 	if(typeof drain_Array =="undefined")
 	{
@@ -110,24 +110,25 @@ function getIOTable()
 	drain_Array = combineSameIOArray(drain_Array);
 	for(var x = 0; x < drain_Array.length;x++)
 	{
-		table.appendChild(printRow_IO(drain_Array[x],"(ml)"));
+		table.appendChild(printRow_IO(drain_Array[x],"(ml)",true));
 	}
 	if(drain_Array.length==0)
 	{
-		table.appendChild(printRow_IO({"route":"Drain"},"(ml)"));
+		table.appendChild(printRow_IO({"route":"Drain","amount":[]},"(ml)",true));
 	}
 
 	if(typeof urine =="undefined")
 	{
 		urine=[];
 	}
-	table.appendChild(printRow_IO({"route":"Urine","amount":urine},"(ml)"));
+	table.appendChild(printRow_IO({"route":"Urine","amount":urine},"(ml)",true));
 	
 	if(typeof stool =="undefined")
 	{
 		stool=[];
 	}
-	table.appendChild(printRow_IO({"route":"Stool","amount":stool},""));
+	translateStool();
+	table.appendChild(printRow_IO({"route":"Stool","amount":stool},"",false,true));
 	
 	if(typeof enema =="undefined")
 	{
@@ -140,7 +141,7 @@ function getIOTable()
 	return table;
 }
 
-function printRow_IO(IOObject, unit)
+function printRow_IO(IOObject, unit,isZeroShowed, isSmallWord)
 {
 	var tr = getComponent('tr');
 	var route = IOObject.route && IOObject.route;
@@ -159,16 +160,20 @@ function printRow_IO(IOObject, unit)
 	tr.appendChild(getSpacingTD());
 	tr.appendChild(td);
 	tr.appendChild(getSpacingTD());
+
 	for(var i=0;i<8;i++){
-		tr.appendChild(getTDwithData(amount[i],"td_Data_IO"));	
+		if(isZeroShowed && amount[i]==0){amount[i]="0";}
+		tr.appendChild(getTDwithData(amount[i],"td_Data_IO","","",false,"",isSmallWord));	
 	}
 	tr.appendChild(getSpacingTD());
 	for(var i=8;i<16;i++){
-		tr.appendChild(getTDwithData(amount[i],"td_Data_IO"));	
+		if(isZeroShowed && amount[i]==0){amount[i]="0";}
+		tr.appendChild(getTDwithData(amount[i],"td_Data_IO","","",false,"",isSmallWord));	
 	}
 	tr.appendChild(getSpacingTD());
 	for(var i=16;i<24;i++){
-		tr.appendChild(getTDwithData(amount[i],"td_Data_IO"));	
+		if(isZeroShowed && amount[i]==0){amount[i]="0";}
+	tr.appendChild(getTDwithData(amount[i],"td_Data_IO","","",false,"",isSmallWord));	
 	}
 	tr.appendChild(getSpacingTD());
 	return tr;
@@ -231,3 +236,38 @@ function combineSameIOArray(IOArray)
 	return result_Array;
 }
 
+function translateStool(){
+	for(var i = 0; i < stool.length;i++)
+	{
+		if(typeof stool[i]  == "undefined") {continue;}
+
+		var newSentence ="";
+		for(var j=0; j < stool[i].length;j++)
+		{
+			switch(stool[i][j]) {
+			case	"a":newSentence+="成形";break;
+			case	"b":newSentence+="腹瀉";break;
+			case	"c":newSentence+="軟便";break;
+			case	"d":newSentence+="水狀";break;
+			case	"e":newSentence+="糊狀";break;
+			case	"f":newSentence+="滲便";break;
+			case	"g":newSentence+="血便";break;
+			case	"h":newSentence+="硬便";break;
+			case	"i":newSentence+="黏液";break;
+			case	"j":newSentence+="顆粒";break;
+			case	"k":newSentence+="胎便";break;
+
+			case	"A":newSentence+="黑";break;
+			case	"B":newSentence+="綠";break;
+			case	"C":newSentence+="褐紫";break;
+			case	"D":newSentence+="紅";break;
+			case	"E":newSentence+="白";break;
+			case	"F":newSentence+="黃";break;	
+			case	"G":newSentence+="墨綠";break;
+			}
+		} 
+		
+
+		stool[i]=newSentence;
+	}
+}

@@ -6,8 +6,13 @@ function labDataProcess()
 	var GlucoseData = document.getElementById("glucoseData_tr");
 	GlucoseData.innerHTML="";
 	var warn="";
-	if(glucoseDataToShow.value>=150 || glucoseDataToShow.value < 60) {warn="warn";}
-	GlucoseData.appendChild(getTDandSpan(glucoseDataToShow.value,"","glucoseMainWord",warn));
+	if(glucoseDataToShow.value>=150 || glucoseDataToShow.value < 50 ||
+		(typeof glucoseDataToShow.value=="string" && glucoseDataToShow.value.indexOf(">")>=0)) 
+		{warn="warn";}
+	GlucoseData.appendChild(getTDandSpan(glucoseDataToShow.value,"","glucoseMainWord",warn,getTooltip(lab_glucose)));
+
+	
+	
 
 	var GlucoseTime = document.getElementById("glucoseTime_tr");
 	GlucoseTime.innerHTML="";
@@ -15,21 +20,29 @@ function labDataProcess()
 		getTDandSpan(getMonthDay(glucoseDataToShow.date)+" "+glucoseDataToShow.time,"","DateInfo")
 	);
 
+
 	var WBCDataToShow = processData(lab_WBC);
 	var HgbDataToShow = processData(lab_Hgb);
 	var PltDataToShow = processData(lab_PLT);
+
 	var SegDataToShow = processData(lab_Seg);
 	var CBCData = document.getElementById("CBCData_tr");
 	CBCData.innerHTML="";
-	CBCData.appendChild(getTDandSpan(WBCDataToShow.value,"","CBCMainWord"));
 	warn="";
-	if(HgbDataToShow>=20 || HgbDataToShow < 10) {warn="warn";}
-	var td = getTDandSpan(HgbDataToShow.value,"","CBCMainWord",warn);
+	if(WBCDataToShow.value>=30000 || WBCDataToShow.value < 5000) {warn="warn";}
+	CBCData.appendChild(getTDandSpan(WBCDataToShow.value,"","CBCMainWord",warn,getTooltip(lab_WBC)));
+
+	warn="";
+	if(HgbDataToShow.value>=20 || HgbDataToShow.value < 10) {warn="warn";}
+	var td = getTDandSpan(HgbDataToShow.value,"","CBCMainWord",warn,getTooltip(lab_Hgb));
 	td.setAttribute("rowspan","2");
 	CBCData.appendChild(td);
-	if(PltDataToShow>0)
+
+	if(PltDataToShow.value)
 	{
-		td = getTDandSpan(Math.round(PltDataToShow.value/1000)+"k","","CBCMainWord");
+		warn="";
+		if(PltDataToShow.value >= 400000 || PltDataToShow.value < 100000) {warn="warn";}
+		td = getTDandSpan(Math.round(PltDataToShow.value/1000)+"k","","CBCMainWord",warn,getTooltip(lab_PLT));
 	}else
 	{
 		td = getTDandSpan("","","CBCMainWord");
@@ -39,13 +52,17 @@ function labDataProcess()
 
 	var CBCData2 = document.getElementById("CBCData2_tr");
 	CBCData2.innerHTML="";
-	CBCData2.appendChild(getTDandSpan(SegDataToShow.value,"","CBCSubInfo"));
+	if(SegDataToShow.value && SegDataToShow.time == WBCDataToShow.time )
+	{
+		CBCData2.appendChild(getTDandSpan("Seg "+SegDataToShow.value,"","CBCSubInfo","",getTooltip(lab_Seg)));
+	}
 	
 	var CBCTime = document.getElementById("CBCTime");
 	CBCTime.innerHTML="";
 	CBCTime.appendChild(getTDandSpan(getMonthDay(WBCDataToShow.date)+" "+WBCDataToShow.time,"","DateInfo"));
 	CBCTime.appendChild(getTDandSpan(getMonthDay(HgbDataToShow.date)+" "+HgbDataToShow.time,"","DateInfo"));
 	CBCTime.appendChild(getTDandSpan(getMonthDay(PltDataToShow.date)+" "+PltDataToShow.time,"","DateInfo"));
+
 
 	var NaDataToShow = processData(lab_Na);
 	var KDataToShow = processData(lab_K);
@@ -56,19 +73,19 @@ function labDataProcess()
 	EleData.innerHTML="";
 	warn="";
 	if(NaDataToShow.value>=145 || NaDataToShow.value < 135) {warn="warn";}
-	EleData.appendChild(getTDandSpan(NaDataToShow.value,"","EleMainWord",warn));
+	EleData.appendChild(getTDandSpan(NaDataToShow.value,"","EleMainWord",warn,getTooltip(lab_Na)));
 	warn="";
 	if(KDataToShow.value>=6 || KDataToShow.value < 3) {warn="warn";}
-	EleData.appendChild(getTDandSpan(KDataToShow.value,"","EleMainWord",warn));
+	EleData.appendChild(getTDandSpan(KDataToShow.value,"","EleMainWord",warn,getTooltip(lab_K)));
 	warn="";
 	if(CaDataToShow.value>=1.2 || CaDataToShow.value < 1) {warn="warn";}
-	EleData.appendChild(getTDandSpan(CaDataToShow.value,"","EleMainWord",warn));
+	EleData.appendChild(getTDandSpan(CaDataToShow.value,"","EleMainWord",warn,getTooltip(lab_Ca)));
 	warn="";
 	if(PDataToShow.value>=6 || PDataToShow.value < 3) {warn="warn";}
-	EleData.appendChild(getTDandSpan(PDataToShow.value,"","EleMainWord",warn));
+	EleData.appendChild(getTDandSpan(PDataToShow.value,"","EleMainWord",warn,getTooltip(lab_P)));
 	warn="";
-	if(MgDataToShow.value>=4 || MgDataToShow.value < 2) {warn="warn";}
-	EleData.appendChild(getTDandSpan(MgDataToShow.value,"","EleMainWord",warn));
+	if(MgDataToShow.value>=2.5 || MgDataToShow.value < 1.7) {warn="warn";}
+	EleData.appendChild(getTDandSpan(MgDataToShow.value,"","EleMainWord",warn,getTooltip(lab_Mg)));
 	
 	var EleTime	= document.getElementById("EleTime_tr");
 	EleTime.innerHTML="";
@@ -83,23 +100,23 @@ function labDataProcess()
 	CRPData.innerHTML="";
 	warn="";
 	if(CRPDataToShow.value>=0.5) {warn="warn";}
-	CRPData.appendChild(getTDandSpan(CRPDataToShow.value,"","CRPMainWord",warn));
+	CRPData.appendChild(getTDandSpan(CRPDataToShow.value,"","CRPMainWord",warn, getTooltip(lab_CRP)));
 
 	var CRPTime = document.getElementById("CRPTime_tr");
 	CRPTime.innerHTML="";
-	CRPTime.appendChild(getTDandSpan(getMonthDay(CRPDataToShow.date)+" "+CRPDataToShow.time,"","DateInfo"));
+	CRPTime.appendChild(getTDandSpan(getMonthDay(CRPDataToShow.date),"","DateInfo"));
 
 	var PCTDataToShow = processData(lab_PCT);
 	var PCTData = document.getElementById("PCTData_tr");
 	PCTData.innerHTML="";
 	warn="";
 	if(PCTDataToShow.value>=0.5) {warn="warn";}
-	PCTData.appendChild(getTDandSpan(PCTDataToShow.value,"","CRPMainWord",warn));
+	PCTData.appendChild(getTDandSpan(PCTDataToShow.value,"","CRPMainWord",warn, getTooltip(lab_PCT)));
 
 	var PCTTime = document.getElementById("PCTTime_tr");
 	PCTTime.innerHTML="";
 	PCTTime.appendChild(getTDandSpan(getMonthDay(PCTDataToShow.date),"","DateInfo"));
-
+    
 	var Abx_Array=getAbx_Array();
 	var Abxname = document.getElementById("abxname_tr");
 	Abxname.innerHTML="";
@@ -122,17 +139,17 @@ function labDataProcess()
 	{
 		Abxdose.appendChild(getTDandSpan(Abx_Array[x].dosage + " " +Abx_Array[x].frequency ,"","DateInfo"));
 	}
-
+    
 	var BUNDataToShow = processData(lab_BUN);
 	var CrDataToShow = processData(lab_Cr);
 	var renalData = document.getElementById("renal_tr");
 	renalData.innerHTML="";
 	warn="";
 	if(BUNDataToShow.value>20) {warn="warn";}
-	renalData.appendChild(getTDandSpan(BUNDataToShow.value,"RenalMainWord","",warn));
+	renalData.appendChild(getTDandSpan(BUNDataToShow.value,"RenalMainWord","",warn,getTooltip(lab_BUN)));
 
 	if(CrDataToShow.value>=1) {warn="warn";}
-	renalData.appendChild(getTDandSpan(CrDataToShow.value,"RenalMainWord","",warn));
+	renalData.appendChild(getTDandSpan(CrDataToShow.value,"RenalMainWord","",warn,getTooltip(lab_Cr)));
 
 	var renalTime = document.getElementById("renaltime_tr");
 	renalTime.innerHTML="";
@@ -145,9 +162,9 @@ function labDataProcess()
 	liverData.innerHTML="";
 	warn="";
 	if(ALTDataToShow.value>=50) {warn="warn";}
-	liverData.appendChild(getTDandSpan(ALTDataToShow.value,"LiverMainWord","",warn));
+	liverData.appendChild(getTDandSpan(ALTDataToShow.value,"LiverMainWord","",warn,getTooltip(lab_ALT)));
 	if(ASTDataToShow.value>=50) {warn="warn";}
-	liverData.appendChild(getTDandSpan(ASTDataToShow.value,"LiverMainWord","",warn));
+	liverData.appendChild(getTDandSpan(ASTDataToShow.value,"LiverMainWord","",warn,getTooltip(lab_AST)));
 
 	var liverTime = document.getElementById("livertime_tr");
 	liverTime.innerHTML="";
@@ -242,6 +259,7 @@ function processData(dataArrayObject)
 {
 	var emptyObject ={"value":"", "date":"","time":""};
 	
+	if(!dataArrayObject) var dataArrayObject=emptyObject;
 
 	if(typeof dataArrayObject =="undefined" && dataArrayObject)
 	{
@@ -272,6 +290,38 @@ function processData(dataArrayObject)
 		}
 	}
 	return dataToShow;
+}
+
+function getTooltip(dataArrayObject){
+	var emptyObject ={"value":"", "date":"","time":""};
+	if(!dataArrayObject) return "";
+	var sortedArray = dataArrayObject.sort(function (a,b){
+		return compareDate(a.date,b.date,a.time,b.time)==false;});
+
+	var finalString="";
+	var grabbedArray=[];
+	for(var i = 1 ; i < sortedArray.length && grabbedArray.length <=3 ; i++)
+	{
+		grabbedArray.push(sortedArray[i]);
+	}
+	
+	for(var i = 1 ; i < grabbedArray.length  ; i++)
+	{
+		if(finalString!="") finalString+="\r\n";
+		
+		var valuetoshow= grabbedArray[i].value; 
+		if(/d+(.d+)?/.test(valuetoshow))
+		{
+			valuetoshow = valuetoshow.match(/d+(.d+)?/)[0];
+			valuetoshow=Math.round(valuetoshow*10)/10;	
+		}
+		if(valuetoshow>50000) {valuetoshow = valuetoshow/1000+"k";}
+		finalString+=grabbedArray[i].date.split('-')[1]+"/"+grabbedArray[i].date.split('-')[2] +" "+valuetoshow;
+	}
+
+	//if(sortedArray.length>grabbedArray.length +1) finalString+="\r\n...";
+
+	return finalString;
 }
 
  function getThresholdDate()
@@ -321,25 +371,34 @@ function regularTime(inputStringDate)
 
 function compareDate(dateA, dateB, timeA, timeB)
 {
+	
+	var result =false;
+	
 	if(!(dateA && dateB && timeA && timeB))
 	{
 		return false;
 	}
-	else if(dateA.split('-')[0] > dateB.split('-')[0])
+	
+	for(var i = 0 ; i < 3; i++)
 	{
-		return true;
-	}else if(dateA.split('-')[1] > dateB.split('-')[1])
+		if(dateA.split('-')[i] > dateB.split('-')[i])
+		{
+			return true;
+		}else if (dateA.split('-')[i] < dateB.split('-')[i])
+		{
+			return false
+		}
+	}
+
+	for(var i = 0 ; i < 2; i++)
 	{
-		return true;
-	}else if(dateA.split('-')[2] > dateB.split('-')[2])
-	{
-		return true;
-	}else if(timeA.split(':')[0] > timeB.split(':')[0])
-	{
-		return true;
-	}else if(timeA.split(':')[1] > timeB.split(':')[1])
-	{
-		return true;
+		if(timeA.split('-')[i] > timeA.split('-')[i])
+		{
+			return true;
+		}else if (timeA.split('-')[i] < timeB.split('-')[i])
+		{
+			return false
+		}
 	}
 	return false;
 }
@@ -365,13 +424,14 @@ function getMonthDay(s)
 }
 
 
-function getTDandSpan(content, tdclass, spanclass, warn)
+function getTDandSpan(content, tdclass, spanclass, warn, tooltip)
 {
 	td=document.createElement('td');
 		td.setAttribute('class',tdclass);
 		td.align="center";
 			sp=document.createElement('span');
 			sp.setAttribute('class',spanclass);
+			
 			sp2=document.createElement('span');
 			sp2.setAttribute('class',warn);
 			if((typeof content ==="string" || typeof content ==="number") && content !="")
@@ -383,12 +443,13 @@ function getTDandSpan(content, tdclass, spanclass, warn)
 			}
 			sp.appendChild(sp2);
 		td.appendChild(sp)
+		if(tooltip){td.setAttribute("title",tooltip);}
 	return td;
 }
 
 function getAbx_Array()
 {
-	var filteredArray = drug_Array.filter(drugDateFilter(new Date("2016-11-18")));
+	var filteredArray = drug_Array.filter(drugDateFilter(currentDate));
 	var matchArray =[];
 	var matchedDrugs=[];
 	var resultArray=[];
@@ -399,16 +460,16 @@ function getAbx_Array()
 		{
 			if( ((filteredArray[i].name.toLowerCase().indexOf(AvailableDrugList[j].match.toLowerCase())>=0)||
 				(filteredArray[i].productName.toLowerCase().indexOf(AvailableDrugList[j].match.toLowerCase())>=0)) &&
-				filteredArray[i].frequency.toLowerCase() != "st" &&
-				filteredArray[i].frequency.toLowerCase() != "stat" &&
-				filteredArray[i].frequency.toLowerCase() != "once")
+				filteredArray[i].frequency.trim().toLowerCase() != "st" &&
+				filteredArray[i].frequency.trim().toLowerCase() != "stat" &&
+				filteredArray[i].frequency.trim().toLowerCase() != "once")
 			{
 
 				matchArray.push(
-					{"name":AvailableDrugList[j].abbr,
-					"dosage":filteredArray[i].dosage+filteredArray[i].unit,
-					"frequency":filteredArray[i].frequency,
-					"startDate":filteredArray[i].startDate}
+					{"name":AvailableDrugList[j].abbr.trim(),
+					"dosage":filteredArray[i].dosage.trim()+" "+filteredArray[i].unit.toLowerCase().trim(),
+					"frequency":filteredArray[i].frequency.trim().toLowerCase(),
+					"startDate":filteredArray[i].startDate.trim()}
 					);
 				
 				if(matchedDrugs.indexOf(AvailableDrugList[j].abbr)<0)
@@ -433,16 +494,52 @@ function getAbx_Array()
 	return resultArray;
 }
 
-var AvailableDrugList=
+var AvailableDrugList =
 [
+	
 	{"match":"ampicillin","abbr":"AMPI"},
 	{"match":"ampolin","abbr":"AMPI"},
+	{"match":"oxacillin","abbr":"OXAC"},
+	{"match":"unasyn","abbr":"UNAS"},
+
+	{"match":"soonmelt","abbr":"Augmentin"},
+	{"match":"tazocin","abbr":"TAZO"},
+	{"match":"zovirax","abbr":"ACYCL"},
+
+	{"match":"mepem","abbr":"MEPEM"},
+	{"match":"meropenem","abbr":"MEPEM"},
+	{"match":"imipenem","abbr":"IMIPENEM"},
+
+	{"match":"cefazolin","abbr":"CEFA"},
+	{"match":"cefuroxime","abbr":"CEFU"},
 	{"match":"cefotaxime","abbr":"CLAF"},
 	{"match":"claforan","abbr":"CLAF"},
-	{"match":"unasyn","abbr":"UNAS"},
+	{"match":"rocephin","abbr":"ROCEP"},
+	{"match":"ceftriax","abbr":"ROCEP"},
+	{"match":"ceftazi","abbr":"CEFTA"},
+	{"match":"cefepime","abbr":"CEFEP"},
+
+	{"match":"moxifloxacin","abbr":"MOXI"},
+	{"match":"ciprofloxacin","abbr":"CIPRO"},
+	{"match":"levofloxacin","abbr":"CRAVIT"},
+
 	{"match":"isepamicin","abbr":"EXAC"},
 	{"match":"exacin","abbr":"EXAC"},
-	{"match":"vancomycin","abbr":"VANCO"}
+
+	{"match":"metronidazole","abbr":"METRO"},
+
+	{"match":"teico","abbr":"TEICO"},
+	{"match":"vancomycin","abbr":"VANCO"},
+
+	{"match":"daptomycin","abbr":"DAPTO"},
+
+	{"match":"linezolid","abbr":"LINEZ"},
+
+	{"match":"fluconazole","abbr":"FLUCO"},
+	{"match":"ambisome","abbr":"AMBI"},
+	{"match":"fungizone","abbr":"AMBI"},
+
+	{"match":"zovirax","abbr":"ACYCL"}
 ]
 
 function drugDateFilter(dateToExam)

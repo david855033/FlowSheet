@@ -1,0 +1,328 @@
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=EmulateIE9" >
+    <title>NICU FLow Sheet Main Page</title>
+    <script language='javaScript'>var path='/NIS';</script>
+<script language='javaScript'>var qdate='2017/01/25';</script>
+<script language='javaScript'>var chartNumber='43752314';</script>
+<script language='javaScript'>var wardName='CVSA - 3';</script>
+<script language='javaScript'>var patientName='薛亦茜';</script>
+<script language='javaScript'>var doctorName='吳飛逸';</script>
+<script language='javaScript'>var currentDate=new Date('2017-01-25');</script>
+<script language='javaScript'>var admissionDate=new Date('2017-01-19');</script>
+<script language='javaScript'>var birthDate=new Date('2016-10-20');</script>
+<script language='javaScript'>var gestationalAgeWeek='';</script>
+<script language='javaScript'>var gestationalAgeDate='';</script>
+<script language='javaScript'>var bodyWeight='';</script>
+<script language='javaScript'>var bodyWeightLastDate='';</script>
+<script language='javaScript'>var mostRecentBodyWeight=5407.0;</script>
+<script language='javaScript'>var mostRecentBodyWeightDate=new Date('2017-01-23');</script>
+<script language='javaScript'>var birthBodyWeight='';</script>
+<script language='javaScript'>var bodyWeightArray=[{"date":"2017-01-23","weight":"5407.0"},{"date":"2017-01-22","weight":"5315.0"},{"date":"2017-01-21","weight":"5296.0"},{"date":"2017-01-19","weight":"5355.0"}];</script>
+<script language='javaScript'>var bodyTemperature=[{"time":"07:46","value":37.4},{"time":"06:00","value":36.8},{"time":"02:43","value":36.7},{"time":"00:30","value":36.2}];</script>
+<script language='javaScript'>var HeartRate=[{"time":"08:00","value":136},{"time":"07:00","value":136},{"time":"06:00","value":138},{"time":"05:00","value":134},{"time":"04:00","value":132},{"time":"03:00","value":132},{"time":"02:00","value":122},{"time":"01:00","value":104},{"time":"00:57","value":106}];</script>
+<script language='javaScript'>var RespRate=[{"time":"08:00","value":29},{"time":"07:00","value":28},{"time":"06:00","value":28},{"time":"05:00","value":28},{"time":"04:00","value":28},{"time":"03:00","value":28},{"time":"02:00","value":28},{"time":"01:00","value":28},{"time":"00:57","value":28}];</script>
+<script language='javaScript'>var SBP=[{"time":"08:00","value":70},{"time":"07:00","value":78},{"time":"06:00","value":86},{"time":"05:00","value":92},{"time":"04:00","value":86},{"time":"03:00","value":96},{"time":"02:00","value":102},{"time":"01:00","value":80},{"time":"00:57","value":92},{"time":"00:00","value":92}];</script>
+<script language='javaScript'>var DBP=[{"time":"08:00","value":44},{"time":"07:00","value":50},{"time":"06:00","value":58},{"time":"05:00","value":60},{"time":"04:00","value":56},{"time":"03:00","value":64},{"time":"02:00","value":68},{"time":"01:00","value":52},{"time":"00:57","value":47},{"time":"00:00","value":47}];</script>
+<script language='javaScript'>var peripheral_Array=[];</script>
+<script language='javaScript'>var aline_Array=[{"route":"A-line","name":"ns 500ml+heparin 250u","amount":[,,12.6,,,,9.3,,,,,,,,,,,,,,,,,]}];</script>
+<script language='javaScript'>var central_Array=[{"route":"CVP","name":"NTG 16.2mg/D5W 250ml","amount":[,,8.7,,,,3.7,,,,,,,,,,,,,,,,,]},{"route":"CVP","name":"dopamin 165mg/NS 50ml","amount":[,,3,,,,1.8,,,,,,,,,,,,,,,,,]},{"route":"CVP","name":"D10W + 15%KCL 3ML","amount":[,,40.6,,,,25,,,,,,,,,,,,,,,,,]},{"route":"CVP","name":"fentanyl 5amp/ns 10ml","amount":[,,2.5,,,,1.8,,,,,,,,,,,,,,,,,]},{"route":"CVP","name":"vitacal","amount":[,,,,,,,,,,,,,,,,,,,,,,,]},{"route":"CVP","name":"Vancomycin","amount":[,,,,,,,3.2,,,,,,,,,,,,,,,,]},{"route":"CVP","name":"Ceftazidime","amount":[,3.6,,,,,,,,,,,,,,,,,,,,,,]},{"route":"CVP","name":"D10W + 15%KCL 3ML","amount":[,,,,,,,13.3,,,,,,,,,,,,,,,,]}];</script>
+<script language='javaScript'>var transfusion_Array=[];</script>
+<script language='javaScript'>var drain_Array=[{"route":"Chest tube","name":"胸部","amount":[3.0,,2.4,,1.6,,2.4,,,,,,,,,,,,,,,,,]},{"route":"Chest tube","name":"胸部","amount":[,,4.199999999999999,,4.3999999999999995,,2.4,,,,,,,,,,,,,,,,,]},{"route":"Dialysis","name":"","amount":[5,,15,,15,,4,,,,,,,,,,,,,,,,,]}];</script>
+<script language='javaScript'>var NGDrain=[];</script>
+<script language='javaScript'>var event_Array=[{"time":"09:33","content":"至手術室手術間"},{"time":"09:32","content":"至手術室觀察區"},{"time":"03:44","content":"dopamin 0.6(6)"},{"time":"01:45","content":"dopamin 0.7(7)"},{"time":"00:30","content":"dopamin 0.8(8)"}];</script>
+<script language='javaScript'>var POAmount=[,,,,,,,,,,,,,,,,,,,,,,,];</script>
+<script language='javaScript'>var NGAmount=[,,2,,,,,,,,,,,,,,,,,,,,,];</script>
+<script language='javaScript'>var RVAmount=[,,,,,,,,,,,,,,,,,,,,,,,];</script>
+<script language='javaScript'>var urine=[26.8,,11.2,,19.4,8,,,25.3,,,,,,,,,,,,,,,];</script>
+<script language='javaScript'>var stool=[];</script>
+<script language='javaScript'>var enema=[];</script>
+<script language='javaScript'>var lab_glucose=[{"value":81.0,"date":"2017-01-23","time":"05:07"},{"value":70.0,"date":"2017-01-23","time":"19:36"},{"value":103.0,"date":"2017-01-23","time":"21:54"},{"value":107.0,"date":"2017-01-24","time":"00:35"},{"value":96.0,"date":"2017-01-24","time":"04:44"},{"value":95.0,"date":"2017-01-24","time":"07:03"},{"value":121.0,"date":"2017-01-24","time":"12:57"},{"value":154.0,"date":"2017-01-24","time":"16:36"},{"value":156.0,"date":"2017-01-24","time":"19:39"},{"value":168.0,"date":"2017-01-24","time":"23:22"},{"value":156.0,"date":"2017-01-25","time":"04:38"}];</script>
+<script language='javaScript'>var lab_WBC=[{"value":7000,"date":"2017-01-19","time":"14:46"},{"value":4900,"date":"2017-01-22","time":"06:22"},{"value":4600,"date":"2017-01-23","time":"06:18"},{"value":12300,"date":"2017-01-23","time":"20:13"},{"value":10600,"date":"2017-01-24","time":"04:51"},{"value":7550,"date":"2017-01-25","time":"06:32"}];</script>
+<script language='javaScript'>var lab_Seg=[{"value":"50.0%","date":"2017-01-19","time":"14:46"},{"value":"27.7%","date":"2017-01-22","time":"06:22"},{"value":"27.3%","date":"2017-01-23","time":"06:18"},{"value":"66.7%","date":"2017-01-23","time":"20:13"},{"value":"66.2%","date":"2017-01-24","time":"04:51"},{"value":"79.5%","date":"2017-01-25","time":"06:32"}];</script>
+<script language='javaScript'>var lab_Hgb=[{"value":9.1,"date":"2017-01-19","time":"14:46"},{"value":8.8,"date":"2017-01-22","time":"06:22"},{"value":14.0,"date":"2017-01-23","time":"06:18"},{"value":7.8,"date":"2017-01-23","time":"20:13"},{"value":8.2,"date":"2017-01-24","time":"04:51"},{"value":12.4,"date":"2017-01-25","time":"06:32"}];</script>
+<script language='javaScript'>var lab_PLT=[{"value":276000,"date":"2017-01-19","time":"14:46"},{"value":293000,"date":"2017-01-22","time":"06:22"},{"value":270000,"date":"2017-01-23","time":"06:18"},{"value":62000,"date":"2017-01-23","time":"20:13"},{"value":61000,"date":"2017-01-24","time":"04:51"},{"value":66000,"date":"2017-01-25","time":"06:32"}];</script>
+<script language='javaScript'>var lab_Na=[{"value":142,"date":"2017-01-19","time":"12:51"},{"value":141,"date":"2017-01-21","time":"09:31"},{"value":139,"date":"2017-01-21","time":"20:28"},{"value":136,"date":"2017-01-22","time":"06:12"},{"value":138,"date":"2017-01-22","time":"18:13"},{"value":137,"date":"2017-01-23","time":"06:19"},{"value":143,"date":"2017-01-23","time":"20:44"},{"value":142,"date":"2017-01-24","time":"05:17"},{"value":141,"date":"2017-01-25","time":"06:40"}];</script>
+<script language='javaScript'>var lab_K=[{"value":4.0,"date":"2017-01-19","time":"12:51"},{"value":3.6,"date":"2017-01-21","time":"09:31"},{"value":4.1,"date":"2017-01-21","time":"20:28"},{"value":4.8,"date":"2017-01-22","time":"06:12"},{"value":4.0,"date":"2017-01-22","time":"18:13"},{"value":4.2,"date":"2017-01-23","time":"06:19"},{"value":4.1,"date":"2017-01-23","time":"20:44"},{"value":4.0,"date":"2017-01-24","time":"05:17"},{"value":5.1,"date":"2017-01-25","time":"06:40"}];</script>
+<script language='javaScript'>var lab_Ca=[{"value":1.16,"date":"2017-01-19","time":"12:37"},{"value":1.23,"date":"2017-01-21","time":"20:21"},{"value":1.26,"date":"2017-01-22","time":"05:59"},{"value":1.21,"date":"2017-01-22","time":"18:06"},{"value":1.21,"date":"2017-01-23","time":"06:07"},{"value":1.06,"date":"2017-01-23","time":"20:14"},{"value":0.95,"date":"2017-01-24","time":"04:57"}];</script>
+<script language='javaScript'>var lab_Mg=[{"value":2.29,"date":"2017-01-21","time":"20:56"},{"value":2.44,"date":"2017-01-22","time":"06:12"},{"value":2.32,"date":"2017-01-22","time":"18:13"}];</script>
+<script language='javaScript'>var lab_P=[];</script>
+<script language='javaScript'>var lab_CRP=[{"value":0.04,"date":"2017-01-19","time":"12:51"},{"value":0.51,"date":"2017-01-23","time":"20:35"}];</script>
+<script language='javaScript'>var lab_PCT=[{"value":100.00,"date":"2017-01-23","time":"20:35"}];</script>
+<script language='javaScript'>var lab_BUN=[{"value":8,"date":"2017-01-19","time":"12:51"},{"value":8,"date":"2017-01-23","time":"06:19"},{"value":16,"date":"2017-01-23","time":"20:44"},{"value":24,"date":"2017-01-24","time":"05:17"},{"value":12,"date":"2017-01-25","time":"06:40"}];</script>
+<script language='javaScript'>var lab_Cr=[{"value":0.46,"date":"2017-01-19","time":"12:51"},{"value":0.28,"date":"2017-01-23","time":"06:19"},{"value":0.52,"date":"2017-01-23","time":"20:44"},{"value":0.53,"date":"2017-01-24","time":"05:17"},{"value":0.27,"date":"2017-01-25","time":"06:40"}];</script>
+<script language='javaScript'>var lab_ALT=[{"value":21,"date":"2017-01-19","time":"12:51"},{"value":14,"date":"2017-01-23","time":"20:35"}];</script>
+<script language='javaScript'>var lab_AST=[];</script>
+<script language='javaScript'>var lab_TBIL=[{"value":0.68,"date":"2017-01-23","time":"20:35"}];</script>
+<script language='javaScript'>var lab_MICROBIL=[];</script>
+<script language='javaScript'>var lab_TCB=[];</script>
+<script language='javaScript'>var lab_DBIL=[];</script>
+<script language='javaScript'>var lab_ALKP=[];</script>
+<script language='javaScript'>var lab_TotalCa=[];</script>
+<script language='javaScript'>var lab_LDH=[];</script>
+<script language='javaScript'>var lab_Iron=[];</script>
+<script language='javaScript'>var lab_TIBC=[];</script>
+<script language='javaScript'>var lab_Ferritin=[];</script>
+<script language='javaScript'>var drug_Array=[{"name":"Cefazolin (Veterin) *inj 1000 mg","productName":"Veterin  for * inj 1000 mg      ","dosage":"125     ","unit":"MG    ","route":"IVA","frequency":"ST      ","startDate":"2017-01-19-13:52","endDate":"2017-01-20-15:00","status":"CDC","totalAmount":"","selfPaid":"N","info":"TO OR                                                                                           "},{"name":"Cefazolin (Veterin) *inj 1000 mg","productName":"Veterin  for * inj 1000 mg      ","dosage":"125     ","unit":"MG    ","route":"IVA","frequency":"ST      ","startDate":"2017-01-19-13:52","endDate":"2017-01-20-15:00","status":"CDC","totalAmount":"","selfPaid":"N","info":"TO OR                                                                                           "},{"name":"Cefazolin (Veterin) *inj 1000 mg","productName":"Veterin  for * inj 1000 mg      ","dosage":"125     ","unit":"MG    ","route":"IVA","frequency":"ST      ","startDate":"2017-01-19-13:52","endDate":"2017-01-20-15:00","status":"CDC","totalAmount":"","selfPaid":"N","info":"TO OR                                                                                           "},{"name":"Vancomycin  Sandoz  *inj 1000 mg","productName":"Vancomycin  Sandoz  *inj 1000 mg","dosage":"50      ","unit":"MG    ","route":"IVA","frequency":"Q6H     ","startDate":"2017-01-23-17:11","endDate":"2017-01-23-17:54","status":"DC","totalAmount":"","selfPaid":"N","info":""},{"name":"Ceftazidime (Tatumcef) * inj 2 g","productName":"Tatumcef for * inj 2 g  CCPC    ","dosage":"250     ","unit":"MG    ","route":"IVA","frequency":"Q8H     ","startDate":"2017-01-23-17:11","endDate":"2017-01-23-17:54","status":"DC","totalAmount":"","selfPaid":"N","info":""},{"name":"Ceftazidime (Tatumcef) * inj 2 g","productName":"Tatumcef for * inj 2 g  CCPC    ","dosage":"250     ","unit":"MG    ","route":"IVA","frequency":"ST      ","startDate":"2017-01-23-17:11","endDate":"2017-01-24-15:00","status":"CDC","totalAmount":"","selfPaid":"N","info":""},{"name":"Vancomycin  Sandoz  *inj 1000 mg","productName":"Vancomycin  Sandoz  *inj 1000 mg","dosage":"50      ","unit":"MG    ","route":"IVA","frequency":"Q6HV    ","startDate":"2017-01-23-17:54","endDate":"2017-01-26-15:00","status":"使用中","totalAmount":"","selfPaid":"N","info":""},{"name":"Ceftazidime (Tatumcef) * inj 2 g","productName":"Tatumcef for * inj 2 g  CCPC    ","dosage":"250     ","unit":"MG    ","route":"IVA","frequency":"Q8H     ","startDate":"2017-01-23-17:54","endDate":"2017-01-26-15:00","status":"使用中","totalAmount":"","selfPaid":"N","info":""},{"name":"Vancomycin  Sandoz  *inj 1000 mg","productName":"Vancomycin  Sandoz  *inj 1000 mg","dosage":"50      ","unit":"MG    ","route":"IVA","frequency":"ST      ","startDate":"2017-01-23-21:38","endDate":"2017-01-24-15:00","status":"CDC","totalAmount":"","selfPaid":"N","info":""},{"name":"Ceftazidime (Tatumcef) * inj 2 g","productName":"Tatumcef for * inj 2 g  CCPC    ","dosage":"250     ","unit":"MG    ","route":"IVA","frequency":"ST      ","startDate":"2017-01-23-21:38","endDate":"2017-01-24-15:00","status":"CDC","totalAmount":"","selfPaid":"N","info":""},{"name":"Vancomycin  Sandoz  *inj 1000 mg","productName":"Vancomycin  Sandoz  *inj 1000 mg","dosage":"1000    ","unit":"MG    ","route":"IPL","frequency":"STAT    ","startDate":"2017-01-24-15:00","endDate":"2017-01-25-15:00","status":"CDC","totalAmount":"","selfPaid":"N","info":"TO OR                                                                                           "}];</script>
+<script language='javaScript'>var Saturation=[{"time":"08:00","value":94},{"time":"07:30","value":98},{"time":"07:10","value":97},{"time":"07:00","value":92},{"time":"06:00","value":93},{"time":"05:00","value":95},{"time":"04:46","value":94},{"time":"03:00","value":96},{"time":"02:00","value":95},{"time":"01:00","value":97}];</script>
+<script language='javaScript'>var ABG_Array=[{"time":"04:37","data":{"ph":"7.46","po2":"63","paco2":"42","hco3":"29.9","be":"5.5","sat":"93%","hb":"","hct":"36","na":"134","k":"3.2","ca":"1.20","bun":"","cr":""}},{"time":"04:46","data":{"ph":"7.46","po2":"63","paco2":"42","hco3":"29.9","be":"5.5","sat":"93%","hb":"","hct":"","na":"","k":"","ca":"","bun":"","cr":""}}];</script>
+  
+    <script src="/NIS/report/FlowSheet/jquery-1.2.6.pack.js"></script>
+    <script src="/NIS/report/FlowSheet/flowsheet_main.js"></script>
+</head>
+
+<body>
+<input type="hidden" id="hdactvdate" value=""/>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>NICU FLow Sheet</title>
+    <link rel="stylesheet" type="text/css" href="style.css">
+    
+    <script src="dataInterface.js"></script>
+    <script src="componentFactory.js"></script>
+    <script src="HeaderDataProcess.js"></script>
+    <script src="TPRDataProcess.js"></script>
+    <script src="ABDataProcess.js"></script>
+    <script src="IODataProcess.js"></script>
+    <script src="IOSummaryCard.js"></script>
+    <script src="eventProcess.js"></script>
+    <script src="ventilatorDataProcess.js"></script>
+    <script src="ABGDataProcess.js"></script>
+    <script src="labDataProcess.js"></script>
+
+</head>
+<body onload="HeaderDataProcess();TPRDataProcess(); ABDataProcess();IODataProcess();IOSummaryCard();eventProcess();ventilatorProcess();ABGDataProcess();labDataProcess();">
+<section>
+    <div ID="mainHeader" class="header">
+            <div class="clear"></div>
+    </div>
+    
+    <div class="navigator">    
+        <div class="navigatorContainer">
+            <div id="currentDate" class="navigatorButton"></div>
+            <div id="chgdate" class="navigatorButton">切換日期</div>
+        </div>
+    </div>
+
+    <div class="main-content">
+        <div class="UpperLeftTableContainer">
+            <div id="tprtable" class="TPRtable">
+            </div>
+            <div id="abtable" class="ABtable">
+            </div>
+        </div>
+            
+        <div id="eventdiv" class="event">
+
+        </div>
+        <div class="clear"></div>
+    </div>
+
+    <div class="IO_content">
+        <div id="iotable" class="IO_table">
+        
+        </div>
+
+        <div id="idcards" class="IO_Cards">
+    
+        </div>
+        <div class="clear"></div>
+    </div>
+
+
+    <div class="bottom-content">
+            <div class="bottomLeft">
+                <div id="ABGDiv" class="ABG_table">
+                </div>
+                
+                <div id="ventilatorDiv" class="ventilator_table">
+                </div>
+            </div>
+            <div class="bottomRight">
+            
+                <div class="glucoseCard">
+                    <table class="glucoseTable">
+                        <tr>
+                            <td><span class="glucoseTitle">Glucose</span></td>
+                        </tr>
+                        <tr id="glucoseData_tr">
+                        
+                        </tr>
+                        <tr id="glucoseTime_tr">
+                        
+                        </tr>
+                    </table>
+                </div>
+                <div class="CBCCard">
+                    <table class="CBCtable">
+                        <tr>
+                            <td><span class="CBCtitle">WBC</span></td>
+                            <td><span class="CBCtitle">Hgb</span></td>
+                            <td><span class="CBCtitle">Platelet</span></td>
+                        </tr>
+                        <tr id="CBCData_tr">
+                            
+                        </tr>
+                        <tr id="CBCData2_tr">
+                            
+                        </tr>
+                        <tr id="CBCTime">
+                            
+                        </tr>
+                    </table>
+                </div>
+                
+                <div class="clear"></div>
+
+                <div class="EleCard">
+                    <table class="EleTable">
+                        <tr>
+                            <td><span class="EleTitle">Na<span class="upperWord">+</span></span></td>
+                            <td><span class="EleTitle">K<span class="upperWord">+</span></span></td>
+                            <td><span class="EleTitle">Ca<span class="upperWord">2+</span></span></td>
+                            <td><span class="EleTitle">P</span></td>
+                            <td><span class="EleTitle">Mg<span class="upperWord">2+</span></span></td>
+                        </tr>
+                        <tr id="EleData_tr">
+                            
+                        </tr>
+                        <tr id="EleTime_tr">
+                            
+                        </tr>
+                    </table>
+                </div>
+                <div class="clear"></div>
+                
+                <div class="CRPCard">
+                    <table class="CRPTable">
+                        <tr>
+                            <td><span class="CRPTitle">CRP</span></td>
+                        </tr>
+                        <tr id="CRPData_tr">
+                        </tr>
+                        <tr id="CRPTime_tr">
+                        </tr>
+                    </table>
+                </div>
+                <div class="CRPCard">
+                    <table class="CRPTable">
+                        <tr>
+                            <td><span class="CRPTitle">Procalcitonin</span></td>
+                        </tr>
+                        <tr  id="PCTData_tr">
+                        </tr>
+                        <tr id="PCTTime_tr">
+                        </tr>
+                    </table>
+                </div>
+        
+                <div class="AbxCard">
+                    <table class="AbxTable">
+                        <tr>
+                            <td colspan="4"><span class="AbxTitle">Current Antibiotics</span></td>
+                        </tr>
+                        <tr id="abxname_tr">
+                        </tr>
+                        <tr id="abxdose_tr">
+                        </tr>
+
+                    </table>
+                </div>
+
+                <div class="clear"></div>
+
+                <div class="RenalCard">
+                    <table class="RenalTable">
+                        <tr>
+                            <td><span class="RenalTitle">BUN</span></td>
+                            <td><span class="RenalTitle">Cr</span></td>
+                        </tr>
+                        <tr id="renal_tr">
+
+                        </tr>
+                        <tr id="renaltime_tr">
+
+                        </tr>
+                    </table>
+                </div>
+                
+                <div class="LiverCard">
+                    <table class="LiverTable">
+                        <tr>
+                            <td><span class="LiverTitle">ALT</span></td>
+                            <td><span class="LiverTitle">AST</span></td>
+                        </tr>
+                        <tr id="liver_tr">
+                        </tr>
+                        <tr id="livertime_tr">
+                        </tr>
+                    </table>
+                </div>
+
+                <div class="TbilCard">
+                    <table class="TbilTable">
+                        <tr id="TBilTitle_tr">
+
+                        </tr>
+                        <tr id="TBilData_tr">
+                        </tr>
+                        <tr id="TBilTime_tr">
+                        </tr>
+                    </table>
+                </div>
+
+                <div class="clear"></div>
+                    
+                <div class="BoneMarkerCard">
+                    <table class="BoneMarkerTable">
+                        <tr>
+                            <td><span class="BoneMarkerTitle">ALKP</span></td>
+                            <td><span class="BoneMarkerTitle">Total Ca</span></td>
+                            <td><span class="BoneMarkerTitle">LDH</span></td>
+                        </tr>
+                        <tr id="BoneMarkerData_tr">
+                    
+                        </tr>
+                        <tr id="BoneMarkerTime_tr">
+                    
+                        </tr>
+                    </table>
+                </div>
+                
+                <div class="AnemiaCard">
+                    <table class="AnemiaTable">
+                        <tr>
+                            <td><span class="AnemiaTitle">Iron</span></td>
+                            <td><span class="AnemiaTitle">TIBC</span></td>
+                            <td><span class="AnemiaTitle">FeSat</span></td>
+                            <td><span class="AnemiaTitle">Ferritin</span></td>
+                        </tr>
+                        <tr id="AnemiaData_tr">
+
+                        </tr>
+                        <tr id="AnemiaTime_tr">
+                    
+                        </tr>
+                    </table>
+                </div>
+
+                <div class="clear"></div>
+
+            </div>
+            <div class="clear"></div>
+        </div>
+        <div style="height:2px;"></div>
+    </div>
+    
+</section>
+
+</body>
+</html>
+</body>
+</html>
+

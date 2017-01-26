@@ -40,28 +40,27 @@ function getShiftName(shiftname, isTotal)
 function getIOContainer(start, end, isTotal)
 {
 	var div = getComponent('div',"IOContainer");
-	div.appendChild(getInnerCard("IV", getIV(start, end), isTotal, false));
-	div.appendChild(getInnerCard("Feed", getFeed(start, end), isTotal, false));
-	div.appendChild(getInnerCard("Input",getInput(start, end), isTotal, true));
+	div.appendChild(getInnerCard("IV", getIV(start, end)||"-", isTotal, false));
+	div.appendChild(getInnerCard("Feed", getFeed(start, end)||"-", isTotal, false));
+	div.appendChild(getInnerCard("Input", getInput(start, end)||"-", isTotal, false));
 	div.appendChild(getClearDiv());
-	div.appendChild(getInnerCard("Urine",getUrine(start, end), isTotal, false));
+	div.appendChild(getInnerCard("Urine", getUrine(start, end)||"-", isTotal, false));
 	var uo = getUrinePerHour(start, end);
-	var warn;
-	if(uo >= 5 || (uo <1 && uo>0)) {warn="warn";}
-	div.appendChild(getInnerCard("ml/kg/h",uo, isTotal, false, warn));
-	div.appendChild(getInnerCard("Output",getOutput(start,end), isTotal, true));
-	div.appendChild(getClearDiv());
+	var style="Bold";
+	if(uo >= 5 || (uo <1 && uo>0)) {style="Warn";}
+	div.appendChild(getInnerCard("ml/kg/h", uo||"-", isTotal, false, style));
+	div.appendChild(getInnerCard("Output", getOutput(start,end)||"-", isTotal, false));
 	return div;
 }
 
-function getInnerCard(name, amount, isTotal, isWide, isWarn)
+function getInnerCard(name, amount, isTotal, isWide, style)
 {
 	var div= getComponent('div',getDivClass(isTotal, isWide));
 		var tb = getComponent('table');
 			var td1=getTRwithTD(name,getNameTitleClass(isTotal));
 			td1.align="center";
 			tb.appendChild(td1);
-			var td2=getTRwithTD(amount,getAmountTitleClass(isTotal,isWarn));
+			var td2=getTRwithTD(amount.toString(),getAmountTitleClass(isTotal,style));
 			td2.align="center";
 			tb.appendChild(td2);
 	div.appendChild(tb);
@@ -71,45 +70,26 @@ function getInnerCard(name, amount, isTotal, isWide, isWarn)
 
 
 
-function getIOBalance(start, end, isTotal)
+function getIOBalance(start, end, isTotal) 
 {
-	var setClass,setClass1,setClass2;
-	if(isTotal){
-		setClass="IOBalanceTotal";
-		setClass1="IOInnerSmallTotal";
-		setClass2="IOInnerBigTotal";
+	var div = getComponent('div',"IOBalance");
+	if(!isTotal)
+	{
+		div.appendChild(getComponent('div',"tr_IObalancespacing"));
 	}else{
-		setClass="IOBalance";
-		setClass1="IOInnerSmall";
-		setClass2="IOInnerBig";
+		div.appendChild(getInnerCard("Daily per kg", getPerKg(start, end)||"-", isTotal, true));
 	}
-	var div = getComponent('div',setClass);
-		var tb = document.createElement('table');
-		tb.appendChild(getComponent('tr',"tr_IObalancespacing"));
-			var tr1 = getTRwithTD("I/O",setClass1);
-			tr1.align="center";
-		tb.appendChild(tr1);
-			var tr2 = getTRwithTD(getIO(start,end),setClass2);
-			tr2.align="center";
-		tb.appendChild(tr2);
-	div.appendChild(tb);
-	return div;
+	
+	div.appendChild(getInnerCard("In-Out", getIO(start, end)||"-", isTotal, true));	
+	div.appendChild(getClearDiv());
+	return div;	
+	
 }
 
 
 
 function getIV(start, end){
 	var amount=0;
-	for(x = 0; x < peripheral_Array.length; x++)
-	{
-		for(y = start ; y<=end ; y++)
-		{
-			if(typeof peripheral_Array[x].amount[y] === "number")
-			{
-				amount +=peripheral_Array[x].amount[y];
-			}
-		}
-	}
 	for(x = 0; x < peripheral_Array.length; x++)
 	{
 		for(y = start ; y<=end ; y++)
@@ -130,7 +110,7 @@ function getIV(start, end){
 			}
 		}
 	}
-	amount = Math.round(amount);
+	amount = Math.round(amount)||"";
 	return amount;
 }
 
@@ -147,12 +127,13 @@ function getFeed(start, end){
 				amount += NGAmount[y];
 			}
 	}
-	amount = Math.round(amount);
+	amount = Math.round(amount)||"";
 	return amount;	
 }
 
 function getInput(start, end){
-	var amount=getIV(start, end)+getFeed(start,end);
+	var amount=getIV(start, end)*1+getFeed(start,end)*1;
+	
 	for(x = 0; x < transfusion_Array.length; x++)
 	{
 		for(y = start ; y<=end ; y++)
@@ -163,8 +144,20 @@ function getInput(start, end){
 			}
 		}
 	}
-	amount = Math.round(amount);
+	amount = Math.round(amount)||"";
 	return amount;
+}
+
+function getPerKg(start, end){
+	var input=getInput(start, end);
+	if(mostRecentBodyWeight && typeof mostRecentBodyWeight =="number")
+	{
+		input = Math.round(input/mostRecentBodyWeight*1000);	
+		return input||"-";
+	}else
+	{
+		return "-";
+	}	
 }
 
 function getUrine(start, end){
@@ -177,7 +170,7 @@ function getUrine(start, end){
 			}
 	}
 	amount = Math.round(amount);
-	return amount;	
+	return amount||"";	
 }
 
 function getUrinePerHour(start,end){	
@@ -198,8 +191,8 @@ function getUrinePerHour(start,end){
 	{
 	var amount = "-";
 	}
-	
-	return amount;
+	amount = Math.round(amount*10)/10;
+	return amount||"";
 }
 
 function getOutput(start,end){
@@ -221,12 +214,15 @@ function getOutput(start,end){
 				amount += NGDrain[y];
 			}
 		}
-	return amount;
+	amount = Math.round(amount*10)/10;
+	return amount||"";
 }
 
 function getIO(start,end){
-	var amount = getInput(start,end)-getOutput(start,end);
-	return amount;
+	var amount = getInput(start,end)*1-getOutput(start,end)*1;
+	amount = Math.round(amount*10)/10;
+	if(amount >=0) amount = "+"+amount;
+	return amount||"";
 }
 
 
@@ -242,7 +238,7 @@ function getNameTitleClass(isTotal){
 	return divclass
 }
 
-function getAmountTitleClass(isTotal,isWarn){
+function getAmountTitleClass(isTotal,style){
 	var divclass;
 	if(isTotal)
 	{
@@ -250,8 +246,8 @@ function getAmountTitleClass(isTotal,isWarn){
 	}else{
 		divclass="IOInnerBig";
 	}
-	if(isWarn)
-	{divclass+="Warn";}
+	if(style)
+	{divclass+=style;}
 	return divclass
 }
 

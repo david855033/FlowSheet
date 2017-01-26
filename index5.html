@@ -1,0 +1,328 @@
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=EmulateIE9" >
+    <title>NICU FLow Sheet Main Page</title>
+    <script language='javaScript'>var path='/NIS';</script>
+<script language='javaScript'>var qdate='2017/01/25';</script>
+<script language='javaScript'>var chartNumber='43443578';</script>
+<script language='javaScript'>var wardName='PICU - 1';</script>
+<script language='javaScript'>var patientName='洪銓鎂';</script>
+<script language='javaScript'>var doctorName='宋文舉';</script>
+<script language='javaScript'>var currentDate=new Date('2017-01-25');</script>
+<script language='javaScript'>var admissionDate=new Date('2017-01-23');</script>
+<script language='javaScript'>var birthDate=new Date('2016-05-24');</script>
+<script language='javaScript'>var gestationalAgeWeek='';</script>
+<script language='javaScript'>var gestationalAgeDate='';</script>
+<script language='javaScript'>var bodyWeight='';</script>
+<script language='javaScript'>var bodyWeightLastDate='';</script>
+<script language='javaScript'>var mostRecentBodyWeight=4293.0;</script>
+<script language='javaScript'>var mostRecentBodyWeightDate=new Date('2017-01-23');</script>
+<script language='javaScript'>var birthBodyWeight='';</script>
+<script language='javaScript'>var bodyWeightArray=[{"date":"2017-01-23","weight":"4293.0"}];</script>
+<script language='javaScript'>var bodyTemperature=[{"time":"12:01","value":33.5},{"time":"11:00","value":33.5},{"time":"10:00","value":33.5},{"time":"09:04","value":33.5},{"time":"08:00","value":33.5},{"time":"04:00","value":33.5},{"time":"00:00","value":33.5}];</script>
+<script language='javaScript'>var HeartRate=[{"time":"12:01","value":100},{"time":"11:00","value":104},{"time":"10:00","value":104},{"time":"09:04","value":107},{"time":"08:00","value":105},{"time":"07:00","value":105},{"time":"06:00","value":105},{"time":"05:00","value":106},{"time":"04:00","value":113},{"time":"03:00","value":115},{"time":"02:00","value":113},{"time":"01:00","value":132},{"time":"00:00","value":88}];</script>
+<script language='javaScript'>var RespRate=[{"time":"12:01","value":25},{"time":"11:00","value":25},{"time":"10:00","value":25},{"time":"09:04","value":23},{"time":"08:00","value":20},{"time":"07:00","value":20},{"time":"06:00","value":20},{"time":"05:00","value":20},{"time":"04:00","value":20},{"time":"03:00","value":20},{"time":"02:00","value":20},{"time":"01:00","value":20},{"time":"00:00","value":20}];</script>
+<script language='javaScript'>var SBP=[{"time":"12:01","value":72},{"time":"11:00","value":75},{"time":"10:00","value":74},{"time":"09:04","value":68},{"time":"07:00","value":64},{"time":"06:00","value":61},{"time":"05:00","value":67},{"time":"04:00","value":59},{"time":"03:00","value":71},{"time":"01:00","value":97}];</script>
+<script language='javaScript'>var DBP=[{"time":"12:01","value":41},{"time":"11:00","value":44},{"time":"10:00","value":41},{"time":"09:04","value":35},{"time":"07:00","value":32},{"time":"06:00","value":31},{"time":"05:00","value":37},{"time":"04:00","value":41},{"time":"03:00","value":46},{"time":"01:00","value":64}];</script>
+<script language='javaScript'>var peripheral_Array=[];</script>
+<script language='javaScript'>var aline_Array=[{"route":"A-line","name":"NS+HEPARIN(1:1)","amount":[3,3,3,3,3,3,3,,,,,,,,,,,,,,,,,]},{"route":"A-line","name":"1/2NS+HEPARIN(1:1)","amount":[,,,,,,,,,,,,,1,1,,,,,,,,,]},{"route":"A-line","name":"NS+HEPARIN(1:1)","amount":[,,,,,,,1,1,1,1,1,1,,,,,,,,,,,]}];</script>
+<script language='javaScript'>var central_Array=[{"route":"CVP","name":"3%NaCl","amount":[0.8,0.8,0.8,0.8,0.8,0.8,0.3,,,,,,,,,,,,,,,,,]},{"route":"CVP","name":"20%Mannitol","amount":[20,,,,20,,,,,,,,,,,,,,,,,,,]},{"route":"CVP","name":"Ta. No5","amount":[5,10,15,15,15,15,15,,,,,,,,,,,,,,,,,]},{"route":"CVP","name":"NS for drug","amount":[,,,40,,,6,,,,,,,,,,,,,,,,,]},{"route":"CVP","name":"Dormicum","amount":[1.2,1.2,1.2,1.2,1.2,1.2,1.2,,,,,,,,,,,,,,,,,]},{"route":"CVP","name":"NS+Heparin","amount":[,,,,,,0,,,,,,,,,,,,,,,,,]},{"route":"CVP","name":"Fentanyl","amount":[0.8,0.8,0.8,0.8,0.8,0.8,0.8,,,,,,,,,,,,,,,,,]},{"route":"CVP","name":"D5W","amount":[,,,,,,,,10,10,10,10,10,,,,,,,,,,,]},{"route":"CVP","name":"ALBU 16ML+D5W","amount":[,,,,,,,40,40,,,,,,,,,,,,,,,]},{"route":"CVP","name":"Ta. No5","amount":[,,,,,,,10,,,,,,,,,,,,,,,,]},{"route":"CVP","name":"NS FOR DRUD","amount":[,,,,,,,,,,,,,,,,,,,,,,,]},{"route":"CVP","name":"Fentanyl","amount":[,,,,,,,0.8,0.8,0.8,0.8,0.8,0.8,,,,,,,,,,,]},{"route":"CVP","name":"Dormicum","amount":[,,,,,,,1,1,1,1,1,1,,,,,,,,,,,]},{"route":"CVP","name":"20%Mannitol","amount":[,,,,,,,,,20,,,,,,,,,,,,,,]},{"route":"CVP","name":"NS","amount":[,,,,10,10,10,,,,,,,,,,,,,,,,,]}];</script>
+<script language='javaScript'>var transfusion_Array=[{"route":"PRBC","name":"","amount":[,,,,,,,,,35,35,,,,,,,,,,,,,]}];</script>
+<script language='javaScript'>var drain_Array=[];</script>
+<script language='javaScript'>var NGDrain=[];</script>
+<script language='javaScript'>var event_Array=[];</script>
+<script language='javaScript'>var POAmount=[,,,,,,,,,,,,,,,,,,,,,,,];</script>
+<script language='javaScript'>var NGAmount=[,,,,,,,,,10,,,,,,,,,,,,,,];</script>
+<script language='javaScript'>var RVAmount=[,,,,,,,,,,,,,,,,,,,,,,,];</script>
+<script language='javaScript'>var urine=[80,,,108,,,134,,,,166,67,,92,,,,,,,,,,];</script>
+<script language='javaScript'>var stool=[];</script>
+<script language='javaScript'>var enema=[];</script>
+<script language='javaScript'>var lab_glucose=[{"value":87.0,"date":"2016-10-27","time":"05:48"},{"value":50.0,"date":"2016-10-28","time":"02:19"},{"value":56.0,"date":"2016-10-28","time":"06:52"},{"value":78.0,"date":"2016-10-28","time":"08:07"},{"value":86.0,"date":"2016-10-29","time":"05:46"},{"value":82.0,"date":"2016-10-30","time":"05:32"},{"value":80.0,"date":"2016-10-31","time":"05:20"},{"value":67.0,"date":"2016-11-02","time":"05:24"},{"value":97.0,"date":"2016-11-03","time":"05:07"},{"value":125.0,"date":"2016-11-04","time":"06:45"},{"value":"> 600","date":"2016-11-06","time":"06:12"},{"value":90.0,"date":"2016-11-06","time":"06:14"},{"value":77.0,"date":"2016-11-08","time":"05:22"},{"value":79.0,"date":"2016-11-09","time":"06:43"},{"value":322.0,"date":"2016-11-09","time":"17:56"},{"value":51.0,"date":"2016-11-10","time":"07:24"},{"value":73.0,"date":"2016-11-10","time":"09:37"},{"value":122.0,"date":"2016-11-10","time":"12:37"},{"value":69.0,"date":"2016-11-10","time":"23:40"},{"value":23.0,"date":"2016-11-11","time":"05:46"},{"value":81.0,"date":"2016-11-11","time":"05:50"},{"value":70.0,"date":"2016-11-11","time":"15:07"},{"value":38.0,"date":"2016-11-11","time":"19:58"},{"value":84.0,"date":"2016-11-11","time":"21:31"},{"value":39.0,"date":"2016-11-12","time":"06:37"},{"value":43.0,"date":"2016-11-12","time":"06:40"},{"value":78.0,"date":"2016-11-12","time":"07:44"},{"value":45.0,"date":"2016-11-12","time":"11:47"},{"value":81.0,"date":"2016-11-12","time":"11:50"},{"value":79.0,"date":"2016-11-12","time":"15:27"},{"value":75.0,"date":"2016-11-13","time":"05:14"},{"value":63.0,"date":"2016-11-14","time":"05:04"},{"value":78.0,"date":"2016-11-15","time":"07:34"},{"value":59.0,"date":"2016-11-16","time":"04:27"},{"value":93.0,"date":"2016-11-17","time":"05:20"},{"value":78.0,"date":"2016-11-18","time":"05:34"},{"value":82.0,"date":"2016-11-19","time":"05:48"},{"value":84.0,"date":"2016-11-19","time":"18:07"},{"value":80.0,"date":"2016-11-20","time":"05:24"},{"value":90.0,"date":"2016-11-21","time":"05:11"},{"value":80.0,"date":"2016-11-22","time":"05:57"},{"value":76.0,"date":"2016-11-23","time":"04:58"},{"value":114.0,"date":"2016-11-24","time":"05:58"},{"value":148.0,"date":"2016-11-26","time":"01:58"},{"value":89.0,"date":"2016-11-27","time":"06:28"},{"value":62.0,"date":"2016-11-28","time":"05:38"},{"value":57.0,"date":"2016-11-29","time":"05:15"},{"value":87.0,"date":"2016-11-30","time":"04:36"},{"value":94.0,"date":"2016-12-01","time":"06:32"},{"value":67.0,"date":"2016-12-02","time":"06:21"},{"value":86.0,"date":"2016-12-03","time":"07:20"},{"value":167.0,"date":"2016-12-04","time":"06:41"},{"value":90.0,"date":"2016-12-04","time":"11:07"},{"value":107.0,"date":"2016-12-05","time":"03:11"},{"value":144.0,"date":"2016-12-06","time":"03:50"},{"value":66.0,"date":"2016-12-07","time":"05:52"},{"value":61.0,"date":"2016-12-08","time":"05:52"},{"value":64.0,"date":"2016-12-09","time":"04:45"},{"value":89.0,"date":"2016-12-10","time":"05:10"},{"value":91.0,"date":"2016-12-11","time":"04:45"},{"value":87.0,"date":"2016-12-12","time":"04:51"},{"value":89.0,"date":"2016-12-13","time":"05:10"},{"value":518.0,"date":"2016-12-14","time":"05:18"},{"value":77.0,"date":"2016-12-14","time":"05:21"},{"value":98.0,"date":"2016-12-15","time":"05:39"},{"value":83.0,"date":"2016-12-16","time":"04:28"},{"value":71.0,"date":"2016-12-17","time":"04:53"},{"value":80.0,"date":"2016-12-18","time":"04:43"},{"value":83.0,"date":"2016-12-19","time":"05:02"},{"value":79.0,"date":"2016-12-20","time":"05:35"},{"value":127.0,"date":"2016-12-21","time":"05:04"},{"value":74.0,"date":"2016-12-24","time":"04:50"},{"value":97.0,"date":"2016-12-26","time":"04:53"},{"value":83.0,"date":"2016-12-27","time":"05:34"},{"value":"> 600","date":"2016-12-28","time":"07:01"},{"value":"> 600","date":"2016-12-28","time":"07:02"},{"value":"> 600","date":"2016-12-28","time":"07:03"},{"value":"> 600","date":"2016-12-28","time":"07:04"},{"value":"> 600","date":"2016-12-28","time":"07:05"},{"value":"> 600","date":"2016-12-28","time":"07:13"},{"value":102.0,"date":"2016-12-28","time":"07:15"},{"value":88.0,"date":"2016-12-30","time":"05:36"},{"value":79.0,"date":"2016-12-31","time":"05:08"},{"value":"> 600","date":"2017-01-01","time":"02:38"},{"value":533.0,"date":"2017-01-01","time":"02:39"},{"value":74.0,"date":"2017-01-01","time":"04:52"},{"value":84.0,"date":"2017-01-03","time":"04:46"},{"value":"> 600","date":"2017-01-23","time":"19:30"},{"value":"> 600","date":"2017-01-23","time":"21:26"},{"value":441.0,"date":"2017-01-23","time":"22:58"},{"value":331.0,"date":"2017-01-24","time":"01:29"},{"value":146.0,"date":"2017-01-24","time":"03:51"},{"value":91.0,"date":"2017-01-24","time":"04:59"},{"value":121.0,"date":"2017-01-24","time":"06:57"},{"value":112.0,"date":"2017-01-24","time":"08:48"},{"value":84.0,"date":"2017-01-24","time":"11:48"},{"value":127.0,"date":"2017-01-24","time":"13:11"},{"value":222.0,"date":"2017-01-24","time":"15:15"},{"value":112.0,"date":"2017-01-24","time":"17:26"},{"value":"> 600","date":"2017-01-24","time":"20:40"},{"value":"> 600","date":"2017-01-24","time":"20:41"},{"value":345.0,"date":"2017-01-24","time":"20:43"},{"value":145.0,"date":"2017-01-24","time":"23:30"},{"value":119.0,"date":"2017-01-25","time":"00:52"},{"value":141.0,"date":"2017-01-25","time":"03:27"},{"value":163.0,"date":"2017-01-25","time":"05:43"},{"value":164.0,"date":"2017-01-25","time":"07:27"},{"value":73.0,"date":"2017-01-25","time":"11:47"},{"value":139.0,"date":"2017-01-25","time":"14:10"}];</script>
+<script language='javaScript'>var lab_WBC=[{"value":6900,"date":"2016-10-28","time":"10:39"},{"value":12700,"date":"2016-11-03","time":"05:48"},{"value":8100,"date":"2016-11-08","time":"05:55"},{"value":9600,"date":"2016-11-09","time":"18:32"},{"value":15900,"date":"2016-11-10","time":"08:00"},{"value":14700,"date":"2016-11-10","time":"13:24"},{"value":14800,"date":"2016-11-12","time":"11:57"},{"value":19070,"date":"2016-11-16","time":"04:59"},{"value":17800,"date":"2016-11-18","time":"09:23"},{"value":27100,"date":"2016-11-19","time":"18:50"},{"value":10900,"date":"2016-11-22","time":"15:25"},{"value":24800,"date":"2016-11-28","time":"06:02"},{"value":3300,"date":"2016-12-04","time":"07:18"},{"value":16300,"date":"2016-12-04","time":"11:51"},{"value":11800,"date":"2016-12-12","time":"05:32"},{"value":8500,"date":"2016-12-19","time":"05:22"},{"value":13700,"date":"2016-12-23","time":"07:17"},{"value":13600,"date":"2016-12-30","time":"06:35"},{"value":24700,"date":"2017-01-23","time":"19:48"},{"value":25550,"date":"2017-01-24","time":"05:50"},{"value":24100,"date":"2017-01-25","time":"06:24"}];</script>
+<script language='javaScript'>var lab_Seg=[{"value":"40.2%","date":"2016-10-28","time":"10:39"},{"value":"79.1%","date":"2016-11-03","time":"05:48"},{"value":"49.1%","date":"2016-11-08","time":"05:55"},{"value":"60.1%","date":"2016-11-09","time":"18:32"},{"value":"82.8%","date":"2016-11-10","time":"08:00"},{"value":"76.5%","date":"2016-11-10","time":"13:24"},{"value":"76.8%","date":"2016-11-12","time":"11:57"},{"value":"67.6%","date":"2016-11-16","time":"04:59"},{"value":"73.9%","date":"2016-11-18","time":"09:23"},{"value":"85.6%","date":"2016-11-19","time":"18:50"},{"value":"79.6%","date":"2016-11-22","time":"15:25"},{"value":"68.5%","date":"2016-11-28","time":"06:02"},{"value":"49.7%","date":"2016-12-04","time":"07:18"},{"value":"58.3%","date":"2016-12-12","time":"05:32"},{"value":"53.5%","date":"2016-12-19","time":"05:22"},{"value":"86.9%","date":"2016-12-23","time":"07:17"},{"value":"63.9%","date":"2016-12-30","time":"06:35"},{"value":"85.4%","date":"2017-01-23","time":"19:48"},{"value":"79.9%","date":"2017-01-24","time":"05:50"},{"value":"89.5%","date":"2017-01-25","time":"06:24"}];</script>
+<script language='javaScript'>var lab_Hgb=[{"value":8.9,"date":"2016-10-28","time":"10:39"},{"value":8.3,"date":"2016-11-03","time":"05:48"},{"value":10.8,"date":"2016-11-08","time":"05:55"},{"value":11.6,"date":"2016-11-09","time":"18:32"},{"value":11.3,"date":"2016-11-10","time":"08:00"},{"value":11.4,"date":"2016-11-10","time":"13:24"},{"value":9.6,"date":"2016-11-11","time":"10:12"},{"value":13.1,"date":"2016-11-12","time":"11:57"},{"value":11.8,"date":"2016-11-16","time":"04:59"},{"value":10.7,"date":"2016-11-18","time":"09:23"},{"value":10.7,"date":"2016-11-19","time":"18:50"},{"value":10.4,"date":"2016-11-20","time":"09:25"},{"value":10.6,"date":"2016-11-22","time":"15:25"},{"value":14.2,"date":"2016-11-28","time":"06:02"},{"value":10.9,"date":"2016-12-04","time":"07:18"},{"value":11.8,"date":"2016-12-04","time":"11:51"},{"value":10.8,"date":"2016-12-12","time":"05:32"},{"value":9.6,"date":"2016-12-19","time":"05:22"},{"value":10.6,"date":"2016-12-23","time":"07:17"},{"value":11.4,"date":"2016-12-30","time":"06:35"},{"value":11.1,"date":"2017-01-23","time":"19:48"},{"value":8.7,"date":"2017-01-24","time":"05:50"},{"value":10.3,"date":"2017-01-25","time":"06:24"}];</script>
+<script language='javaScript'>var lab_PLT=[{"value":354000,"date":"2016-10-28","time":"10:39"},{"value":459000,"date":"2016-11-03","time":"05:48"},{"value":357000,"date":"2016-11-08","time":"05:55"},{"value":368000,"date":"2016-11-09","time":"18:32"},{"value":198000,"date":"2016-11-10","time":"08:00"},{"value":190000,"date":"2016-11-10","time":"13:24"},{"value":157000,"date":"2016-11-12","time":"11:57"},{"value":232000,"date":"2016-11-16","time":"04:59"},{"value":332000,"date":"2016-11-18","time":"09:23"},{"value":450000,"date":"2016-11-19","time":"18:50"},{"value":660000,"date":"2016-11-22","time":"15:25"},{"value":523000,"date":"2016-11-28","time":"06:02"},{"value":18000,"date":"2016-12-04","time":"07:18"},{"value":433000,"date":"2016-12-04","time":"11:51"},{"value":538000,"date":"2016-12-12","time":"05:32"},{"value":485000,"date":"2016-12-19","time":"05:22"},{"value":538000,"date":"2016-12-23","time":"07:17"},{"value":638000,"date":"2016-12-30","time":"06:35"},{"value":390000,"date":"2017-01-23","time":"19:48"},{"value":302000,"date":"2017-01-24","time":"05:50"},{"value":163000,"date":"2017-01-25","time":"06:24"}];</script>
+<script language='javaScript'>var lab_Na=[{"value":140,"date":"2016-10-28","time":"10:46"},{"value":141,"date":"2016-11-03","time":"06:02"},{"value":138,"date":"2016-11-09","time":"18:35"},{"value":139,"date":"2016-11-10","time":"07:47"},{"value":146,"date":"2016-11-10","time":"13:50"},{"value":142,"date":"2016-11-11","time":"09:44"},{"value":139,"date":"2016-11-12","time":"06:20"},{"value":142,"date":"2016-11-14","time":"05:37"},{"value":137,"date":"2016-11-16","time":"05:04"},{"value":137,"date":"2016-11-18","time":"09:28"},{"value":137,"date":"2016-11-19","time":"18:38"},{"value":137,"date":"2016-11-22","time":"15:46"},{"value":133,"date":"2016-11-28","time":"06:24"},{"value":134,"date":"2016-11-28","time":"08:16"},{"value":138,"date":"2016-12-04","time":"07:32"},{"value":137,"date":"2016-12-04","time":"11:44"},{"value":140,"date":"2016-12-05","time":"08:06"},{"value":141,"date":"2016-12-12","time":"05:47"},{"value":140,"date":"2016-12-19","time":"05:39"},{"value":127,"date":"2017-01-23","time":"20:24"},{"value":131,"date":"2017-01-23","time":"22:15"},{"value":140,"date":"2017-01-24","time":"01:56"},{"value":144,"date":"2017-01-24","time":"05:50"},{"value":141,"date":"2017-01-24","time":"10:57"},{"value":154,"date":"2017-01-24","time":"12:22"},{"value":157,"date":"2017-01-24","time":"13:41"},{"value":166,"date":"2017-01-24","time":"18:38"},{"value":163,"date":"2017-01-24","time":"21:33"},{"value":163,"date":"2017-01-25","time":"01:20"},{"value":170,"date":"2017-01-25","time":"06:14"},{"value":174,"date":"2017-01-25","time":"07:57"},{"value":175,"date":"2017-01-25","time":"10:39"},{"value":180,"date":"2017-01-25","time":"12:07"}];</script>
+<script language='javaScript'>var lab_K=[{"value":4.2,"date":"2016-10-28","time":"10:46"},{"value":4.0,"date":"2016-11-03","time":"06:02"},{"value":4.8,"date":"2016-11-09","time":"18:35"},{"value":4.4,"date":"2016-11-10","time":"07:47"},{"value":3.7,"date":"2016-11-10","time":"13:50"},{"value":3.6,"date":"2016-11-11","time":"09:44"},{"value":3.5,"date":"2016-11-12","time":"06:20"},{"value":3.7,"date":"2016-11-14","time":"05:37"},{"value":4.8,"date":"2016-11-16","time":"05:04"},{"value":4.4,"date":"2016-11-18","time":"09:28"},{"value":4.7,"date":"2016-11-19","time":"18:38"},{"value":4.7,"date":"2016-11-22","time":"15:46"},{"value":6.0,"date":"2016-11-28","time":"06:24"},{"value":4.8,"date":"2016-11-28","time":"08:16"},{"value":5.6,"date":"2016-12-04","time":"07:32"},{"value":5.0,"date":"2016-12-04","time":"11:44"},{"value":4.4,"date":"2016-12-05","time":"08:06"},{"value":4.0,"date":"2016-12-12","time":"05:47"},{"value":4.6,"date":"2016-12-19","time":"05:39"},{"value":7.8,"date":"2017-01-23","time":"20:24"},{"value":6.1,"date":"2017-01-23","time":"22:15"},{"value":3.7,"date":"2017-01-24","time":"01:56"},{"value":3.3,"date":"2017-01-24","time":"05:50"},{"value":3.1,"date":"2017-01-24","time":"10:57"},{"value":3.0,"date":"2017-01-24","time":"12:22"},{"value":2.5,"date":"2017-01-24","time":"13:41"},{"value":3.1,"date":"2017-01-24","time":"18:38"},{"value":4.5,"date":"2017-01-24","time":"21:33"},{"value":4.0,"date":"2017-01-25","time":"01:20"},{"value":3.4,"date":"2017-01-25","time":"06:14"},{"value":3.3,"date":"2017-01-25","time":"07:57"},{"value":2.9,"date":"2017-01-25","time":"10:39"},{"value":3.0,"date":"2017-01-25","time":"12:07"},{"value":6.0,"date":"2017-01-25","time":"12:30"}];</script>
+<script language='javaScript'>var lab_Ca=[{"value":1.25,"date":"2016-10-28","time":"10:33"},{"value":1.32,"date":"2016-11-03","time":"05:53"},{"value":1.05,"date":"2016-11-09","time":"18:23"},{"value":0.87,"date":"2016-11-10","time":"13:53"},{"value":1.11,"date":"2016-11-11","time":"09:47"},{"value":1.24,"date":"2016-11-12","time":"06:22"},{"value":1.22,"date":"2016-11-14","time":"05:38"},{"value":1.34,"date":"2016-11-16","time":"04:52"},{"value":1.28,"date":"2016-11-22","time":"15:47"},{"value":1.05,"date":"2016-12-04","time":"07:36"},{"value":1.13,"date":"2016-12-23","time":"07:18"},{"value":0.84,"date":"2017-01-23","time":"19:49"},{"value":1.10,"date":"2017-01-24","time":"01:44"},{"value":1.05,"date":"2017-01-24","time":"05:40"},{"value":0.96,"date":"2017-01-24","time":"10:44"},{"value":1.24,"date":"2017-01-24","time":"13:54"},{"value":1.02,"date":"2017-01-24","time":"21:20"},{"value":1.14,"date":"2017-01-25","time":"01:11"},{"value":1.17,"date":"2017-01-25","time":"06:00"},{"value":1.21,"date":"2017-01-25","time":"10:25"},{"value":1.23,"date":"2017-01-25","time":"11:55"}];</script>
+<script language='javaScript'>var lab_Mg=[{"value":2.08,"date":"2016-10-28","time":"10:46"},{"value":2.09,"date":"2016-11-10","time":"13:50"},{"value":1.94,"date":"2016-11-11","time":"09:44"},{"value":1.81,"date":"2016-11-12","time":"06:20"},{"value":1.94,"date":"2016-11-14","time":"05:37"},{"value":2.05,"date":"2016-11-16","time":"05:04"},{"value":2.12,"date":"2017-01-23","time":"22:45"},{"value":2.10,"date":"2017-01-24","time":"01:56"},{"value":2.11,"date":"2017-01-24","time":"05:50"},{"value":2.09,"date":"2017-01-24","time":"10:57"},{"value":2.33,"date":"2017-01-24","time":"13:41"},{"value":2.50,"date":"2017-01-24","time":"18:38"},{"value":2.51,"date":"2017-01-24","time":"21:33"},{"value":2.48,"date":"2017-01-25","time":"01:20"},{"value":2.59,"date":"2017-01-25","time":"06:14"},{"value":2.66,"date":"2017-01-25","time":"07:57"},{"value":3.00,"date":"2017-01-25","time":"12:07"}];</script>
+<script language='javaScript'>var lab_P=[{"value":2.3,"date":"2016-10-28","time":"10:46"},{"value":2.4,"date":"2016-11-03","time":"06:02"},{"value":3.7,"date":"2016-11-11","time":"09:44"},{"value":3.0,"date":"2016-11-12","time":"06:20"},{"value":3.2,"date":"2016-11-14","time":"05:37"},{"value":3.3,"date":"2016-11-16","time":"05:04"},{"value":5.0,"date":"2016-12-19","time":"10:06"},{"value":6.4,"date":"2017-01-23","time":"22:45"},{"value":4.0,"date":"2017-01-24","time":"01:56"},{"value":3.4,"date":"2017-01-24","time":"05:50"},{"value":3.3,"date":"2017-01-24","time":"10:57"},{"value":2.1,"date":"2017-01-24","time":"13:41"},{"value":4.2,"date":"2017-01-24","time":"18:38"},{"value":6.5,"date":"2017-01-24","time":"21:33"},{"value":4.4,"date":"2017-01-25","time":"01:20"},{"value":4.1,"date":"2017-01-25","time":"06:14"},{"value":4.3,"date":"2017-01-25","time":"07:57"},{"value":3.3,"date":"2017-01-25","time":"12:07"}];</script>
+<script language='javaScript'>var lab_CRP=[{"value":0.08,"date":"2016-11-03","time":"06:02"},{"value":0.04,"date":"2016-11-09","time":"18:35"},{"value":6.06,"date":"2016-11-10","time":"13:50"},{"value":2.53,"date":"2016-11-14","time":"05:37"},{"value":1.75,"date":"2016-11-16","time":"05:04"},{"value":1.27,"date":"2016-11-19","time":"18:38"},{"value":0.80,"date":"2016-11-22","time":"15:46"},{"value":0.33,"date":"2016-11-28","time":"07:03"},{"value":0.20,"date":"2016-12-04","time":"07:32"},{"value":1.03,"date":"2016-12-19","time":"05:39"},{"value":0.08,"date":"2016-12-23","time":"07:30"},{"value":0.16,"date":"2017-01-24","time":"05:50"},{"value":2.26,"date":"2017-01-25","time":"06:14"}];</script>
+<script language='javaScript'>var lab_PCT=[{"value":8.12,"date":"2016-11-10","time":"16:18"},{"value":0.35,"date":"2016-11-19","time":"20:05"},{"value":0.14,"date":"2016-11-28","time":"12:02"}];</script>
+<script language='javaScript'>var lab_BUN=[{"value":4,"date":"2016-11-09","time":"18:35"},{"value":8,"date":"2016-11-10","time":"13:50"},{"value":6,"date":"2016-11-14","time":"05:37"},{"value":9,"date":"2016-11-19","time":"18:38"},{"value":9,"date":"2016-11-22","time":"15:46"},{"value":13,"date":"2016-11-28","time":"06:24"},{"value":10,"date":"2016-12-04","time":"07:32"},{"value":9,"date":"2016-12-04","time":"11:44"},{"value":3,"date":"2016-12-05","time":"08:06"},{"value":5,"date":"2016-12-12","time":"05:47"},{"value":10,"date":"2016-12-19","time":"10:06"},{"value":13,"date":"2016-12-23","time":"07:30"},{"value":14,"date":"2017-01-23","time":"20:24"}];</script>
+<script language='javaScript'>var lab_Cr=[{"value":0.43,"date":"2016-11-09","time":"18:35"},{"value":0.48,"date":"2016-11-10","time":"13:50"},{"value":0.22,"date":"2016-11-14","time":"05:37"},{"value":0.25,"date":"2016-11-19","time":"18:38"},{"value":0.27,"date":"2016-11-22","time":"15:46"},{"value":0.33,"date":"2016-11-28","time":"06:24"},{"value":0.55,"date":"2016-12-04","time":"07:32"},{"value":0.42,"date":"2016-12-04","time":"11:44"},{"value":0.28,"date":"2016-12-05","time":"08:06"},{"value":0.27,"date":"2016-12-12","time":"05:47"},{"value":0.31,"date":"2016-12-19","time":"10:06"},{"value":0.27,"date":"2016-12-23","time":"07:30"},{"value":0.69,"date":"2017-01-23","time":"20:24"},{"value":0.31,"date":"2017-01-25","time":"07:57"}];</script>
+<script language='javaScript'>var lab_ALT=[{"value":33,"date":"2016-11-09","time":"18:35"},{"value":24,"date":"2016-11-10","time":"13:50"},{"value":10,"date":"2016-11-14","time":"05:37"},{"value":14,"date":"2016-11-19","time":"18:38"},{"value":13,"date":"2016-11-22","time":"15:46"},{"value":19,"date":"2016-11-28","time":"06:24"},{"value":28,"date":"2016-12-04","time":"07:32"},{"value":16,"date":"2016-12-19","time":"05:39"},{"value":15,"date":"2016-12-23","time":"07:30"},{"value":92,"date":"2017-01-23","time":"20:24"},{"value":54,"date":"2017-01-25","time":"07:57"}];</script>
+<script language='javaScript'>var lab_AST=[];</script>
+<script language='javaScript'>var lab_TBIL=[];</script>
+<script language='javaScript'>var lab_MICROBIL=[];</script>
+<script language='javaScript'>var lab_TCB=[];</script>
+<script language='javaScript'>var lab_DBIL=[];</script>
+<script language='javaScript'>var lab_ALKP=[{"value":422,"date":"2016-11-18","time":"09:28"},{"value":220,"date":"2016-12-19","time":"05:39"}];</script>
+<script language='javaScript'>var lab_TotalCa=[{"value":9.6,"date":"2016-12-19","time":"10:06"}];</script>
+<script language='javaScript'>var lab_LDH=[{"value":309,"date":"2016-12-19","time":"10:06"}];</script>
+<script language='javaScript'>var lab_Iron=[{"value":42,"date":"2016-11-18","time":"09:42"}];</script>
+<script language='javaScript'>var lab_TIBC=[{"value":170,"date":"2016-11-18","time":"09:42"}];</script>
+<script language='javaScript'>var lab_Ferritin=[];</script>
+<script language='javaScript'>var drug_Array=[{"name":"Vancomycin  Sandoz  *inj 1000 mg","productName":"Vancomycin  Sandoz  *inj 1000 mg","dosage":"42      ","unit":"MG    ","route":"IVA","frequency":"Q6HV    ","startDate":"2017-01-23-23:13","endDate":"2017-01-25-13:26","status":"DC","totalAmount":"","selfPaid":"N","info":"10MG/KG/DOSE                                                                                    "},{"name":"Ceftazidime (Tatumcef) * inj 2 g","productName":"Tatumcef for * inj 2 g  CCPC    ","dosage":"210     ","unit":"MG    ","route":"IVA","frequency":"Q8H     ","startDate":"2017-01-23-23:13","endDate":"2017-01-25-13:26","status":"DC","totalAmount":"","selfPaid":"N","info":"50MG/KG/DOSE                                                                                    "}];</script>
+<script language='javaScript'>var Saturation=[{"time":"11:00","value":96},{"time":"09:00","value":98},{"time":"07:00","value":99},{"time":"05:00","value":99},{"time":"03:00","value":100},{"time":"01:00","value":100}];</script>
+<script language='javaScript'>var ABG_Array=[{"time":"00:52","data":{"ph":"7.38","po2":"149","paco2":"50","hco3":"29.6","be":"3.7","sat":"99%","hb":"","hct":"33","na":"157","k":"3.8","ca":"1.12","bun":"","cr":""}},{"time":"05:40","data":{"ph":"7.42","po2":"77","paco2":"43","hco3":"27.9","be":"3.1","sat":"95%","hb":"","hct":"29","na":"163","k":"3.1","ca":"1.14","bun":"","cr":""}},{"time":"07:25","data":{"ph":"7.41","po2":"73","paco2":"44","hco3":"27.9","be":"2.9","sat":"95%","hb":"","hct":"29","na":"167","k":"3.0","ca":"1.14","bun":"","cr":""}},{"time":"10:01","data":{"ph":"7.42","po2":"77","paco2":"42","hco3":"27.2","be":"2.4","sat":"95%","hb":"","hct":"31","na":"168","k":"2.7","ca":"1.15","bun":"","cr":""}},{"time":"11:40","data":{"ph":"7.46","po2":"59","paco2":"39","hco3":"27.7","be":"3.7","sat":"92%","hb":"","hct":"40","na":"178","k":"2.8","ca":"1.17","bun":"","cr":""}}];</script>
+  
+    <script src="/NIS/report/FlowSheet/jquery-1.2.6.pack.js"></script>
+    <script src="/NIS/report/FlowSheet/flowsheet_main.js"></script>
+</head>
+
+<body>
+<input type="hidden" id="hdactvdate" value=""/>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>NICU FLow Sheet</title>
+    <link rel="stylesheet" type="text/css" href="style.css">
+    
+    <script src="dataInterface.js"></script>
+    <script src="componentFactory.js"></script>
+    <script src="HeaderDataProcess.js"></script>
+    <script src="TPRDataProcess.js"></script>
+    <script src="ABDataProcess.js"></script>
+    <script src="IODataProcess.js"></script>
+    <script src="IOSummaryCard.js"></script>
+    <script src="eventProcess.js"></script>
+    <script src="ventilatorDataProcess.js"></script>
+    <script src="ABGDataProcess.js"></script>
+    <script src="labDataProcess.js"></script>
+
+</head>
+<body onload="HeaderDataProcess();TPRDataProcess(); ABDataProcess();IODataProcess();IOSummaryCard();eventProcess();ventilatorProcess();ABGDataProcess();labDataProcess();">
+<section>
+    <div ID="mainHeader" class="header">
+            <div class="clear"></div>
+    </div>
+    
+    <div class="navigator">    
+        <div class="navigatorContainer">
+            <div id="currentDate" class="navigatorButton"></div>
+            <div id="chgdate" class="navigatorButton">切換日期</div>
+        </div>
+    </div>
+
+    <div class="main-content">
+        <div class="UpperLeftTableContainer">
+            <div id="tprtable" class="TPRtable">
+            </div>
+            <div id="abtable" class="ABtable">
+            </div>
+        </div>
+            
+        <div id="eventdiv" class="event">
+
+        </div>
+        <div class="clear"></div>
+    </div>
+
+    <div class="IO_content">
+        <div id="iotable" class="IO_table">
+        
+        </div>
+
+        <div id="idcards" class="IO_Cards">
+    
+        </div>
+        <div class="clear"></div>
+    </div>
+
+
+    <div class="bottom-content">
+            <div class="bottomLeft">
+                <div id="ABGDiv" class="ABG_table">
+                </div>
+                
+                <div id="ventilatorDiv" class="ventilator_table">
+                </div>
+            </div>
+            <div class="bottomRight">
+            
+                <div class="glucoseCard">
+                    <table class="glucoseTable">
+                        <tr>
+                            <td><span class="glucoseTitle">Glucose</span></td>
+                        </tr>
+                        <tr id="glucoseData_tr">
+                        
+                        </tr>
+                        <tr id="glucoseTime_tr">
+                        
+                        </tr>
+                    </table>
+                </div>
+                <div class="CBCCard">
+                    <table class="CBCtable">
+                        <tr>
+                            <td><span class="CBCtitle">WBC</span></td>
+                            <td><span class="CBCtitle">Hgb</span></td>
+                            <td><span class="CBCtitle">Platelet</span></td>
+                        </tr>
+                        <tr id="CBCData_tr">
+                            
+                        </tr>
+                        <tr id="CBCData2_tr">
+                            
+                        </tr>
+                        <tr id="CBCTime">
+                            
+                        </tr>
+                    </table>
+                </div>
+                
+                <div class="clear"></div>
+
+                <div class="EleCard">
+                    <table class="EleTable">
+                        <tr>
+                            <td><span class="EleTitle">Na<span class="upperWord">+</span></span></td>
+                            <td><span class="EleTitle">K<span class="upperWord">+</span></span></td>
+                            <td><span class="EleTitle">Ca<span class="upperWord">2+</span></span></td>
+                            <td><span class="EleTitle">P</span></td>
+                            <td><span class="EleTitle">Mg<span class="upperWord">2+</span></span></td>
+                        </tr>
+                        <tr id="EleData_tr">
+                            
+                        </tr>
+                        <tr id="EleTime_tr">
+                            
+                        </tr>
+                    </table>
+                </div>
+                <div class="clear"></div>
+                
+                <div class="CRPCard">
+                    <table class="CRPTable">
+                        <tr>
+                            <td><span class="CRPTitle">CRP</span></td>
+                        </tr>
+                        <tr id="CRPData_tr">
+                        </tr>
+                        <tr id="CRPTime_tr">
+                        </tr>
+                    </table>
+                </div>
+                <div class="CRPCard">
+                    <table class="CRPTable">
+                        <tr>
+                            <td><span class="CRPTitle">Procalcitonin</span></td>
+                        </tr>
+                        <tr  id="PCTData_tr">
+                        </tr>
+                        <tr id="PCTTime_tr">
+                        </tr>
+                    </table>
+                </div>
+        
+                <div class="AbxCard">
+                    <table class="AbxTable">
+                        <tr>
+                            <td colspan="4"><span class="AbxTitle">Current Antibiotics</span></td>
+                        </tr>
+                        <tr id="abxname_tr">
+                        </tr>
+                        <tr id="abxdose_tr">
+                        </tr>
+
+                    </table>
+                </div>
+
+                <div class="clear"></div>
+
+                <div class="RenalCard">
+                    <table class="RenalTable">
+                        <tr>
+                            <td><span class="RenalTitle">BUN</span></td>
+                            <td><span class="RenalTitle">Cr</span></td>
+                        </tr>
+                        <tr id="renal_tr">
+
+                        </tr>
+                        <tr id="renaltime_tr">
+
+                        </tr>
+                    </table>
+                </div>
+                
+                <div class="LiverCard">
+                    <table class="LiverTable">
+                        <tr>
+                            <td><span class="LiverTitle">ALT</span></td>
+                            <td><span class="LiverTitle">AST</span></td>
+                        </tr>
+                        <tr id="liver_tr">
+                        </tr>
+                        <tr id="livertime_tr">
+                        </tr>
+                    </table>
+                </div>
+
+                <div class="TbilCard">
+                    <table class="TbilTable">
+                        <tr id="TBilTitle_tr">
+
+                        </tr>
+                        <tr id="TBilData_tr">
+                        </tr>
+                        <tr id="TBilTime_tr">
+                        </tr>
+                    </table>
+                </div>
+
+                <div class="clear"></div>
+                    
+                <div class="BoneMarkerCard">
+                    <table class="BoneMarkerTable">
+                        <tr>
+                            <td><span class="BoneMarkerTitle">ALKP</span></td>
+                            <td><span class="BoneMarkerTitle">Total Ca</span></td>
+                            <td><span class="BoneMarkerTitle">LDH</span></td>
+                        </tr>
+                        <tr id="BoneMarkerData_tr">
+                    
+                        </tr>
+                        <tr id="BoneMarkerTime_tr">
+                    
+                        </tr>
+                    </table>
+                </div>
+                
+                <div class="AnemiaCard">
+                    <table class="AnemiaTable">
+                        <tr>
+                            <td><span class="AnemiaTitle">Iron</span></td>
+                            <td><span class="AnemiaTitle">TIBC</span></td>
+                            <td><span class="AnemiaTitle">FeSat</span></td>
+                            <td><span class="AnemiaTitle">Ferritin</span></td>
+                        </tr>
+                        <tr id="AnemiaData_tr">
+
+                        </tr>
+                        <tr id="AnemiaTime_tr">
+                    
+                        </tr>
+                    </table>
+                </div>
+
+                <div class="clear"></div>
+
+            </div>
+            <div class="clear"></div>
+        </div>
+        <div style="height:2px;"></div>
+    </div>
+    
+</section>
+
+</body>
+</html>
+</body>
+</html>
+

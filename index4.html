@@ -1,0 +1,328 @@
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=EmulateIE9" >
+    <title>NICU FLow Sheet Main Page</title>
+    <script language='javaScript'>var path='/NIS';</script>
+<script language='javaScript'>var qdate='2017/01/25';</script>
+<script language='javaScript'>var chartNumber='43637043';</script>
+<script language='javaScript'>var wardName='NICU - 6';</script>
+<script language='javaScript'>var patientName='連珈樂';</script>
+<script language='javaScript'>var doctorName='曹珮真';</script>
+<script language='javaScript'>var currentDate=new Date('2017-01-25');</script>
+<script language='javaScript'>var admissionDate=new Date('2016-12-24');</script>
+<script language='javaScript'>var birthDate=new Date('2016-12-24');</script>
+<script language='javaScript'>var gestationalAgeWeek=26;</script>
+<script language='javaScript'>var gestationalAgeDate=3;</script>
+<script language='javaScript'>var bodyWeight=906.0;</script>
+<script language='javaScript'>var bodyWeightLastDate=900.0;</script>
+<script language='javaScript'>var mostRecentBodyWeight=906.0;</script>
+<script language='javaScript'>var mostRecentBodyWeightDate=new Date('2017-01-25');</script>
+<script language='javaScript'>var birthBodyWeight=714;</script>
+<script language='javaScript'>var bodyWeightArray=[{"date":"2017-01-25","weight":"906.0"},{"date":"2017-01-24","weight":"900.0"},{"date":"2017-01-23","weight":"890.0"},{"date":"2017-01-22","weight":"876.0"},{"date":"2017-01-21","weight":"866.0"},{"date":"2017-01-20","weight":"840.0"},{"date":"2017-01-19","weight":"817.0"},{"date":"2017-01-18","weight":"816.0"},{"date":"2017-01-17","weight":"792.0"},{"date":"2017-01-16","weight":"845.0"},{"date":"2017-01-15","weight":"810.0"},{"date":"2017-01-14","weight":"790.0"},{"date":"2017-01-13","weight":"736.0"},{"date":"2017-01-12","weight":"742.0"},{"date":"2017-01-11","weight":"738.0"},{"date":"2017-01-10","weight":"737.0"},{"date":"2017-01-09","weight":"747.0"},{"date":"2017-01-08","weight":"760.0"},{"date":"2017-01-07","weight":"775.0"},{"date":"2017-01-06","weight":"772.0"},{"date":"2017-01-05","weight":"703.0"},{"date":"2017-01-04","weight":"715.0"},{"date":"2017-01-03","weight":"672.0"},{"date":"2017-01-02","weight":"679.0"},{"date":"2017-01-01","weight":"680.0"},{"date":"2016-12-30","weight":"657.0"},{"date":"2016-12-28","weight":"696.0"},{"date":"2016-12-27","weight":"759.0"},{"date":"2016-12-26","weight":"747.0"}];</script>
+<script language='javaScript'>var bodyTemperature=[{"time":"07:17","value":37.2},{"time":"04:00","value":36.6},{"time":"00:00","value":37.6}];</script>
+<script language='javaScript'>var HeartRate=[{"time":"07:17","value":156},{"time":"07:00","value":156},{"time":"06:00","value":151},{"time":"05:00","value":169},{"time":"04:00","value":165},{"time":"03:00","value":130},{"time":"02:00","value":161},{"time":"01:00","value":161},{"time":"00:30","value":65},{"time":"00:00","value":166}];</script>
+<script language='javaScript'>var RespRate=[{"time":"07:17","value":38},{"time":"07:00","value":55},{"time":"06:00","value":60},{"time":"05:00","value":44},{"time":"04:00","value":65},{"time":"03:00","value":21},{"time":"02:00","value":54},{"time":"01:00","value":56},{"time":"00:30","value":15},{"time":"00:00","value":57}];</script>
+<script language='javaScript'>var SBP=[{"time":"05:00","value":76},{"time":"01:00","value":63}];</script>
+<script language='javaScript'>var DBP=[{"time":"05:00","value":44},{"time":"01:00","value":43}];</script>
+<script language='javaScript'>var peripheral_Array=[];</script>
+<script language='javaScript'>var aline_Array=[];</script>
+<script language='javaScript'>var central_Array=[];</script>
+<script language='javaScript'>var transfusion_Array=[];</script>
+<script language='javaScript'>var drain_Array=[];</script>
+<script language='javaScript'>var NGDrain=[];</script>
+<script language='javaScript'>var event_Array=[{"time":"01:00","content":"箱溫31.5度"}];</script>
+<script language='javaScript'>var POAmount=[,,,,,,,,,,,,,,,,,,,,,,,];</script>
+<script language='javaScript'>var NGAmount=[18,,,18,,,18,,,,,,,,,,,,,,,,,];</script>
+<script language='javaScript'>var RVAmount=[0,,,0,,,0,,,,,,,,,,,,,,,,,];</script>
+<script language='javaScript'>var urine=[13.3,,,13,,,4.4,,,,,,,,,,,,,,,,,];</script>
+<script language='javaScript'>var stool=["eF",,,,,,"eF",,,,,,,,,,,,,,,,,];</script>
+<script language='javaScript'>var enema=[];</script>
+<script language='javaScript'>var lab_glucose=[{"value":65.0,"date":"2016-12-24","time":"20:29"},{"value":158.0,"date":"2016-12-25","time":"01:18"},{"value":92.0,"date":"2016-12-25","time":"03:34"},{"value":70.0,"date":"2016-12-25","time":"12:28"},{"value":146.0,"date":"2016-12-25","time":"20:49"},{"value":229.0,"date":"2016-12-26","time":"01:04"},{"value":216.0,"date":"2016-12-26","time":"03:49"},{"value":200.0,"date":"2016-12-26","time":"04:52"},{"value":180.0,"date":"2016-12-26","time":"07:24"},{"value":165.0,"date":"2016-12-26","time":"11:48"},{"value":176.0,"date":"2016-12-26","time":"19:09"},{"value":130.0,"date":"2016-12-26","time":"19:21"},{"value":118.0,"date":"2016-12-27","time":"01:28"},{"value":136.0,"date":"2016-12-27","time":"05:33"},{"value":152.0,"date":"2016-12-27","time":"09:16"},{"value":124.0,"date":"2016-12-27","time":"09:19"},{"value":91.0,"date":"2016-12-27","time":"14:17"},{"value":59.0,"date":"2016-12-28","time":"06:34"},{"value":86.0,"date":"2016-12-28","time":"19:51"},{"value":55.0,"date":"2016-12-29","time":"03:28"},{"value":61.0,"date":"2016-12-29","time":"05:51"},{"value":84.0,"date":"2016-12-30","time":"03:07"},{"value":104.0,"date":"2016-12-31","time":"04:11"},{"value":76.0,"date":"2017-01-01","time":"03:19"},{"value":62.0,"date":"2017-01-02","time":"04:06"},{"value":65.0,"date":"2017-01-03","time":"04:02"},{"value":99.0,"date":"2017-01-04","time":"03:35"},{"value":145.0,"date":"2017-01-04","time":"15:49"},{"value":99.0,"date":"2017-01-05","time":"03:34"},{"value":79.0,"date":"2017-01-06","time":"03:54"},{"value":85.0,"date":"2017-01-07","time":"03:45"},{"value":71.0,"date":"2017-01-08","time":"03:44"},{"value":83.0,"date":"2017-01-09","time":"03:14"},{"value":88.0,"date":"2017-01-10","time":"03:07"},{"value":136.0,"date":"2017-01-10","time":"13:05"},{"value":110.0,"date":"2017-01-11","time":"03:14"},{"value":101.0,"date":"2017-01-12","time":"03:00"},{"value":86.0,"date":"2017-01-13","time":"02:53"},{"value":111.0,"date":"2017-01-14","time":"03:15"},{"value":127.0,"date":"2017-01-15","time":"02:55"},{"value":74.0,"date":"2017-01-24","time":"03:33"}];</script>
+<script language='javaScript'>var lab_WBC=[{"value":9822,"date":"2016-12-24","time":"23:35"},{"value":7317,"date":"2016-12-25","time":"14:28"},{"value":4400,"date":"2016-12-29","time":"16:54"},{"value":10163,"date":"2017-01-02","time":"09:38"},{"value":15400,"date":"2017-01-04","time":"17:07"},{"value":11700,"date":"2017-01-08","time":"09:52"},{"value":21600,"date":"2017-01-16","time":"09:57"},{"value":19440,"date":"2017-01-17","time":"14:50"},{"value":20100,"date":"2017-01-22","time":"14:14"}];</script>
+<script language='javaScript'>var lab_Seg=[{"value":"16%","date":"2016-12-24","time":"23:35"},{"value":"50%","date":"2016-12-25","time":"14:28"},{"value":"59%","date":"2016-12-29","time":"16:54"},{"value":"28%","date":"2017-01-02","time":"09:38"},{"value":"36%","date":"2017-01-04","time":"17:07"},{"value":"46.8%","date":"2017-01-08","time":"09:52"},{"value":"38%","date":"2017-01-16","time":"09:57"},{"value":"49%","date":"2017-01-17","time":"14:50"},{"value":"43.7%","date":"2017-01-22","time":"14:14"}];</script>
+<script language='javaScript'>var lab_Hgb=[{"value":16.1,"date":"2016-12-24","time":"23:35"},{"value":12.3,"date":"2016-12-25","time":"14:28"},{"value":10.2,"date":"2016-12-26","time":"21:00"},{"value":12.4,"date":"2016-12-29","time":"16:54"},{"value":12.2,"date":"2017-01-02","time":"09:38"},{"value":10.1,"date":"2017-01-04","time":"17:07"},{"value":12.2,"date":"2017-01-08","time":"09:52"},{"value":12.3,"date":"2017-01-16","time":"09:57"},{"value":11.9,"date":"2017-01-17","time":"14:50"},{"value":9.2,"date":"2017-01-22","time":"14:14"}];</script>
+<script language='javaScript'>var lab_PLT=[{"value":216000,"date":"2016-12-24","time":"23:35"},{"value":210000,"date":"2016-12-25","time":"14:28"},{"value":112000,"date":"2016-12-29","time":"16:54"},{"value":245000,"date":"2017-01-02","time":"09:38"},{"value":208000,"date":"2017-01-04","time":"17:07"},{"value":150000,"date":"2017-01-08","time":"09:52"},{"value":302000,"date":"2017-01-16","time":"09:57"},{"value":341000,"date":"2017-01-17","time":"14:50"},{"value":377000,"date":"2017-01-22","time":"14:14"}];</script>
+<script language='javaScript'>var lab_Na=[{"value":141,"date":"2016-12-24","time":"23:10"},{"value":141,"date":"2016-12-25","time":"14:26"},{"value":138,"date":"2016-12-25","time":"21:33"},{"value":139,"date":"2016-12-25","time":"23:09"},{"value":138,"date":"2016-12-26","time":"01:53"},{"value":140,"date":"2016-12-26","time":"04:23"},{"value":138,"date":"2016-12-26","time":"13:18"},{"value":141,"date":"2016-12-26","time":"15:18"},{"value":144,"date":"2016-12-26","time":"20:32"},{"value":141,"date":"2016-12-27","time":"01:49"},{"value":143,"date":"2016-12-27","time":"06:08"},{"value":143,"date":"2016-12-27","time":"10:02"},{"value":147,"date":"2016-12-27","time":"15:47"},{"value":150,"date":"2016-12-27","time":"23:35"},{"value":145,"date":"2016-12-28","time":"07:06"},{"value":143,"date":"2016-12-29","time":"04:33"},{"value":143,"date":"2016-12-29","time":"04:33"},{"value":147,"date":"2017-01-02","time":"13:34"},{"value":144,"date":"2017-01-04","time":"16:56"},{"value":130,"date":"2017-01-16","time":"12:28"},{"value":136,"date":"2017-01-22","time":"14:25"}];</script>
+<script language='javaScript'>var lab_K=[{"value":5.3,"date":"2016-12-24","time":"23:10"},{"value":6.2,"date":"2016-12-25","time":"14:26"},{"value":8.2,"date":"2016-12-25","time":"21:33"},{"value":7.4,"date":"2016-12-25","time":"23:09"},{"value":6.0,"date":"2016-12-26","time":"01:53"},{"value":5.8,"date":"2016-12-26","time":"04:23"},{"value":8.1,"date":"2016-12-26","time":"13:18"},{"value":6.1,"date":"2016-12-26","time":"15:18"},{"value":6.7,"date":"2016-12-26","time":"20:32"},{"value":6.2,"date":"2016-12-27","time":"01:49"},{"value":6.3,"date":"2016-12-27","time":"06:08"},{"value":6.1,"date":"2016-12-27","time":"10:02"},{"value":6.0,"date":"2016-12-27","time":"15:47"},{"value":4.3,"date":"2016-12-27","time":"23:35"},{"value":4.6,"date":"2016-12-28","time":"07:06"},{"value":5.0,"date":"2016-12-29","time":"04:33"},{"value":5.0,"date":"2016-12-29","time":"04:33"},{"value":4.9,"date":"2017-01-02","time":"13:34"},{"value":5.3,"date":"2017-01-04","time":"16:56"},{"value":5.2,"date":"2017-01-16","time":"12:28"},{"value":5.3,"date":"2017-01-22","time":"14:25"}];</script>
+<script language='javaScript'>var lab_Ca=[{"value":1.26,"date":"2016-12-24","time":"23:14"},{"value":0.93,"date":"2016-12-25","time":"14:02"},{"value":0.83,"date":"2016-12-27","time":"23:30"},{"value":0.88,"date":"2016-12-29","time":"04:10"},{"value":1.27,"date":"2017-01-02","time":"13:20"},{"value":1.49,"date":"2017-01-04","time":"16:44"},{"value":1.39,"date":"2017-01-16","time":"12:16"}];</script>
+<script language='javaScript'>var lab_Mg=[{"value":0.66,"date":"2016-12-25","time":"01:24"},{"value":0.59,"date":"2016-12-25","time":"02:35"},{"value":3.03,"date":"2016-12-25","time":"14:26"},{"value":0.52,"date":"2016-12-26","time":"01:09"},{"value":2.49,"date":"2016-12-29","time":"04:33"},{"value":2.80,"date":"2017-01-02","time":"13:34"},{"value":2.66,"date":"2017-01-04","time":"16:56"}];</script>
+<script language='javaScript'>var lab_P=[{"value":6.3,"date":"2016-12-25","time":"14:26"},{"value":3.8,"date":"2016-12-29","time":"04:33"},{"value":2.9,"date":"2017-01-02","time":"13:34"},{"value":3.0,"date":"2017-01-04","time":"16:56"},{"value":4.2,"date":"2017-01-16","time":"12:28"},{"value":6.1,"date":"2017-01-22","time":"14:25"}];</script>
+<script language='javaScript'>var lab_CRP=[{"value":0.05,"date":"2016-12-29","time":"14:39"}];</script>
+<script language='javaScript'>var lab_PCT=[{"value":0.99,"date":"2016-12-29","time":"14:39"},{"value":0.38,"date":"2017-01-17","time":"12:25"}];</script>
+<script language='javaScript'>var lab_BUN=[{"value":8,"date":"2016-12-24","time":"23:10"},{"value":10,"date":"2016-12-25","time":"01:24"},{"value":9,"date":"2016-12-25","time":"02:35"},{"value":20,"date":"2016-12-25","time":"14:26"},{"value":27,"date":"2016-12-26","time":"01:09"},{"value":45,"date":"2016-12-26","time":"15:18"},{"value":37,"date":"2016-12-26","time":"19:13"},{"value":37,"date":"2016-12-27","time":"01:24"},{"value":37,"date":"2016-12-27","time":"14:20"},{"value":52,"date":"2016-12-27","time":"15:47"},{"value":36,"date":"2016-12-27","time":"23:02"},{"value":34,"date":"2016-12-28","time":"06:40"},{"value":50,"date":"2016-12-28","time":"07:06"},{"value":36,"date":"2016-12-28","time":"19:55"},{"value":35,"date":"2016-12-29","time":"03:33"},{"value":49,"date":"2016-12-29","time":"04:33"},{"value":43,"date":"2016-12-30","time":"03:09"},{"value":43,"date":"2016-12-30","time":"04:08"},{"value":51,"date":"2016-12-31","time":"04:15"},{"value":52,"date":"2017-01-01","time":"03:24"},{"value":48,"date":"2017-01-02","time":"04:14"},{"value":51,"date":"2017-01-02","time":"13:34"},{"value":35,"date":"2017-01-03","time":"04:07"},{"value":26,"date":"2017-01-04","time":"03:39"},{"value":23,"date":"2017-01-04","time":"15:54"},{"value":24,"date":"2017-01-04","time":"16:56"},{"value":18,"date":"2017-01-05","time":"03:40"},{"value":15,"date":"2017-01-06","time":"03:58"},{"value":12,"date":"2017-01-07","time":"04:05"},{"value":11,"date":"2017-01-08","time":"03:49"},{"value":10,"date":"2017-01-09","time":"03:17"},{"value":11,"date":"2017-01-10","time":"03:10"},{"value":14,"date":"2017-01-11","time":"03:18"},{"value":28,"date":"2017-01-12","time":"03:04"},{"value":21,"date":"2017-01-13","time":"02:57"},{"value":18,"date":"2017-01-14","time":"03:20"},{"value":26,"date":"2017-01-16","time":"12:28"},{"value":29,"date":"2017-01-17","time":"23:50"},{"value":28,"date":"2017-01-17","time":"23:50"},{"value":13,"date":"2017-01-20","time":"03:01"},{"value":12,"date":"2017-01-21","time":"06:18"},{"value":16,"date":"2017-01-22","time":"14:25"},{"value":14,"date":"2017-01-23","time":"10:56"},{"value":12,"date":"2017-01-25","time":"03:00"}];</script>
+<script language='javaScript'>var lab_Cr=[{"value":0.49,"date":"2016-12-24","time":"23:10"},{"value":0.90,"date":"2016-12-25","time":"14:26"},{"value":1.49,"date":"2016-12-26","time":"15:18"},{"value":1.81,"date":"2016-12-27","time":"15:47"},{"value":1.80,"date":"2016-12-28","time":"07:06"},{"value":1.37,"date":"2016-12-29","time":"04:33"},{"value":1.41,"date":"2017-01-02","time":"13:34"},{"value":1.10,"date":"2017-01-04","time":"16:56"},{"value":1.14,"date":"2017-01-16","time":"12:28"},{"value":0.86,"date":"2017-01-22","time":"14:25"}];</script>
+<script language='javaScript'>var lab_ALT=[{"value":6,"date":"2017-01-02","time":"13:34"},{"value":5,"date":"2017-01-04","time":"16:56"},{"value":6,"date":"2017-01-16","time":"12:28"},{"value":8,"date":"2017-01-22","time":"14:25"}];</script>
+<script language='javaScript'>var lab_AST=[];</script>
+<script language='javaScript'>var lab_TBIL=[];</script>
+<script language='javaScript'>var lab_MICROBIL=[{"value":8.0,"date":"2016-12-29","time":"09:13"},{"value":5.5,"date":"2017-01-03","time":"18:02"},{"value":5.8,"date":"2017-01-03","time":"18:04"},{"value":4.5,"date":"2017-01-05","time":"16:14"},{"value":4.8,"date":"2017-01-06","time":"11:46"},{"value":7.9,"date":"2017-01-09","time":"11:14"},{"value":5.3,"date":"2017-01-09","time":"13:54"},{"value":5.6,"date":"2017-01-10","time":"15:15"},{"value":6.8,"date":"2017-01-12","time":"14:21"},{"value":6.9,"date":"2017-01-12","time":"14:25"},{"value":6.6,"date":"2017-01-12","time":"14:34"},{"value":7.5,"date":"2017-01-16","time":"10:29"},{"value":7.0,"date":"2017-01-18","time":"09:01"}];</script>
+<script language='javaScript'>var lab_TCB=[{"value":8.0,"date":"2016-12-29","time":"09:13"},{"value":5.5,"date":"2017-01-03","time":"18:02"},{"value":5.8,"date":"2017-01-03","time":"18:04"},{"value":4.5,"date":"2017-01-05","time":"16:14"},{"value":4.8,"date":"2017-01-06","time":"11:46"},{"value":7.9,"date":"2017-01-09","time":"11:14"},{"value":5.3,"date":"2017-01-09","time":"13:54"},{"value":5.6,"date":"2017-01-10","time":"15:15"},{"value":6.8,"date":"2017-01-12","time":"14:21"},{"value":6.9,"date":"2017-01-12","time":"14:25"},{"value":6.6,"date":"2017-01-12","time":"14:34"},{"value":7.5,"date":"2017-01-16","time":"10:29"},{"value":7.0,"date":"2017-01-18","time":"09:01"}];</script>
+<script language='javaScript'>var lab_DBIL=[];</script>
+<script language='javaScript'>var lab_ALKP=[{"value":918,"date":"2017-01-22","time":"14:25"}];</script>
+<script language='javaScript'>var lab_TotalCa=[{"value":10.7,"date":"2017-01-22","time":"14:25"}];</script>
+<script language='javaScript'>var lab_LDH=[];</script>
+<script language='javaScript'>var lab_Iron=[{"value":71,"date":"2017-01-23","time":"12:29"}];</script>
+<script language='javaScript'>var lab_TIBC=[{"value":285,"date":"2017-01-23","time":"12:29"}];</script>
+<script language='javaScript'>var lab_Ferritin=[{"value":854.3,"date":"2017-01-23","time":"13:21"}];</script>
+<script language='javaScript'>var drug_Array=[{"name":"Ceftazidime (Tatumcef) * inj 2 g","productName":"Tatumcef for * inj 2 g  CCPC    ","dosage":"52      ","unit":"MG    ","route":"IVA","frequency":"Q12H    ","startDate":"2016-12-27-14:49","endDate":"2016-12-29-14:02","status":"DC","totalAmount":"","selfPaid":"N","info":""},{"name":"Meropenem iv for inj 250 mg     ","productName":"Mepem iv for inj 250 mg         ","dosage":"28      ","unit":"MG    ","route":"IVA","frequency":"Q8H     ","startDate":"2016-12-29-14:52","endDate":"2017-01-04-11:18","status":"DC","totalAmount":"","selfPaid":"N","info":""},{"name":"Meropenem iv for inj 250 mg     ","productName":"Mepem iv for inj 250 mg         ","dosage":"28      ","unit":"MG    ","route":"IVA","frequency":"Q8H     ","startDate":"2017-01-04-13:16","endDate":"2017-01-06-09:11","status":"DC","totalAmount":"","selfPaid":"N","info":""},{"name":"Vancomycin  Sandoz  *inj 1000 mg","productName":"Vancomycin  Sandoz  *inj 1000 mg","dosage":"7       ","unit":"MG    ","route":"IVA","frequency":"ST      ","startDate":"2017-01-04-15:59","endDate":"2017-01-05-15:00","status":"CDC","totalAmount":"","selfPaid":"N","info":"10mg/kg/dose， q24h                                                                              "},{"name":"Vancomycin  Sandoz  *inj 1000 mg","productName":"Vancomycin  Sandoz  *inj 1000 mg","dosage":"7       ","unit":"MG    ","route":"IVA","frequency":"QD      ","startDate":"2017-01-04-15:59","endDate":"2017-01-06-12:16","status":"DC","totalAmount":"","selfPaid":"N","info":"10mg/kg/dose， q24h                                                                              "},{"name":"Vancomycin  Sandoz  *inj 1000 mg","productName":"Vancomycin  Sandoz  *inj 1000 mg","dosage":"7       ","unit":"MG    ","route":"IVA","frequency":"QD      ","startDate":"2017-01-06-14:16","endDate":"2017-01-09-14:13","status":"DC","totalAmount":"","selfPaid":"N","info":"DOSE: 10MG/KG/DOSE， QD                                                                          "},{"name":"Vancomycin  Sandoz  *inj 1000 mg","productName":"Vancomycin  Sandoz  *inj 1000 mg","dosage":"7       ","unit":"MG    ","route":"IVA","frequency":"QD      ","startDate":"2017-01-09-16:35","endDate":"2017-01-11-08:10","status":"DC","totalAmount":"","selfPaid":"N","info":"DOSE: 10MG/KG/DOSE， QD                                                                          "},{"name":"Vancomycin  Sandoz  *inj 1000 mg","productName":"Vancomycin  Sandoz  *inj 1000 mg","dosage":"8       ","unit":"MG    ","route":"IVA","frequency":"Q12H    ","startDate":"2017-01-17-10:01","endDate":"2017-01-20-15:01","status":"DC","totalAmount":"","selfPaid":"N","info":"DOSE:10MG/KG/DOSE， Q12H                                                                         "},{"name":"Vancomycin  Sandoz  *inj 1000 mg","productName":"Vancomycin  Sandoz  *inj 1000 mg","dosage":"8       ","unit":"MG    ","route":"IVA","frequency":"ST      ","startDate":"2017-01-17-09:42","endDate":"2017-01-18-15:00","status":"CDC","totalAmount":"","selfPaid":"N","info":""},{"name":"Meropenem iv for inj 250 mg     ","productName":"Mepem iv for inj 250 mg         ","dosage":"16      ","unit":"MG    ","route":"IVA","frequency":"Q8H     ","startDate":"2017-01-17-10:01","endDate":"2017-01-20-15:01","status":"DC","totalAmount":"","selfPaid":"N","info":"DOSE:20MG/KG/DOSE Q8H                                                                           "},{"name":"Meropenem iv for inj 250 mg     ","productName":"Mepem iv for inj 250 mg         ","dosage":"16      ","unit":"MG    ","route":"IVA","frequency":"ST      ","startDate":"2017-01-17-09:42","endDate":"2017-01-18-15:00","status":"CDC","totalAmount":"","selfPaid":"N","info":""}];</script>
+<script language='javaScript'>var Saturation=[{"time":"07:00","value":100},{"time":"05:00","value":97},{"time":"03:00","value":96},{"time":"01:00","value":98},{"time":"00:30","value":56}];</script>
+<script language='javaScript'>var ABG_Array=[{"time":"02:58","data":{"ph":"7.444","po2":"45.3","paco2":"42.1","hco3":"29.2","be":"5.1","sat":"82.3%","hb":"13.3","hct":"40","na":"129.1","k":"5.45","ca":"1.29","bun":"12","cr":"0.8"}}];</script>
+  
+    <script src="/NIS/report/FlowSheet/jquery-1.2.6.pack.js"></script>
+    <script src="/NIS/report/FlowSheet/flowsheet_main.js"></script>
+</head>
+
+<body>
+<input type="hidden" id="hdactvdate" value=""/>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>NICU FLow Sheet</title>
+    <link rel="stylesheet" type="text/css" href="style.css">
+    
+    <script src="dataInterface.js"></script>
+    <script src="componentFactory.js"></script>
+    <script src="HeaderDataProcess.js"></script>
+    <script src="TPRDataProcess.js"></script>
+    <script src="ABDataProcess.js"></script>
+    <script src="IODataProcess.js"></script>
+    <script src="IOSummaryCard.js"></script>
+    <script src="eventProcess.js"></script>
+    <script src="ventilatorDataProcess.js"></script>
+    <script src="ABGDataProcess.js"></script>
+    <script src="labDataProcess.js"></script>
+
+</head>
+<body onload="HeaderDataProcess();TPRDataProcess(); ABDataProcess();IODataProcess();IOSummaryCard();eventProcess();ventilatorProcess();ABGDataProcess();labDataProcess();">
+<section>
+    <div ID="mainHeader" class="header">
+            <div class="clear"></div>
+    </div>
+    
+    <div class="navigator">    
+        <div class="navigatorContainer">
+            <div id="currentDate" class="navigatorButton"></div>
+            <div id="chgdate" class="navigatorButton">切換日期</div>
+        </div>
+    </div>
+
+    <div class="main-content">
+        <div class="UpperLeftTableContainer">
+            <div id="tprtable" class="TPRtable">
+            </div>
+            <div id="abtable" class="ABtable">
+            </div>
+        </div>
+            
+        <div id="eventdiv" class="event">
+
+        </div>
+        <div class="clear"></div>
+    </div>
+
+    <div class="IO_content">
+        <div id="iotable" class="IO_table">
+        
+        </div>
+
+        <div id="idcards" class="IO_Cards">
+    
+        </div>
+        <div class="clear"></div>
+    </div>
+
+
+    <div class="bottom-content">
+            <div class="bottomLeft">
+                <div id="ABGDiv" class="ABG_table">
+                </div>
+                
+                <div id="ventilatorDiv" class="ventilator_table">
+                </div>
+            </div>
+            <div class="bottomRight">
+            
+                <div class="glucoseCard">
+                    <table class="glucoseTable">
+                        <tr>
+                            <td><span class="glucoseTitle">Glucose</span></td>
+                        </tr>
+                        <tr id="glucoseData_tr">
+                        
+                        </tr>
+                        <tr id="glucoseTime_tr">
+                        
+                        </tr>
+                    </table>
+                </div>
+                <div class="CBCCard">
+                    <table class="CBCtable">
+                        <tr>
+                            <td><span class="CBCtitle">WBC</span></td>
+                            <td><span class="CBCtitle">Hgb</span></td>
+                            <td><span class="CBCtitle">Platelet</span></td>
+                        </tr>
+                        <tr id="CBCData_tr">
+                            
+                        </tr>
+                        <tr id="CBCData2_tr">
+                            
+                        </tr>
+                        <tr id="CBCTime">
+                            
+                        </tr>
+                    </table>
+                </div>
+                
+                <div class="clear"></div>
+
+                <div class="EleCard">
+                    <table class="EleTable">
+                        <tr>
+                            <td><span class="EleTitle">Na<span class="upperWord">+</span></span></td>
+                            <td><span class="EleTitle">K<span class="upperWord">+</span></span></td>
+                            <td><span class="EleTitle">Ca<span class="upperWord">2+</span></span></td>
+                            <td><span class="EleTitle">P</span></td>
+                            <td><span class="EleTitle">Mg<span class="upperWord">2+</span></span></td>
+                        </tr>
+                        <tr id="EleData_tr">
+                            
+                        </tr>
+                        <tr id="EleTime_tr">
+                            
+                        </tr>
+                    </table>
+                </div>
+                <div class="clear"></div>
+                
+                <div class="CRPCard">
+                    <table class="CRPTable">
+                        <tr>
+                            <td><span class="CRPTitle">CRP</span></td>
+                        </tr>
+                        <tr id="CRPData_tr">
+                        </tr>
+                        <tr id="CRPTime_tr">
+                        </tr>
+                    </table>
+                </div>
+                <div class="CRPCard">
+                    <table class="CRPTable">
+                        <tr>
+                            <td><span class="CRPTitle">Procalcitonin</span></td>
+                        </tr>
+                        <tr  id="PCTData_tr">
+                        </tr>
+                        <tr id="PCTTime_tr">
+                        </tr>
+                    </table>
+                </div>
+        
+                <div class="AbxCard">
+                    <table class="AbxTable">
+                        <tr>
+                            <td colspan="4"><span class="AbxTitle">Current Antibiotics</span></td>
+                        </tr>
+                        <tr id="abxname_tr">
+                        </tr>
+                        <tr id="abxdose_tr">
+                        </tr>
+
+                    </table>
+                </div>
+
+                <div class="clear"></div>
+
+                <div class="RenalCard">
+                    <table class="RenalTable">
+                        <tr>
+                            <td><span class="RenalTitle">BUN</span></td>
+                            <td><span class="RenalTitle">Cr</span></td>
+                        </tr>
+                        <tr id="renal_tr">
+
+                        </tr>
+                        <tr id="renaltime_tr">
+
+                        </tr>
+                    </table>
+                </div>
+                
+                <div class="LiverCard">
+                    <table class="LiverTable">
+                        <tr>
+                            <td><span class="LiverTitle">ALT</span></td>
+                            <td><span class="LiverTitle">AST</span></td>
+                        </tr>
+                        <tr id="liver_tr">
+                        </tr>
+                        <tr id="livertime_tr">
+                        </tr>
+                    </table>
+                </div>
+
+                <div class="TbilCard">
+                    <table class="TbilTable">
+                        <tr id="TBilTitle_tr">
+
+                        </tr>
+                        <tr id="TBilData_tr">
+                        </tr>
+                        <tr id="TBilTime_tr">
+                        </tr>
+                    </table>
+                </div>
+
+                <div class="clear"></div>
+                    
+                <div class="BoneMarkerCard">
+                    <table class="BoneMarkerTable">
+                        <tr>
+                            <td><span class="BoneMarkerTitle">ALKP</span></td>
+                            <td><span class="BoneMarkerTitle">Total Ca</span></td>
+                            <td><span class="BoneMarkerTitle">LDH</span></td>
+                        </tr>
+                        <tr id="BoneMarkerData_tr">
+                    
+                        </tr>
+                        <tr id="BoneMarkerTime_tr">
+                    
+                        </tr>
+                    </table>
+                </div>
+                
+                <div class="AnemiaCard">
+                    <table class="AnemiaTable">
+                        <tr>
+                            <td><span class="AnemiaTitle">Iron</span></td>
+                            <td><span class="AnemiaTitle">TIBC</span></td>
+                            <td><span class="AnemiaTitle">FeSat</span></td>
+                            <td><span class="AnemiaTitle">Ferritin</span></td>
+                        </tr>
+                        <tr id="AnemiaData_tr">
+
+                        </tr>
+                        <tr id="AnemiaTime_tr">
+                    
+                        </tr>
+                    </table>
+                </div>
+
+                <div class="clear"></div>
+
+            </div>
+            <div class="clear"></div>
+        </div>
+        <div style="height:2px;"></div>
+    </div>
+    
+</section>
+
+</body>
+</html>
+</body>
+</html>
+

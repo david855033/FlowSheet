@@ -19,22 +19,24 @@
 //var birthDate = new Date("2014-08-30");			
 
 //頁面當前時間(date)
-//var currentDate = new Date("2016-11-18");		
+//var currentDate = new Date("2016-11-19");		
+//alert(currentDate);
 
 //出生時候週數(cGA)(int)
 //var gestationalAgeWeek=28;						
 //出生時候週數(cGA)之日數部分(int)
 //var gestationalAgeDate=1;						
 
-//今日體重(g),若無資料則傳入空字串(int)
-//var bodyWeight = 4360;							
 
-//昨天體重(g),若無資料則傳入空字串(int)
-//var bodyWeightLastDate = 1500;			
+//從currentDate起，往前回推一個月的體重陣列 格式如下
+//var bodyWeightArray = [{"date":"2016-11-18","weight":"2500"},
+//					{"date":"2016-11-17","weight":"2450"},/
+//					{"date":"2016-11-16","weight":"2300"}];
 
-//最近一筆體重(g),若沒有今日體重，則查詢最近一筆體重傳入(int)
+
+//查詢最近一筆體重傳入(int)
 //var mostRecentBodyWeight=5400;					
-//最近一筆體重日期(g),若沒有今日體重，則查詢最近一筆體重傳入(date)
+//查詢最近一筆體重傳入(date)
 //var mostRecentBodyWeightDate=new Date("2016-06-30");		
 
 //出生體重(g)(int)
@@ -283,12 +285,12 @@ var RVCharacter=
 */
 
 //大便量以及性狀     array of string  for example["a1","b3"]
-var stool = 
-	[];
+/*var stool = 
+	[];*/
 
 //是否有灌腸(S表示有肛門口刺激，E表示灌腸，D表示digital)   array of string
-var enema =
-	[];
+/*var enema =
+	[];*/
 
 //ventilator_Array 有三個欄位: time mode setting, 
 //預計由RT表單接入
@@ -300,96 +302,151 @@ var enema =
 	"setting":"FiO2:40%, PIP/PEEP:20/5mmHg, Rate:20/min|FiO2=100%, Air flow=2L/min, RPM=2500, Flow=700ml/min"}*/
 var ventilator_Array=
 [
-]
+];
 
 //ABG有兩個欄位(Time/Data)
-//Data部分為陣列，資料內容依序為：
+//Data部分為JSON，資料內容依序為：(欄位名稱都小寫)
 //pH PO2 PaCO2 HCO3 BE Sat(%) Hb Na K Ca Mg BUN Cr
-/* example
-    {"time":"10:00", "data":[7.25,60,40,24,-3,"50%",13.1,140,3.5,1.01,2.03,20,0.34]},
-	{"time":"12:00", "data":[7.25,60,40,24,-3,"50%"]},
-	{"time":"14:00", "data":[7.25,60,40,24,-3,"50%",13.1,140,3.5,1.01,2.03,20,0.34]},
+ /*ABG_Array =[
+     	{
+     	"time":"10:00", 
+     	"data":{
+     		"ph":7.25,
+    		"po2":60,
+    		"paco2":40,
+    		"hco3":24,
+    		"be":-5,
+    		"sat":"85%",
+    		"hb":"14",
+			"hct":"31.1",
+			"na":"145",
+			"k":"4",
+			"ca":"1.2",
+			"bun":"20",
+			"cr":"0.7"}
+		}
+	]
 */
-var ABG_Array =
-[
 
-]
 
 //lab data物件的欄位(查詢currentDate算起往前推三個月資料),
 // value(num)/date(str)/time(str)
-var lab_glucose=
+/*var lab_glucose=
 [
 {"value":180,"date":"2016-11-22","time":"0:23"},
 {"value":30,"date":"2016-10-01","time":"0:23"},
 {"value":50,"date":"2016-11-01","time":"10:23"},
 {"value":40,"date":"2016-9-01","time":"10:23"}
 ];
+*/
 
-var lab_WBC=
-[{"value":20500,"date":"2016-8-01","time":"17:23"},
-{"value":20300,"date":"2016-7-01","time":"17:23"},
-{"value":12000,"date":"2016-9-01","time":"17:23"}];
-var lab_Seg=
+/*var lab_WBC=
+//[{"value":20500,"date":"2016-8-01","time":"17:23"},
+//{"value":20300,"date":"2016-7-01","time":"17:23"},
+//{"value":12000,"date":"2016-9-01","time":"17:23"}];
+*/
+
+
+/*var lab_Seg=
 [{"value":"43%","date":"2016-7-01","time":"17:23"}];
-var lab_Hgb=
+*/
+
+/*var lab_Hgb=
 [{"value":7.7,"date":"2016-7-01","time":"17:23"}];
-var lab_PLT = 
+*/
+
+/*var lab_PLT = 
 [];
+*/
 
-var lab_Na = 
+/*var lab_Na = 
 [{"value":143,"date":"2016-7-1","time":"17:23"}];
-var lab_K = 
+*/
+
+/*var lab_K = 
 [{"value":2.6,"date":"2016-7-1","time":"17:23"}];
+*/
+
 //free calcium(Ca++)，不是total Ca
-var lab_Ca = 
+/*var lab_Ca = 
 [{"value":0.91,"date":"2016-7-1","time":"17:23"}];
-var lab_Mg = 
+*/
+
+/*var lab_Mg = 
 [{"value":2.2,"date":"2016-7-5","time":"17:23"}];
-var lab_P = 
+*/
+
+/*var lab_P = 
 [{"value":5.5,"date":"2016-7-1","time":"17:23"}];
+*/
 
-var lab_CRP = 
+/*var lab_CRP = 
 [{"value":3.2,"date":"2016-7-1","time":"17:23"}];
+*/
 
-var lab_PCT =
+/*var lab_PCT =
 [{"value":0.2,"date":"2016-7-1","time":"17:23"}];
+*/
 
-var lab_BUN=
+
+/*var lab_BUN=
 [{"value":19,"date":"2016-7-1","time":"17:23"}];
-var lab_Cr=
+*/
+
+/*var lab_Cr=
 [{"value":0.4,"date":"2016-7-1","time":"17:23"}];
+*/
 
-var lab_ALT=
+/*var lab_ALT=
 [{"value":20,"date":"2016-7-1","time":"17:23"}];
-var lab_AST=
-[{"value":50,"date":"2016-7-1","time":"17:23"}];
+*/
 
+/*var lab_AST=
+[{"value":50,"date":"2016-7-1","time":"17:23"}];
+*/
 //TBIL = 生化檢驗的Tbil
 //MicroBil = 兒科的Bil(足跟血)
 //TCB = 兒科的TCB(經皮測量)
 //前端會自動顯示最近的資料
-var lab_TBIL=
+/*var lab_TBIL=
 [{"value":18,"date":"2016-7-1","time":"17:23"}];
-var lab_MICROBIL=
+*/
+
+/*var lab_MICROBIL=
 [{"value":22,"date":"2016-7-3","time":"17:23"}];
-var lab_TCB=
+*/
+
+/*var lab_TCB=
 [{"value":24,"date":"2016-7-2","time":"17:23"}];
-var lab_DBIL=
+*/
+
+/*var lab_DBIL=
 [{"value":0.3,"date":"2016-7-1","time":"17:23"}];
+*/
 
-var lab_ALKP = 
+/*var lab_ALKP = 
 [{"value":154,"date":"2016-7-1","time":"17:23"}];
-var lab_TotalCa = 
-[{"value":9.7,"date":"2016-7-1","time":"17:23"}];
-var lab_LDH =
-[];
+*/
 
-var lab_Iron = 
-[{"value":12,"date":"2016-7-1","time":"17:23"}];
-var lab_TIBC = 
-[{"value":100,"date":"2016-7-1","time":"17:23"}];
-var lab_Ferritin = 
+/*var lab_TotalCa = 
+[{"value":9.7,"date":"2016-7-1","time":"17:23"}];
+*/
+
+/*var lab_LDH =
 [];
+*/
+
+/*var lab_Iron = 
+[{"value":12,"date":"2016-7-1","time":"17:23"}];
+*/
+
+/*var lab_TIBC = 
+[{"value":100,"date":"2016-7-1","time":"17:23"}];
+*/
+
+/*var lab_Ferritin = 
+[];
+*/
 
 //傳入藥物清單(直接從用藥內容把整個陣列複製下來) //(查詢currentDate算起往前推一個月資料 (藥品開始日))
 /*
@@ -400,7 +457,7 @@ startDate=開始日, endDate=結束日, status=狀態, totalAmount=總量, selfP
 json格式：{"name":"","productName":"","dosage":"","unit":"","route":"","frequency":"","startDate":"",
 	"endDate":"","status":"","totalAmount":"","selfPaid":"","info":""},
 */
-var drug_Array =
+/*var drug_Array =
 [
 	{"name":"Ampicillin sod for inj 500 mg",'productName':'Ampolin inj 500 mg "YF"',"dosage":"270","unit":"mg","route":"IVA",
 	"frequency":"QD","startDate":"2016-11-07-16.44",
@@ -428,6 +485,6 @@ var drug_Array =
 
 	{"name":"Ampicillin sod for inj 500 mg",'productName':'Ampolin inj 500 mg "YF"',"dosage":"270","unit":"mg","route":"IVA",
 	"frequency":"Q8H","startDate":"2016-11-04-17.45",
-	"endDate":"2016-11-29-12:00","status":"使用中","totalAmount":"21","selfPaid":"N","info":"test string"}
-];
+	"endDate":"2016-11-29-12:00","status":"使用中","totalAmount":"21","selfPaid":"N","info":"test string"} 
+];*/
 

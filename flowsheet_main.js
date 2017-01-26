@@ -9,6 +9,6 @@ $(document).ready(function(){
       window.location=path +"/report/FlowSheet/main.do?gaugeDate1="+cho;
       
     });
-  
+
 	  
 });

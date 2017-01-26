@@ -48,7 +48,7 @@ function getTable()
 		Saturation=[];
 	}
 	if(!(typeof SaturationWarn_L ==="number")) SaturationWarn_L=85;
-	if(!(typeof SaturationWarn_U ==="number")) SaturationWarn_U=95;
+	if(!(typeof SaturationWarn_U ==="number")) SaturationWarn_U="";
 	table.appendChild(printRowTPR("Sat","(%)",Saturation,SaturationWarn_L,SaturationWarn_U));
 	table.appendChild(getSpacingRow());
 	
@@ -99,17 +99,48 @@ function printRowTPR(fieldName, Unit, DataArray, LowerWarn, UpperWarn)
 			td.appendChild(getComponent('span',"warnInfo_TPR",limittext));
 		tr.appendChild(td);
 		tr.appendChild(getSpacingTD());
+
 		var dataOutput = generateDataOutput(DataArray);
+
 		for(var i=0;i<8;i++){
-			tr.appendChild(getTDwithData(dataOutput[i],"td_Data_TPR",LowerWarn,UpperWarn));	
+			var tooltip="";
+			if(dataOutput[i].detail && dataOutput[i].detail.length>1)
+			{
+				for(var j=0; j<dataOutput[i].detail.length;j++)
+				{
+					tooltip +=dataOutput[i].detail[j].time+" "+ dataOutput[i].detail[j].value+"\r\n";
+				}
+			}
+			var tdToAppend=getTDwithData(dataOutput[i].value,"td_Data_TPR",LowerWarn,UpperWarn,false,tooltip);
+			tr.appendChild(tdToAppend);
 		}
 		tr.appendChild(getSpacingTD());
+
 		for(var i=8;i<16;i++){
-			tr.appendChild(getTDwithData(dataOutput[i],"td_Data_TPR",LowerWarn,UpperWarn));	
+			var tooltip="";
+			if(dataOutput[i].detail && dataOutput[i].detail.length>1)
+			{
+				for(var j=0; j<dataOutput[i].detail.length;j++)
+				{
+					tooltip +=dataOutput[i].detail[j].time+" "+ dataOutput[i].detail[j].value+"\r\n";
+				}
+			}
+			var tdToAppend=getTDwithData(dataOutput[i].value,"td_Data_TPR",LowerWarn,UpperWarn,false,tooltip);
+			tr.appendChild(tdToAppend);
 		}
 		tr.appendChild(getSpacingTD());
+		
 		for(var i=16;i<24;i++){
-			tr.appendChild(getTDwithData(dataOutput[i],"td_Data_TPR",LowerWarn,UpperWarn));	
+			var tooltip="";
+			if(dataOutput[i].detail && dataOutput[i].detail.length>1)
+			{
+				for(var j=0; j<dataOutput[i].detail.length;j++)
+				{
+					tooltip +=dataOutput[i].detail[j].time+" "+ dataOutput[i].detail[j].value+"\r\n";
+				}
+			}
+			var tdToAppend=getTDwithData(dataOutput[i].value,"td_Data_TPR",LowerWarn,UpperWarn,false,tooltip);
+			tr.appendChild(tdToAppend);
 		}
 
 		tr.appendChild(getSpacingTD());
@@ -162,19 +193,25 @@ function getFirstRowTPR()
 function generateDataOutput(DataArray)
 {
 	var dataOutput=[];
+	SortedDataArray = DataArray.sort(keysrt("time",false));
 	for(var i = 0; i<24; i++)
 	{
+		dataOutput.push({"value":"","detail":[]});
 		var max="";
 		for(var x = 0;x< DataArray.length;x++)
 		{
 			if(DataArray[x].time.split(':')[0]==i)
 			{
-				if( DataArray[x].value > max) max = DataArray[x].value;
+				if(DataArray[x].value > max) max = DataArray[x].value;
+				
+				dataOutput[i].detail.push(DataArray[x]);
+				
 				if(validStart > i) {validStart=i;}
 				if(validEnd < i) {validEnd=i;}
 			}
+
 		}
-		dataOutput[i] = max;
+		dataOutput[i].value = max;
 	}
 	return dataOutput;
 }

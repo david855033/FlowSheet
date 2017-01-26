@@ -9,7 +9,6 @@ function getComponent(componentType, setClass,  setHTML)
 	{
 		result.innerHTML=setHTML;
 	}
-	
 	return result;
 }
 
@@ -27,14 +26,13 @@ function getSpacingTD()
 
 function dateToStringShort(input)
 {
-	if(typeof input ==="Date")
+	if(input instanceof Date) //modify by Bob 20161124
 	{
 		var result=
 		input.getFullYear() +"-"+(input.getMonth() + 1) + '-' + input.getDate();
 		return result;
 	}else
 	{
-
 		return "";
 	}
 }
@@ -47,11 +45,12 @@ function dateToStringMMDD(input)
 }
 
 //產生裝資料的格子，無資料的CSS使用pstfix: "_Empty" 警告字體cs ="warn"
-function getTDwithData(value, setClass,L,U)
+function getTDwithData(value, setClass,L,U,isZeroShowed, tooltip,isSmallerWord)
 {
+	if(!isZeroShowed) {var isZeroShowed = false;}
 	var warn = "";
-	if( (typeof value === "number" && value !=0) ||
-		(typeof value === "string" && value !="" ) )
+	if( (typeof value === "number" && (false||value !=0 ) ||
+		(typeof value === "string" && value !="" ) ))
 	{
 		var td = getComponent('td',setClass);		
 		if( (typeof L === "number" && value < L) ||
@@ -59,7 +58,13 @@ function getTDwithData(value, setClass,L,U)
 		{
 			warn="warn";
 		}
-		td.appendChild(getComponent('span',warn,value));
+		if(isSmallerWord)
+		{
+			warn="smallWord";
+		}
+		if(typeof value == "number") value = Math.round(value*10)/10;
+		var toAppend = getSpanWithUnderLineAndToolTip(getComponent('span',warn,value),tooltip);
+		td.appendChild(toAppend);
 	}
 	else{
 		var td =  getComponent('td',setClass+"_Empty");	
@@ -111,4 +116,27 @@ function keysrt(key,desc) {
   	if(desc) result = result * -1;
    return result;
   }
+}
+
+function getSpanWithUnderLineAndToolTip(element, input){
+	if(input && input !="")
+	{
+		var result = getComponent("span","underline");
+		element.setAttribute("title",input);	
+		result.appendChild(element);	
+		return result;
+	}else
+	{
+		return element;
+	}
+}
+
+function getSpanToolTip(element, input){
+	if(input && input !="")
+	{
+		var result = getComponent("span");
+		element.setAttribute("title",input);
+			result.appendChild(element);	
+		return result;
+	}
 }

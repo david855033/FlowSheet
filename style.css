@@ -1,7 +1,8 @@
 section
 {
+	font-size: 0.7em;
 	margin:0 auto;
-	width:1440px;
+	width:1024px;
 }
 body{
 	background-color: #666666;
@@ -10,18 +11,14 @@ body{
 table{overflow: hidden; }
 td{overflow: hidden;}
 
-/*span 警告字體*/
-.warn{
-	font-weight: bolder;
-	color:rgb(255,0,0);
-}
+
 
 /*標頭底色*/
 .header{
 	background-color: #FFFFFF;
 	margin: auto; 
 	width: 100%;
-	height: 115px;
+	height: 100px;
 	text-align: center;
 	overflow: hidden;
 	box-shadow: 5px 5px 5px #444444;
@@ -38,7 +35,7 @@ td{overflow: hidden;}
 
 /*上下副標題字體*/
 .smalltitle{
-	font-size: 1em;
+	font-size: 1.2em;
 	color:rgb(100,100,100);
 	line-height: 20px;
 }
@@ -47,18 +44,19 @@ td{overflow: hidden;}
 .bigtitle{
 	font-size: 2em;
 	font-weight: bold;
-	line-height: 55px;
+	line-height: 40px;
 }
 
 /*中央標題字體(縮小)*/
 .midtitle{
 	font-size: 1.5em;
 	font-weight: normal;
-	line-height: 55px;	
+	line-height: 40px;	
 }
 
 /*按鈕列*/
 .navigator{
+	font-size: 1.2em;
 	margin-top:2px;
 	background-color: #333;
 	box-shadow: 5px 5px 5px #444444;
@@ -80,20 +78,20 @@ td{overflow: hidden;}
 
 /*主畫面*/
 .main-content{
-	margin-top: 20px;
+	margin-top: 5px;
 }
 /*橫填充高度*/
 .tr_spacing{
-	height: 2px;
+	height: 0px;
 }
 /*填充寬度*/
 .td_spacing{
-	width: 1px  ;
+	width: 5px  ;
 }
 
 /*裝TPR+AB table之容器*/
 .UpperLeftTableContainer{
-	width:1150px;
+	width:814px;
 	box-shadow: 5px 5px 5px #444444;
 	float:left;
 }
@@ -106,18 +104,18 @@ td{overflow: hidden;}
 }
 /*TPR 第一欄的顏色設定*/
 .td_FirstColumn_TPR{
-	max-width: 128px;
-	min-width: 128px;
-	height: 25px;
+	max-width: 90px;
+	min-width: 90px;
+	height: 20px;
 	background-color: rgb(209,242,208);
 
 }
 /*TPR 第一列的顏色設定*/
 .td_FirstRow_TPR {
-	max-width: 37.5px;
-	min-width: 37.5px;
+	max-width: 25px;
+	min-width: 25px;
 	text-align: center;
-	height: 25px;
+	height: 20px;
 	background-color: rgb(209,242,208);	
 }
 /*TPR 標題欄 標註上限下限之字體*/
@@ -127,18 +125,18 @@ td{overflow: hidden;}
 }
 /*TPR含數值的格子*/
 .td_Data_TPR {
-	max-width: 37.5px;
-	min-width: 37.5px;
+	max-width: 25px;
+	min-width: 25px;
 	text-align: center;
-	height: 25px;
+	height: 20px;
 	background-color: rgb(235,249,235);
 }
 /*TPR不含數值的格子*/
 .td_Data_TPR_Empty {
-	max-width: 37.5px;
-	min-width: 37.5px;
+	max-width: 25px;
+	min-width: 25px;
 	text-align: center;
-	height: 25px;
+	height: 20px;
 	background-color: rgb(176,232,175);
 }
 
@@ -150,101 +148,101 @@ td{overflow: hidden;}
 }
 /*AB table第一欄*/
 .td_FirstColumn_AB{
-	max-width: 128px;
-	min-width: 128px;
-	height: 25px;
+	max-width: 90px;
+	min-width: 90px;
+	height: 20px;
 	background-color: rgb(243,231,197);
 }
 /*AB含數值的格子*/
 .td_Data_AB {
-	max-width: 37.5px;
-	min-width: 37.5px;
+	max-width: 25px;
+	min-width: 25px;
 	text-align: center;
-	height: 25px;
+	height: 20px;
 	background-color: rgb(250,245,230);
 }
 /*AB不含數值的格子*/
 .td_Data_AB_Empty {
-	max-width: 37.5px;
-	min-width: 37.5px;
+	max-width: 25px;
+	min-width: 25px;
 	text-align: center;
-	height: 25px;
+	height: 20px;
 	background-color: rgb(253,213,155);
 }
 
 /*IO table之背景色設定*/
 .IO_table{
 	background-color:#7BBBBB;
-	width:1150px;
+	width:814px;
 	float:left;
 	box-shadow: 5px 5px 5px #444444;
 }
 /*IO table第一欄*/
 .td_FirstColumn_IO{
-	max-width: 128px;
-	min-width: 128px;
-	height: 25px;
+	max-width: 90px;
+	min-width: 90px;
+	height: 20px;
 	background-color: rgb(209,231,231);
 }
 /*IO 含數值的格子*/
 .td_Data_IO {
-	max-width: 37.5px;
-	min-width: 37.5px;
+	max-width: 25px;
+	min-width: 25px;
 	text-align: center;
-	height: 25px;
+	height: 20px;
 	background-color: rgb(235,245,245);
 }
 /*IO 不含數值的格子*/
 .td_Data_IO_Empty {
-	max-width: 37.5px;
-	min-width: 37.5px;
+	max-width: 25px;
+	min-width: 25px;
 	text-align: center;
-	height: 25px;
+	height: 20px;
 	background-color: rgb(176,214,214);
 		}
 
 
 /*右邊輸入輸出加總區域寬度(擺放卡片的空間)*/
 .IO_Cards{
-	max-width:270px;
-	min-width:270px;
+	max-width:200px;
+	min-width:200px;
 	float:left;
-	margin-left:20px;
+	margin-left:5px;
 }
 
 
 /*一張卡片的大小、顏色設定*/
 .IOCard{
-	max-width:270px;
-	min-width:270px;
-	max-height:100px ;
-	min-height:100px ;
+	max-width:200px;
+	min-width:200px;
+	max-height:80px;
+	min-height:80px;
 	background-color:#C8A8FF;
 	margin-bottom: 5px;
 	box-shadow: 5px 5px 5px #444444;
 }
 .IOCard_Total{
-	max-width:270px;
-	min-width:270px;
-	max-height:120px ;
-	min-height:120px ;
+	max-width:200px;
+	min-width:200px;
+	max-height:100px;
+	min-height:100px;
 	background-color:#3F5765;
 	box-shadow: 5px 5px 5px #444444;
 }
 
 /*顯示卡片名稱的欄位*/
 .shift{
-	max-width:25px;
-	min-width:25px;
-	max-height:100px ;
-	min-height:100px ;
+	max-width:20px;
+	min-width:20px;
+	max-height:80px ;
+	min-height:80px ;
 	float:left;
 }
 .shift_Total{
-	max-width:25px;
-	min-width:25px;
-	max-height:120px ;
-	min-height:120px ;
+	max-width:20px;
+	min-width:20px;
+	max-height:80px ;
+	min-height:80px ;
 	padding-top: 10px;
 	color:#FFFFFF;
 	float:left;
@@ -255,39 +253,41 @@ td{overflow: hidden;}
 }
 /*裝IO細項欄位(IO卡中間的六小格) 設定寬度*/
 .IOContainer{
-	max-width: 180px;
-	min-width: 180px;
+	max-width: 120px;
+	min-width: 120px;
 	height: 100%;
 	float:left;
 }
 .IOInnerCard{
 	background: rgb(222,203,255);
-	max-height: 50px;
-	min-height: 50px;
-	max-width: 55px;
-	min-width: 55px;
+	max-height: 40px;
+	min-height: 40px;
+	max-width: 40px;
+	min-width: 40px;
 	float:left;
 }
 .IOInnerCard_Wide{
 	background: rgb(228,212,255);
-	max-height: 50px;
-	min-height: 50px;
-	max-width: 70px;
-	min-width: 70px;
+	max-height: 60px;
+	min-height: 60px;
+	max-width: 60px;
+	min-width: 60px;
 	float:left;
 }
 .IOInnerCard_Total{
 	background: rgb(31,43,50);
-	max-height: 60px;
-	min-height: 60px;
-	max-width: 55px;
-	min-width: 55px;
+	max-height: 50px;
+	min-height: 50px;
+	max-width: 40px;
+	min-width: 40px;
 	float:left;
 }
 .IOInnerCard_Wide_Total{
 	background: rgb(25,35,40);
-	height: 60px;
-	width: 70px;
+	max-height: 50px;
+	min-height: 50px;
+	max-width: 60px;
+	min-width: 60px;
 	float:left;
 }
 
@@ -299,90 +299,92 @@ td{overflow: hidden;}
 }
 .IOInnerBig{
 	font-size: 1.2em;
-	font-weight: border;
+	line-height: 15px;
 }
 .IOInnerBigWarn{
 	font-size: 1.2em;
-	font-weight: border;
+	line-height: 15px;
 	color:rgb(255,0,0);
 }
-.IOInnerSmallTotal{
+.IOInnerBigBold{
+	font-size: 1.2em;
 	line-height: 15px;
+}
+
+.IOInnerSmallTotal{
+	line-height: 13px;
 	font-size: 0.8em;
 	color:rgb(180,180,180);
 }
 .IOInnerBigTotal{
 	font-size: 1.2em;
+	line-height: 20px;
 	color:#FFFFFF;
-	font-weight: border;
 }
 .IOInnerBigTotalWarn{
 	font-size: 1.2em;
+	line-height: 20px;
 	color:#FFFFFF;
-	font-weight: border;
 	color:rgb(255,150,0);
 }
+.IOInnerBigTotalBold{
+	font-size: 1.2em;
+	line-height: 20px;
+	color:#FFFFFF;
+	color:#FFFFFF;
+}
 
-/*IO加總 欄位大小*/
+/*IO加總 欄位大小*/  
 .IOBalance{
-	max-width: 65px;
-	min-width: 65px;
-	max-height:100px ;
-	min-height:100px ;
+	max-width: 60px;
+	min-width: 60px;
+	height: 100%;
 	float:left;
-	font-size: 1.0em;
-	text-align: center;
 }
-.IOBalanceTotal{
-	max-width: 65px;
-	min-width: 65px;
-	max-height:120px ;
-	min-height:120px ;
-	float:left;
-	font-size: 1.1em;
-	text-align: center;
-}
+
 .tr_IObalancespacing{
-	height: 25px;
+	height: 20px;
+	background: rgb(228,212,255);
 }
 
 
 /*事件欄位*/
 .event{
 	background-color:#84B4BF;
-	max-width:270px;
-	min-width:270px;
-	max-height: 365px;
-	min-height: 365px;
+	max-width:205px;
+	min-width:205px;
+	max-height: 295px;
+	min-height: 295px;
 	float:left;
-	margin-left: 20px;
-	margin-bottom: 10px;
+	margin-left: 5px;
+	margin-bottom: 5px;
 	box-shadow: 5px 5px 5px #444444;
 	overflow-y:scroll;
+	overflow-x:hidden;
 }
 /*首欄寬度*/
 .td_FirstColumn_event{
-	max-width:50px;
-	min-width:50px;
-	max-height: 25px;
-	min-height: 25px;
+	max-width:30px;
+	min-width:30px;
+	max-height: 20px;
+	min-height: 20px;
 	text-align: center;
 	background-color: rgb(194,218,223);
 }
 /*第二欄寬度*/
 .tdInFirstRow_event {
-	max-width: 173px;
-	min-width: 173px;
+	max-width: 140px;
+	min-width: 140px;
 	text-align: center;
-	max-height: 25px;
-	min-height: 25px;
+	max-height: 20px;
+	min-height: 20px;
 	background-color: rgb(194,218,223);
 }
 .tdInTable_event {
 	text-align: center;
 	background-color: rgb(230,240,242);
-	padding-top: 4px;
-	padding-bottom: 4px;
+	padding-top: 2px;
+	padding-bottom: 2px;
 	font-size:0.9em;
 }
 
@@ -396,8 +398,8 @@ td{overflow: hidden;}
 
 /*左方欄(呼吸器及ABG)*/
 .bottomLeft{
-	width:710px;
-	margin-right:10px;
+	width:500px;
+	margin-right:5px;
 	float:left;
 }
 
@@ -405,33 +407,33 @@ td{overflow: hidden;}
 .ventilator_table{
 	background-color: #75E243;
 	box-shadow: 5px 5px 5px #444444;
-	margin-bottom:20px;
+	margin-bottom:10px;
 }
 .ventilator_table_innerTD1
 {
-	width: 80px;
+	width: 35px;
 	text-align: center;
-	height: 25px;
+	height: 20px;
 	background-color: #b3ef98;
 }
 .ventilator_table_innerTD2
 {
-	width: 150px;
+	width: 80px;
 	text-align: center;
-	height: 25px;
+	height: 20px;
 	background-color: #b3ef98;
 }
 .ventilator_table_innerTD3
 {
-	width: 460px;
+	width: 350px;
 	text-align: center;
-	height: 25px;
+	height: 20px;
 	background-color: #b3ef98;
 }
 .ventilator_table_Content_TD
 {	
 	text-align: center;
-	height: 25px;
+	height: 20px;
 	background-color: #e3f9d9;
 }
 
@@ -440,36 +442,36 @@ td{overflow: hidden;}
 .ABG_table{
 	background-color: #2ADD75;
 	box-shadow: 5px 5px 5px #444444;
-	margin-bottom:10px;
+	margin-bottom:8px;
 }
 .td_spacing_ABG_table{
 	width:1px;
 	background-color: #2ADD75;
 }
 .ABG_table_TD_Time{
-	width: 80px;
+	width: 35px;
 	text-align: center;
-	height: 25px;
+	height: 20px;
 	background-color: #95eeba;
 }
 .ABG_table_TD_Element{
-	width: 42px;
+	width: 26px;
 	text-align: center;
-	height: 25px;
+	height: 20px;
 	background-color: #95eeba;
 }
 .ABG_table_TD_Content{
 	text-align: center;
-	height: 25px;
+	height: 20px;
 	background-color: #c0f5d6;
 }
 
 
 /*右方欄(Labdata)*/
 .bottomRight{
-	width:710px;
+	width:510px;
 	float:left;
-	margin-left:10px;
+	margin-left:5px;
 }
 .bottomRight table{
 	border-collapse: collapse;
@@ -481,248 +483,248 @@ td{overflow: hidden;}
 	color: rgb(150,150,150);
 }
 .glucoseCard{
-	width:170px;
-	height: 110px;
+	width:120px;
+	height: 80px;
 	background-color: #EDF3FF;
 	box-shadow: 5px 5px 5px #444444;
 	display: inline-block;
-	margin-right: 5px;
-	margin-bottom: 5px;
+	margin-right: 2px;
+	margin-bottom: 2px;
 }
 .glucoseTable{
-	width:170px;
-	height: 110px;
+	width:120px;
+	height: 80px;
 	text-align: center;
 }
 .glucoseTitle{
-	font-size: 1em;
+	font-size: 1.1em;
 	line-height: 10px;
 	color: rgb(0,0,0);
 }
 .glucoseMainWord{
-	font-size: 3em;
-	line-height: 43px;
+	font-size: 2.2em;
+	line-height: 30px;
 	font-weight: bolder;
 }
 
 .CBCCard{
-	width:520px;
-	height: 110px;
+	width:377px;
+	height: 80px;
 	background-color: #EDF3FF;
 	box-shadow: 5px 5px 5px #444444;
 	display: inline-block;
-	margin-right: 5px;
-	margin-bottom: 5px;	
+	margin-right: 2px;
+	margin-bottom: 2px;	
 }
 .CBCtable{
-	width:520px;
-	height: 110px;
+	width:377px;
+	height: 80px;
 	text-align: center;
 }
 .CBCtitle{
-	font-size: 1em;
-	line-height: 10px;
+	font-size: 1.1em;
+	line-height: 15px;
 }
 .CBCMainWord{
-	font-size: 2.4em;
-	line-height: 30px;
+	font-size: 2.2em;
+	line-height: 20px;
 	font-weight: bolder;
 }
 .CBCSubInfo{
-	font-size: 1.2em;
-	font-weight: border;
-	line-height:13px;
+	font-size: 1.1em;
+	font-weight: bolder;
+	line-height:5px;
 }
 
 .EleCard{
-	width:700px;
-	height: 100px;
+	width:502px;
+	height: 70px;
 	background-color: #EDF3FF;
 	box-shadow: 5px 5px 5px #444444;
 	display: inline-block;
-	margin-right: 5px;
-	margin-bottom: 5px;	
+	margin-right: 2px;
+	margin-bottom: 2px;	
 }
 .EleTable{
-	width:700px;
-	height: 100px;
+	width:502px;
+	height: 70px;
 	text-align: center;
 }
 .EleTitle{
-	font-size: 1em;
-	line-height: 10px;
+	font-size: 1.1em;
+	line-height: 5px;
 }
 .EleMainWord{
 	font-size: 2.2em;
-	line-height:35px;
+	line-height:30px;
 	font-weight: bolder;
 }
 
 .CRPCard{
-	width:124px;
-	height: 100px;
+	width:80px;
+	height: 70px;
 	background-color: #EDF3FF;
 	box-shadow: 5px 5px 5px #444444;
 	display: inline-block;
-	margin-right: 5px;
-	margin-bottom: 5px;
+	margin-right: 2px;
+	margin-bottom: 2px;
 }
 .CRPTable{
-	width:124px;
-	height: 100px;
+	width:80px;
+	height: 70px;
 	text-align: center;
 }
 .CRPTitle{
-	font-size: 1em;
-	line-height: 10px;
+	font-size: 1.1em;
+	line-height: 5px;
 }
 .CRPMainWord{
 	font-size: 2.2em;
-	line-height:35px;
+	line-height:30px;
 	font-weight: bolder;
 }
 
 .AbxCard{
-	width:433px;
-	height: 100px;
+	width: 333px;
+	height: 70px;
 	background-color: #EDF3FF;
 	box-shadow: 5px 5px 5px #444444;
 	display: inline-block;
-	margin-right: 5px;
-	margin-bottom: 5px;	
+	margin-right: 2px;
+	margin-bottom: 2px;	
 }
 .AbxTable{
-	width:433px;
-	height: 100px;
+	width:333px;
+	height: 70px;
 	text-align: center;	
 }
 .AbxTitle{
-	font-size: 1em;
-	line-height: 10px;
+	font-size: 1.1em;
+	line-height: 5px;
 }
 .AbxMainWord{
 	font-size: 1.5em;
-	line-height:35px;
+	line-height:30px;
 	font-weight: bolder;
 }
 
 .RenalCard{
-	width:227px;
-	height: 90px;
+	width:164px;
+	height: 70px;
 	background-color: #EDF3FF;
 	box-shadow: 5px 5px 5px #444444;
 	display: inline-block;
-	margin-right: 5px;
-	margin-bottom: 5px;	
+	margin-right: 2px;
+	margin-bottom: 2px;	
 }
 .RenalTable{
-	width:227px;
-	height: 90px;
+	width:164px;
+	height: 70px;
 	text-align: center;
 }
 .RenalTitle{
-	font-size: 1em;
-	line-height: 10px;
+	font-size: 1.1em;
+	line-height: 5px;
 }
 .RenalMainWord{
 	font-size: 2.2em;
-	line-height:35px;
+	line-height:30px;
 	font-weight: bolder;
 }
 
 .LiverCard{
-	width:227px;
-	height: 90px;
+	width:164px;
+	height: 70px;
 	background-color: #EDF3FF;
 	box-shadow: 5px 5px 5px #444444;
 	display: inline-block;
-	margin-right: 5px;
-	margin-bottom: 5px;	
+	margin-right: 2px;
+	margin-bottom: 2px;	
 }
 .LiverTable{
-	width:227px;
-	height: 90px;
+	width:164px;
+	height: 70px;
 	text-align: center;
 }
 .LiverTitle{
-	font-size: 1em;
-	line-height: 10px;
+	font-size: 1.1em;
+	line-height: 5px;
 }
 .LiverMainWord{
 	font-size: 2.2em;
-	line-height:35px;
+	line-height:30px;
 	font-weight: bolder;
 }
 
 .TbilCard{
-	width:227px;
-	height: 90px;
+	width:164px;
+	height: 70px;
 	background-color: #EDF3FF;
 	box-shadow: 5px 5px 5px #444444;
 	display: inline-block;
-	margin-right: 5px;
-	margin-bottom: 5px;
+	margin-right: 2px;
+	margin-bottom: 2px;
 }
 .TbilTable{
-	width:227px;
-	height: 90px;
+	width:164px;
+	height: 70px;
 	text-align: center;
 }
 .TbilTitle{
-	font-size: 1em;
-	line-height: 10px;
+	font-size: 1.1em;
+	line-height: 5px;
 }
 .TbilMainWord{
 	font-size: 2.2em;
-	line-height:35px;
+	line-height:30px;
 	font-weight: bolder;
 }
 
 .BoneMarkerCard{
-	width:320px;
-	height: 80px;
+	width:198px;
+	height: 70px;
 	background-color: #EDF3FF;
 	box-shadow: 5px 5px 5px #444444;
 	display: inline-block;
-	margin-right: 5px;
-	margin-bottom: 5px;	
+	margin-right: 2px;
+	margin-bottom: 2px;	
 }
 .BoneMarkerTable{
-	width:320px;
-	height: 80px;
+	width:198px;
+	height: 70px;
 	text-align: center;
 }
 .BoneMarkerTitle{
 	font-size: 0.9em;
-	line-height: 9px;
+	line-height: 5px;
 }
 .BoneMarkerMainWord{
 	font-size: 1.4em;
-	line-height:25px;
+	line-height:30px;
 	font-weight: bold;
 }
 
 .AnemiaCard{
-	width:368px;
-	height: 80px;
+	width:300px;
+	height: 70px;
 	background-color: #EDF3FF;
 	box-shadow: 5px 5px 5px #444444;
 	display: inline-block;
-	margin-right: 5px;
-	margin-bottom: 5px;	
+	margin-right: 2px;
+	margin-bottom: 2px;	
 }
 .AnemiaTable{
-	width:368px;
-	height: 80px;
+	width:300px;
+	height: 70px;
 	text-align: center;
 }
 .AnemiaTitle{
 	font-size: 0.9em;
-	line-height: 9px;
+	line-height: 5px;
 }
 .AnemiaMainWord{
 	font-size: 1.4em;
-	line-height:25px;
+	line-height:30px;
 	font-weight: bold;
 }
 
@@ -750,11 +752,25 @@ td{overflow: hidden;}
 }
 
 
+/*span 警告字體*/
+.warn{
+	font-weight: bolder;
+	color:rgb(255,0,0);
+}
+
 .warn2{
 	font-weight: bolder;
 	color:rgb(255,150,0);
 }
+
+.underline{
+	text-decoration: underline;
+}
+
 .warn3{
 	color:rgb(255,0,0);
 }
 
+.smallWord{
+	font-size: 0.9em;
+}

@@ -6,6 +6,7 @@ function ventilatorProcess()
 	{
 		ventilator_Array=[];
 	}
+	ventilator_Array.sort(keysrt("time"));
 	var tb = getComponent('table');
 		tb.appendChild(getSpacingRow());
 		tb.appendChild(getFirstRowVent());
